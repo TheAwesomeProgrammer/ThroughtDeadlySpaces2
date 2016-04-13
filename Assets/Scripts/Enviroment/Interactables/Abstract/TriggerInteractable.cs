@@ -6,18 +6,26 @@ public abstract class TriggerInteractable : MonoBehaviour, Interactable
 {
     public List<string> Tags { get; set; }
 
-    protected Collider _otherCollider;
+    protected Collider _triggerCollider;
+    protected Collider _collider;
 
     protected virtual void Start()
     {
         Tags = new List<string>();
+        _collider = GetComponent<Collider>();
+        if (!_collider.isTrigger)
+        {
+            _collider.isTrigger = true;
+            Debug.LogWarning("Setting isTrigger to true, because has TriggerInteractable on it. \n Make sure this is on the right object.");
+        }
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (Tags.Contains(collider.tag))
         {
-            OnEnter(collider);
+            _triggerCollider = collider;
+            OnEnter();
         }
         
     }
@@ -26,7 +34,8 @@ public abstract class TriggerInteractable : MonoBehaviour, Interactable
     {
         if (Tags.Contains(collider.tag))
         {
-            OnStay(collider);
+            _triggerCollider = collider;
+            OnStay();
         }
     }
 
@@ -34,22 +43,14 @@ public abstract class TriggerInteractable : MonoBehaviour, Interactable
     {
         if (Tags.Contains(collider.tag))
         {
-            OnExit(collider);
+            _triggerCollider = collider;
+            OnExit();
         }
     }
 
-    public virtual void OnEnter(object otherCollisionObject)
-    {
-        _otherCollider = otherCollisionObject as Collider;
-    }
+    public virtual void OnEnter(){}
 
-    public virtual void OnStay(object otherCollisionObject)
-    {
-        _otherCollider = otherCollisionObject as Collider;
-    }
+    public virtual void OnStay(){}
 
-    public virtual void OnExit(object otherCollisionObject)
-    {
-        _otherCollider = otherCollisionObject as Collider;
-    }
+    public virtual void OnExit(){}
 }

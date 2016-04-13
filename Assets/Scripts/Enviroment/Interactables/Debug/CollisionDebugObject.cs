@@ -8,21 +8,21 @@ public class CollisionDebugObject : CollisionInteractable
         Tags.Add("Debug");
     }
 
-    public override void OnEnter(object otherCollisionObject)
+    public override void OnEnter()
     {
-        base.OnEnter(otherCollisionObject);
-        Debug.Log("Entering collision. Collision : "+otherCollisionObject);
+        base.OnEnter();
+        Debug.Log("Entering collision. Collision : "+ _collisionObject);
     }
 
-    public override void OnStay(object otherCollisionObject)
+    public override void OnStay()
     {
-        base.OnStay(otherCollisionObject);
-        Debug.Log("Staying in collision. Collision : " + otherCollisionObject);
+        base.OnStay();
+        Debug.Log("Staying in collision. Collision : " + _collisionObject);
     }
 
-    public override void OnExit(object otherCollisionObject)
+    public override void OnExit()
     {
-        base.OnExit(otherCollisionObject);
-        Debug.Log("Exiting collision. Collision : " + otherCollisionObject);
+        base.OnExit();
+        Debug.Log("Exiting collision. Collision : " + _collisionObject);
     }
 }

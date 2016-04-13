@@ -6,9 +6,9 @@
         Tags.Add("Player");
     }
 
-    public override void OnEnter(object otherCollisionObject)
+    public override void OnEnter()
     {
-        base.OnEnter(otherCollisionObject);
+        base.OnEnter();
 
     }
 }

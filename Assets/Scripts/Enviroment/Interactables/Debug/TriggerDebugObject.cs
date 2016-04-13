@@ -8,21 +8,21 @@ public class TriggerDebugObject : TriggerInteractable
         Tags.Add("Debug");
     }
 
-    public override void OnEnter(object otherCollisionObject)
+    public override void OnEnter()
     {
-        base.OnEnter(otherCollisionObject);
-        Debug.Log("Entering trigger. Object : "+_otherCollider);
+        base.OnEnter();
+        Debug.Log("Entering trigger. Object : "+_triggerCollider);
     }
 
-    public override void OnStay(object otherCollisionObject)
+    public override void OnStay()
     {
-        base.OnStay(otherCollisionObject);
-        Debug.Log("Staying in trigger. Object : " + _otherCollider);
+        base.OnStay();
+        Debug.Log("Staying in trigger. Object : " + _triggerCollider);
     }
 
-    public override void OnExit(object otherCollisionObject)
+    public override void OnExit()
     {
-        base.OnExit(otherCollisionObject);
-        Debug.Log("Exiting trigger. Object : " + _otherCollider);
+        base.OnExit();
+        Debug.Log("Exiting trigger. Object : " + _triggerCollider);
     }
 }

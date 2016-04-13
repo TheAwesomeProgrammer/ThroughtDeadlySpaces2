@@ -6,14 +6,16 @@ public abstract class CollisionInteractable : MonoBehaviour, Interactable
 {
     public List<string> Tags { get; set; }
 
-    protected Collision _otherCollision;
+    protected Collision _collisionObject;
+    protected Collider _collider;
 
     protected virtual void Start()
     {
         Tags = new List<string>();
-        if (GetComponent<Collider>().isTrigger)
+        _collider = GetComponent<Collider>();
+        if (_collider.isTrigger)
         {
-            GetComponent<Collider>().isTrigger = false;
+            _collider.isTrigger = false;
             Debug.LogWarning("Setting isTrigger to false, because has CollisionInteractable on it. \n Make sure this is on the right object.");
         }
     }
@@ -22,7 +24,8 @@ public abstract class CollisionInteractable : MonoBehaviour, Interactable
     {
         if (Tags.Contains(collision.collider.tag))
         {
-            OnEnter(collision);
+            _collisionObject = collision;
+            OnEnter();
         }
     }
 
@@ -30,7 +33,8 @@ public abstract class CollisionInteractable : MonoBehaviour, Interactable
     {
         if (Tags.Contains(collision.collider.tag))
         {
-            OnStay(collision);
+            _collisionObject = collision;
+            OnStay();
         }
     }
 
@@ -38,22 +42,14 @@ public abstract class CollisionInteractable : MonoBehaviour, Interactable
     {
         if (Tags.Contains(collision.collider.tag))
         {
-            OnExit(collision);
+            _collisionObject = collision;
+            OnExit();
         }
     }
 
-    public virtual void OnEnter(object otherCollisionObject)
-    {
-        _otherCollision = otherCollisionObject as Collision;
-    }
+    public virtual void OnEnter(){}
 
-    public virtual void OnStay(object otherCollisionObject)
-    {
-        _otherCollision = otherCollisionObject as Collision;
-    }
+    public virtual void OnStay(){}
 
-    public virtual void OnExit(object otherCollisionObject)
-    {
-        _otherCollision = otherCollisionObject as Collision;
-    }
+    public virtual void OnExit(){}
 }
