@@ -61,5 +61,11 @@ public class Life : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void SetHealth(int health)
+    {
+        MaxHealth = health;
+        Health = health;
+    }
+
 
 }

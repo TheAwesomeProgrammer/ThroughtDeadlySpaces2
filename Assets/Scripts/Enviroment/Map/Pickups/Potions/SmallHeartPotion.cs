@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityTest;
 
-public class Potion : TriggerInteractable
+public class SmallHeartPotion : TriggerInteractable
 {
     public int HealthToGive = 2;
 

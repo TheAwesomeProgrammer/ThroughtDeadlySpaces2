@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Swords>
+    <Sword id="0" name="Standard">
+        <Specs>(1,2,3,4,5)</Specs>
+        <Att></Att>
+    </Sword>
+</Swords>

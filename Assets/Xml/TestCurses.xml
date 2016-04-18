@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Curses>
+    <BrokenSwordCurse id="0">
+        <Specs>(-40)</Specs>        
+    </BrokenSwordCurse>
+    <HeavySwordCurse id="1">
+        <Specs>(2)</Specs>        
+    </HeavySwordCurse>
+    <RustrySwordCurse id="2">
+        <Specs>(-20,8)</Specs>        
+    </RustrySwordCurse>    
+</Curses>

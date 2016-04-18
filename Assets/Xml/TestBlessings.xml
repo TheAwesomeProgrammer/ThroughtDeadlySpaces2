@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Blessings>
+    <VstellSwordBlessing id="0">
+        <Specs>(10,50)</Specs>        
+    </VstellSwordBlessing>    
+    <LifeDrainSwordBlessing id="1">
+        <Specs>(5,1)</Specs>        
+    </LifeDrainSwordBlessing> 
+    <EnchantedSwordBlessing id="2">
+        <Specs>(10,1)</Specs>        
+    </EnchantedSwordBlessing> 
+</Blessings>

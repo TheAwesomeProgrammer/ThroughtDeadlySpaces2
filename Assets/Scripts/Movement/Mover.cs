@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Mover : MonoBehaviour
 {
-    public float Speed = 10;
+    public float Speed { get; set; }
 
     private Vector3 _moveDirection = Vector3.right;
 
@@ -18,7 +18,8 @@ public class Mover : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    _rigidbody = GetComponent<Rigidbody>();
+	    Speed = 100;
+        _rigidbody = GetComponent<Rigidbody>();
 
 	}
 	

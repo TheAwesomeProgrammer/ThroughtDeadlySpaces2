@@ -2,8 +2,6 @@
 
 public class TestPotion : MonoBehaviour
 {
-    
-
     private Life _life;
     private int _potionHealthChange;
 
