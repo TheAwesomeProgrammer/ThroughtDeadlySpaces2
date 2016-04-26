@@ -1,18 +1,13 @@
 ﻿namespace Assets.Scripts.Xml
 {
 
-    public class SpecsConverter
+    public class SpecsConverter : XmlConverter
     {
-        private const char SplitIdentifier = ',';
-        private const string EndIdentifier = ")";
-        private const string StartIdenfier = "(";
+        
 
         public int[] Convert(string xmlSpecsText)
         {
-            xmlSpecsText = xmlSpecsText.Replace(StartIdenfier, "");
-            xmlSpecsText = xmlSpecsText.Replace(EndIdentifier, "");
-
-            string[] specsStrings = xmlSpecsText.Split(SplitIdentifier);
+            string[] specsStrings = GetElementsInString(xmlSpecsText);
             int[] specs = new int[specsStrings.Length];
 
             for (int i = 0; i < specsStrings.Length; i++)

@@ -9,8 +9,6 @@ namespace Assets.Scripts.Player.Swords
 {
     public class SwordAttack : SwordComponent
     {
-        public int StandardDamage = 1;
-
         public event Action Attacking;
 
         private List<DamageData> _damageDatas;

@@ -17,7 +17,14 @@ public static class NumericExtensions
     {
         float tAngleInRadians = pAngleInDegrees.ToRadians();
 
-        return new Vector2((float)Mathf.Cos(tAngleInRadians), (float)Mathf.Sin(tAngleInRadians));
+        return new Vector2((float)Mathf.Cos(tAngleInRadians), (float)Mathf.Sin(tAngleInRadians)).normalized;
+    }
+
+    public static Vector3 GetDirectionBasedOnAngleXz(this float pAngleInDegrees)
+    {
+        float tAngleInRadians = pAngleInDegrees.ToRadians();
+
+        return new Vector3((float)Mathf.Cos(tAngleInRadians), 0, (float)Mathf.Sin(tAngleInRadians)).normalized;
     }
 
     public static float GetAngleBasedOnDirection(this Vector2 pDirection)

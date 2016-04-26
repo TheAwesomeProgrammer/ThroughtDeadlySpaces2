@@ -6,19 +6,18 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public abstract class Sword : MonoBehaviour, XmlLoadingObject
+    public abstract class Sword : MonoBehaviour
     {
-        public const int SwordId = 1;
+        public int SwordId = 1;
         public SwordSpecs Specs;
 
         protected List<SwordComponent> _swordComponents;
-        protected XmlSearcher _xmlSearcher;
+        protected SwordXmlLoader _swordXmlLoader;
 
         void Awake()
         {
             _swordComponents = new List<SwordComponent>();
-            _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Sword));
-            LoadXmlSpecs();
+            _swordXmlLoader = new SwordXmlLoader(this);
         }
 
         public SwordComponent AddExistingComponent(SwordComponent swordComponent)
@@ -61,13 +60,6 @@ namespace Assets.Scripts.Player.Swords
         public bool HasComponent<T>() where T : SwordComponent
         {
             return _swordComponents.Exists(item => item.GetType() == typeof(T));
-        }
-
-        public virtual void LoadXmlSpecs()
-        {
-            int[] specs = _xmlSearcher.GetSpecsWithId(0, "Swords");
-
-            Specs = new SwordSpecs(specs[0], specs[1], specs[2], specs[3], specs[4]);
         }
 
         void OnDestroy()

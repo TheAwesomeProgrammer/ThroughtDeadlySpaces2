@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class LargeHeartPoition : TriggerInteractable
+    public class LargeHeartPoition : Trigger
     {
         protected override void Start()
         {

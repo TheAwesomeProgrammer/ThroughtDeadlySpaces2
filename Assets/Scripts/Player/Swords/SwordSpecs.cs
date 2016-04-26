@@ -1,5 +1,6 @@
 ﻿namespace Assets.Scripts.Player.Swords
 {
+    [System.Serializable]
     public class SwordSpecs
     {
         public int BaseDamage;

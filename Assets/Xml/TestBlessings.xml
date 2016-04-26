@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Blessings>
     <VstellSwordBlessing id="0">
-        <Specs>(10,50)</Specs>        
+        <Specs>(10,50)</Specs>    <!-- [1 = procent chance of critical hit], [2 = critical hit base damage procent] -->     
     </VstellSwordBlessing>    
     <LifeDrainSwordBlessing id="1">
-        <Specs>(5,1)</Specs>        
+        <Specs>(5,1)</Specs>      <!-- [1 = procent chance of gaining life on hit], [2 = life on hit] -->   
     </LifeDrainSwordBlessing> 
     <EnchantedSwordBlessing id="2">
-        <Specs>(10,1)</Specs>        
+        <Specs>(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
     </EnchantedSwordBlessing> 
 </Blessings>

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class StrengthPotion : TriggerInteractable
+    public class StrengthPotion : Trigger
     {
         public int StrengthToGive = 1;
 

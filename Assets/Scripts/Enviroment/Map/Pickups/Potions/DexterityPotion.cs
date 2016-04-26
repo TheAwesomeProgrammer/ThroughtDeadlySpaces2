@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class DexterityPotion : TriggerInteractable
+    public class DexterityPotion : Trigger
     {
         public float DexterityToGive;
 

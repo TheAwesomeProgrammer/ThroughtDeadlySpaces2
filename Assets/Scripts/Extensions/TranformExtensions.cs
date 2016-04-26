@@ -42,6 +42,19 @@ public static class TranformExtension {
         return null;
     }
 
+    public static T FindComponentInChildWithName<T>(this Transform pTransformRoot, string name) where T : Component
+    {
+        foreach (T tChild in pTransformRoot.GetComponentsInChildren<T>(true))
+        {
+            if (tChild.name == name)
+            {
+                return tChild.GetComponent<T>();
+            }
+        }
+
+        return null;
+    }
+
     public static IEnumerator MoveToPosition(this Transform pTransform,Vector3 pPositionToMoveTo,float pSpeed,CallbackInfo pCallBackInfo)
     {
         pPositionToMoveTo.z = pTransform.position.z;

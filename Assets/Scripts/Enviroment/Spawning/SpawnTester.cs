@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpawnTester : MonoBehaviour
 {
-    public Spawner SpawnerToCall;
+    public ObjectSpawner ObjectSpawnerToCall;
     public bool SpawnOnStart;
     public bool SpawnOnUpdate;
     public float SpawnDelay = 0;
@@ -22,7 +22,7 @@ public class SpawnTester : MonoBehaviour
 
     void Spawn()
     {
-        SpawnerToCall.Spawn(SpawnTransform.position);
+        ObjectSpawnerToCall.Spawn(SpawnTransform.position);
     }
 
     void Update()

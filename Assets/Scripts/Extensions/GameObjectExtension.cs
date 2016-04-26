@@ -23,7 +23,4 @@ public static class GameObjectExtension {
 
          return tGameObjectsWithLayer.ToArray();
      }
-
-     
-   
 }

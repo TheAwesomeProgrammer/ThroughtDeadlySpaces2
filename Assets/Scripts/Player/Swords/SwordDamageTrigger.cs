@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public class SwordDamageTrigger : TriggerInteractable
+    public class SwordDamageTrigger : Trigger
     {
         private List<Collider> _enemies;
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Curses>
     <BrokenSwordCurse id="0">
-        <Specs>(-40)</Specs>        
+        <Specs>(-40)</Specs>    <!-- [1 = Minus procent base damage] -->    
     </BrokenSwordCurse>
     <HeavySwordCurse id="1">
-        <Specs>(2)</Specs>        
+        <Specs>(2)</Specs>      <!-- [1 = Speed to lose] -->     
     </HeavySwordCurse>
     <RustrySwordCurse id="2">
-        <Specs>(-20,8)</Specs>        
+        <Specs>(-20,8)</Specs>  <!-- [1 = Minus procent base damage], [2 = procent chance to break sword] -->    
     </RustrySwordCurse>    
 </Curses>

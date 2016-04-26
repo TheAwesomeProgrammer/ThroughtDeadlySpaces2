@@ -4,6 +4,8 @@
     {
         Sword,
         Curse,
-        Blessing
+        Blessing,
+        Reward,
+        QuestGiver
     }
 }

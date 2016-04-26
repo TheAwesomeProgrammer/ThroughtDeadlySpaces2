@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
@@ -7,23 +8,26 @@ namespace Assets.Scripts.Xml
     public class XmlSearcher
     {
         private SpecsConverter _specsConverter = new SpecsConverter();
+        private AttributeConverter _attributeConverter = new AttributeConverter();
 
         private string _pathToXmlDocument;
+        private XmlDocument _xmlDocument;
 
         public XmlSearcher(Location location)
         {
             _pathToXmlDocument = XmlFileLocations.GetLocation(location);
+            _xmlDocument = XmlLoader.LoadXmlDocument(_pathToXmlDocument);
         }
 
         public XmlSearcher(string pathToXmlDocument)
         {
             _pathToXmlDocument = pathToXmlDocument;
+            _xmlDocument = XmlLoader.LoadXmlDocument(_pathToXmlDocument);
         }
 
-        public XmlNode SelectNodeInDocument(string nodeName, string pathToXmlDocument)
+        public XmlNode SelectNodeInDocument(string nodeName)
         {
-            XmlDocument xmlDocument = XmlLoader.LoadXmlDocument(pathToXmlDocument);
-            return xmlDocument.SelectSingleNode(nodeName);
+            return _xmlDocument.GetElementsByTagName(nodeName)[0];
         }
 
         public XmlNode SelectChildNode(XmlNode xmlNode, string nodeName)
@@ -36,33 +40,120 @@ namespace Assets.Scripts.Xml
             return xmlNode.ChildNodes;
         }
 
-        public int[] GetSpecs(XmlNode node)
+        public XmlNode GetNodeInArrayWithId(int id, XmlNode arrayNode)
         {
-            XmlNode specsNode = node.SelectSingleNode("Specs");
-            string specsText = specsNode.InnerText;
-            int[] specs = _specsConverter.Convert(specsText);
-            return specs;
-        }
-
-        public XmlNode GetNodeWithId(int id, string nodeName)
-        {
-            XmlNode swordsNode = SelectNodeInDocument(nodeName, _pathToXmlDocument);
-            foreach (XmlNode swordNode in swordsNode.ChildNodes)
+            foreach (XmlNode childNode in arrayNode.ChildNodes)
             {
-                int swordNodeId = Int32.Parse(swordNode.Attributes["id"].InnerText);
-
-                if (swordNodeId == id)
+                if (HasNodeId(id, childNode))
                 {
-                    return swordNode;
+                    return childNode;
                 }
             }
 
             return null;
         }
 
-        public int[] GetSpecsWithId(int id, string nodeName)
+        public XmlNode GetNodeInArrayWithId(int id, string arrayNodeName)
         {
-            return GetSpecs(GetNodeWithId(id, nodeName));
+            return GetNodeInArrayWithId(id, SelectNodeInDocument(arrayNodeName));
+        }
+
+        private bool HasNodeId(int id, XmlNode node)
+        {
+            int nodeId = int.MinValue;
+
+            string idText = GetAttributeText(node, "id");
+            if (idText != "")
+            {
+                nodeId = int.Parse(idText);
+            }
+
+            return nodeId == id;
+        }
+
+        private string GetAttributeText(XmlNode node, string attributeName)
+        {
+            if (node.Attributes != null && node.Attributes.Count > 0)
+            {
+                return node.Attributes[attributeName].InnerText;
+            }
+            return "";
+        }
+
+        public List<XmlNode> GetNodesInArrayWithId(int id, XmlNode arrayNode)
+        {
+            List<XmlNode> nodesWithId = new List<XmlNode>();
+
+            foreach (XmlNode childNode in arrayNode.ChildNodes)
+            {
+                if (HasNodeId(id, childNode))
+                {
+                    nodesWithId.Add(childNode);
+                }
+            }
+
+            return nodesWithId;
+        }
+
+        public List<XmlNode> GetNodesInArrayWithId(int id, string arrayNodeName)
+        {
+            return GetNodesInArrayWithId(id, SelectNodeInDocument(arrayNodeName));
+        }
+
+        public List<XmlNode> GetChildrensWithName(XmlNode parent, string name)
+        {
+            List<XmlNode> childrenWithName = new List<XmlNode>();
+
+            foreach (XmlNode child in parent.ChildNodes)
+            {
+                if (child.Name == name)
+                {
+                    childrenWithName.Add(child);
+                }
+            }
+
+            return childrenWithName;
+        }
+
+        public int[] GetSpecsInNode(XmlNode node, string specName = "Specs")
+        {
+            XmlNode specsNode = SelectChildNode(node, specName);
+            string specsText = specsNode.InnerText;
+            int[] specs = _specsConverter.Convert(specsText);
+            return specs;
+        }
+
+        public string[] GetAttributesInNode(XmlNode node, string attributeNodeName = "Att")
+        {
+            XmlNode attributeNode = SelectChildNode(node, attributeNodeName);
+
+            return GetAttributes(attributeNode);
+        }
+
+        public string[] GetAttributes(XmlNode node)
+        {
+            return _attributeConverter.Convert(node.InnerText);
+        }
+
+        public int[] GetSpecsInNodeWithId(int id,XmlNode node)
+        {
+            return GetSpecs(GetNodeInArrayWithId(id, node));
+        }
+
+        public int[] GetSpecs(XmlNode node)
+        {
+            int[] specs = _specsConverter.Convert(node.InnerText);
+            return specs;
+        }
+
+        public int[] GetSpecsInChildrenWithId(int id, string nodeName)
+        {
+            return GetSpecsInNode(GetNodeInArrayWithId(id, nodeName));
+        }
+
+        public int[] GetSpecsInChildrenWithId(int id, XmlNode arrayNode)
+        {
+            return GetSpecsInNode(GetNodeInArrayWithId(id, arrayNode));
         }
     }
 }

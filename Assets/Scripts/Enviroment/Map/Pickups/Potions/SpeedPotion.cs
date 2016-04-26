@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class SpeedPotion : TriggerInteractable
+    public class SpeedPotion : Trigger
     {
         public float SpeedToGive = 1;
 

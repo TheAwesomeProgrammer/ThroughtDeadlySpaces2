@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Shop;
 using UnityEngine;
 
-public class MoneyDrop : TriggerInteractable
+public class MoneyDrop : Trigger
 {
     public int MoneyToGive;
 

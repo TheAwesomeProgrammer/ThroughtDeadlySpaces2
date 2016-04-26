@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Items>
+
+    <Item id="1" name="Standard">
+        <Specs id ="1">(1,2)</Specs> 
+        <Att>(Rusty)</Att>
+    </Item>
+    
+     <Item2 id="2" name="Standard">
+        <Specs>(1,2,3,4,5)</Specs> 
+        <Att>(Rusty)</Att>
+    </Item2>
+    
+</Items>
