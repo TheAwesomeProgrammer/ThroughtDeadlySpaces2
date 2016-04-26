@@ -123,6 +123,11 @@ namespace Assets.Scripts.Xml
             return specs;
         }
 
+        public int[] GetSpecsInNode(string nodeName, string specName = "Specs")
+        {
+            return GetSpecsInNode(SelectNodeInDocument(nodeName), specName);
+        }
+
         public string[] GetAttributesInNode(XmlNode node, string attributeNodeName = "Att")
         {
             XmlNode attributeNode = SelectChildNode(node, attributeNodeName);
@@ -144,6 +149,11 @@ namespace Assets.Scripts.Xml
         {
             int[] specs = _specsConverter.Convert(node.InnerText);
             return specs;
+        }
+
+        public int[] GetSpecsInChildren(string arrayName, string nodeName)
+        {
+            return GetSpecsInNode(SelectChildNode(SelectNodeInDocument(arrayName), nodeName));
         }
 
         public int[] GetSpecsInChildrenWithId(int id, string nodeName)

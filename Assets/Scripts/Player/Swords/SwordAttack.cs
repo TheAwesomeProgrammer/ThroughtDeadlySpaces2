@@ -68,7 +68,7 @@ namespace Assets.Scripts.Player.Swords
 
             foreach (var swordDamageModifier in GetSwordDamageModifiers())
             {
-                modfiedDamageData.Damage = swordDamageModifier.GetModifiedDamageData(damageData).Damage;
+                modfiedDamageData.Damage = ((DamageData) swordDamageModifier.GetModifiedCombatData(damageData)).Damage;
             }
 
             return modfiedDamageData;

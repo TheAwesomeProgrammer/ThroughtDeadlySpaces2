@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class Resistance : LifeDamager
 {
     public List<DefenseData> DefenseDatas { get; set; }
+    public event Action Defending;
 
     protected void Start()
     {
@@ -15,6 +17,10 @@ public class Resistance : LifeDamager
 
     public void DoDamage(List<DamageData> damageDatas)
     {
+        if (Defending != null)
+        {
+            Defending();
+        }
         Damage(GetDamageAfterGoingThroughResistance(damageDatas));
     }
 

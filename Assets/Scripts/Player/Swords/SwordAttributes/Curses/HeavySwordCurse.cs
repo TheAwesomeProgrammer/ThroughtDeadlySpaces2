@@ -14,8 +14,9 @@ namespace Assets.Scripts.Player.Swords.Curses
 
         protected override void Start()
         {
-            _playerProperties = GetComponent<PlayerProperties>();
+            _playerProperties = GetComponentInParent<PlayerProperties>();
             Activate();
+            LoadSpecs();
         }
 
         public void LoadSpecs()

@@ -13,4 +13,18 @@
         [Vsteel],[LifeDrain],[Enchant]
         -->
     </Sword>
+    
+     <Sword id="2" name="Standard">
+        <Specs>(2,3,4,5,6)</Specs> 
+        <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+        <Att>(Broken,Heavy)</Att>
+        <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        -->
+    </Sword>
 </Swords>

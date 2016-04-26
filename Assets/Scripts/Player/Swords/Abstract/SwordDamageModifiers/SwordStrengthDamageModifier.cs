@@ -1,18 +1,19 @@
-﻿using Assets.Scripts.Combat.Attack;
+﻿using Assets.Scripts.Combat;
+using Assets.Scripts.Combat.Attack;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public abstract class SwordStrengthDamageModifier : SwordComponent, SwordDamageModifier
+    public abstract class SwordStrengthDamageModifier : SwordDamageModifier
     {
-        public DamageData GetModifiedDamageData(DamageData damageData)
+        public override CombatData GetModifiedCombatData(CombatData combatData)
         {
-            if (damageData is StrengthDamageData)
+            base.GetModifiedCombatData(combatData);
+            if (_damageData is StrengthDamageData)
             {
-                return ModifydamageData(damageData);
+                return ModifydamageData(_damageData);
             }
-            return damageData;
+            return _damageData;
         }
-        public abstract DamageData ModifydamageData(DamageData damageData);
     }
 }

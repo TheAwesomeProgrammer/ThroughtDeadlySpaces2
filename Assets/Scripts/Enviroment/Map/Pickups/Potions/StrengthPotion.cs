@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Player;
+﻿using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
@@ -7,17 +8,19 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
     {
         public int StrengthToGive = 1;
 
+        private StrengthPotionExecute _strengthPotionExecute;
+
         protected override void Start()
         {
             base.Start();
             Tags.Add("Player");
+            _strengthPotionExecute = new StrengthPotionExecute(StrengthToGive);
         }
 
         public override void OnEnter()
         {
             base.OnEnter();
-            PlayerProperties playerProperties = _triggerCollider.GetComponent<PlayerProperties>();
-            playerProperties.Strength += StrengthToGive;
+            _strengthPotionExecute.Execute(_triggerCollider.gameObject);
         }
     }
 }

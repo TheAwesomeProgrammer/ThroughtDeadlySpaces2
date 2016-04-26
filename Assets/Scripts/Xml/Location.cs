@@ -6,6 +6,7 @@
         Curse,
         Blessing,
         Reward,
-        QuestGiver
+        QuestGiver,
+        Shop
     }
 }

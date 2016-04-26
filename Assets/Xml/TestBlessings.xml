@@ -9,4 +9,10 @@
     <EnchantedSwordBlessing id="2">
         <Specs>(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
     </EnchantedSwordBlessing> 
+      <EnchantedArmorBlessing id="3">
+        <Specs>(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
+    </EnchantedArmorBlessing> 
+    <VSteelArmorBlessing id="4">
+        <Specs>(8)</Specs>     <!-- [1 = procent chance of preventing all damage] -->   
+    </VSteelArmorBlessing> 
 </Blessings>

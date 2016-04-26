@@ -5,7 +5,7 @@ namespace Assets.Scripts.Shop
 {
     public class MoneyManager
     {
-        private static int _money = 0;
+        private static int _money = 1000;
 
         public static int Money
         {

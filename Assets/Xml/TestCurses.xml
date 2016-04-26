@@ -8,5 +8,8 @@
     </HeavySwordCurse>
     <RustrySwordCurse id="2">
         <Specs>(-20,8)</Specs>  <!-- [1 = Minus procent base damage], [2 = procent chance to break sword] -->    
-    </RustrySwordCurse>    
+    </RustrySwordCurse>   
+    <RustryArmorCurse id="3">
+        <Specs>(8)</Specs>  <!-- [ [1 = procent chance to break armor] -->    
+    </RustryArmorCurse>   
 </Curses>
