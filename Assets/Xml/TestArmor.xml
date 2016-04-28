@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Swords>
-    <Sword id="1" name="Standard">
+<Armors>
+    <Armor id="1" name="Standard">
+        <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
         <Specs>(1,2,3,4,5)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Rusty,LifeDrain)</Att>
+        <Att>(Rusty,Broken)</Att>
         <!-- 
         Possible attributes :
         Curses : 
-        [Rusty],[Broken],[Heavy],[Worn]
+        [Broken,Rusty]
         Blessings : 
-        [Vsteel],[LifeDrain],[Enchant]
+        [Enchant,Vsteel,LifeDrain]
         -->
-    </Sword>
+    </Armor>
     
-     <Sword id="2" name="Standard">
+    <Armor id="2" name="Standard">
+        <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
         <Specs>(2,3,4,5,6)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Broken,Heavy)</Att>
+        <Att>(Broken,Vsteel)</Att>
         <!-- 
         Possible attributes :
         Curses : 
-        [Broken]
+        [Broken,Rusty]
         Blessings : 
-        
+        [Enchant,Vsteel,LifeDrain]
         -->
-    </Sword>
-</Swords>
+    </Armor>
+</Armors>

@@ -7,6 +7,7 @@
         Blessing,
         Reward,
         QuestGiver,
-        Shop
+        Shop,
+        Armor
     }
 }

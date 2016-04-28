@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Shop;
+using Assets.Scripts.Shop.Merchant;
 using UnityEngine;
 
 namespace Assets.Scripts.Quest

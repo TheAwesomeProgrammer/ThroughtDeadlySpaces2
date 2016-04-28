@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Combat.Defense
 {
-    public class DefenseData : CombatData
+    public class DefenseData : CombatData,ICloneable
     {
         private int _defense;
 
@@ -17,6 +17,11 @@ namespace Assets.Scripts.Combat.Defense
         public DefenseData(CombatType combatType, int defense) : base(combatType)
         {
             Defense = defense;
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
     }
 }

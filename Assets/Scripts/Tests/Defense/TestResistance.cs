@@ -15,6 +15,7 @@ public class TestResistance : MonoBehaviour
     void Start()
     {
         _resistance = GetComponent<Resistance>();
+        _resistance.Start();
         _life = GetComponent<Life>();
         TestIfDamageNDefenseMitegatesEachOther();
         Reset();

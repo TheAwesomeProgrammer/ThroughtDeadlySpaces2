@@ -36,13 +36,13 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanFindSwordBySwordId()
         {
-            Assert.IsEquals(_xmlSearcher.GetNodeInArrayWithId(SwordId, "Elements").Attributes["name"].InnerText, "Standard",
+            Assert.IsEquals(_xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords").Attributes["name"].InnerText, "Standard",
                 "Test if can find sword by sword id");
         }
 
         void TestIfCanFindSwordSpecs()
         {
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(SwordId, "Elements");
+            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(SwordId, "Swords");
             Assert.IsEquals(specs[0], 1, "Test sword base damage");
             Assert.IsEquals(specs[1], 2, "Test sword combat type1 damage");
             Assert.IsEquals(specs[2], 3, "Test sword combat type2 damage");

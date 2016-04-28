@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Assets.Scripts.Xml
 {
+    
+
     public class XmlSearcher
     {
         private SpecsConverter _specsConverter = new SpecsConverter();
@@ -13,16 +16,24 @@ namespace Assets.Scripts.Xml
         private string _pathToXmlDocument;
         private XmlDocument _xmlDocument;
 
-        public XmlSearcher(Location location)
+        public XmlSearcher(Location location) : this(XmlFileLocations.GetLocation(location))
         {
-            _pathToXmlDocument = XmlFileLocations.GetLocation(location);
-            _xmlDocument = XmlLoader.LoadXmlDocument(_pathToXmlDocument);
         }
 
         public XmlSearcher(string pathToXmlDocument)
         {
-            _pathToXmlDocument = pathToXmlDocument;
+            SetDocument(pathToXmlDocument);
+        }
+
+        void SetDocument(string pathToDocument)
+        {
+            _pathToXmlDocument = pathToDocument;
             _xmlDocument = XmlLoader.LoadXmlDocument(_pathToXmlDocument);
+        }
+
+        public void SetLocation(Location location)
+        {
+            SetDocument(XmlFileLocations.GetLocation(location));
         }
 
         public XmlNode SelectNodeInDocument(string nodeName)
@@ -42,6 +53,11 @@ namespace Assets.Scripts.Xml
 
         public XmlNode GetNodeInArrayWithId(int id, XmlNode arrayNode)
         {
+            if (arrayNode == null)
+            {
+                throw new NullReferenceException("Array node is null");
+            }
+
             foreach (XmlNode childNode in arrayNode.ChildNodes)
             {
                 if (HasNodeId(id, childNode))
@@ -156,9 +172,14 @@ namespace Assets.Scripts.Xml
             return GetSpecsInNode(SelectChildNode(SelectNodeInDocument(arrayName), nodeName));
         }
 
-        public int[] GetSpecsInChildrenWithId(int id, string nodeName)
+        public int[] GetSpecsInChildrenWithId(int id, string arrayNodeName)
         {
-            return GetSpecsInNode(GetNodeInArrayWithId(id, nodeName));
+            return GetSpecsInNode(GetNodeInArrayWithId(id, arrayNodeName));
+        }
+
+        public int[] GetSpecsInChildrenWithId(int id, string arrayNodeName, string specNodeName)
+        {
+            return GetSpecsInNode(GetNodeInArrayWithId(id, arrayNodeName), specNodeName);
         }
 
         public int[] GetSpecsInChildrenWithId(int id, XmlNode arrayNode)

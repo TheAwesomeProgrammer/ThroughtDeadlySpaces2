@@ -33,6 +33,8 @@ namespace Assets.Scripts.Xml
                     return "Xml/TestQuestGivers.xml";
                 case Location.Shop:
                     return "Xml/TestShop.xml";
+                case Location.Armor:
+                    return "Xml/TestArmor.xml";
                 default:
                     return "";
             }
