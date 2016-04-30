@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Player.Swords.Abstract;
+using Assets.Scripts.Player.Swords.Curses;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Equipments
@@ -31,6 +32,7 @@ namespace Assets.Scripts.Player.Equipments
         {
             T attribute = AddNewComponent<T>();
             Attributes.Add(new AttributeData(equipmentAttributeType, attribute));
+            
             return attribute;
         }
 

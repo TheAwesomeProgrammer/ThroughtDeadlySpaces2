@@ -7,61 +7,38 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.InputInteractables
 {
-    public class QuestGiverInteractable : Trigger
+    public class QuestGiverInteractable : InteractableWithButtons
     {
-        private InputButton _interactableButton;
-        private InputButton _backButton;
         private UIManager _uiManager;
         private bool _hasUsedInteractable;
-
-        protected override void Start()
-        {
-            base.Start();
-            Tags.Add("Player");
-            _uiManager = Camera.main.GetComponent<UIManager>();
-            _interactableButton = transform.FindComponentInChildWithName<InputButton>("InteractableButton");
-            _backButton = transform.FindComponentInChildWithName<InputButton>("BackButton");
-            _interactableButton.ButtonDown += OnInteractableButtonDown;
-            _backButton.ButtonDown += OnBackButtonDown;
-        }
+        private PlayerMovementChanger _movementChanger;
 
         public void OnUsedInteractable()
         {
+            _movementChanger = new PlayerMovementChanger();
+            _uiManager = Camera.main.GetComponent<UIManager>();
             _hasUsedInteractable = true;
-            StartPlayerMovement();
+            _movementChanger.StartMovement(_triggerCollider.gameObject);
         }
 
-        void OnInteractableButtonDown()
+        protected override void OnInteractableButtonDownAndCollidingWithPlayer()
         {
-            if (CollidingWithPlayer() && !_hasUsedInteractable)
+            base.OnInteractableButtonDownAndCollidingWithPlayer();
+            if (!_hasUsedInteractable)
             {
-                StopPlayerMovement();
+                _movementChanger.StopMovement(_triggerCollider.gameObject);
                 ActivateQuestGivers();
             }
         }
 
-        private void StopPlayerMovement()
+        protected override void OnBackButtonDownAndCollidingWithPlayer()
         {
-            _triggerCollider.GetComponent<PlayerMovement>().CanMove = false;
-        }
-
-        private bool CollidingWithPlayer()
-        {
-            return CollisionType != CollisionType.NoCollision;
-        }
-
-        void OnBackButtonDown()
-        {
-            if (CollidingWithPlayer() && !_hasUsedInteractable)
+            base.OnBackButtonDownAndCollidingWithPlayer();
+            if (!_hasUsedInteractable)
             {
-                StartPlayerMovement();
+                _movementChanger.StartMovement(_triggerCollider.gameObject);
                 _uiManager.DeactivateItemWithType<UiQuestGiver>();
             }
-        }
-
-        private void StartPlayerMovement()
-        {
-            _triggerCollider.GetComponent<PlayerMovement>().CanMove = true;
         }
 
         private void ActivateQuestGivers()

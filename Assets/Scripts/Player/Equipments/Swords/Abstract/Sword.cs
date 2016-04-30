@@ -21,7 +21,7 @@ namespace Assets.Scripts.Player.Swords
             _swordAttributeManager = GetComponent<AttributeManager>();
             _swordXmlLoader = new SwordXmlLoader(_swordAttributeManager, SwordId, "Swords");
             _swordXmlLoader.Load();
-            GetComponent<SwordAttack>().Attacking += OnUse;
+            GetComponent<SwordAttack>().AttackStarted += OnUse;
             Specs = _swordXmlLoader.EquipmentSpecs;
         }
 

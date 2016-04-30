@@ -1,11 +1,12 @@
-﻿using Assets.Scripts.Xml;
+﻿using Assets.Scripts.Camera_ll_UI;
+using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Shop.Merchant
 {
-    public abstract class ShopItem : MonoBehaviour, XmlLoadable
+    public abstract class ShopItem : UiItem, XmlLoadable
     {
-        public int ShopId;
+        public int SpecId;
         public string XmlShopName = "Merchant";
 
         public int Money { get; set; }
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Shop.Merchant
         public void LoadXml()
         {
             int[] specs = _xmlSearcher.GetSpecsInChildren("Shop", XmlShopName);
-            Money = specs[ShopId];
+            Money = specs[SpecId];
         }
     }
 }

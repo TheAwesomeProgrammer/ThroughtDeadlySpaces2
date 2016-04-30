@@ -9,9 +9,10 @@ namespace Assets.Scripts.Shop.Merchant
     {
         public Executeable GetItemExecuteable(ShopItem shopItem)
         {
-            DefaultShopItem defaultShopItem = (DefaultShopItem) shopItem;
-            if (defaultShopItem != null)
+            if (shopItem is DefaultShopItem)
             {
+                DefaultShopItem defaultShopItem = (DefaultShopItem)shopItem;
+               
                 switch (defaultShopItem.EquipmentType)
                 {
                     case EquipmentType.Sword:
@@ -21,9 +22,10 @@ namespace Assets.Scripts.Shop.Merchant
                 }
             }
 
-            PotionShopItem potionShopItem = (PotionShopItem) shopItem;
-            if (potionShopItem != null)
+            if (shopItem is PotionShopItem)
             {
+                PotionShopItem potionShopItem = (PotionShopItem) shopItem;
+
                 switch (potionShopItem.PotionType)
                 {
                     case PotionType.Speed:

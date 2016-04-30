@@ -18,7 +18,6 @@ namespace Assets.Scripts.Combat.Defense.Boss
             Damage(GetDamageDatasHittingWeaknesses(damageDatas));
         }
 
-
         List<DamageData> GetDamageDatasHittingWeaknesses(List<DamageData> damageDatas)
         {
             List<DamageData> damageDatasHittingWeaknesses = new List<DamageData>();
@@ -38,8 +37,5 @@ namespace Assets.Scripts.Combat.Defense.Boss
         {
             return Weaknesses.Contains(damageData.CombatType) || damageData.CombatType == CombatType.BaseType;
         }
-
-
-
     }
 }

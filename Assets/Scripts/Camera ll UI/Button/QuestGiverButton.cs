@@ -10,13 +10,13 @@ namespace Assets.Scripts.Quest
     public class QuestGiverButton : UiButton
     {
         private QuestGiverManager _questGiverManager;
-        private UIItem _uiItem;
+        private UiItem _uiItem;
         private UIManager _uiManager;
         private Map _map;
         protected override void Start()
         {
             base.Start();
-            _uiItem = GetComponentInParent<UIItem>();
+            _uiItem = GetComponentInParent<UiItem>();
             _questGiverManager = GameObject.FindGameObjectWithTag("QuestGiverManager").GetComponent<QuestGiverManager>();
             _uiManager = Camera.main.GetComponent<UIManager>();
             _map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
@@ -26,7 +26,7 @@ namespace Assets.Scripts.Quest
         {
             base.OnClick();
             UiQuestGiver uiQuestGiver = (UiQuestGiver)_uiItem;
-            _questGiverManager.SetActiveQuestGiver(uiQuestGiver.Id);
+            _questGiverManager.SetActiveQuestGiver(uiQuestGiver.UiId);
             _uiManager.DeactivateItemWithType<UiQuestGiver>();
             SetInteractableToUsed();
         }

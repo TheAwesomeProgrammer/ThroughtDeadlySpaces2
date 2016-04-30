@@ -13,13 +13,14 @@ namespace Assets.Scripts.Player.Equipments
 
         private int _equipmentState;
         private GameObject _ownerGameObject;
-        private EquipmentType _equipmentType;
+        private Equipment _equipment;
         private BreakingFactory _breakingFactory;
              
-        void Start(GameObject ownerGameObject, EquipmentType equipmentType)
+
+        public EquipmentBrokenState(GameObject ownerGameObject, Equipment equipment)
         {
             _ownerGameObject = ownerGameObject;
-            _equipmentType = equipmentType;
+            _equipment = equipment;
             _equipmentState = HitsForBrokenEquipment;
             _breakingFactory = new BreakingFactory();
         }
@@ -45,12 +46,15 @@ namespace Assets.Scripts.Player.Equipments
 
         void Break()
         {
-            if (Breaking != null)
+            if (!_equipment.Broken)
             {
-                Breaking();
+                if (Breaking != null)
+                {
+                    Breaking();
+                }
+                Executeable executeable = _breakingFactory.GetBreakingExecuteable(_equipment);
+                executeable.Execute(_ownerGameObject);
             }
-            Executeable executeable = _breakingFactory.GetBreakingExecuteable(_equipmentType);
-            executeable.Execute(_ownerGameObject);
         }
     }
 }

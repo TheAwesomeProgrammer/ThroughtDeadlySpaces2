@@ -4,21 +4,19 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Camera_ll_UI
 {
-    public class UiQuestGiver : UIItem
+    public class UiQuestGiver : UiItem
     {
-        public int Id;
-
         private Text _title;
-        private Image _dropTypeImage;
-        private Image _pictureOfQuestGiver;
+        //private Image _dropTypeImage;
+        //private Image _pictureOfQuestGiver;
         private Text[] _rewardTexts;
 
         protected override void OnActivate()
         {
             _rewardTexts = new Text[3];
             _title = transform.FindComponentInChildWithName<Text>("Title");
-            _dropTypeImage = transform.FindComponentInChildWithName<Image>("DropTypeImage");
-            _pictureOfQuestGiver = transform.FindComponentInChildWithName<Image>("PictureOfQuestGiver");
+            //_dropTypeImage = transform.FindComponentInChildWithName<Image>("DropTypeImage");
+            //_pictureOfQuestGiver = transform.FindComponentInChildWithName<Image>("PictureOfQuestGiver");
             _rewardTexts[0] = transform.FindComponentInChildWithName<Text>("Reward1");
             _rewardTexts[1] = transform.FindComponentInChildWithName<Text>("Reward2");
             _rewardTexts[2] = transform.FindComponentInChildWithName<Text>("Reward3");
@@ -26,14 +24,14 @@ namespace Assets.Scripts.Camera_ll_UI
 
         public void SetActiveQuestGiver(QuestGiverManager questGiverManager)
         {
-            questGiverManager.SetActiveQuestGiver(Id);
+            questGiverManager.SetActiveQuestGiver(UiId);
         }
 
         public override void SetProperties(params object[] properties)
         {
             QuestGiverProperties questGiverProperties = (QuestGiverProperties)properties[0];
             _title.text = questGiverProperties.Name + "(" + questGiverProperties.Health + ")";
-            Id = questGiverProperties.Id;
+            UiId = questGiverProperties.Id;
             List<Reward> rewards = questGiverProperties.Rewards;
             SetRewardTexts(rewards, questGiverProperties);
         }

@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
-using Assets.Scripts.Player.Armor.Curses;
+using Assets.Scripts.Player.Armors.Curses;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Executes

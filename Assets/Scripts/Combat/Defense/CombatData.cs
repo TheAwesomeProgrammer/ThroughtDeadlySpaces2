@@ -8,7 +8,7 @@ namespace Assets.Scripts.Combat
     {
         public CombatType CombatType;
 
-        public CombatData(CombatType combatType)
+        protected CombatData(CombatType combatType)
         {
             CombatType = combatType;
         }
@@ -21,6 +21,11 @@ namespace Assets.Scripts.Combat
                 return (int)otherDamageData.CombatType == (int)CombatType;
             }
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return 1;
         }
     }
 }

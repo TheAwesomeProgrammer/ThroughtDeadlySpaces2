@@ -3,7 +3,7 @@ using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Xml;
 using UnityEngine;
 using Assets.Scripts.Combat;
-using Assets.Scripts.Player.Armor;
+using Assets.Scripts.Player.Armors;
 using Assets.Scripts.Player.Equipments;
 
 namespace Assets.Scripts.Player.Swords

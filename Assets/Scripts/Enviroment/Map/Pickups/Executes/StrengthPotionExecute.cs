@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Player;
+﻿using Assets.Scripts.Combat.Attack;
+using Assets.Scripts.Player;
+using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
@@ -14,8 +16,8 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
 
         public void Execute(GameObject gameObject)
         {
-            PlayerProperties playerProperties = gameObject.GetComponent<PlayerProperties>();
-            playerProperties.Strength += _strength;
+            SwordAttack swordAttack = gameObject.GetComponentInChildren<SwordAttack>();
+            swordAttack.AddDamageData(new StrengthDamageData(_strength));
         }
     }
 }

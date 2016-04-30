@@ -1,5 +1,7 @@
 ﻿using System;
 using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
+using Assets.Scripts.Player.Armors;
+using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords.Executes;
 using Assets.Scripts.Shop;
 
@@ -7,17 +9,18 @@ namespace Assets.Scripts.Player.Swords
 {
     public class BreakingFactory
     {
-        public Executeable GetBreakingExecuteable(EquipmentType equipmentType)
+        public Executeable GetBreakingExecuteable(Equipment equipment)
         {
-            switch (equipmentType)
+            if (equipment is Sword)
             {
-                case EquipmentType.Sword:
-                    return new ArmorBreakingExecute();
-                case EquipmentType.Armor:
-                    return new SwordBreakingExecute();
-                default:
-                    throw new ArgumentOutOfRangeException("equipmentType", equipmentType, null);
+                return new SwordBreakingExecute();
             }
+            else if (equipment is Armor)
+            {
+                return new ArmorBreakingExecute();
+            }
+
+            return null;
         }
     }
 }

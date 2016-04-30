@@ -1,5 +1,5 @@
 ﻿using System;
-using Assets.Scripts.Player.Armor;
+using Assets.Scripts.Player.Armors;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;

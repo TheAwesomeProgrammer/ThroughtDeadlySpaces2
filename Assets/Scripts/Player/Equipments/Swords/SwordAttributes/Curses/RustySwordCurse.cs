@@ -17,7 +17,7 @@ namespace Assets.Scripts.Player.Swords.Curses
         protected override void Start()
         {
             base.Start();
-            GetComponent<SwordAttack>().Attacking += OnAttacking;
+            GetComponent<SwordAttack>().AttackStarted += OnAttacking;
             LoadSpecs();
         }
 
@@ -36,7 +36,7 @@ namespace Assets.Scripts.Player.Swords.Curses
 
         void OnAttacking()
         {
-            if (MathHelper.IsBetweenRandomProcentFrom0To100(ProcentToBreakSword))
+            if (MathHelper.IsBetweenRandomProcentFrom0To100(ProcentToBreakSword) && !_swordAttributeManager.HasComponent<BrokenSwordCurse>())
             {
                 _swordAttributeManager.AddNewComponent<BrokenSwordCurse>();
             }

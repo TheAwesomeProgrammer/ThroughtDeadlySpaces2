@@ -2,8 +2,10 @@
 
 namespace Assets.Scripts.Camera_ll_UI
 {
-    public abstract class UIItem : MonoBehaviour
+    public abstract class UiItem : MonoBehaviour
     {
+        public int UiId;
+
         public void Activate()
         {
             gameObject.SetActive(true);
@@ -16,7 +18,10 @@ namespace Assets.Scripts.Camera_ll_UI
             OnDeactivate();
         }
 
-        public abstract void SetProperties(params object[] properties);
+        public virtual void SetProperties(params object[] properties)
+        {
+            
+        }
 
         protected virtual void OnActivate()
         {

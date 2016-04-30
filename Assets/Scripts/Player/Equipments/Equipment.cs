@@ -13,8 +13,7 @@ namespace Assets.Scripts.Player.Equipments
 
         protected virtual void Start()
         {
-            Broken = true;
-            _equipmentBrokenState = new EquipmentBrokenState();
+            _equipmentBrokenState = new EquipmentBrokenState(gameObject, this);
             _equipmentBrokenState.Breaking += () => Broken = true;
         }
 

@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Player.Armor;
+﻿using Assets.Scripts.Player.Armors;
 using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
