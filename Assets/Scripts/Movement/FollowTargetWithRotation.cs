@@ -41,9 +41,10 @@ namespace Assets.Scripts.Movement
 
         void Update()
         {
-            transform.LookAt(Target);
             if (_movingAfterTarget && Target != null && _rigidbodyToMove != null)
             {
+                Vector3 lookAtPosition = new Vector3(Target.transform.position.x, transform.position.y, Target.transform.position.z);
+                transform.LookAt(lookAtPosition);
                 Vector3 moveDirection = transform.forward * Speed;
                 moveDirection.y = _rigidbodyToMove.velocity.y;
                 _rigidbodyToMove.velocity = moveDirection;

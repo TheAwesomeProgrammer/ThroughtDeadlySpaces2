@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense;
+using Assets.Scripts.Combat.Defense.Boss;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Armors;
 using Assets.Scripts.Player.Armors.ArmorModifier;
@@ -10,17 +11,29 @@ using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
-public class Resistance : LifeDamager
+public class Resistance : LifeDamager, Damageable
 {
     public List<DefenseData> DefenseDatas { get; set; }
     public event Action Defending;
 
     private AttributeManager _armorAttributeManager;
+    private Armor _armor;
 
     public void Start()
     {
         DefenseDatas = new List<DefenseData>();
+        _armor = GetComponent<Armor>();
+        SetupDefenseDamageDatas();
         _armorAttributeManager = GetComponent<AttributeManager>();
+    }
+
+    void SetupDefenseDamageDatas()
+    {
+        DefenseDatas.Add(new BaseDefenseData(_armor.Specs.BaseDamage));
+        DefenseDatas.Add(new DefenseData(CombatType.Type1, _armor.Specs.CombatType1Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Type2, _armor.Specs.CombatType2Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Type3, _armor.Specs.CombatType3Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Type4, _armor.Specs.CombatType4Damage));
     }
 
     public void DoDamage(List<DamageData> damageDatas)

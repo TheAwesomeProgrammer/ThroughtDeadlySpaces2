@@ -18,7 +18,7 @@ namespace Assets.Scripts.Player
 
         void Start()
         {
-            _life = GetComponent<Life>();
+            _life = GetComponentInChildren<Life>();
             _life.MaxHealth = MaxHealth;
             _life.Health = StartHealth;
             _swordAttack = GetComponentInChildren<SwordAttack>();

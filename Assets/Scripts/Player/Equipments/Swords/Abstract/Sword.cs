@@ -14,12 +14,13 @@ namespace Assets.Scripts.Player.Swords
         public int SwordId = 1;
 
         protected SwordXmlLoader _swordXmlLoader;
-        protected AttributeManager _swordAttributeManager;
+        protected AttributeManager _bossAttributeManager;
+        protected string _xmlRootNode = "Swords";
 
-        public void Awake()
+        public virtual void Awake()
         {
-            _swordAttributeManager = GetComponent<AttributeManager>();
-            _swordXmlLoader = new SwordXmlLoader(_swordAttributeManager, SwordId, "Swords");
+            _bossAttributeManager = GetComponent<AttributeManager>();
+            _swordXmlLoader = new SwordXmlLoader(_bossAttributeManager, SwordId, _xmlRootNode);
             _swordXmlLoader.Load();
             GetComponent<SwordAttack>().AttackStarted += OnUse;
             Specs = _swordXmlLoader.EquipmentSpecs;
@@ -27,7 +28,7 @@ namespace Assets.Scripts.Player.Swords
 
         void OnDestroy()
         {
-            _swordAttributeManager.RemoveComponents();
+            _bossAttributeManager.RemoveComponents();
         }
     }
 }

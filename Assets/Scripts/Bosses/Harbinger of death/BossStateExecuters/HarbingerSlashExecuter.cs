@@ -1,33 +1,19 @@
 ﻿using Assets.Scripts.Player.Swords;
+using Assets.Scripts.Player.Swords.Abstract.Bosses.Attack;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
-    public class HarbingerSlashExecuter : MonoBehaviour, BossStateExecuter
+    public class HarbingerSlashExecuter : HarbingerAttackBase
     {
-        private AnimatorTrigger _animatorTrigger;
-        private HarbingerOfDeath _harbingerOfDeath;
-
-        void Start()
+        protected override void Start()
         {
-            _animatorTrigger = GetComponent<AnimatorTrigger>();
-            _animatorTrigger.AnimationEnded += OnAnimationEnd;
-        }
-
-        public void StartState(HarbingerOfDeath harbingerOfDeath)
-        {
-            _harbingerOfDeath = harbingerOfDeath;
-            _animatorTrigger.StartAnimation();
-        }
-
-        void OnAnimationEnd()
-        {
-            _harbingerOfDeath.ChangeState(HarbingerOfDeathState.Idle);
-        }
-
-        public void EndState(HarbingerOfDeath harbingerOfDeath)
-        {
-
+            base.Start();
+            _possiblePauseStates = new HarbingerOfDeathState[1]
+            {
+                HarbingerOfDeathState.Idle
+            };
+            _baseDamageXmlId = 0;
         }
     }
 }

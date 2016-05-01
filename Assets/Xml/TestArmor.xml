@@ -2,10 +2,10 @@
 <Armors>
     <Armor id="1" name="Standard">
         <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
-        <Specs>(1,2,3,4,5)</Specs> 
+        <Specs>(1,1,1,1,1)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Rusty,Broken)</Att>
+        <Att>()</Att>
         <!-- 
         Possible attributes :
         Curses : 
@@ -20,7 +20,7 @@
         <Specs>(2,3,4,5,6)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Broken,Vsteel)</Att>
+        <Att>()</Att>
         <!-- 
         Possible attributes :
         Curses : 

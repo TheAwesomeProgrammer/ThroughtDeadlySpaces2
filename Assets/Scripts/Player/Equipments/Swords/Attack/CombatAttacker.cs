@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public class EnemyAttacker
+    public class CombatAttacker
     {
         public Collider Collider;
 
-        private Weakness _weakness;
+        private Damageable _damageable;
         private float _attackSpeed;
         private float _attackTimer;
 
-        public EnemyAttacker(Collider collider, float attackSpeed)
+        public CombatAttacker(Collider collider, float attackSpeed)
         {
             Collider = collider;
-            _weakness = collider.GetComponent<Weakness>();
+            _damageable = collider.GetComponent<Damageable>();
             _attackSpeed = attackSpeed;
         }
 
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Player.Swords
         private void Attack(List<DamageData> damageDatas)
         {
             _attackTimer = Time.time + _attackSpeed;
-            _weakness.DoDamage(damageDatas);
+            _damageable.DoDamage(damageDatas);
         }
 
         private bool CanAttack()
@@ -41,8 +41,8 @@ namespace Assets.Scripts.Player.Swords
 
         public override bool Equals(object obj)
         {
-            EnemyAttacker enemyAttacker = (EnemyAttacker) obj;
-            return enemyAttacker.Collider == Collider;
+            CombatAttacker combatAttacker = (CombatAttacker) obj;
+            return combatAttacker.Collider == Collider;
         }
 
         public override int GetHashCode()

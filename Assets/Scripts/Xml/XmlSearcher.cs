@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -135,13 +136,26 @@ namespace Assets.Scripts.Xml
         {
             XmlNode specsNode = SelectChildNode(node, specName);
             string specsText = specsNode.InnerText;
-            int[] specs = _specsConverter.Convert(specsText);
+            int[] specs = _specsConverter.Convert(specsText).Select(i => (int)i).ToArray();
+            return specs;
+        }
+
+        public float[] GetSpecsInNodeFloat(XmlNode node, string specName = "Specs")
+        {
+            XmlNode specsNode = SelectChildNode(node, specName);
+            string specsText = specsNode.InnerText;
+            float[] specs = _specsConverter.Convert(specsText);
             return specs;
         }
 
         public int[] GetSpecsInNode(string nodeName, string specName = "Specs")
         {
             return GetSpecsInNode(SelectNodeInDocument(nodeName), specName);
+        }
+
+        public float[] GetSpecsInNodeFloat(string nodeName, string specName = "Specs")
+        {
+            return GetSpecsInNodeFloat(SelectNodeInDocument(nodeName), specName);
         }
 
         public string[] GetAttributesInNode(XmlNode node, string attributeNodeName = "Att")
@@ -163,7 +177,7 @@ namespace Assets.Scripts.Xml
 
         public int[] GetSpecs(XmlNode node)
         {
-            int[] specs = _specsConverter.Convert(node.InnerText);
+            int[] specs = _specsConverter.Convert(node.InnerText).Select(i => (int)i).ToArray(); ;
             return specs;
         }
 
@@ -180,6 +194,11 @@ namespace Assets.Scripts.Xml
         public int[] GetSpecsInChildrenWithId(int id, string arrayNodeName, string specNodeName)
         {
             return GetSpecsInNode(GetNodeInArrayWithId(id, arrayNodeName), specNodeName);
+        }
+
+        public float[] GetSpecsInChildrenWithIdFloat(int id, string arrayNodeName, string specNodeName)
+        {
+            return GetSpecsInNodeFloat(GetNodeInArrayWithId(id, arrayNodeName), specNodeName);
         }
 
         public int[] GetSpecsInChildrenWithId(int id, XmlNode arrayNode)

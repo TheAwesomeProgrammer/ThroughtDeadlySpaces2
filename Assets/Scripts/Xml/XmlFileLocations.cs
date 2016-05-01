@@ -35,6 +35,8 @@ namespace Assets.Scripts.Xml
                     return "Xml/TestShop.xml";
                 case Location.Armor:
                     return "Xml/TestArmor.xml";
+                case Location.Boss:
+                    return "Xml/TestBosses.xml";
                 default:
                     return "";
             }
@@ -56,6 +58,8 @@ namespace Assets.Scripts.Xml
                     return "Xml/QuestGivers.xml";
                 case Location.Shop:
                     return "Xml/Shop.xml";
+                case Location.Boss:
+                    return "Xml/Bosses.xml";
                 default:
                     return "";
             }

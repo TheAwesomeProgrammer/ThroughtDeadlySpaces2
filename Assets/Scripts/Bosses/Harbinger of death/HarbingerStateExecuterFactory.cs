@@ -21,9 +21,9 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
                 case HarbingerOfDeathState.Heavy:
                     return GetComponentInChildren<HarbingerHeavyExecuter>();
                 case HarbingerOfDeathState.Beam:
-                    break;
+                    return GetComponentInChildren<HarbingerBeamExecuter>();
                 case HarbingerOfDeathState.MultiBeam:
-                    break;
+                    return GetComponentInChildren<HarbingerMultiBeamExecuter>();
                 case HarbingerOfDeathState.Exhausted:
                     return GetComponentInChildren<HarbingerExhaustedExecuter>();
                 case HarbingerOfDeathState.Enraged:

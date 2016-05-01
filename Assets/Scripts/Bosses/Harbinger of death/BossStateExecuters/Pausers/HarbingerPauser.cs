@@ -1,21 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
-    public class HarbingerPauser
+    public class HarbingerPauser : XmlLoadable
     {
+        private const int BossId = 1;
+
         private Dictionary<HarbingerOfDeathState, float> WaitTimeSet;
 
         public HarbingerPauser()
         {
+            LoadXml();
+        }
+
+        public void LoadXml()
+        {
+            XmlSearcher xmlSearcher = new XmlSearcher(Location.Boss);
+            XmlNode bossNode = xmlSearcher.GetNodeInArrayWithId(BossId, "Bosses");
             WaitTimeSet = new Dictionary<HarbingerOfDeathState, float>()
             {
-                {HarbingerOfDeathState.Slash, 0.5f},
-                {HarbingerOfDeathState.Heavy, 3f},
-                {HarbingerOfDeathState.Beam, 3f},
-                {HarbingerOfDeathState.MultiBeam, 4f}
+                {HarbingerOfDeathState.Slash, xmlSearcher.GetSpecsInNodeFloat(bossNode, "PauseTime")[0] },
+                {HarbingerOfDeathState.Heavy, xmlSearcher.GetSpecsInNodeFloat(bossNode, "PauseTime")[1] },
+                {HarbingerOfDeathState.Beam, xmlSearcher.GetSpecsInNodeFloat(bossNode, "PauseTime")[2] },
+                {HarbingerOfDeathState.MultiBeam, xmlSearcher.GetSpecsInNodeFloat(bossNode, "PauseTime")[3] }
             };
         }
 

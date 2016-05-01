@@ -8,6 +8,8 @@
         Reward,
         QuestGiver,
         Shop,
-        Armor
+        Armor,
+        Boss
+        
     }
 }

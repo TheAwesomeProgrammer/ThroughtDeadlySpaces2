@@ -30,7 +30,6 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
             }
             _currentStateExecuter = _bossStateExecuterFactory.GetBossStateExecuter(newState);
             _currentStateExecuter.StartState(this);
-            
         }
     }
 }

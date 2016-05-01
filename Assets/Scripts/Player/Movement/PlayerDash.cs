@@ -10,7 +10,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 
         private AnimatorTrigger _animatorTrigger;
         private PlayerMovement _playerMovement;
-        private CharacterController _characterController;
+        private Rigidbody _rigidbody;
         private DexterityFiller _dexterityFiller;
         private AbillityTiming _abillityTiming;
         private float _dashSpeed;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         {
             _abillityTiming = GetComponent<AbillityTiming>();
             _playerMovement = GetComponent<PlayerMovement>();
-            _characterController = GetComponent<CharacterController>();
+            _rigidbody = GetComponent<Rigidbody>();
             _animatorTrigger = GetComponent<AnimatorTrigger>();
             _dexterityFiller = GetComponentInParent<DexterityFiller>();
             _animatorTrigger.AnimationStarting += OnDashAnimationStarting;
@@ -58,7 +58,9 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 
         private void OnAbillityUpdate()
         {
-            _characterController.Move(-transform.forward * _dashSpeed * Time.deltaTime);
+            Vector3 moveDirection = (-transform.forward * _dashSpeed);
+            moveDirection.y = _rigidbody.velocity.y;
+            _rigidbody.velocity = moveDirection;
         }
 
         private void OnAbillityEnd()

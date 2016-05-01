@@ -1,43 +1,37 @@
 ﻿using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
-    public class Range
-    {
-        public float Max;
-        public float Min;
-
-        public Range(float min, float max)
-        {
-            Min = min;
-            Max = max;
-        }
-
-        public int GetRandomRounded()
-        {
-            return Mathf.RoundToInt(Random.Range(Min, Max));
-        }
-    }
+ 
 
     public class PossibleAttacks
     {
-        public Range MeleeStateRange;
-        public Range RangedStateRange;
+        private HarbingerOfDeathState[] PossibleMeleeAttacks;
+        private HarbingerOfDeathState[] PossibleRangedAttacks;
 
         public PossibleAttacks()
         {
-            RangedStateRange = new Range(6, 7);
-            MeleeStateRange = new Range(4, 5);
+            PossibleRangedAttacks = new HarbingerOfDeathState[2]
+            {
+                HarbingerOfDeathState.MultiBeam, 
+                HarbingerOfDeathState.Beam
+            };
+            PossibleMeleeAttacks = new HarbingerOfDeathState[2]
+            {
+                HarbingerOfDeathState.Slash,
+                HarbingerOfDeathState.Heavy
+            };
         }
 
         public HarbingerOfDeathState GetRandomMeleeAttackState()
         {
-            return (HarbingerOfDeathState)MeleeStateRange.GetRandomRounded();
+            return PossibleMeleeAttacks[Random.Range(0, PossibleMeleeAttacks.Length)];
         }
 
         public HarbingerOfDeathState GetRandomRangedAttackState()
         {
-            return (HarbingerOfDeathState)RangedStateRange.GetRandomRounded();
+            return PossibleRangedAttacks[Random.Range(0, PossibleRangedAttacks.Length)];
         }
     }
 }

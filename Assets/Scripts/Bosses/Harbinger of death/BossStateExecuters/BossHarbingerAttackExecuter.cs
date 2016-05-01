@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Player.Swords.Abstract.Bosses.Attack;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
@@ -7,12 +8,14 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
     {
         private bool _isPlayerInRange;
         private PossibleAttacks _possibleAttacks;
+        private BossSwordAttack _bossSwordAttack;
 
         protected override void Start()
         {
             base.Start();
             _possibleAttacks = new PossibleAttacks();
             Tags.Add("Player");
+            _bossSwordAttack = transform.root.FindComponentInChildWithName<BossSwordAttack>("Sword");
         }
 
         public override void OnEnter()
@@ -32,6 +35,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             if (_isPlayerInRange)
             {
+                _bossSwordAttack.OnAttackStarting();
                 harbingerOfDeath.ChangeState(_possibleAttacks.GetRandomMeleeAttackState());
             }
             else

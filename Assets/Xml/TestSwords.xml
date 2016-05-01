@@ -2,7 +2,7 @@
 <Swords>
     <Sword id="1" name="Standard">
         <Type>(1)</Type>
-        <Specs>(1,2,3,4,5)</Specs> 
+        <Specs>(1,1,1,1,1)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
         <Att>()</Att>

@@ -14,10 +14,9 @@ namespace Assets.Scripts.Player.Swords
         protected List<DamageData> _damageDatas = new List<DamageData>();
 
         private DamageTrigger _damageTrigger;
-        private AnimatorTrigger _animatorTrigger;
         protected bool _attacking;
         protected bool _canAttack;
-        
+        private AnimationEventListener _animationEventListener;
 
         protected override void Start()
         {
@@ -25,15 +24,8 @@ namespace Assets.Scripts.Player.Swords
             StartAttack();
             _damageDatas = new List<DamageData>();
             _damageTrigger = GetComponent<DamageTrigger>();
-            _animatorTrigger = GetComponent<AnimatorTrigger>();
-            SetupAnimatorTrigger();
-            
-        }
-
-        private void SetupAnimatorTrigger()
-        {
-            _animatorTrigger.AnimationStarting += OnAttackStarting;
-            _animatorTrigger.AnimationEnded += OnAttackEnded;
+            _animationEventListener = GetComponent<AnimationEventListener>();
+            _animationEventListener.SetupAnimatorTrigger(OnAttackStarting, OnAttackEnded);
         }
 
         public void StopAttack()
@@ -46,7 +38,7 @@ namespace Assets.Scripts.Player.Swords
             _canAttack = true;
         }
 
-        protected void OnAttackStarting()
+        public void OnAttackStarting()
         {
             if (_canAttack)
             {
@@ -58,7 +50,7 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        protected void OnAttackEnded()
+        public void OnAttackEnded()
         {
             if (_canAttack)
             {
@@ -101,8 +93,13 @@ namespace Assets.Scripts.Player.Swords
             {
                 cloneOfDamageDatas[i] = GetModifiedDamage(cloneOfDamageDatas[i]);
             }
-            _damageTrigger.DoDamage(cloneOfDamageDatas);
+            DoDamage(cloneOfDamageDatas);
             return cloneOfDamageDatas;
+        }
+
+        protected virtual void DoDamage(List<DamageData> damageDatas)
+        {
+            _damageTrigger.DoDamage(damageDatas);
         }
 
         protected void OnAttack()

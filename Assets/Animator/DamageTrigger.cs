@@ -9,13 +9,13 @@ namespace Assets.Scripts.Player.Swords
     {
         private const float AttackSpeed = 1;
 
-        private List<EnemyAttacker> _enemyAttackers;
+        protected List<CombatAttacker> _enemyAttackers;
 
         protected override void Start()
         {
             base.Start();
             Tags.Add("Enemy");
-            _enemyAttackers = new List<EnemyAttacker>();
+            _enemyAttackers = new List<CombatAttacker>();
         } 
 
         public void DoDamage(List<DamageData> damageDatas)
@@ -29,10 +29,10 @@ namespace Assets.Scripts.Player.Swords
         public override void OnStay()
         {
             base.OnStay();
-            EnemyAttacker newEnemyAttacker = new EnemyAttacker(_triggerCollider, AttackSpeed);
-            if (!_enemyAttackers.Contains(newEnemyAttacker))
+            CombatAttacker newCombatAttacker = new CombatAttacker(_triggerCollider, AttackSpeed);
+            if (!_enemyAttackers.Contains(newCombatAttacker))
             {
-                _enemyAttackers.Add(newEnemyAttacker);
+                _enemyAttackers.Add(newCombatAttacker);
             }
         }
     }

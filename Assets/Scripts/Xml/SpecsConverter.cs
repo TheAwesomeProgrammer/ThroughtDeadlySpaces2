@@ -5,14 +5,14 @@
     {
         
 
-        public int[] Convert(string xmlSpecsText)
+        public float[] Convert(string xmlSpecsText)
         {
             string[] specsStrings = GetElementsInString(xmlSpecsText);
-            int[] specs = new int[specsStrings.Length];
+            float[] specs = new float[specsStrings.Length];
 
             for (int i = 0; i < specsStrings.Length; i++)
             {
-                specs[i] = int.Parse(specsStrings[i]);
+                specs[i] = float.Parse(specsStrings[i]);
             }
 
             return specs;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Combat.Defense.Boss
 {
-    public class Weakness : LifeDamager
+    public class Weakness : LifeDamager, Damageable
     {
         public List<CombatType> Weaknesses;
 
