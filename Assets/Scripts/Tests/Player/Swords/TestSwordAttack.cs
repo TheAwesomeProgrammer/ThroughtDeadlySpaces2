@@ -60,9 +60,9 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             _swordAttack.ClearDamageDatas();
             _enemyWeakness.Weaknesses.Clear();
-            _swordAttributeManager.RemoveComponents<SwordBaseDamageModifier>();
+            _swordAttributeManager.RemoveComponents<BaseDamageModifier>();
             _swordAttributeManager.RemoveComponents<SwordStrengthDamageModifier>();
-            _swordAttributeManager.RemoveComponents<SwordDamagesDataModifier>();
+            _swordAttributeManager.RemoveComponents<DamagesDataModifier>();
         }
 
         #region Sword attack only tests
@@ -174,10 +174,10 @@ namespace Assets.Scripts.Tests.Player.Swords
             int damage = 1;
             _enemyLife.SetHealth(10);
             _swordAttack.AddDamageDatas(new List<DamageData>() { new DamageData(CombatType.Type1, damage) });
-            EnchantedSwordBlessing enchantedSwordBlessing = _swordAttributeManager.AddNewComponent<EnchantedSwordBlessing>();
-            enchantedSwordBlessing.ProcentChangeToEnchant = 100;
+            EnchantedBlessing enchantedBlessing = _swordAttributeManager.AddNewComponent<EnchantedBlessing>();
+            enchantedBlessing.ProcentChangeToEnchant = 100;
 
-            Assert.IsEquals(damage + enchantedSwordBlessing.EnchantDamage,
+            Assert.IsEquals(damage + enchantedBlessing.EnchantDamage,
                 _swordAttack.Attack()[0].Damage,
                 "Testing if enchanted blessing increases damage  by one");
         }

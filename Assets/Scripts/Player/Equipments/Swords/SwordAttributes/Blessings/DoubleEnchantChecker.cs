@@ -19,21 +19,21 @@ namespace Assets.Scripts.Player.Swords
 
         private void ShouldSetOtherEnchantTo100Procent()
         {
-            EnchantedSwordBlessing enchantedSwordBlessing = ExistSameEnchant();
-            if (enchantedSwordBlessing)
+            EnchantedBlessing enchantedBlessing = ExistSameEnchant();
+            if (enchantedBlessing)
             {
-                SetOtherEnchantTo100Procent(enchantedSwordBlessing);
+                SetOtherEnchantTo100Procent(enchantedBlessing);
             }
         }
 
-        private EnchantedSwordBlessing ExistSameEnchant()
+        private EnchantedBlessing ExistSameEnchant()
         {
-            return _script.GetComponent<EnchantedSwordBlessing>();
+            return _script.GetComponent<EnchantedBlessing>();
         }
 
-        private void SetOtherEnchantTo100Procent(EnchantedSwordBlessing enchantedSwordBlessing)
+        private void SetOtherEnchantTo100Procent(EnchantedBlessing enchantedBlessing)
         {
-            enchantedSwordBlessing.ProcentChangeToEnchant = 100;
+            enchantedBlessing.ProcentChangeToEnchant = 100;
             Object.Destroy(_script);
         }
     }

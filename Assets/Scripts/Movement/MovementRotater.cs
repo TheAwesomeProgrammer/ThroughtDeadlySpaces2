@@ -7,23 +7,26 @@ namespace Assets.Scripts.Movement
     {
         private int _rotationOffset;
 
-        public void SetRotation(Vector3 newMovedirection)
+        void Start()
         {
             SetRotationOffset();
+        }
+
+        public void SetRotation(Vector3 newMovedirection)
+        {
             Vector2 movementVector2 = new Vector2(newMovedirection.x, newMovedirection.z);
             transform.rotation = Quaternion.Euler(0, movementVector2.GetAngleBasedOnDirection() + _rotationOffset, 0);
         }
 
+        public void SetRotation(Vector3 newMovedirection, int offset)
+        {
+            _rotationOffset = offset;
+            SetRotation(newMovedirection);
+        }
+
         void SetRotationOffset()
         {
-            if (InputAdapter.inputDevice != InputDevice.Joystick)
-            {
-                _rotationOffset = -90;
-            }
-            else
-            {
-                _rotationOffset = -90;
-            }
+            _rotationOffset = -90;
         }
     }
 }

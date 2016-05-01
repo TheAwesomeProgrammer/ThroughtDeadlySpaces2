@@ -44,5 +44,10 @@ namespace Assets.Scripts.Player.Swords
             EnemyAttacker enemyAttacker = (EnemyAttacker) obj;
             return enemyAttacker.Collider == Collider;
         }
+
+        public override int GetHashCode()
+        {
+            return 1;
+        }
     }
 }

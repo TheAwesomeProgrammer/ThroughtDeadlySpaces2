@@ -14,8 +14,8 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
 
         public void Execute(GameObject gameObject)
         {
-            PlayerProperties playerProperties = gameObject.GetComponent<PlayerProperties>();
-            playerProperties.Dexterity += _dexterity;
+            DexterityFiller dexterityFiller = gameObject.GetComponent<DexterityFiller>();
+            dexterityFiller.MaxDexterity += _dexterity;
         }
     }
 }

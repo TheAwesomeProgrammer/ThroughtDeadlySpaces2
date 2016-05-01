@@ -14,7 +14,10 @@ namespace Assets.Scripts.Xml
 
             for (int i = 0; i < xmlEnumStrings.Length; i++)
             {
-                convertedEnums[i] = (T)Enum.Parse(typeof(T), xmlEnumStrings[i]);
+                if (xmlEnumStrings[i].Length > 0)
+                {
+                    convertedEnums[i] = (T)Enum.Parse(typeof(T), xmlEnumStrings[i]);
+                }                
             }
 
             return convertedEnums;

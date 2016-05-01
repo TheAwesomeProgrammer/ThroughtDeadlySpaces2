@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public class VsteelSwordBaseBlessing : SwordBaseDamageModifier
+    public class VsteelSwordBaseBlessing : BaseDamageModifier
     {
         public int ProcentChanceOfCriticalHit = 10;
         public int CriticalHitDamageProcent = 50;

@@ -10,10 +10,11 @@ namespace Assets.Scripts.Player
         public float Speed = 0;
         public float Gravity = 9.82f;
         public int Strength = 0;
-        public float Dexterity = 0;
+        public float MaxDexterity = 2;
 
         private Life _life;
         private SwordAttack _swordAttack;
+        private DexterityFiller _dexterityFiller;
 
         void Start()
         {
@@ -21,7 +22,9 @@ namespace Assets.Scripts.Player
             _life.MaxHealth = MaxHealth;
             _life.Health = StartHealth;
             _swordAttack = GetComponentInChildren<SwordAttack>();
-            _swordAttack.
+            _dexterityFiller = GetComponent<DexterityFiller>();
+            _dexterityFiller.MaxDexterity = MaxDexterity;
+
         }
     }
 }

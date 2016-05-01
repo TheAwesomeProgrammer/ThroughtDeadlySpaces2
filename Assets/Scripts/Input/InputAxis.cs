@@ -21,7 +21,7 @@ namespace Assets.Scripts.Input
         private void CheckAxis(string axisName)
         {
             float axisMovement = InputManager.GetAxis(axisName);
-            if (AxisMoving != null && Mathf.Abs(axisMovement) > 0)
+            if (AxisMoving != null)
             {
                 AxisMoving(axisMovement);
             }

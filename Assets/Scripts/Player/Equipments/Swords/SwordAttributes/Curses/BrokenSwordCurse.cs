@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Curses
 {
-    public class BrokenSwordCurse : SwordBaseDamageModifier,XmlLoadable
+    public class BrokenSwordCurse : BaseDamageModifier,XmlLoadable
     {
         public int BrokenSwordMinusProcentDamage = -40;
         public const int CurseId = 0;

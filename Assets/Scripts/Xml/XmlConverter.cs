@@ -1,4 +1,7 @@
-﻿namespace Assets.Scripts.Xml
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Assets.Scripts.Xml
 {
     public class XmlConverter
     {
@@ -10,8 +13,14 @@
         {
             textToSplit = textToSplit.Replace(StartIdenfier, "");
             textToSplit = textToSplit.Replace(EndIdentifier, "");
+            string[] stringSplitted = textToSplit.Split(SplitIdentifier);
 
-            return textToSplit.Split(SplitIdentifier);
+            return RemoveEmptyStrings(stringSplitted);
+        }
+
+        string[] RemoveEmptyStrings(string[] stringsToCheck)
+        {
+            return stringsToCheck.Where(stringItem => stringItem != "").ToArray();
         }
     }
 }

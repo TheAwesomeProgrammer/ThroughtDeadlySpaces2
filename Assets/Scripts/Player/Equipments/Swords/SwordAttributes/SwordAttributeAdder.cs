@@ -22,7 +22,7 @@ namespace Assets.Scripts.Player.Swords
                 case SwordAttribute.Broken:
                     return _attributeManager.AddNewAttribute<BrokenSwordCurse>(EquipmentAttributeType.Curse);
                 case SwordAttribute.Enchant:
-                    return _attributeManager.AddNewAttribute<EnchantedSwordBlessing>(EquipmentAttributeType.Blessing);
+                    return _attributeManager.AddNewAttribute<EnchantedBlessing>(EquipmentAttributeType.Blessing);
                 case SwordAttribute.Heavy:
                     return _attributeManager.AddNewAttribute<HeavySwordCurse>(EquipmentAttributeType.Curse);
                 case SwordAttribute.LifeDrain:

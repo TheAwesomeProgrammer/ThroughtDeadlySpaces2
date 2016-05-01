@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public abstract class SwordDamagesDataModifier : SwordDamageModifier
+    public abstract class DamagesDataModifier : DamageModifier
     {
         public override CombatData GetModifiedCombatData(CombatData combatData)
         {

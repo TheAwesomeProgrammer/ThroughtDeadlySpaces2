@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Curses
 {
-    public class RustySwordCurse : SwordBaseDamageModifier
+    public class RustySwordCurse : BaseDamageModifier
     {
         public int MinusProcentDamage = -20;
         public int ProcentToBreakSword = 8;

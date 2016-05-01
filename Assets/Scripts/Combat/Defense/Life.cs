@@ -5,6 +5,7 @@ public class Life : MonoBehaviour
 {
     public int MaxHealth;
     public int StartHealth;
+    public GameObject ObjectToKillOnDeath;
 
     public event Action Death;
     public event Action<int> LifeChanged;
@@ -56,6 +57,10 @@ public class Life : MonoBehaviour
         if (Death != null)
         {
             Death();
+        }
+        if (ObjectToKillOnDeath != null)
+        {
+            Destroy(ObjectToKillOnDeath);
         }
 
         Destroy(gameObject);
