@@ -8,6 +8,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
     public abstract class HarbingerAttackBase : MonoBehaviour, BossStateExecuter, XmlLoadable
     {
         protected const int BossId = 1;
+        
 
         protected AnimatorTrigger _animatorTrigger;
         protected HarbingerOfDeath _harbingerOfDeath;
@@ -15,6 +16,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         protected HarbingerOfDeathState[] _possiblePauseStates;
         protected int _baseDamage;
         protected int _baseDamageXmlId = 1;
+        protected int _attackDelay;
         protected XmlSearcher _xmlSearcher;
         private AnimationEventListener _animationEventListener;
 
@@ -41,7 +43,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         public virtual void SwitchState()
         {
             _harbingerOfDeath.ChangeState(GetRandomPauseState());
-            _bossSwordAttack.OnAttackEnded();
+            _bossSwordAttack.EndAttack();
         }
 
         protected virtual HarbingerOfDeathState GetRandomPauseState()
@@ -53,10 +55,23 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             _bossSwordAttack.SetExtraBaseDamage(_baseDamage);
             _harbingerOfDeath = harbingerOfDeath;
-            Attack();
+
+            if (_attackDelay <= 0)
+            {
+                Attack();
+            }
+            else if (_attackDelay > 0)
+            {
+                Timer.Start(_attackDelay, DelayedAttack);
+            }
         }
 
         protected virtual void Attack()
+        {
+            _animatorTrigger.StartAnimation();
+        }
+
+        protected virtual void DelayedAttack()
         {
             _animatorTrigger.StartAnimation();
         }

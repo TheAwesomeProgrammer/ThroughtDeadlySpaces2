@@ -1,28 +1,54 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CallbackInfo
+public class CallbackInfo : Callbackable
 {
-    public GameObject ObjectToCall;
-    public string MethodName;
-
+    private GameObject _objectToCall;
+    private string _methodName;
     
     public CallbackInfo(GameObject pObjectToCall,string pMethodName)
     {
-        ObjectToCall = pObjectToCall;
-        MethodName = pMethodName;
+        _objectToCall = pObjectToCall;
+        _methodName = pMethodName;
+    }
+
+    public void Callback()
+    {
+        _objectToCall.SendMessage(_methodName);
+    }
+}
+
+public interface Callbackable
+{
+    void Callback();
+}
+
+public class CallBackInfoWithAction : Callbackable
+{
+    private Action _callBackAction;
+
+    public CallBackInfoWithAction(Action callbackAction)
+    {
+        _callBackAction = callbackAction;
+    }
+    
+
+    public void Callback()
+    {
+        _callBackAction();
     }
 }
 
 public class TimingInfo
 {
-    public CallbackInfo TheCallBackInfo;
+    public Callbackable CallBackInfo;
     public float Timer;
     
-    public TimingInfo(CallbackInfo pTheCallBackInfo,float pTimer)
+    public TimingInfo(Callbackable pCallBackInfo,float pTimer)
     {
-        TheCallBackInfo = pTheCallBackInfo;
+        CallBackInfo = pCallBackInfo;
         Timer = pTimer;
     }
 }
@@ -44,11 +70,15 @@ public class Timer : MonoBehaviour
         Start(pDurationOfTimer, new CallbackInfo(pObjectToCall, pMethodName));    
     }
 
-    public static void Start(float pDurationOfTimer,CallbackInfo pCallbackInfo)
+    public static void Start(float pDurationOfTimer,Callbackable pCallbackInfo)
     {
-        mTimers.Add(new TimingInfo(pCallbackInfo,pDurationOfTimer));           
+        mTimers.Add(new TimingInfo(pCallbackInfo, pDurationOfTimer));           
     }
 
+    public static void Start(float pDurationOfTimer, Action callBackAction)
+    {
+        Start(pDurationOfTimer, new CallBackInfoWithAction(callBackAction));
+    }
 
     IEnumerator MakeLoop()
     {
@@ -75,20 +105,16 @@ public class Timer : MonoBehaviour
 
         foreach(TimingInfo tTimingInfo in mTimersToBeDestroyed)
         {
-            TimerCallBack(tTimingInfo.TheCallBackInfo);
+            TimerCallBack(tTimingInfo.CallBackInfo);
             mTimers.Remove(tTimingInfo);
         }
 
         mTimersToBeDestroyed.Clear();
     }
 
-    void TimerCallBack(CallbackInfo pCallBackInfo)
+    void TimerCallBack(Callbackable callback)
     {
-        GameObject tObjectToCall = pCallBackInfo.ObjectToCall;
-        if (tObjectToCall && tObjectToCall.activeSelf)
-        {
-            tObjectToCall.SendMessage(pCallBackInfo.MethodName);
-        }
+       callback.Callback();
     }
 
     void CountDownTimers()

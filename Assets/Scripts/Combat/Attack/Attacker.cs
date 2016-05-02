@@ -5,7 +5,7 @@ using Assets.Scripts.Extensions;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public abstract class Attacker : SwordComponent
+    public abstract class Attacker : SwordComponent, Attackable
     {
         public event Action AttackStarted;
         public event Action Attacking;
@@ -21,24 +21,24 @@ namespace Assets.Scripts.Player.Swords
         protected override void Start()
         {
             base.Start();
-            StartAttack();
+            EnableAttack();
             _damageDatas = new List<DamageData>();
             _damageTrigger = GetComponent<DamageTrigger>();
             _animationEventListener = GetComponent<AnimationEventListener>();
-            _animationEventListener.SetupAnimatorTrigger(OnAttackStarting, OnAttackEnded);
+            _animationEventListener.SetupAnimatorTrigger(StartAttack, EndAttack);
         }
 
-        public void StopAttack()
+        public void DeativateAttack()
         {
             _canAttack = false;
         }
 
-        public void StartAttack()
+        public void EnableAttack()
         {
             _canAttack = true;
         }
 
-        public void OnAttackStarting()
+        public void StartAttack()
         {
             if (_canAttack)
             {
@@ -50,7 +50,7 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        public void OnAttackEnded()
+        public void EndAttack()
         {
             if (_canAttack)
             {
@@ -87,7 +87,7 @@ namespace Assets.Scripts.Player.Swords
 
         public virtual List<DamageData> Attack()
         {
-            OnAttack();
+            IsAttacking();
             List<DamageData> cloneOfDamageDatas = _damageDatas.Clone();
             for (int i = 0; i < cloneOfDamageDatas.Count; i++)
             {
@@ -102,7 +102,7 @@ namespace Assets.Scripts.Player.Swords
             _damageTrigger.DoDamage(damageDatas);
         }
 
-        protected void OnAttack()
+        public void IsAttacking()
         {
             if (Attacking != null)
             {

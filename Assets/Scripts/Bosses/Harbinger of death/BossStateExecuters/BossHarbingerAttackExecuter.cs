@@ -35,7 +35,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             if (_isPlayerInRange)
             {
-                _bossSwordAttack.OnAttackStarting();
+                _bossSwordAttack.StartAttack();
                 harbingerOfDeath.ChangeState(_possibleAttacks.GetRandomMeleeAttackState());
             }
             else

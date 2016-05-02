@@ -10,7 +10,7 @@ namespace Assets.Scripts.Player.Swords
         
         private AnimatorTrigger _animatorTrigger;
 
-        void Start()
+        void Awake()
         {
             _animatorTrigger = GetComponent<AnimatorTrigger>();
         }

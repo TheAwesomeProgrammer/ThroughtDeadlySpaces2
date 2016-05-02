@@ -12,12 +12,12 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 
         public PossibleAttacks()
         {
-            PossibleRangedAttacks = new HarbingerOfDeathState[2]
+            PossibleRangedAttacks = new[]
             {
                 HarbingerOfDeathState.MultiBeam, 
                 HarbingerOfDeathState.Beam
             };
-            PossibleMeleeAttacks = new HarbingerOfDeathState[2]
+            PossibleMeleeAttacks = new[]
             {
                 HarbingerOfDeathState.Slash,
                 HarbingerOfDeathState.Heavy

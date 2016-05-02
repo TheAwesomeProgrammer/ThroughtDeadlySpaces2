@@ -9,15 +9,14 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         private const int BossId = 1;
         private float _timeToFollow;
 
-        private FollowTargetWithRotation _followTargetWithRotation;
+        private MoveForward _moveForward;
         private Transform _playerTransform;
         private HarbingerOfDeath _harbingerOfDeath;
         private XmlSearcher _xmlSearcher;
 
         void Start()
         {
-            _followTargetWithRotation = GetComponentInParent<FollowTargetWithRotation>();
-            _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            _moveForward = GetComponentInParent<MoveForward>();
             LoadXml();
         }
 
@@ -25,26 +24,26 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             _xmlSearcher = new XmlSearcher(Location.Boss);
             float[] specs = _xmlSearcher.GetSpecsInChildrenWithIdFloat(BossId, "Bosses", "Movement");
-            _followTargetWithRotation.Speed = specs[0];
+            _moveForward.Speed = specs[0];
             _timeToFollow = specs[1];
         }
 
         void SwitchToAttacking()
         {
-            _followTargetWithRotation.StopMoving();
+            _moveForward.StopMoving();
             _harbingerOfDeath.ChangeState(HarbingerOfDeathState.Attack);
         }
 
         public void StartState(HarbingerOfDeath harbingerOfDeath)
         {
-            _followTargetWithRotation.SetTarget(_playerTransform);
             _harbingerOfDeath = harbingerOfDeath;
+            _moveForward.StartMoving();
             Timer.Start(_timeToFollow, gameObject, "SwitchToAttacking");
         }
 
         public void EndState(HarbingerOfDeath harbingerOfDeath)
         {
-            _followTargetWithRotation.StopMoving();
+            _moveForward.StopMoving();
         }
     }
 }

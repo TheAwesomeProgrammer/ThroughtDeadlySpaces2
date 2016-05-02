@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool CanMove = true;
 
-    //private CharacterController _mover;
     private Rigidbody _rigidbody;
     private MovementRotater _movementRotater;
     private MovementAnimator _movementAnimator;

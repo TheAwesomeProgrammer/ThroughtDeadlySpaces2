@@ -2,11 +2,9 @@
 
 namespace Assets.Scripts.Movement
 {
-    public class FollowTargetWithRotation : MonoBehaviour
+    public class MoveForward : MonoBehaviour
     {
-        public Transform Target;
         public float Speed;
-        public int RotationOffset = 0;
 
         private bool _movingAfterTarget;
 
@@ -23,12 +21,6 @@ namespace Assets.Scripts.Movement
             _rigidbodyToMove = rigidbodyToMove;
         }
 
-        public void SetTarget(Transform target)
-        {
-            Target = target;
-            StartMoving();
-        }
-
         public void StopMoving()
         {
             _movingAfterTarget = false;
@@ -41,10 +33,8 @@ namespace Assets.Scripts.Movement
 
         void Update()
         {
-            if (_movingAfterTarget && Target != null && _rigidbodyToMove != null)
+            if (_movingAfterTarget && _rigidbodyToMove != null)
             {
-                Vector3 lookAtPosition = new Vector3(Target.transform.position.x, transform.position.y, Target.transform.position.z);
-                transform.LookAt(lookAtPosition);
                 Vector3 moveDirection = transform.forward * Speed;
                 moveDirection.y = _rigidbodyToMove.velocity.y;
                 _rigidbodyToMove.velocity = moveDirection;

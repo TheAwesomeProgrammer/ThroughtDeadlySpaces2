@@ -8,7 +8,8 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
     public class HarbingerMultiBeamExecuter : HarbingerAttackBase
     {
         private float _attackSpeed;
-        private const int TimesToAttack = 4;
+        private const int StartDelay = 0;
+        private const int TimesToAttack = 3;
         private BossBeam _bossBeam;
         private int _beamsFired;
 
@@ -23,17 +24,24 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             };
             _baseDamageXmlId = 2;
             _attackSpeed = _xmlSearcher.GetSpecsInChildrenWithIdFloat(BossId, "Bosses", "Beam")[0];
+            _bossBeam.CallbackAction = HasDoneMultiBeam;
         }
 
         protected override void Attack()
         {
+            base.Attack();
             DoMultiBeam();
+        }
+
+        public override void StartState(HarbingerOfDeath harbingerOfDeath)
+        {
+            base.StartState(harbingerOfDeath);
+            _bossBeam.StartDelay = StartDelay;
         }
 
         void DoMultiBeam()
         {
-            base.Attack();
-            _bossBeam.OnAttackStarted(HasDoneMultiBeam);
+            _bossBeam.StartAttack();
             _beamsFired++;
         }
 
