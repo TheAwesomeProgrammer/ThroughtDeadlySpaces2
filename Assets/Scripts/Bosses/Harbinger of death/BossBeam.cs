@@ -12,7 +12,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 
         private SetCapsuleCollider _setCapsuleCollider;
         private CapsuleCollider _capsuleCollider;
-        private BossSwordAttack _bossSwordAttack;
+        private BossAttack _bossAttack;
         private Transform _startParent;
         private Action _callbackAction;
         private DamageTrigger _damageTrigger;
@@ -28,13 +28,13 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
             _startParent = transform.parent;
             _damageTrigger = GetComponent<BossDamageTrigger>();
             _setCapsuleCollider = GetComponent<SetCapsuleCollider>();
-            _bossSwordAttack = GetComponent<BossSwordAttack>();
+            _bossAttack = GetComponent<BossAttack>();
             _capsuleCollider = GetComponent<CapsuleCollider>();
         }
 
         public void StartAttack()
         {
-            _bossSwordAttack.StartAttack();
+            _bossAttack.StartAttack();
             _setCapsuleCollider.TargetPlayer();
             transform.localPosition = Vector3.zero;
             transform.parent = null;
@@ -50,7 +50,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
         public void EndAttack()
         {
             transform.parent = _startParent;
-            _bossSwordAttack.EndAttack();
+            _bossAttack.EndAttack();
             _capsuleCollider.enabled = false;
             if (_callbackAction != null)
             {

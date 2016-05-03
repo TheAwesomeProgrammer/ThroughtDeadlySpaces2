@@ -2,34 +2,18 @@
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death
 {
-    public class HarbingerOfDeath : MonoBehaviour
+    public class HarbingerOfDeath : BossStateMachine
     {
-        public HarbingerOfDeathState CurrentState;
-        public HarbingerOfDeathState PreviusState;
-        private BossStateExecuter _currentStateExecuter;
-        private HarbingerStateExecuterFactory _bossStateExecuterFactory;
-
-        void Start()
+        protected override void Start()
         {
+            base.Start();
             _bossStateExecuterFactory = GetComponentInChildren<HarbingerStateExecuterFactory>();
-            Invoke("DelayedStart", 0.1f);
         }
 
-        void DelayedStart()
+        protected override void DelayedStart()
         {
+            base.DelayedStart();
             ChangeState(HarbingerOfDeathState.Movement);
-        }
-
-        public void ChangeState(HarbingerOfDeathState newState)
-        {
-            PreviusState = CurrentState;
-            CurrentState = newState;
-            if (_currentStateExecuter != null)
-            {
-                _currentStateExecuter.EndState(this);
-            }
-            _currentStateExecuter = _bossStateExecuterFactory.GetBossStateExecuter(newState);
-            _currentStateExecuter.StartState(this);
         }
     }
 }

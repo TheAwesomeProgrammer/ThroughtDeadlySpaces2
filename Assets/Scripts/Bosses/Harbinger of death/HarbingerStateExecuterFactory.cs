@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death
 {
-    public class HarbingerStateExecuterFactory : MonoBehaviour
+    public class HarbingerStateExecuterFactory : MonoBehaviour, BossFactoryable
     {
-        public BossStateExecuter GetBossStateExecuter(HarbingerOfDeathState harbingerOfDeathState)
+        public BossStateExecuter GetBossStateExecuter(Enum harbingerOfDeathState)
         {
-            switch (harbingerOfDeathState)
+            switch ((HarbingerOfDeathState)harbingerOfDeathState)
             {
                 case HarbingerOfDeathState.Movement:
-                    return GetComponentInChildren<BossHarbingerMovementExecuter>();
+                    return GetComponentInChildren<DefaultBossMovementExecuter>();
                 case HarbingerOfDeathState.Idle:
-                    return GetComponentInChildren<HarbingerIdleExecuter>();
+                    return GetComponentInChildren<HarbingerIdle>();
                 case HarbingerOfDeathState.Attack:
-                    return GetComponentInChildren<BossHarbingerAttackExecuter>();
+                    return GetComponentInChildren<HarbingerAttackChoser>();
                 case HarbingerOfDeathState.Slash:
                     return GetComponentInChildren<HarbingerSlashExecuter>();
                 case HarbingerOfDeathState.Heavy:
@@ -25,9 +25,9 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
                 case HarbingerOfDeathState.MultiBeam:
                     return GetComponentInChildren<HarbingerMultiBeamExecuter>();
                 case HarbingerOfDeathState.Exhausted:
-                    return GetComponentInChildren<HarbingerExhaustedExecuter>();
+                    return GetComponentInChildren<HarbingerExhausted>();
                 case HarbingerOfDeathState.Enraged:
-                    return GetComponentInChildren<HarbingerEnragedExecuter>();
+                    return GetComponentInChildren<HarbingerEnraged>();
                 default:
                     throw new ArgumentOutOfRangeException("harbingerOfDeathState", harbingerOfDeathState, null);
             }

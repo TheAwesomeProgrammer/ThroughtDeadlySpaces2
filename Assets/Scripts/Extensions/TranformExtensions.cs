@@ -65,7 +65,7 @@ public static class TranformExtension {
             yield return 0;
         }
 
-        pCallBackInfo.ObjectToCall.SendMessage(pCallBackInfo.MethodName);
+        pCallBackInfo.Callback();
     }
 
    
