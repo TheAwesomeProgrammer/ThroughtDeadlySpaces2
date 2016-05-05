@@ -9,6 +9,8 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
     {
         public float StartDelay = 0.5f;
         public float Duration = 0.5f;
+        public GameObject Beam;
+        public Transform BeamSpawnPoint;
 
         private SetCapsuleCollider _setCapsuleCollider;
         private CapsuleCollider _capsuleCollider;
@@ -43,6 +45,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 
         void StartBeamWithDelay()
         {
+            Instantiate(Beam, BeamSpawnPoint.position, Quaternion.identity);
             _capsuleCollider.enabled = true;
             Invoke("EndAttack", Duration);
         }

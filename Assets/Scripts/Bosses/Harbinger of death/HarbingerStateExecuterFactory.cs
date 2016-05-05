@@ -31,8 +31,6 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
                 default:
                     throw new ArgumentOutOfRangeException("harbingerOfDeathState", harbingerOfDeathState, null);
             }
-
-            return null;
         }
     }
 }

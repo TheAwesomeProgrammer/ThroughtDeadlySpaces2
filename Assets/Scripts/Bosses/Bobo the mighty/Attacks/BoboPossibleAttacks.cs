@@ -11,15 +11,15 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         {
             _possibleRangedAttacks = new List<Enum>()
             {
-                BoboState.Suck,
-                BoboState.Jump,
-                BoboState.AcidSpit
+                //BoboState.Suck,
+                //BoboState.Jump,
+                //BoboState.AcidSpit
             };
             _possibleMeleeAttacks = new List<Enum>()
             {
                  BoboState.Bite,
-                 BoboState.RapidFrenzy,
-                 BoboState.MinionSpawn
+                 //BoboState.RapidFrenzy,
+                 //BoboState.MinionSpawn
             };
         }
 

@@ -7,7 +7,6 @@ namespace Assets.Scripts.Bosses.Debug
     {
         protected override void Attack()
         {
-            base.Attack();
             SwitchState();
         }
     }

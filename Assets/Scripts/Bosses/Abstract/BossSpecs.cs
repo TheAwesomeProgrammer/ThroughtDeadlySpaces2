@@ -2,6 +2,7 @@
 
 namespace Assets.Scripts.Bosses.Abstract
 {
+    [System.Serializable]
     public class BossSpecs
     {
         public float[] MovementSpecs;

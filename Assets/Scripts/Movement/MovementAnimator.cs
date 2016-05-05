@@ -4,18 +4,34 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 {
     public class MovementAnimator : MonoBehaviour
     {
-        public const string SpeedAnimatorVariableName = "Speed";
+        public string SpeedAnimatorVariableName = "Speed";
+        public Animator Animator;
+        public bool AutoSet = false;
 
-        private Animator _animator;
+        
+        private Rigidbody _rigidbody;
 
         void Start()
         {
-            _animator = GetComponent<Animator>();
+            _rigidbody = GetComponent<Rigidbody>();
+            if (Animator == null)
+            {
+                Animator = GetComponent<Animator>();
+            }
         }
+
+        void Update()
+        {
+            if (AutoSet && _rigidbody != null && _rigidbody.velocity.magnitude > 0)
+            {
+                SetAnimatorSpeed(_rigidbody.velocity);
+            }
+        }
+
 
         public void SetAnimatorSpeed(Vector3 moveDirection)
         {
-            _animator.SetFloat(SpeedAnimatorVariableName, moveDirection.magnitude);
+            Animator.SetFloat(SpeedAnimatorVariableName, moveDirection.magnitude);
         }
     }
 }

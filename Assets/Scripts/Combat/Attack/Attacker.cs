@@ -12,11 +12,11 @@ namespace Assets.Scripts.Player.Swords
         public event Action AttackEnded;
 
         protected List<DamageData> _damageDatas = new List<DamageData>();
-
-        private DamageTrigger _damageTrigger;
         protected bool _attacking;
         protected bool _canAttack;
+
         private AnimationEventListener _animationEventListener;
+        private DamageTrigger _damageTrigger;
 
         protected override void Start()
         {
