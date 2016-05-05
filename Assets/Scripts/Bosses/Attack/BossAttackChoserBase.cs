@@ -7,7 +7,6 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
     public abstract class BossAttackChoserBase : Trigger, BossStateExecuter
     {
         protected PossibleAttacks _possibleAttacks;
-        protected BossAttack _bossAttack;
 
         private bool _isPlayerInRange;
 
@@ -16,7 +15,6 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             base.Start();
             _possibleAttacks = new PossibleAttacks();
             Tags.Add("Player");
-            _bossAttack = transform.root.FindComponentInChildWithName<BossAttack>("Sword");
         }
 
         public override void OnEnter()
@@ -40,7 +38,6 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             if (_isPlayerInRange)
             {
-                _bossAttack.StartAttack();
                 bossStateMachine.ChangeState(_possibleAttacks.GetRandomMeleeAttackState());
             }
             else

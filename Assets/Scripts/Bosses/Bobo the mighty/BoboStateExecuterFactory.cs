@@ -1,7 +1,7 @@
 ﻿using System;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks;
+using Assets.Scripts.Bosses.Bobo_the_mighty.Movement;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Pausers;
-using Assets.Scripts.Bosses.Debug;
 using Assets.Scripts.Bosses.Harbinger_of_death;
 using Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters;
 using UnityEngine;
@@ -15,11 +15,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty
             switch ((BoboState)bossState)
             {
                 case BoboState.Movement:
-                    return GetComponentInChildren<DefaultBossMovementExecuter>();
+                    return GetComponentInChildren<BoboMovement>();
                 case BoboState.Attack:
                     return GetComponentInChildren<BoboAttackChoserExecuter>();
                 case BoboState.Bite:
-                    return GetComponentInChildren<SwitchInstaBackToIdle>();
+                    return GetComponentInChildren<BoboBiteExecuter>();
                 case BoboState.RapidFrenzy:
                     break;
                 case BoboState.MinionSpawn:
@@ -27,11 +27,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty
                 case BoboState.Suck:
                     break;
                 case BoboState.Jump:
-                    break;
+                    return GetComponentInChildren<BoboJumpExecuter>(); 
                 case BoboState.AcidSpit:
                     break;
                 case BoboState.Idle:
-                    return GetComponentInParent<BoboIdlePauser>();
+                    return GetComponentInChildren<BoboIdlePauser>();
                 default:
                     throw new ArgumentOutOfRangeException("bossState", bossState, null);
             }

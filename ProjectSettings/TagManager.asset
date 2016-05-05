@@ -15,6 +15,9 @@ TagManager:
   - Map
   - EnemyAttack
   - EnemyProjectile
+  - BeamSpawn
+  - Collision
+  - Floor
   layers:
   - Default
   - TransparentFX

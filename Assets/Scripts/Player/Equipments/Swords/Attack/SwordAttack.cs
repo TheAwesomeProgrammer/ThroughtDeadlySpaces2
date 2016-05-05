@@ -7,14 +7,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public class SwordAttack : Attacker
+    public class SwordAttack : SwordAttacker
     {
-
-
         protected override void Start()
         {
             base.Start();
-            
             SetupDamageDatas();
         }
 

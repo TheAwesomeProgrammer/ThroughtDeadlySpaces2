@@ -5,8 +5,9 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty
 {
     public class BoboSpecsLoader : BossSpecsLoader
     {
-        private void Start()
+        protected override void Awake()
         {
+            base.Awake();
             LoadXml();
         }
     }

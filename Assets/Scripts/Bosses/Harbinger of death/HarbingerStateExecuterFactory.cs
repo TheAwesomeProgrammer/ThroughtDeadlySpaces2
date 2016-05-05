@@ -11,7 +11,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
             switch ((HarbingerOfDeathState)harbingerOfDeathState)
             {
                 case HarbingerOfDeathState.Movement:
-                    return GetComponentInChildren<DefaultBossMovementExecuter>();
+                    return GetComponentInChildren<BossMovementExecuter>();
                 case HarbingerOfDeathState.Idle:
                     return GetComponentInChildren<HarbingerIdle>();
                 case HarbingerOfDeathState.Attack:

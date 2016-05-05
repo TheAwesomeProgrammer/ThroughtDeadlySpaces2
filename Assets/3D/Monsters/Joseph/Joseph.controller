@@ -202,7 +202,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.03131342
   m_TransitionOffset: 0
   m_ExitTime: 0.90000004
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -592,7 +592,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MultiLazor
-  m_Speed: 0.54
+  m_Speed: 0.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101000010798808332}
@@ -606,7 +606,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_Motion: {fileID: 7400008, guid: d5557171a29cd5d4eaa00b694d40b2d7, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Speed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
 --- !u!1102 &1102000012992265938
@@ -697,7 +697,7 @@ AnimatorStateMachine:
     m_Position: {x: 504, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000011916117348}
-    m_Position: {x: -168, y: 108, z: 0}
+    m_Position: {x: -168, y: 144, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000013223021410}
     m_Position: {x: 180, y: -48, z: 0}
@@ -706,7 +706,7 @@ AnimatorStateMachine:
     m_Position: {x: -24, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000012992265938}
-    m_Position: {x: -168, y: 180, z: 0}
+    m_Position: {x: -168, y: 192, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000010311119338}
     m_Position: {x: -168, y: 240, z: 0}

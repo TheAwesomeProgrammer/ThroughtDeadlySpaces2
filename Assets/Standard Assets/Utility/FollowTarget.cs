@@ -14,8 +14,11 @@ namespace UnityStandardAssets.Utility
 
         private void LateUpdate()
         {
-            transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref velocity,
+            if (target != null)
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref velocity,
                 SmoothTime);
+            }
         }
     }
 }

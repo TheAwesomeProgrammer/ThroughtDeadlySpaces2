@@ -1,19 +1,21 @@
-﻿using Assets.Scripts.Bosses.Abstract;
+﻿using System;
+using Assets.Scripts.Bosses.Abstract;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
-    public class DefaultBossMovementExecuter : MonoBehaviour, BossStateExecuter
+    public abstract class BossMovementExecuter : MonoBehaviour, BossStateExecuter
     {
         private float _timeToFollow;
 
         private MoveForward _moveForward;
         private BossStateMachine _bossStateMachine;
         protected BossSpecsLoader _bossSpecsLoader;
+        protected Enum _attackState;
 
-        void Start()
+        protected virtual void Start()
         {
             _moveForward = GetComponentInParent<MoveForward>();
             _bossSpecsLoader = GetComponentInParent<BossSpecsLoader>();
@@ -34,10 +36,10 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             Timer.Start(_timeToFollow, SwitchToAttacking);
         }
 
-        void SwitchToAttacking()
+        protected virtual void SwitchToAttacking()
         {
             _moveForward.StopMoving();
-            _bossStateMachine.ChangeState(HarbingerOfDeathState.Attack);
+            _bossStateMachine.ChangeState(_attackState);
         }
 
         public void EndState(BossStateMachine bossStateMachine)

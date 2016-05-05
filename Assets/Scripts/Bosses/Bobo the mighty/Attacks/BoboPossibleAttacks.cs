@@ -12,7 +12,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             _possibleRangedAttacks = new List<Enum>()
             {
                 //BoboState.Suck,
-                //BoboState.Jump,
+                BoboState.Jump,
                 //BoboState.AcidSpit
             };
             _possibleMeleeAttacks = new List<Enum>()

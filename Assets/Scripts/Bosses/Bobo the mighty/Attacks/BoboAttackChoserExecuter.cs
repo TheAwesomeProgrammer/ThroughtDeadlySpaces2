@@ -8,7 +8,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         protected override void Start()
         {
             base.Start();
-            _possibleAttacks = new HarbingerPossibleAttacks();
+            _possibleAttacks = new BoboPossibleAttacks();
         }
     }
 }

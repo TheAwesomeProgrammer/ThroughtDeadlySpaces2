@@ -12,6 +12,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         protected Dictionary<Enum, float> _waitTimeSet;
         protected int _bossId = 1;
         protected Enum _movementState;
+
         private AnimatorTrigger _animatorTrigger;
 
         protected virtual void Start()

@@ -2,15 +2,18 @@ using System;
 using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions;
+using Assets.Scripts.Player.Equipments;
+using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public abstract class Attacker : SwordComponent, Attackable
+    public abstract class Attacker : MonoBehaviour, Attackable
     {
         public event Action AttackStarted;
         public event Action Attacking;
         public event Action AttackEnded;
 
+        protected AttributeManager _attributeManager;
         protected List<DamageData> _damageDatas = new List<DamageData>();
         protected bool _attacking;
         protected bool _canAttack;
@@ -18,14 +21,17 @@ namespace Assets.Scripts.Player.Swords
         private AnimationEventListener _animationEventListener;
         private DamageTrigger _damageTrigger;
 
-        protected override void Start()
+        protected virtual void Start()
         {
-            base.Start();
             EnableAttack();
             _damageDatas = new List<DamageData>();
             _damageTrigger = GetComponent<DamageTrigger>();
+            _attributeManager = GetComponent<AttributeManager>();
             _animationEventListener = GetComponent<AnimationEventListener>();
-            _animationEventListener.SetupAnimatorTrigger(StartAttack, EndAttack);
+            if (_animationEventListener != null)
+            {
+                _animationEventListener.SetupAnimatorTrigger(StartAttack, EndAttack);
+            }
         }
 
         public void DeativateAttack()
@@ -114,17 +120,17 @@ namespace Assets.Scripts.Player.Swords
         {
             DamageData modfiedDamageData = damageData;
 
-            foreach (var swordDamageModifier in GetSwordDamageModifiers())
+            foreach (var damageModifier in GetDamageModifiers())
             {
-                modfiedDamageData.Damage = ((DamageData) swordDamageModifier.GetModifiedCombatData(damageData)).Damage;
+                modfiedDamageData.Damage = ((DamageData) damageModifier.GetModifiedCombatData(damageData)).Damage;
             }
 
             return modfiedDamageData;
         }
 
-        private List<DamageModifier> GetSwordDamageModifiers()
+        private List<DamageModifier> GetDamageModifiers()
         {
-            return _swordAttributeManager.GetComponentsList<DamageModifier>();
+            return _attributeManager.GetComponentsList<DamageModifier>();
         }
     }
 }

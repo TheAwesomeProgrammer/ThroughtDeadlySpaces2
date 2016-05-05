@@ -26,7 +26,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             _possiblePauseStates = new List<Enum>();
             _animatorTrigger = GetComponent<AnimatorTrigger>();
             _bossSpecsLoader = GetComponentInParent<BossSpecsLoader>();
-            _bossAttack = transform.root.FindComponentInChildWithName<BossAttack>("Sword");
+            _bossAttack = transform.root.GetComponentInChildren<BossAttack>();
             _animationEventListener = GetComponent<AnimationEventListener>();
             _animationEventListener.SetupAnimatorTrigger(onEndAttackAction:  OnAnimationEnded);
             _baseDamage = _bossSpecsLoader.BossSpecs.DamageSpecs[_baseDamageXmlId];
@@ -40,17 +40,19 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         public virtual void SwitchState()
         {
             _bossStateMachine.ChangeState(GetRandomPauseState());
-            _bossAttack.EndAttack();
+            if (_bossAttack != null)
+            {
+                _bossAttack.EndAttack();
+            }
         }
 
-        protected virtual HarbingerOfDeathState GetRandomPauseState()
+        protected virtual Enum GetRandomPauseState()
         {
-            return (HarbingerOfDeathState)_possiblePauseStates[Random.Range(0, _possiblePauseStates.Count)];
+            return _possiblePauseStates[Random.Range(0, _possiblePauseStates.Count)];
         }
 
         public virtual void StartState(BossStateMachine bossStateMachine)
         {
-            _bossAttack.SetExtraBaseDamage(_baseDamage);
             _bossStateMachine = bossStateMachine;
             ShouldDelayAttack();
         }
@@ -69,10 +71,20 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 
         protected virtual void Attack()
         {
-            _animatorTrigger.StartAnimation();
+            if (_bossAttack != null)
+            {
+                _bossAttack.StartAttack();
+                _bossAttack.SetExtraBaseDamage(_baseDamage);
+            }
+            StartAnimation();
         }
 
         protected virtual void DelayedAttack()
+        {
+            StartAnimation();
+        }
+
+        protected void StartAnimation()
         {
             _animatorTrigger.StartAnimation();
         }

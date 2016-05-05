@@ -17,7 +17,7 @@ namespace Assets.Scripts.Movement
 
         void Update()
         {
-            if (CanLook)
+            if (CanLook && _target != null)
             {
                 Vector3 lookAtPosition = new Vector3(_target.transform.position.x, transform.position.y, _target.transform.position.z);
                 Vector3 lookRotation = Quaternion.LookRotation(lookAtPosition - transform.position).eulerAngles;

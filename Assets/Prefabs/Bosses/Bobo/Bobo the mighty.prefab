@@ -1430,6 +1430,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685d00d6ed134424380de18c415d58c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BossSpecs:
+    MovementSpecs: []
+    DamageSpecs: 
+    PauseTimeSpecs: []
+    SpecialSpecs: []
   BossId: 2
 --- !u!114 &114000011005467774
 MonoBehaviour:
@@ -1442,7 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77eca03aec2bf9c4b9d8bf549f3ae5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LookTarget: {fileID: 0}
+  TargetTag: Player
   LookTime: 1
   CanLook: 1
 --- !u!114 &114000011032503626
@@ -1492,6 +1497,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca0809a8e5c9bd4e9192682418ad107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animatorTrigger: {fileID: 0}
+  _bossStateMachine: {fileID: 0}
+  _bossAttack: {fileID: 0}
+  _baseDamage: 0
+  _baseDamageXmlId: 1
+  _attackDelay: 0
+  _bossSpecsLoader: {fileID: 0}
+  _animationEventListener: {fileID: 0}
 --- !u!114 &114000012683470374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1544,6 +1557,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3421d618044390a409e28f715c3b3aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeToFollow: 0
+  _moveForward: {fileID: 0}
+  _bossStateMachine: {fileID: 0}
+  _bossSpecsLoader: {fileID: 0}
 --- !u!114 &114000013890328922
 MonoBehaviour:
   m_ObjectHideFlags: 1
