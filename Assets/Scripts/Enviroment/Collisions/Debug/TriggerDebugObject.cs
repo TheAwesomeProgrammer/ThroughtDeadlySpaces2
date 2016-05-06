@@ -8,21 +8,21 @@ public class TriggerDebugObject : Trigger
         Tags.Add("Debug");
     }
 
-    public override void OnEnter()
+    public override void OnEnterWithTag()
     {
-        base.OnEnter();
+        base.OnEnterWithTag();
         Debug.Log("Entering trigger. Object : "+_triggerCollider);
     }
 
-    public override void OnStay()
+    public override void OnStayWithTag()
     {
-        base.OnStay();
+        base.OnStayWithTag();
         Debug.Log("Staying in trigger. Object : " + _triggerCollider);
     }
 
-    public override void OnExit()
+    public override void OnExitWithTag()
     {
-        base.OnExit();
+        base.OnExitWithTag();
         Debug.Log("Exiting trigger. Object : " + _triggerCollider);
     }
 }

@@ -60,9 +60,9 @@ namespace Assets.Scripts.Player
             _animatorTrigger.End();
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             if (_abillityTiming.Active && IsAttackerInFrontOfPlayer(_triggerCollider.transform.position))
             {
                 Attackable attacker = _triggerCollider.GetComponent<Attackable>();
@@ -83,9 +83,9 @@ namespace Assets.Scripts.Player
             return Mathf.Abs(angleToAttacker - forwardAngle) < InFrontOfPlayerAngle;
         }
 
-        public override void OnExit()
+        public override void OnExitWithTag()
         {
-            base.OnExit();
+            base.OnExitWithTag();
             if (_abillityTiming.Active)
             {
                 Attackable attacker = _triggerCollider.GetComponent<Attackable>();
@@ -95,8 +95,11 @@ namespace Assets.Scripts.Player
 
         private void RemoveAndEnableAttacker(Attackable attacker)
         {
-            attacker.EnableAttack();
-            _stoppedAttackers.Remove(attacker);
+            if (attacker != null)
+            {
+                attacker.EnableAttack();
+                _stoppedAttackers.Remove(attacker);
+            }
         }
 
      

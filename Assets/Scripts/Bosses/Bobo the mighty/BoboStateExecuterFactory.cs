@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks;
+using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Movement;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Pausers;
 using Assets.Scripts.Bosses.Harbinger_of_death;
@@ -23,9 +24,9 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty
                 case BoboState.RapidFrenzy:
                     break;
                 case BoboState.MinionSpawn:
-                    break;
+                    return GetComponentInChildren<BoboMinionSpawnExecuter>();
                 case BoboState.Suck:
-                    break;
+                    return GetComponentInChildren<BoboSuckExecuter>();
                 case BoboState.Jump:
                     return GetComponentInChildren<BoboJumpExecuter>(); 
                 case BoboState.AcidSpit:

@@ -13,15 +13,15 @@ namespace Assets.Scripts.Enviroment.Map.Rooms.EventTriggers
             _roomInParent = GetComponentInParent<Room>();
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _roomInParent.IsPlayerInRoom = true;
         }
 
-        public override void OnExit()
+        public override void OnExitWithTag()
         {
-            base.OnExit();
+            base.OnExitWithTag();
             _roomInParent.IsPlayerInRoom = false;
         }
     }

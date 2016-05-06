@@ -14,9 +14,9 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
             _largeHeartPotionExecute = new LargeHeartPotionExecute();
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _largeHeartPotionExecute.Execute(_triggerCollider.gameObject);
         }
     }

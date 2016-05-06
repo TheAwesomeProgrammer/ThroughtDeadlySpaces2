@@ -9,9 +9,9 @@ public abstract class EventTrigger : Trigger
     public bool TriggerOnStay { get; set; }
     public bool TriggerOnExit { get; set; }
 
-    public override void OnEnter()
+    public override void OnEnterWithTag()
     {
-        base.OnEnter();
+        base.OnEnterWithTag();
         if (TriggerOnEnter)
         {
             DoEvent();
@@ -19,9 +19,9 @@ public abstract class EventTrigger : Trigger
         }
     }
 
-    public override void OnStay()
+    public override void OnStayWithTag()
     {
-        base.OnStay();
+        base.OnStayWithTag();
         if (TriggerOnStay)
         {
             DoEvent();
@@ -29,9 +29,9 @@ public abstract class EventTrigger : Trigger
         }
     }
 
-    public override void OnExit()
+    public override void OnExitWithTag()
     {
-        base.OnExit();
+        base.OnExitWithTag();
         if (TriggerOnExit)
         {
             DoEvent();

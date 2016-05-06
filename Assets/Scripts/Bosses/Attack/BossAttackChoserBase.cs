@@ -6,6 +6,14 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
     public abstract class BossAttackChoserBase : Trigger, BossStateExecuter
     {
+        public bool PlayerInRange
+        {
+            get
+            {
+                return _isPlayerInRange;
+            }
+        }
+
         protected PossibleAttacks _possibleAttacks;
 
         private bool _isPlayerInRange;
@@ -17,15 +25,15 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             Tags.Add("Player");
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _isPlayerInRange = true;
         }
 
-        public override void OnExit()
+        public override void OnExitWithTag()
         {
-            base.OnExit();
+            base.OnExitWithTag();
             _isPlayerInRange = false;
         }
 

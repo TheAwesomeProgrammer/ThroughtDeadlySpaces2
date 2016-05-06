@@ -13,10 +13,9 @@ namespace Assets.Scripts.Player.Swords
         private float _attackSpeed;
         private float _attackTimer;
 
-        public CombatAttacker(Collider collider, float attackSpeed)
+        public CombatAttacker(Damageable damageable, float attackSpeed)
         {
-            Collider = collider;
-            _damageable = collider.GetComponent<Damageable>();
+            _damageable = damageable;
             _attackSpeed = attackSpeed;
         }
 

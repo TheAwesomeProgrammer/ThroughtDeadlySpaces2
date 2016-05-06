@@ -17,9 +17,9 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
             _dexterityPotionExecute = new DexterityPotionExecute(DexterityToGive);
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _dexterityPotionExecute.Execute(_triggerCollider.gameObject);
         }
     }

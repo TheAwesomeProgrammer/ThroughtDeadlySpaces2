@@ -13,15 +13,15 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses
             Tags.Add("Player");
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _rigidbody.isKinematic = true;
         }
 
-        public override void OnExit()
+        public override void OnExitWithTag()
         {
-            base.OnExit();
+            base.OnExitWithTag();
             _rigidbody.isKinematic = false;
         }
     }

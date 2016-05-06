@@ -17,9 +17,9 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
             _speedPotionExecute = new SpeedPotionExecute(SpeedToGive);
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _speedPotionExecute.Execute(_triggerCollider.gameObject);
         }
     }

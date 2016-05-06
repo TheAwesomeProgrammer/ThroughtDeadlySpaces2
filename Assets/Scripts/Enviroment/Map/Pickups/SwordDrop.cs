@@ -17,9 +17,9 @@ namespace Assets.Scripts.Enviroment.Map.Pickups
             _swordExecute = new SwordExecute(SwordId);
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _swordExecute.Execute(_triggerCollider.gameObject);
         }
     }

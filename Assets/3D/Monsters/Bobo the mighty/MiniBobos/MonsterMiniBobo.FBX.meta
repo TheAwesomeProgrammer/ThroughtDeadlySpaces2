@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: a51ace80b677d9d4893737ddbbce9bf1
+timeCreated: 1462532915
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CATRigHib
+    100002: CATRigHub004
+    100004: CATRigjar
+    100006: CATRigLLeg1
+    100008: CATRigLLeg1 1
+    100010: CATRigLLeg2
+    100012: CATRigLLeg2 1
+    100014: CATRigLLegLAnkle
+    100016: CATRigLLegLAnkle 1
+    100018: CATRigLLegPlatform
+    100020: CATRigLLegPlatform 1
+    100022: CATRigRLeg1
+    100024: CATRigRLeg1 1
+    100026: CATRigRLeg2
+    100028: CATRigRLeg2 1
+    100030: CATRigRLegPlatform
+    100032: CATRigRLegPlatform 1
+    100034: CATRigRLegRAnkle
+    100036: CATRigRLegRAnkle 1
+    100038: CATRigShoulder
+    100040: CATRigSpine1
+    100042: CATRigSpine1 1
+    100044: CATRigSpine2
+    100046: CATRigSpine2 1
+    100048: Character001
+    100050: Cylinder001
+    100052: //RootNode
+    400000: CATRigHib
+    400002: CATRigHub004
+    400004: CATRigjar
+    400006: CATRigLLeg1
+    400008: CATRigLLeg1 1
+    400010: CATRigLLeg2
+    400012: CATRigLLeg2 1
+    400014: CATRigLLegLAnkle
+    400016: CATRigLLegLAnkle 1
+    400018: CATRigLLegPlatform
+    400020: CATRigLLegPlatform 1
+    400022: CATRigRLeg1
+    400024: CATRigRLeg1 1
+    400026: CATRigRLeg2
+    400028: CATRigRLeg2 1
+    400030: CATRigRLegPlatform
+    400032: CATRigRLegPlatform 1
+    400034: CATRigRLegRAnkle
+    400036: CATRigRLegRAnkle 1
+    400038: CATRigShoulder
+    400040: CATRigSpine1
+    400042: CATRigSpine1 1
+    400044: CATRigSpine2
+    400046: CATRigSpine2 1
+    400048: Character001
+    400050: Cylinder001
+    400052: //RootNode
+    4300000: Cylinder001
+    7400000: RunMiniBobo
+    7400002: FlyMiniBobo
+    9500000: //RootNode
+    13700000: Cylinder001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: RunMiniBobo
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CATRigHib
+        weight: 1
+      - path: CATRigHib/CATRigLLeg1
+        weight: 1
+      - path: CATRigHib/CATRigLLeg1/CATRigLLeg2
+        weight: 1
+      - path: CATRigHib/CATRigLLeg1/CATRigLLeg2/CATRigLLegLAnkle
+        weight: 1
+      - path: CATRigHib/CATRigRLeg1
+        weight: 1
+      - path: CATRigHib/CATRigRLeg1/CATRigRLeg2
+        weight: 1
+      - path: CATRigHib/CATRigRLeg1/CATRigRLeg2/CATRigRLegRAnkle
+        weight: 1
+      - path: CATRigHib/CATRigSpine1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigLLeg1 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigLLeg1 1/CATRigLLeg2
+          1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigLLeg1 1/CATRigLLeg2
+          1/CATRigLLegLAnkle 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigRLeg1 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigRLeg1 1/CATRigRLeg2
+          1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigRLeg1 1/CATRigRLeg2
+          1/CATRigRLegRAnkle 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1/CATRigSpine2
+          1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub004
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub004/CATRigjar
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigLLegPlatform 1
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform 1
+        weight: 1
+      - path: Character001
+        weight: 1
+      - path: Cylinder001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FlyMiniBobo
+      takeName: Take 001
+      firstFrame: 80
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CATRigHib
+        weight: 1
+      - path: CATRigHib/CATRigLLeg1
+        weight: 1
+      - path: CATRigHib/CATRigLLeg1/CATRigLLeg2
+        weight: 1
+      - path: CATRigHib/CATRigLLeg1/CATRigLLeg2/CATRigLLegLAnkle
+        weight: 1
+      - path: CATRigHib/CATRigRLeg1
+        weight: 1
+      - path: CATRigHib/CATRigRLeg1/CATRigRLeg2
+        weight: 1
+      - path: CATRigHib/CATRigRLeg1/CATRigRLeg2/CATRigRLegRAnkle
+        weight: 1
+      - path: CATRigHib/CATRigSpine1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigLLeg1 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigLLeg1 1/CATRigLLeg2
+          1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigLLeg1 1/CATRigLLeg2
+          1/CATRigLLegLAnkle 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigRLeg1 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigRLeg1 1/CATRigRLeg2
+          1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigRLeg1 1/CATRigRLeg2
+          1/CATRigRLegRAnkle 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1/CATRigSpine2
+          1
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub004
+        weight: 1
+      - path: CATRigHib/CATRigSpine1/CATRigSpine2/CATRigShoulder/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub004/CATRigjar
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigLLegPlatform 1
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform 1
+        weight: 1
+      - path: Character001
+        weight: 1
+      - path: Cylinder001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

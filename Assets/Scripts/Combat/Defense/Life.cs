@@ -53,7 +53,7 @@ public class Life : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         if (Death != null)
         {

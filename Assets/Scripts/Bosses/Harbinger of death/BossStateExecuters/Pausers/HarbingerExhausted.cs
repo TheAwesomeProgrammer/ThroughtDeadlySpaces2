@@ -16,13 +16,13 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         public override void StartState(BossStateMachine bossStateMachine)
         {
             base.StartState(bossStateMachine);
-            _lookAtTargetXz.CanLook = false;
+            _lookAtTargetXz.StopLooking();
         }
 
         public override void EndState(BossStateMachine bossStateMachine)
         {
             base.EndState(bossStateMachine);
-            _lookAtTargetXz.CanLook = true;
+            _lookAtTargetXz.StartLooking();
         }
     }
 }

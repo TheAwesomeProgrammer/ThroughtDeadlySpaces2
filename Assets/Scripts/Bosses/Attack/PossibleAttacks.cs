@@ -16,12 +16,12 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             _possibleRangedAttacks = new List<Enum>();
         }
 
-        public Enum GetRandomMeleeAttackState()
+        public virtual Enum GetRandomMeleeAttackState()
         {
             return _possibleMeleeAttacks[Random.Range(0, _possibleMeleeAttacks.Count)];
         }
 
-        public Enum GetRandomRangedAttackState()
+        public virtual Enum GetRandomRangedAttackState()
         {
             return _possibleRangedAttacks[Random.Range(0, _possibleRangedAttacks.Count)];
         }

@@ -6,7 +6,7 @@ public interface Collisionable
     List<string> Tags { get; set; }
     CollisionType CollisionType { get; set; }
 
-    void OnEnter();
-    void OnStay();
-    void OnExit();
+    void OnEnterWithTag();
+    void OnStayWithTag();
+    void OnExitWithTag();
 }

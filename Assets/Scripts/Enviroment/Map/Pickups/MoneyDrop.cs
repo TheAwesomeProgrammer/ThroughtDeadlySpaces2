@@ -15,9 +15,9 @@ public class MoneyDrop : Trigger
         _moneyExecute = new MoneyExecute(MoneyToGive);
     }
 
-    public override void OnEnter()
+    public override void OnEnterWithTag()
     {
-        base.OnEnter();
+        base.OnEnterWithTag();
         _moneyExecute.Execute(_triggerCollider.gameObject);
         Destroy(gameObject);
     }

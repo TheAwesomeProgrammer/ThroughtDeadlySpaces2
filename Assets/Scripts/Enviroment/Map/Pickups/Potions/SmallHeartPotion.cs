@@ -16,9 +16,9 @@ public class SmallHeartPotion : Trigger
         _smallHeartPotionExecute = new SmallHeartPotionExecute(HealthToGive);
     }
 
-    public override void OnEnter()
+    public override void OnEnterWithTag()
     {
-        base.OnEnter();
+        base.OnEnterWithTag();
         _smallHeartPotionExecute.Execute(_triggerCollider.gameObject);
         Destroy(gameObject);
     }

@@ -25,38 +25,46 @@ public abstract class Trigger : MonoBehaviour, Collisionable
 
     void OnTriggerEnter(Collider collider)
     {
+        CollisionType = CollisionType.Enter;
+        _triggerCollider = collider;
         if (Tags.Contains(collider.tag))
         {
-            CollisionType = CollisionType.Enter;
-            _triggerCollider = collider;
-            OnEnter();
+            OnEnterWithTag();
         }
-        
+        OnEnter();
     }
 
     void OnTriggerStay(Collider collider)
     {
+        _triggerCollider = collider;
+        CollisionType = CollisionType.Stay;
         if (Tags.Contains(collider.tag))
         {
-            CollisionType = CollisionType.Stay;
-            _triggerCollider = collider;
-            OnStay();
+            OnStayWithTag();
         }
+        OnStay();
     }
 
     void OnTriggerExit(Collider collider)
     {
+        CollisionType = CollisionType.NoCollision;
+        _triggerCollider = collider;
         if (Tags.Contains(collider.tag))
         {
-            CollisionType = CollisionType.NoCollision;
-            _triggerCollider = collider;
-            OnExit();
+            OnExitWithTag();
         }
+        OnExit();
     }
 
-    public virtual void OnEnter(){}
+    public virtual void OnEnterWithTag(){}
 
-    public virtual void OnStay(){}
+    public virtual void OnStayWithTag(){}
 
-    public virtual void OnExit(){}
+    public virtual void OnExitWithTag(){}
+
+    public virtual void OnEnter() { }
+
+    public virtual void OnStay() { }
+
+    public virtual void OnExit() { }
 }

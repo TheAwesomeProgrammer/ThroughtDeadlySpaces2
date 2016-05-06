@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 {
-    public class BossDamageTrigger : DamageTrigger
+    public class BossDamageTrigger : PlayerDamageTrigger
     {
         protected override void Start()
         {

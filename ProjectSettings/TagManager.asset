@@ -18,6 +18,7 @@ TagManager:
   - BeamSpawn
   - Collision
   - Floor
+  - BoboMinion
   layers:
   - Default
   - TransparentFX

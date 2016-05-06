@@ -17,9 +17,9 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
             _strengthPotionExecute = new StrengthPotionExecute(StrengthToGive);
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             _strengthPotionExecute.Execute(_triggerCollider.gameObject);
         }
     }

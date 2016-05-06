@@ -6,23 +6,38 @@ namespace Assets.Scripts.Movement
     {
         public string TargetTag = "Player";
         public float LookTime;
-        public bool CanLook = true;
 
         private Transform _target;
+        private bool _canLook;
 
         void Start()
         {
-            _target = GameObject.FindGameObjectWithTag(TargetTag).transform;
+            _canLook = true;
+            GameObject targetObject = GameObject.FindGameObjectWithTag(TargetTag);
+            if (targetObject != null)
+            {
+                _target = targetObject.transform;
+            }
         }
 
         void Update()
         {
-            if (CanLook && _target != null)
+            if (_canLook && _target != null)
             {
                 Vector3 lookAtPosition = new Vector3(_target.transform.position.x, transform.position.y, _target.transform.position.z);
                 Vector3 lookRotation = Quaternion.LookRotation(lookAtPosition - transform.position).eulerAngles;
                 LeanTween.rotate(gameObject, lookRotation, LookTime);
             }
+        }
+
+        public void StopLooking()
+        {
+            _canLook = false;
+        }
+
+        public void StartLooking()
+        {
+            _canLook = true;
         }
     }
 }

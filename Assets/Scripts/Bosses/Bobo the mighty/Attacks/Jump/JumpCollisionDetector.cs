@@ -33,9 +33,9 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             _enabled = false;
         }
 
-        public override void OnEnter()
+        public override void OnEnterWithTag()
         {
-            base.OnEnter();
+            base.OnEnterWithTag();
             if (_enabled)
             {
                 GameObject spawnedObject = _projectileSpawner.Spawn(_aoeSpawnPoint.position,

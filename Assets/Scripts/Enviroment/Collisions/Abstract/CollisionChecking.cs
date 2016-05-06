@@ -31,7 +31,7 @@ public abstract class CollisionChecking : MonoBehaviour, Collisionable
             _collisionObject = collision;
             _otherCollider = _collisionObject.collider;
             CollisionType = CollisionType.Enter;
-            OnEnter();
+            OnEnterWithTag();
         }
     }
 
@@ -42,7 +42,7 @@ public abstract class CollisionChecking : MonoBehaviour, Collisionable
             _collisionObject = collision;
             _otherCollider = _collisionObject.collider;
             CollisionType = CollisionType.Stay;
-            OnStay();
+            OnStayWithTag();
         }
     }
 
@@ -53,13 +53,13 @@ public abstract class CollisionChecking : MonoBehaviour, Collisionable
             _collisionObject = collision;
             _otherCollider = _collisionObject.collider;
             CollisionType = CollisionType.NoCollision;
-            OnExit();
+            OnExitWithTag();
         }
     }
 
-    public virtual void OnEnter(){}
+    public virtual void OnEnterWithTag(){}
 
-    public virtual void OnStay(){}
+    public virtual void OnStayWithTag(){}
 
-    public virtual void OnExit(){}
+    public virtual void OnExitWithTag(){}
 }
