@@ -91,9 +91,12 @@ namespace Assets.Scripts.Quest
         {
             Room activeRoom = _map.GetActiveRoom();
             RewardSpawner rewardSpawner = activeRoom.GetComponentInChildren<RewardSpawner>();
-            foreach (var quest in _questGiverProperties.QuestPropertieses)
+            if (rewardSpawner)
             {
-                quest.Reward.SpawnReward(rewardSpawner);
+                foreach (var quest in _questGiverProperties.QuestPropertieses)
+                {
+                    quest.Reward.SpawnReward(rewardSpawner);
+                }
             }
         }
 
