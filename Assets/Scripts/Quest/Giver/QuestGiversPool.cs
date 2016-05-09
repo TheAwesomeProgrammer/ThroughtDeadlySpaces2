@@ -23,13 +23,13 @@ namespace Assets.Scripts.Quest
         {
             for (int i = 0; i < NumberOfQuestGivers; i++)
             {
-                CreateDisabledQuestGiverWithRandomId();
+                CreateDisabledQuestGiverWithRandomId(i);
             }
         }
 
-        private static QuestGiver CreateDisabledQuestGiverWithRandomId()
+        private static QuestGiver CreateDisabledQuestGiverWithRandomId(int id)
         {
-            QuestGiver createdQuestGiver = CreateQuestGiverWithRandomId();
+            QuestGiver createdQuestGiver = CreateQuestGiverWithId(id);
             DeactivateQuestGiver(createdQuestGiver);
             return createdQuestGiver;
         }
@@ -40,10 +40,10 @@ namespace Assets.Scripts.Quest
             createdQuestGiver.gameObject.hideFlags = HideFlags.HideInHierarchy;
         }
 
-        public static QuestGiver CreateQuestGiverWithRandomId()
+        public static QuestGiver CreateQuestGiverWithId(int id)
         {
             QuestGiver questGiver = _generateQuestGivers.Generate<QuestGiver>(1)[0];
-            questGiver.Id = Random.Range(0, NumberOfQuestGivers);
+            questGiver.Id = id;
             _questGivers.Add(questGiver);
             return questGiver;
         }

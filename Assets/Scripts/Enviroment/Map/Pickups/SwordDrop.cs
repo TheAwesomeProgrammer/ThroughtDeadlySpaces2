@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups
 {
-    public class SwordDrop : Trigger
+    public class SwordDrop : Pickup
     {
         public int SwordId;
 
@@ -14,14 +14,13 @@ namespace Assets.Scripts.Enviroment.Map.Pickups
         protected override void Start()
         {
             base.Start();
-            Tags.Add(Tag.PlayerCollision);
             _swordExecute = new SwordExecute(SwordId);
         }
 
-        public override void OnEnterWithTag()
+        protected override void OnPickup()
         {
-            base.OnEnterWithTag();
-            _swordExecute.Execute(_triggerCollider.gameObject);
+            base.OnPickup();
+            _swordExecute.Execute(_player);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Assets.Scripts.Quest
         private void HideAndSetActive()
         {
             UiQuestGiver uiQuestGiver = (UiQuestGiver) _uiItem;
-            _questGiverManager.SetActiveQuestGiver(uiQuestGiver.UiId);
+            uiQuestGiver.SetActiveQuestGiver(_questGiverManager);
             _uiManager.DeactivateItemWithType<UiQuestGiver>();
         }
 

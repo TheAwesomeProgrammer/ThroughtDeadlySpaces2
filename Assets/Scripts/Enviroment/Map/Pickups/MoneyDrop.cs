@@ -1,9 +1,10 @@
-﻿using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
+﻿using Assets.Scripts.Enviroment.Map.Pickups;
+using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Shop;
 using UnityEngine;
 
-public class MoneyDrop : Trigger
+public class MoneyDrop : Pickup
 {
     public int MoneyToGive;
 
@@ -12,14 +13,13 @@ public class MoneyDrop : Trigger
     protected override void Start()
     {
         base.Start();
-        Tags.Add(Tag.PlayerCollision);
         _moneyExecute = new MoneyExecute(MoneyToGive);
     }
 
-    public override void OnEnterWithTag()
+    protected override void OnPickup()
     {
-        base.OnEnterWithTag();
-        _moneyExecute.Execute(_triggerCollider.gameObject);
+        base.OnPickup();
+        _moneyExecute.Execute(_player);
         Destroy(gameObject);
     }
 }

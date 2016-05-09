@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class SpeedPotion : Trigger
+    public class SpeedPotion : Pickup
     {
         public int SpeedToGive = 1;
 
@@ -14,14 +14,13 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
         protected override void Start()
         {
             base.Start();
-            Tags.Add(Tag.PlayerCollision);
             _speedPotionExecute = new SpeedPotionExecute(SpeedToGive);
         }
 
-        public override void OnEnterWithTag()
+        protected override void OnPickup()
         {
-            base.OnEnterWithTag();
-            _speedPotionExecute.Execute(_triggerCollider.gameObject);
+            base.OnPickup();
+            _speedPotionExecute.Execute(_player);
         }
     }
 }

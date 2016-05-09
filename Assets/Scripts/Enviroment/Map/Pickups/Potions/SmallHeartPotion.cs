@@ -1,9 +1,10 @@
 ﻿using System;
+using Assets.Scripts.Enviroment.Map.Pickups;
 using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
 using UnityEngine;
 using UnityTest;
 
-public class SmallHeartPotion : Trigger
+public class SmallHeartPotion : Pickup
 {
     public int HealthToGive = 2;
 
@@ -12,14 +13,12 @@ public class SmallHeartPotion : Trigger
     protected override void Start()
     {
         base.Start();
-        Tags.Add("Debug");
         _smallHeartPotionExecute = new SmallHeartPotionExecute(HealthToGive);
     }
 
-    public override void OnEnterWithTag()
+    protected override void OnPickup()
     {
-        base.OnEnterWithTag();
-        _smallHeartPotionExecute.Execute(_triggerCollider.gameObject);
-        Destroy(gameObject);
+        base.OnPickup();
+        _smallHeartPotionExecute.Execute(_player);
     }
 }

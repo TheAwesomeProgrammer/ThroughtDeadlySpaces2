@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class StrengthPotion : Trigger
+    public class StrengthPotion : Pickup
     {
         public int StrengthToGive = 1;
 
@@ -14,14 +14,13 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
         protected override void Start()
         {
             base.Start();
-            Tags.Add(Tag.PlayerCollision);
             _strengthPotionExecute = new StrengthPotionExecute(StrengthToGive);
         }
 
-        public override void OnEnterWithTag()
+        protected override void OnPickup()
         {
-            base.OnEnterWithTag();
-            _strengthPotionExecute.Execute(_triggerCollider.gameObject);
+            base.OnPickup();
+            _strengthPotionExecute.Execute(_player);
         }
     }
 }

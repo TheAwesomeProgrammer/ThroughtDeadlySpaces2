@@ -4,21 +4,20 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class LargeHeartPoition : Trigger
+    public class LargeHeartPoition : Pickup
     {
         private LargeHeartPotionExecute _largeHeartPotionExecute;
 
         protected override void Start()
         {
             base.Start();
-            Tags.Add(Tag.PlayerCollision);
             _largeHeartPotionExecute = new LargeHeartPotionExecute();
         }
 
-        public override void OnEnterWithTag()
+        protected override void OnPickup()
         {
-            base.OnEnterWithTag();
-            _largeHeartPotionExecute.Execute(_triggerCollider.gameObject);
+            base.OnPickup();
+            _largeHeartPotionExecute.Execute(_player);
         }
     }
 }

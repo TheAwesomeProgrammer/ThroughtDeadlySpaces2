@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
 {
-    public class DexterityPotion : Trigger
+    public class DexterityPotion : Pickup
     {
         public int DexterityToGive;
 
@@ -14,14 +14,13 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.Potions
         protected override void Start()
         {
             base.Start();
-            Tags.Add(Tag.PlayerCollision);
             _dexterityPotionExecute = new DexterityPotionExecute(DexterityToGive);
         }
 
-        public override void OnEnterWithTag()
+        protected override void OnPickup()
         {
-            base.OnEnterWithTag();
-            _dexterityPotionExecute.Execute(_triggerCollider.gameObject);
+            base.OnPickup();
+            _dexterityPotionExecute.Execute(_player);
         }
     }
 }
