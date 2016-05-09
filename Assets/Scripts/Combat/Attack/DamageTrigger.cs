@@ -71,7 +71,6 @@ namespace Assets.Scripts.Player.Swords
             if (damageable != null)
             {
                 AddCombatAttacker(damageable);
-                Debug.Break();
             }
         }
 

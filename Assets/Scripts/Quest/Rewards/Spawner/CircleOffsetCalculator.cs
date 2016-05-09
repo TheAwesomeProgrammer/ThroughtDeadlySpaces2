@@ -5,7 +5,7 @@ namespace Assets.Scripts.Quest.Rewards.Spawner
     public class CircleOffsetCalculator
     {
         private const int DegreesInACircle = 360;
-        private const int DegreesPerOffset = 60;
+        private const int DegreesPerOffset = 20;
         private const float OffsetsPerCircle = DegreesInACircle / (float)DegreesPerOffset;
 
         private int _currentOffsetNumber = 0;

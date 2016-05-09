@@ -5,6 +5,7 @@ using Assets.Scripts.Xml;
 
 namespace Assets.Scripts.Quest
 {
+    [System.Serializable]
     public class QuestGiverProperties : XmlLoadable
     {
         public string Name;
@@ -25,6 +26,7 @@ namespace Assets.Scripts.Quest
 
         public QuestGiverProperties()
         {
+            QuestPropertieses = new List<QuestProperties>();
             _xmlSearcher = new XmlSearcher(Location.QuestGiver);
             LoadXml();
         }

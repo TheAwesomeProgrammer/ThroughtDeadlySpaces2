@@ -14,7 +14,7 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
 
         public void Execute(GameObject gameObject)
         {
-            Sword playerSword = gameObject.GetComponentInChildren<Sword>();
+            Sword playerSword = gameObject.transform.root.GetComponentInChildren<Sword>();
             GameObject swordObject = playerSword.gameObject;
             Object.Destroy(playerSword);
             swordObject.SetActive(false);

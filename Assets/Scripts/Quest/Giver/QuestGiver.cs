@@ -11,21 +11,33 @@ namespace Assets.Scripts.Quest
 {
     public sealed class QuestGiver : MonoBehaviour
     {
+        private QuestGiverProperties _questGiverProperties;
+        private RewardFactory _rewardFactory;
+        private XmlNode _questGiverNode;
+        private XmlSearcher _xmlSearcher;
+        private BossGenerator _bossGenerator;
+
         public int Id
         {
-            get { return _questGiverProperties.Id; }
-            set { _questGiverProperties.UiId = value; }
+            get { return QuestGiverProperties.Id; }
+            set
+            {
+                QuestGiverProperties.Id = value;
+            }
         }
 
         public int UiId
         {
-            get { return _questGiverProperties.UiId; }
-            set { _questGiverProperties.UiId = value; }
+            get { return QuestGiverProperties.UiId; }
+            set
+            {
+                QuestGiverProperties.UiId = value;
+            }
         }
 
         public int Health
         {
-            get { return _questGiverProperties.Health; }
+            get { return QuestGiverProperties.Health; }
             set
             {
                 if (value <= 0)
@@ -35,11 +47,11 @@ namespace Assets.Scripts.Quest
             }
         }
 
-        private QuestGiverProperties _questGiverProperties = new QuestGiverProperties();
-        private RewardFactory _rewardFactory;
-        private XmlNode _questGiverNode;
-        private XmlSearcher _xmlSearcher;
-        private BossGenerator _bossGenerator;
+        public QuestGiverProperties QuestGiverProperties
+        {
+            get { return _questGiverProperties ?? (_questGiverProperties = new QuestGiverProperties()); }
+            set { _questGiverProperties = value; }
+        }
 
         public void Init()
         {
