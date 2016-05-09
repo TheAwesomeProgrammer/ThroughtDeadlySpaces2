@@ -22,7 +22,7 @@ GameObject:
   - 135: {fileID: 135000012989379356}
   - 54: {fileID: 54000013677101606}
   - 114: {fileID: 114000010849135816}
-  - 114: {fileID: 114000011358748958}
+  - 114: {fileID: 114000011527820748}
   m_Layer: 0
   m_Name: AoePusher
   m_TagString: Untagged
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AliveTime: 0.5
---- !u!114 &114000011358748958
+--- !u!114 &114000011527820748
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,10 +78,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013918487668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9377a8f596edac742a281c80b614ad1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b9b9fd30b03e4f45b06e3b6a4b9fcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplodeOnStart: 1
+  PushOnStart: 1
+  PushingForce: 25000
+  OwnerRigidbody: {fileID: 0}
 --- !u!135 &135000012989379356
 SphereCollider:
   m_ObjectHideFlags: 1

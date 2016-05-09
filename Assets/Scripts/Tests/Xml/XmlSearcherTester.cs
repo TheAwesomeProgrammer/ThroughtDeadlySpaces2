@@ -9,7 +9,7 @@ namespace Assets.Scripts.Tests.Xml
 {
     public class XmlSearcherTester : MonoBehaviour
     {
-        private const string PathToTestXml = "Xml/TestXmlDocument.xml";
+        private const string PathToTestXml = "Xml/Test/XmlDocument.xml";
         private const int ItemId = 1;
         private const int SpecId = 1;
 

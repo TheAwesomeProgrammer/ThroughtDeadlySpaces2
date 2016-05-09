@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
+using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Camera_ll_UI;
+using Assets.Scripts.Enviroment.Map.Rooms;
 using Assets.Scripts.Quest.Rewards.Spawner;
 using Assets.Scripts.Xml;
 using UnityEngine;
@@ -25,59 +27,80 @@ namespace Assets.Scripts.Quest
 
         private QuestGiverProperties _questGiverProperties;
         private RewardFactory _rewardFactory;
-        private RewardSpawner _rewardSpawner;
-        
+        private XmlNode _questGiverNode;
+        private XmlSearcher _xmlSearcher;
+        private BossGenerator _bossGenerator;
+        private Map _map;
 
         public void Init()
         {
-            _questGiverProperties = new QuestGiverProperties(Id);
-            _questGiverProperties.Rewards = new List<Reward>();
+            _map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
+            _questGiverProperties = new QuestGiverProperties(Id) { QuestPropertieses = new List<QuestProperties>() };
+            _bossGenerator = GameObject.FindWithTag("Scripts").GetComponent<BossGenerator>();
             _rewardFactory = new RewardFactory();
-            _rewardSpawner = GameObject.FindGameObjectWithTag("RewardSpawner").GetComponent<RewardSpawner>();
-            InitRewards(_questGiverProperties.RewardIds);
-            SetRewardUI();
+            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
+            _questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, "QuestGivers");
+            InitQuests(_questGiverProperties.RewardIds);
+            SetQuestUI();
         }
 
-        private void SetRewardUI()
+        private void SetQuestUI()
         {
             Camera.main.GetComponent<UIManager>().ActivateItemWithTypeAndId<UiQuestGiver>(UiId);
             Camera.main.GetComponent<UIManager>().SendPropertiesToItemWithTypeAndId<UiQuestGiver>(UiId, _questGiverProperties);
         }
 
-        public void InitRewards(int[] rewardIds)
+        public void InitQuests(int[] questsIds)
         {
-            XmlSearcher rewardsXmlSearcher = new XmlSearcher(Location.Reward);
-            foreach (var rewardId in rewardIds)
+            foreach (var questId in questsIds)
             {
-                AddRewardsWithId(rewardsXmlSearcher, rewardId);
+                AddRewardsWithId(questId);
             }
         }
 
-        private void AddRewardsWithId(XmlSearcher rewardsXmlSearcher, int rewardId)
+        private void AddRewardsWithId(int rewardsId)
         {
-            XmlNode rewardNode = rewardsXmlSearcher.GetNodeInArrayWithId(rewardId, "Rewards");
+            XmlNode questsNode = _xmlSearcher.SelectChildNode(_questGiverNode, "Quests");
+            XmlNode rewardNode = _xmlSearcher.GetNodeInArrayWithId(rewardsId, questsNode);
             if (rewardNode != null)
             {
-                foreach (XmlNode rewardTypeInChildInWithNode in rewardsXmlSearcher.GetChildrensWithName(rewardNode, "Type"))
+                foreach (XmlNode rewardTypeInChildInWithNode in _xmlSearcher.GetChildrensWithName(rewardNode, "Type"))
                 {
-                    AddRewardWithId(rewardId, rewardTypeInChildInWithNode);
+                    AddQuestWithId(rewardsId, rewardTypeInChildInWithNode, questsNode);
                 }
             }
         }
 
-        private void AddRewardWithId(int rewardId, XmlNode rewardTypeInChildInWithNode)
+        private void AddQuestWithId(int rewardId, XmlNode rewardTypeInChildInWithNode, XmlNode questsNode)
         {
             int rewardTypeId = int.Parse(rewardTypeInChildInWithNode.Attributes["id"].InnerText);
-            _questGiverProperties.Rewards.Add(_rewardFactory.GetReward((RewardType) rewardTypeId, rewardId));
+            Reward reward = _rewardFactory.GetReward((RewardType) rewardTypeId, rewardId, questsNode);
+            var bossGeneratorProperties = GetBossGeneratorProperties(rewardId, questsNode);
+            _questGiverProperties.AddReward(rewardId, reward, bossGeneratorProperties);
+        }
+
+        private BossGeneratorProperties GetBossGeneratorProperties(int rewardId, XmlNode questsNode)
+        {
+            BossSpawnType bossSpawnType =
+                (BossSpawnType) _xmlSearcher.GetSpecsInChildrenWithId(rewardId, questsNode, "BossSpawn")[0];
+            BossGeneratorProperties bossGeneratorProperties = _bossGenerator.GetBoss(bossSpawnType);
+            return bossGeneratorProperties;
         }
 
         public void SpawnRewards()
         {
-            foreach (var reward in _questGiverProperties.Rewards)
+            Room activeRoom = _map.GetActiveRoom();
+            RewardSpawner rewardSpawner = activeRoom.GetComponentInChildren<RewardSpawner>();
+            foreach (var quest in _questGiverProperties.QuestPropertieses)
             {
-                reward.SpawnReward(_rewardSpawner);
+                quest.Reward.SpawnReward(rewardSpawner);
             }
         }
 
+        public GameObject SpawnBoss(Vector3 spawnPosition)
+        {
+            BossGeneratorProperties bossGeneratorProperties = _questGiverProperties.BossGeneratorProperties;
+            return Instantiate(bossGeneratorProperties.Boss, spawnPosition, Quaternion.identity) as GameObject;
+        }
     }
 }   

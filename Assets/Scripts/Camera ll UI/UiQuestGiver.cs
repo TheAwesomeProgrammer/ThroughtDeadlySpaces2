@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Quest;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ namespace Assets.Scripts.Camera_ll_UI
         //private Image _dropTypeImage;
         //private Image _pictureOfQuestGiver;
         private Text[] _rewardTexts;
+        private Text _targetText;
+        private Text _difficultyText;
 
         protected override void OnActivate()
         {
@@ -20,6 +23,8 @@ namespace Assets.Scripts.Camera_ll_UI
             _rewardTexts[0] = transform.FindComponentInChildWithName<Text>("Reward1");
             _rewardTexts[1] = transform.FindComponentInChildWithName<Text>("Reward2");
             _rewardTexts[2] = transform.FindComponentInChildWithName<Text>("Reward3");
+            _targetText = transform.FindComponentInChildWithName<Text>("Target");
+            _difficultyText = transform.FindComponentInChildWithName<Text>("Difficulty");
         }
 
         public void SetActiveQuestGiver(QuestGiverManager questGiverManager)
@@ -32,40 +37,49 @@ namespace Assets.Scripts.Camera_ll_UI
             QuestGiverProperties questGiverProperties = (QuestGiverProperties)properties[0];
             _title.text = questGiverProperties.Name + "(" + questGiverProperties.Health + ")";
             UiId = questGiverProperties.Id;
-            List<Reward> rewards = questGiverProperties.Rewards;
+            List<QuestProperties> rewards = questGiverProperties.QuestPropertieses;
+            AddBossGenerationPropertiesText(rewards, questGiverProperties);
             SetRewardTexts(rewards, questGiverProperties);
         }
 
-        private void SetRewardTexts(List<Reward> rewards, QuestGiverProperties questGiverProperties)
+        private void AddBossGenerationPropertiesText(List<QuestProperties> rewards, QuestGiverProperties questGiverProperties)
         {
-            for (int i = 0; i < rewards.Count; i++)
+            BossGeneratorProperties bossGeneratorProperties =
+                rewards[questGiverProperties.CurrentQuestId].BossGeneratorProperties;
+            _targetText.text = bossGeneratorProperties.Name;
+            _difficultyText.text = bossGeneratorProperties.Difficulty.ToString();
+        }
+
+        private void SetRewardTexts(List<QuestProperties> rewards, QuestGiverProperties questGiverProperties)
+        {
+            for (int i = 1; i <= questGiverProperties.RewardIds.Length; i++)
             {
-                var rewardText = GetRewardText(questGiverProperties, i);
-                _rewardTexts[i].text = rewardText;
+                var rewardText = GetRewardText(rewards, i);
+                _rewardTexts[i-1].text = rewardText;
             }
         }
 
-        private string GetRewardText(QuestGiverProperties questGiverProperties, int i)
+        private string GetRewardText(List<QuestProperties> rewards, int index)
         {
             string rewardText = "";
 
-            foreach (var rewardWithId in GetRewardsWithId(questGiverProperties, i))
+            foreach (var rewardWithId in GetRewardsWithId(rewards, index))
             {
-                rewardText += rewardWithId + ", ";
+                rewardText += rewardWithId.Reward + ", ";
             }
 
             return rewardText;
         }
 
-        private List<Reward> GetRewardsWithId(QuestGiverProperties questGiverProperties, int index)
+        private List<QuestProperties> GetRewardsWithId(List<QuestProperties> rewards, int index)
         {
-            List<Reward> rewardsWithId = new List<Reward>();
+            List<QuestProperties> rewardsWithId = new List<QuestProperties>();
 
-            foreach (Reward reward in questGiverProperties.Rewards)
+            foreach (var rewardSet in rewards)
             {
-                if (reward.RewardId == questGiverProperties.RewardIds[index])
+                if (rewardSet.Id == index)
                 {
-                    rewardsWithId.Add(reward);
+                    rewardsWithId.Add(rewardSet);
                 }
             }
 

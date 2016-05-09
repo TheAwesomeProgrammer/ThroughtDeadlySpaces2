@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAxis ZAxis;
 
     private Vector3 _moveDirection;
-    private Vector3 _rotationDirection;
+    private Vector3 _inputDirection;
 
 
     // Use this for initialization
@@ -38,43 +38,39 @@ public class PlayerMovement : MonoBehaviour
 
     void SetXAxis(float x)
     {
-        if (CanMove)
-        {
-            _rotationDirection.x = x;
-        }
-
+        _inputDirection.x = x;
     }
 
     void SetZAxis(float z)
     {
-        if (CanMove)
-        {
-            _rotationDirection.z = z;
-        }
+        _inputDirection.z = z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (CanMove)
+        {
+            Move();
+        }
     }
 
     private void Move()
     {
         _moveDirection = Vector3.zero;
 
-        if (_rotationDirection.magnitude > 0.5f){
+        if (_inputDirection.magnitude > 0.5f){
             
             _moveDirection = -transform.forward *_playerProperties.Speed;
-            _movementRotater.SetRotation(_rotationDirection);
+            _movementRotater.SetRotation(_inputDirection);
         }
 
         _moveDirection.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = (_moveDirection);
 
-        _movementAnimator.SetAnimatorSpeed(_rotationDirection);
+        _movementAnimator.SetAnimatorSpeed(_inputDirection);
 
-        _moveDirection = Vector3.zero;
+        _inputDirection = Vector3.zero;
     }
 }

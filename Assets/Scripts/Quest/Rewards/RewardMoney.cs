@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Quest.Rewards.Spawner;
+﻿using System.Xml;
+using Assets.Scripts.Quest.Rewards.Spawner;
 
 namespace Assets.Scripts.Quest.Rewards
 {
@@ -6,7 +7,7 @@ namespace Assets.Scripts.Quest.Rewards
     {
         private int _money;
 
-        public RewardMoney(int rewardTypeId, int rewardId) : base(rewardTypeId, rewardId)
+        public RewardMoney(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
         {
         }
 

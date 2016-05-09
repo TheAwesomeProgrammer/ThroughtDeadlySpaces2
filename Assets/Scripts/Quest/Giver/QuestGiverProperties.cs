@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
+using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Xml;
 
 namespace Assets.Scripts.Quest
@@ -9,9 +10,15 @@ namespace Assets.Scripts.Quest
         public string Name;
         public int Health;
         public DropType DropType;
-        public List<Reward> Rewards;
+        public List<QuestProperties> QuestPropertieses;
+
+        public BossGeneratorProperties BossGeneratorProperties
+        {
+            get { return QuestPropertieses[CurrentQuestId].BossGeneratorProperties; }
+        }
         public int[] RewardIds;
         public int Id;
+        public int CurrentQuestId;
 
         private static int _id;
 
@@ -24,6 +31,11 @@ namespace Assets.Scripts.Quest
             LoadXml();
         }
 
+        public void AddReward(int id, Reward reward, BossGeneratorProperties bossGeneratorProperties)
+        {
+            QuestPropertieses.Add(new QuestProperties(reward, id, bossGeneratorProperties));
+        }
+
         public void LoadXml()
         {
             XmlNode questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, "QuestGivers");
@@ -34,7 +46,7 @@ namespace Assets.Scripts.Quest
         public void SetSpecs(XmlNode questGiverNode)
         {
             int[] specs = _xmlSearcher.GetSpecsInNode(questGiverNode);
-            RewardIds = _xmlSearcher.GetSpecsInNode(questGiverNode, "Rewards");
+            RewardIds = new[] {1, 2, 3};
             DropType = (DropType) specs[0];
             Health = specs[1];
         }

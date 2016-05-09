@@ -17,7 +17,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Pausers
             base.Start();
             _movementState = BoboState.Movement;
             _bossSpecsLoader = GetComponentInParent<BossSpecsLoader>();
-            _lookAtTargetXz = transform.root.FindComponentInChildWithTag<LookAtTargetXz>("Collision");
+            _lookAtTargetXz = transform.root.FindComponentInChildWithTag<LookAtTargetXz>("EnemyCollision");
             SetupWaitTimeSets();
         }
 

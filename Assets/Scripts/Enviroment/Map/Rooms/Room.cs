@@ -1,19 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-public class Room : MonoBehaviour
+public abstract class Room : MonoBehaviour
 {
     public event Action MoveToNextRoom;
     public bool IsPlayerInRoom;
 
-    public Transform TunnelSpawnTransform;
-    public Transform RewardSpawnTransform;
+    public Transform RoomSpawnTransform;
 
-    private RoomWithTunnelObjectSpawner _roomWithTunnelObjectSpawnerChild;
+    private RoomObjectSpawner _roomObjectSpawner;
 
     void Start()
     {
-        _roomWithTunnelObjectSpawnerChild = GetComponentInChildren<RoomWithTunnelObjectSpawner>();
+        _roomObjectSpawner = GetComponentInChildren<RoomObjectSpawner>();
     }
 
     public void OnMoveToNextRoom()
@@ -23,6 +22,16 @@ public class Room : MonoBehaviour
             MoveToNextRoom();
         }
 
-        _roomWithTunnelObjectSpawnerChild.Spawn(TunnelSpawnTransform.position);
+        _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
+    }
+
+    public virtual void OnPlayerJustEnteredRoom()
+    {
+        
+    }
+
+    public virtual void OnJustSpawned()
+    {
+        
     }
 }

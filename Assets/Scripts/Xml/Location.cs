@@ -5,11 +5,9 @@
         Sword,
         Curse,
         Blessing,
-        Reward,
         QuestGiver,
         Shop,
         Armor,
         Boss
-        
     }
 }

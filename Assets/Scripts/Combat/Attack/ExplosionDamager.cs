@@ -5,14 +5,14 @@ namespace Assets.Scripts.Combat.Attack
 {
     public class ExplosionDamager : MonoBehaviour
     {
-        private ExplosionPusher _explosionPusher;
+        private RadiusPusher _radiusPusher;
         private BossAttack _bossAttack;
 
         void Awake()
         {
             _bossAttack = GetComponent<BossAttack>();
-            _explosionPusher = GetComponent<ExplosionPusher>();
-            _explosionPusher.Explosion += _bossAttack.StartAttack;
+            _radiusPusher = GetComponent<RadiusPusher>();
+            _radiusPusher.Pushing += _bossAttack.StartAttack;
         }
     }
 }

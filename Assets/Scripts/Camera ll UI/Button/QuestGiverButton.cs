@@ -13,6 +13,7 @@ namespace Assets.Scripts.Quest
         private UiItem _uiItem;
         private UIManager _uiManager;
         private Map _map;
+
         protected override void Start()
         {
             base.Start();
@@ -25,10 +26,23 @@ namespace Assets.Scripts.Quest
         protected override void OnClick()
         {
             base.OnClick();
-            UiQuestGiver uiQuestGiver = (UiQuestGiver)_uiItem;
+            HideAndSetActive();
+            UnlockDoorInActiveRoom();
+            SetInteractableToUsed();
+        }
+
+        private void UnlockDoorInActiveRoom()
+        {
+            Room activeRoom = _map.GetActiveRoom();
+            Door door = activeRoom.GetComponentInChildren<Door>();
+            door.UnLock();
+        }
+
+        private void HideAndSetActive()
+        {
+            UiQuestGiver uiQuestGiver = (UiQuestGiver) _uiItem;
             _questGiverManager.SetActiveQuestGiver(uiQuestGiver.UiId);
             _uiManager.DeactivateItemWithType<UiQuestGiver>();
-            SetInteractableToUsed();
         }
 
         protected override void OnEnter(BaseEventData eventData)

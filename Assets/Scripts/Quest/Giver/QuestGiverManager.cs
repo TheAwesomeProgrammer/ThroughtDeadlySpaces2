@@ -21,7 +21,7 @@ namespace Assets.Scripts.Quest
             }
         }
 
-        private static bool IsChosen(int id, int questGiverId)
+        private bool IsChosen(int id, int questGiverId)
         {
             return questGiverId == id;
         }
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Quest
             ActiveQuestGiver = questGiver;
         }
 
-        private static void NotChosen(QuestGiver questGiver)
+        private void NotChosen(QuestGiver questGiver)
         {
             questGiver.Health--;
             QuestGiversPool.DeactivateQuestGiver(questGiver);

@@ -5,11 +5,9 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
 {
     public class BoboJumpExecuter : BossAttackBase
     {
-        public GameObject AoePusher;
-
         private const float StartDelay = 1f;
 
-        private const float JumpForce = 2000;
+        private const float JumpForce = 10;
 
         private Rigidbody _boboRigidbody;
         private JumpCollisionDetector _jumpCollisionDetector;
@@ -18,7 +16,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         {
             _baseDamageXmlId = 1;
             base.Start();
-            _boboRigidbody = transform.root.FindComponentInChildWithTag<Rigidbody>("Collision");
+            _boboRigidbody = transform.root.FindComponentInChildWithTag<Rigidbody>("EnemyCollision");
             _jumpCollisionDetector = _boboRigidbody.GetComponent<JumpCollisionDetector>();
             _possiblePauseStates.Add(BoboState.Idle);
         }
@@ -27,12 +25,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         {
             base.Attack();
             Timer.Start(StartDelay, Jump);
-            //Instantiate(AoePusher, transform.position, Quaternion.identity);
         }
 
         void Jump()
         {
-            _boboRigidbody.AddRelativeForce(new Vector3(0, 0.4f, 1) * JumpForce, ForceMode.Impulse);
+            _boboRigidbody.AddRelativeForce(new Vector3(0, 0.4f, 1) * JumpForce, ForceMode.VelocityChange);
             _jumpCollisionDetector.Enable(_baseDamage);
         }
 

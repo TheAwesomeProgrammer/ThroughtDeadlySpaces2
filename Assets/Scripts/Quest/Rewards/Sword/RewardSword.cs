@@ -11,7 +11,7 @@ namespace Assets.Scripts.Quest
         public string SwordName;
         public int[] SwordDamageSpecs;
 
-        public RewardSword(int rewardTypeId, int rewardId) : base(rewardTypeId, rewardId)
+        public RewardSword(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
         {
         }
 

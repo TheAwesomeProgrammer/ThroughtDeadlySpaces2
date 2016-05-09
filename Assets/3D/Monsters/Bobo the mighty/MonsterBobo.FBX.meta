@@ -79,6 +79,7 @@ ModelImporter:
     7400008: RapidBobo
     7400010: AcidBobo
     7400012: SuckBobo
+    7400014: RapidWithoutStart
     9500000: //RootNode
     13700000: Plane003
   materials:
@@ -712,6 +713,105 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CATRigFLLegPlatform
+        weight: 1
+      - path: CATRigFRLegPlatform
+        weight: 1
+      - path: CATRigHibs
+        weight: 1
+      - path: CATRigHibs/CATRigLLeg1
+        weight: 1
+      - path: CATRigHibs/CATRigLLeg1/CATRigLLeg2
+        weight: 1
+      - path: CATRigHibs/CATRigLLeg1/CATRigLLeg2/CATRigLLegAnkle
+        weight: 1
+      - path: CATRigHibs/CATRigLLeg1/CATRigLLeg2/CATRigLLegAnkle/CATRigAnkleBone001
+        weight: 1
+      - path: CATRigHibs/CATRigRLeg1
+        weight: 1
+      - path: CATRigHibs/CATRigRLeg1/CATRigRLeg2
+        weight: 1
+      - path: CATRigHibs/CATRigRLeg1/CATRigRLeg2/CATRigRLegRAnkle
+        weight: 1
+      - path: CATRigHibs/CATRigRLeg1/CATRigRLeg2/CATRigRLegRAnkle/CATRigAnkleBone001
+          1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigbuttomshell1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigbuttomshell1/CATRigbuttomshell2
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigFLLeg1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigFLLeg1/CATRigFLLeg2
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigFLLeg1/CATRigFLLeg2/CATRigFLLegFLAnkle
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigFRLeg1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigFRLeg1/CATRigFRLeg2
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigFRLeg1/CATRigFRLeg2/CATRigFRLegFRAnkle
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigSpine1
+          1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigSpine1
+          1/CATRigSpine2 1
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigSpine1
+          1/CATRigSpine2 1/CATRigHead
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigSpine3/CATRigShoulder003/CATRigSpine1
+          1/CATRigSpine2 1/CATRigHead/CATRigHeadBone001
+        weight: 1
+      - path: CATRigHibs/CATRigSpine1/CATRigSpine2/CATRigtopshell
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      - path: Plane003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RapidWithoutStart
+      takeName: Take 001
+      firstFrame: 210
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0

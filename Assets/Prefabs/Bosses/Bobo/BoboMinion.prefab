@@ -657,7 +657,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013345784700}
-  m_LocalRotation: {x: -0.1440042, y: -0.21789326, z: 0.81425303, w: 0.51843727}
+  m_LocalRotation: {x: -0.14400421, y: -0.21789329, z: 0.81425315, w: 0.5184373}
   m_LocalPosition: {x: -0.32912654, y: -0.000000029802322, z: 0}
   m_LocalScale: {x: 1.0000168, y: 0.9999844, z: 0.99999905}
   m_Children: []
@@ -856,7 +856,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011103241098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.434595, y: 3.4193864, z: -51.385616}
+  m_LocalPosition: {x: 5.434595, y: 3.4193864, z: -32.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010225524646}
@@ -870,7 +870,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012485427644}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 25
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -932,6 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9370a468a6f397b49b6a23965ba6f778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionCheckingWhenDisabled: 0
 --- !u!114 &114000011948578864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -955,6 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254446cc89c401c4293747aa8e48eeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionCheckingWhenDisabled: 0
 --- !u!114 &114000013823344290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1006,7 +1008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetTag: Player
   LookTime: 0.5
-  CanLook: 1
 --- !u!137 &137000014113986780
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

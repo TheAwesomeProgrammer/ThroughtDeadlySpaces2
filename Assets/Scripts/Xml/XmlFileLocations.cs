@@ -22,21 +22,19 @@ namespace Assets.Scripts.Xml
             switch (location)
             {
                 case Location.Sword:
-                    return "Xml/TestSwords.xml";
+                    return "Xml/Test/Swords.xml";
                 case Location.Curse:
-                    return "Xml/TestCurses.xml";
+                    return "Xml/Test/Curses.xml";
                 case Location.Blessing:
-                    return "Xml/TestBlessings.xml";
-                case Location.Reward:
-                    return "Xml/TestRewards.xml";
+                    return "Xml/Test/Blessings.xml";
                 case Location.QuestGiver:
-                    return "Xml/TestQuestGivers.xml";
+                    return "Xml/Test/QuestGivers.xml";
                 case Location.Shop:
-                    return "Xml/TestShop.xml";
+                    return "Xml/Test/Shop.xml";
                 case Location.Armor:
-                    return "Xml/TestArmor.xml";
+                    return "Xml/Test/Armor.xml";
                 case Location.Boss:
-                    return "Xml/TestBosses.xml";
+                    return "Xml/Test/Bosses.xml";
                 default:
                     return "";
             }
@@ -47,19 +45,17 @@ namespace Assets.Scripts.Xml
             switch (location)
             {
                 case Location.Sword:
-                    return "Xml/Elements.xml";
+                    return "Xml/Release/Elements.xml";
                 case Location.Curse:
-                    return "Xml/Curses.xml";
+                    return "Xml/Release/Curses.xml";
                 case Location.Blessing:
-                    return "Xml/Blessings.xml";
-                case Location.Reward:
-                    return "Xml/Rewards.xml";
+                    return "Xml/Release/Blessings.xml";
                 case Location.QuestGiver:
-                    return "Xml/QuestGivers.xml";
+                    return "Xml/Release/QuestGivers.xml";
                 case Location.Shop:
-                    return "Xml/Shop.xml";
+                    return "Xml/Release/Shop.xml";
                 case Location.Boss:
-                    return "Xml/Bosses.xml";
+                    return "Xml/Release/Bosses.xml";
                 default:
                     return "";
             }

@@ -5,7 +5,7 @@ namespace Assets.Scripts.Quest
 {
     public static class QuestGiversPool
     {
-        public static int NumberOfQuestGivers = 16;
+        public static int NumberOfQuestGivers = 4;
         public static int RandomThreesholdTriesPerAtempt = 1000;
 
         private static GenerateQuestGivers _generateQuestGivers;
@@ -48,11 +48,11 @@ namespace Assets.Scripts.Quest
             return questGiver;
         }
 
-        public static List<QuestGiver> GetQuestGivers(int numberOfQuestGivers)
+        public static List<QuestGiver> GetAliveQuestGivers(int numberOfQuestGivers)
         {
             List<QuestGiver> questGivers = new List<QuestGiver>();
 
-            questGivers.AddRange(GetAliveQuestGivers(numberOfQuestGivers));
+            questGivers.AddRange(FindAliveQuestGivers(numberOfQuestGivers));
             int missingQuestGivers = numberOfQuestGivers - questGivers.Count;
             if (missingQuestGivers > 0)
             {
@@ -62,7 +62,17 @@ namespace Assets.Scripts.Quest
             return questGivers;
         }
 
-        private static List<QuestGiver> GetAliveQuestGivers(int maxNumberOfQuestGivers)
+        public static QuestGiver GetAliveQuestGiver()
+        {
+            List<QuestGiver> oneQuestGiver = GetAliveQuestGivers(1);
+            if (oneQuestGiver.Count > 0)
+            {
+                return oneQuestGiver[0];
+            }
+            return null;
+        }
+
+        private static List<QuestGiver> FindAliveQuestGivers(int maxNumberOfQuestGivers)
         {
             List<QuestGiver> questGivers = new List<QuestGiver>();
 
@@ -132,7 +142,7 @@ namespace Assets.Scripts.Quest
 
         public static void DeactivateAllQuestGivers()
         {
-            foreach (var questGiver in GetAliveQuestGivers(NumberOfQuestGivers))
+            foreach (var questGiver in FindAliveQuestGivers(NumberOfQuestGivers))
             {
                 DeactivateQuestGiver(questGiver);
             }

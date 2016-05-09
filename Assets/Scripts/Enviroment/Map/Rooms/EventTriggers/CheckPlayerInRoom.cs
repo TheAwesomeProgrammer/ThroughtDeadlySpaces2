@@ -16,7 +16,11 @@ namespace Assets.Scripts.Enviroment.Map.Rooms.EventTriggers
         public override void OnEnterWithTag()
         {
             base.OnEnterWithTag();
-            _roomInParent.IsPlayerInRoom = true;
+            if (!_roomInParent.IsPlayerInRoom)
+            {
+                _roomInParent.IsPlayerInRoom = true;
+                _roomInParent.OnPlayerJustEnteredRoom();
+            }
         }
 
         public override void OnExitWithTag()

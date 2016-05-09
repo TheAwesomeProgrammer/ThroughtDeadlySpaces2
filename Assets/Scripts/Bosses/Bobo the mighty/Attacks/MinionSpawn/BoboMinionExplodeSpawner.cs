@@ -12,29 +12,40 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
     {
         public int Damage { get; set; }
 
+        private const float StartInvinsibleTime = 2;
+
         private ProjectileSpawner _projectileSpawner;
         private Life _life;
+        private bool _canExplode;
 
         protected override void Start()
         {
             base.Start();
             Tags.Add("Player");
+            Tags.Add("EnemyCollision");
 
             _projectileSpawner = GetComponent<ProjectileSpawner>();
             _life = GetComponent<Life>();
             _life.Death += SpawnExplosion;
+            Timer.Start(StartInvinsibleTime, () => _canExplode = true);
         }
 
         public override void OnEnterWithTag()
         {
-            base.OnEnterWithTag();
-            _life.Die();
+            if (_canExplode)
+            {
+                base.OnEnterWithTag();
+                _life.Die();
+            }
         }
 
         public override void OnStayWithTag()
         {
-            base.OnStayWithTag();
-            _life.Die();
+            if (_canExplode)
+            {
+                base.OnStayWithTag();
+                _life.Die();
+            }
         }
 
         void SpawnExplosion()

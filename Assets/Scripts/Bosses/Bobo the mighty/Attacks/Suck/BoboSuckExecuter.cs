@@ -10,17 +10,16 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
         public Transform SuckSpawnpoint;
 
         private const float StartDelay = 1f;
-        private const float Duration = 4.5f;
+        private const float Duration = 6f;
 
         private BoboAttackChoserExecuter _attackChoserExecuter;
         private GameObject _spawnedSuckObject;
         private LookAtTargetXz _lookAtTargetXz;
-        private bool _shouldSwitch;
 
         protected override void Start()
         {
             base.Start();
-            _lookAtTargetXz = transform.root.FindComponentInChildWithTag<LookAtTargetXz>("Collision");
+            _lookAtTargetXz = transform.root.FindComponentInChildWithTag<LookAtTargetXz>("EnemyCollision");
             _attackChoserExecuter = GetComponentInParent<BoboAttackChoserExecuter>();
             _possiblePauseStates.Add(BoboState.Idle);
             _baseDamageXmlId = 2;
@@ -29,24 +28,29 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
         protected override void Attack()
         {
             base.Attack();
-            _shouldSwitch = true;
             _lookAtTargetXz.StopLooking();
             Timer.Start(StartDelay, StartSucking);
         }
 
         private void StartSucking()
         {
-            _spawnedSuckObject = Instantiate(Suck, SuckSpawnpoint.position, Quaternion.identity) as GameObject;
-            _spawnedSuckObject.transform.position += new Vector3(_spawnedSuckObject.GetComponent<Collider>().bounds.extents.x, 0, 0);
+            SpawnSuckObject();
             SetBoboSuckerProperties();
             Timer.Start(Duration, StopSucking);
+        }
+
+        private void SpawnSuckObject()
+        {
+            _spawnedSuckObject = Instantiate(Suck, SuckSpawnpoint.position, Quaternion.identity) as GameObject;
+            Vector3 spawnOffset = new Vector3(_spawnedSuckObject.GetComponent<Collider>().bounds.extents.x, 0, 0);
+            _spawnedSuckObject.transform.position += spawnOffset;
         }
 
         private void SetBoboSuckerProperties()
         {
             BoboSucker boboSucker = _spawnedSuckObject.GetComponent<BoboSucker>();
             boboSucker.SuckTransform = SuckSpawnpoint;
-            boboSucker.OwnerRigidbody = transform.root.FindComponentInChildWithTag<Rigidbody>("Collision");
+            boboSucker.OwnerRigidbody = transform.root.FindComponentInChildWithTag<Rigidbody>("EnemyCollision");
         }
 
         private void StopSucking()
@@ -56,15 +60,10 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
             if (_attackChoserExecuter.PlayerInRange)
             {
                 _bossStateMachine.ChangeState(BoboState.Bite);
-                _shouldSwitch = false;
             }
-        }
-
-        public override void SwitchState()
-        {
-            if (_shouldSwitch)
+            else
             {
-                base.SwitchState();
+                SwitchState();
             }
         }
     }

@@ -6,12 +6,12 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
     {
         public void StopMovement(GameObject gameObject)
         {
-            gameObject.GetComponent<PlayerMovement>().CanMove = false;
+            gameObject.GetComponentInChildren<PlayerMovement>().CanMove = false;
         }
 
         public void StartMovement(GameObject gameObject)
         {
-            gameObject.GetComponent<PlayerMovement>().CanMove = true;
+            gameObject.GetComponentInChildren<PlayerMovement>().CanMove = true;
         }
     }
 }

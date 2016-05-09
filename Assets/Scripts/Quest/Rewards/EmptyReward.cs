@@ -1,8 +1,10 @@
-﻿namespace Assets.Scripts.Quest
+﻿using System.Xml;
+
+namespace Assets.Scripts.Quest
 {
     public class EmptyReward : Reward
     {
-        public EmptyReward(int rewardTypeId, int rewardId) : base(rewardTypeId, rewardId)
+        public EmptyReward(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
         {
         }
 

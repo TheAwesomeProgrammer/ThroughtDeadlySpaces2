@@ -10,6 +10,8 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
         private InputButton _interactableButton;
         private InputButton _backButton;
 
+        protected GameObject _player;
+
         protected override void Start()
         {
             base.Start();
@@ -22,7 +24,7 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
 
         private void ShouldCallInteractableButtonDown()
         {
-            if (CollidingWithPlayer())
+            if (_player != null)
             {
                 OnInteractableButtonDownAndCollidingWithPlayer();
             }
@@ -30,7 +32,7 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
 
         private void ShouldCallBackButtonDown()
         {
-            if (CollidingWithPlayer())
+            if (_player != null)
             {
                 OnBackButtonDownAndCollidingWithPlayer();
             }
@@ -46,9 +48,16 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
           
         }
 
-        private bool CollidingWithPlayer()
+        public override void OnEnterWithTag()
         {
-            return CollisionType != CollisionType.NoCollision;
+            base.OnEnterWithTag();
+            _player = _triggerCollider.gameObject;
+        }
+
+        public override void OnExitWithTag()
+        {
+            base.OnExitWithTag();
+            _player = null;
         }
     }
 }

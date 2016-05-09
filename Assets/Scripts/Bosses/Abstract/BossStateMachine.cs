@@ -8,8 +8,11 @@ namespace Assets.Scripts.Bosses
     {
         public Enum CurrentState;
         public Enum PreviusState;
+        public event Action<Enum,Enum> ChangingState;
+
         protected BossStateExecuter _currentStateExecuter;
         protected BossFactoryable _bossStateExecuterFactory;
+        protected bool _canChange;
 
         protected virtual void Start()
         {
@@ -24,13 +27,31 @@ namespace Assets.Scripts.Bosses
 
         public virtual void ChangeState(Enum newState)
         {
-            SetStates(newState);
-            if (_currentStateExecuter != null)
+            ShouldChangeState(CurrentState, newState);
+            if (_canChange)
             {
-                _currentStateExecuter.EndState(this);
+                SetStates(newState);
+                if (_currentStateExecuter != null)
+                {
+                    _currentStateExecuter.EndState(this);
+                }
+                _currentStateExecuter = _bossStateExecuterFactory.GetBossStateExecuter(newState);
+                _currentStateExecuter.StartState(this);
             }
-            _currentStateExecuter = _bossStateExecuterFactory.GetBossStateExecuter(newState);
-            _currentStateExecuter.StartState(this);
+        }
+
+        private void ShouldChangeState(Enum previusState, Enum newState)
+        {
+            _canChange = true;
+            if (ChangingState != null)
+            {
+                ChangingState(previusState, newState);
+            }
+        }
+
+        public void CancelStateChanging()
+        {
+            _canChange = false;
         }
 
         protected virtual void SetStates(Enum newState)

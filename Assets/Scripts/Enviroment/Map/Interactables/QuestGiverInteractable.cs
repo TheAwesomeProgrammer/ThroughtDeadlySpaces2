@@ -13,12 +13,17 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
         private bool _hasUsedInteractable;
         private PlayerMovementChanger _movementChanger;
 
-        public void OnUsedInteractable()
+        protected override void Start()
         {
+            base.Start();
             _movementChanger = new PlayerMovementChanger();
             _uiManager = Camera.main.GetComponent<UIManager>();
+        }
+
+        public void OnUsedInteractable()
+        {
             _hasUsedInteractable = true;
-            _movementChanger.StartMovement(_triggerCollider.gameObject);
+            _movementChanger.StartMovement(_player);
         }
 
         protected override void OnInteractableButtonDownAndCollidingWithPlayer()
@@ -26,7 +31,7 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
             base.OnInteractableButtonDownAndCollidingWithPlayer();
             if (!_hasUsedInteractable)
             {
-                _movementChanger.StopMovement(_triggerCollider.gameObject);
+                _movementChanger.StopMovement(_player);
                 ActivateQuestGivers();
             }
         }
@@ -36,14 +41,14 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
             base.OnBackButtonDownAndCollidingWithPlayer();
             if (!_hasUsedInteractable)
             {
-                _movementChanger.StartMovement(_triggerCollider.gameObject);
+                _movementChanger.StartMovement(_player);
                 _uiManager.DeactivateItemWithType<UiQuestGiver>();
             }
         }
 
         private void ActivateQuestGivers()
         {
-            var questGiversWithRandomIds = QuestGiversPool.GetQuestGivers(2);
+            var questGiversWithRandomIds = QuestGiversPool.GetAliveQuestGivers(2);
 
             for (int i = 0; i < questGiversWithRandomIds.Count; i++)
             {

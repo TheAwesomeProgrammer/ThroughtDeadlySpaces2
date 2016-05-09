@@ -2,8 +2,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Camera_ll_UI;
 using Assets.Scripts.Extensions;
+using Assets.Scripts.Shop.Merchant;
 using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour {
@@ -50,9 +52,14 @@ public class UIManager : MonoBehaviour {
         return itemWithType;
     }
 
-    private UiItem GetItemWithTypeAndId<T>(int id) where T : UiItem
+    public UiItem GetItemWithTypeAndId<T>(int id) where T : UiItem
     {
-        return _uiItems.GetBasesNInterfacesOfType(typeof(T))[id];
+        return _uiItems.GetBasesNInterfacesOfType(typeof (T)).Find(item => item.UiId == id);
+    }
+
+    public List<UiItem> GetItemsWithTypeAndId<T>(int id) where T : UiItem
+    {
+        return _uiItems.GetBasesNInterfacesOfType(typeof(T)).FindAll(item => item.UiId == id);
     }
 
     public void DeactivateItemWithTypeAndId<T>(int id) where T : UiItem

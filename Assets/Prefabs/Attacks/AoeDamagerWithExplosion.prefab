@@ -24,9 +24,9 @@ GameObject:
   - 114: {fileID: 114000010666679224}
   - 114: {fileID: 114000010958833290}
   - 114: {fileID: 114000010335498472}
-  - 114: {fileID: 114000013529626788}
   - 114: {fileID: 114000013794349616}
   - 114: {fileID: 114000013163994334}
+  - 114: {fileID: 114000011800930234}
   m_Layer: 0
   m_Name: AoeDamagerWithExplosion
   m_TagString: Untagged
@@ -96,6 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975bab6dc8cc8fc42825ddc70eb732f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000011800930234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013198285764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9b9fd30b03e4f45b06e3b6a4b9fcdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PushOnStart: 1
+  PushingForce: 25000
+  OwnerRigidbody: {fileID: 0}
 --- !u!114 &114000013163994334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,18 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b8eac2d64545e41b88228a4671ac99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013529626788
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013198285764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9377a8f596edac742a281c80b614ad1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExplodeOnStart: 1
 --- !u!114 &114000013794349616
 MonoBehaviour:
   m_ObjectHideFlags: 1

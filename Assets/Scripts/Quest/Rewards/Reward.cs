@@ -8,8 +8,9 @@ namespace Assets.Scripts.Quest
 {
     public abstract class Reward : Rewardable, XmlLoadable
     {
+        public XmlNode QuestsNode;
+        public int QuestId;
         public int RewardTypeId;
-        public int RewardId;
 
         protected XmlSearcher _xmlSearcher;
         
@@ -21,21 +22,22 @@ namespace Assets.Scripts.Quest
             {
                 List<int> rewardSpecs = new List<int>();
 
-                XmlNode rewardNode = _xmlSearcher.GetNodeInArrayWithId(RewardId, "Rewards");
-                if (rewardNode != null)
+                XmlNode questNode = _xmlSearcher.GetNodeInArrayWithId(QuestId, QuestsNode);
+                if (questNode != null)
                 {
-                    rewardSpecs.AddRange(_xmlSearcher.GetSpecsInNodeWithId(RewardTypeId, rewardNode));
+                    rewardSpecs.AddRange(_xmlSearcher.GetSpecsInNodeWithId(RewardTypeId, questNode));
                 }
 
                 return rewardSpecs.ToArray();
             }
         }
 
-        protected Reward(int rewardTypeId, int rewardId)
+        protected Reward(int rewardTypeId, int questId, XmlNode questsNode)
         {
             RewardTypeId = rewardTypeId;
-            RewardId = rewardId;
-            _xmlSearcher = new XmlSearcher(Location.Reward);
+            QuestId = questId;
+            QuestsNode = questsNode;
+            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
             LoadXml();
         }
 

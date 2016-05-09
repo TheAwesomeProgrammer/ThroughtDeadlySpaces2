@@ -24,14 +24,14 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
             base.OnInteractableButtonDownAndCollidingWithPlayer();
             _uiManager.ActivateItemWithTypeAndId<UiShop>(ShopUiId);
             _uiManager.SelectUiItemWithTypeAndId<RepairItem>(0);
-            _movementChanger.StopMovement(_triggerCollider.gameObject);
+            _movementChanger.StopMovement(_player);
         }
 
         protected override void OnBackButtonDownAndCollidingWithPlayer()
         {
             base.OnBackButtonDownAndCollidingWithPlayer();
             _uiManager.DeactivateItemWithTypeAndId<UiShop>(ShopUiId);
-            _movementChanger.StartMovement(_triggerCollider.gameObject);
+            _movementChanger.StartMovement(_player);
         }
     }
 }

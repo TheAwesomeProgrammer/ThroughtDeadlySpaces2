@@ -8,6 +8,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
     {
         private AnimatorTrigger _animatorTrigger;
         private MoveForward _moveForward;
+        private BoboMinionExplodeSpawner _boboMinionExplodeSpawner;
 
         protected override void Start()
         {

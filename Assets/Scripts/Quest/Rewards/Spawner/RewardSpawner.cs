@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Quest.Rewards.Potion;
+﻿using Assets.Scripts.Enviroment.Map.Rooms;
+using Assets.Scripts.Quest.Rewards.Potion;
 using Assets.Scripts.Quest.Rewards.Sword;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Quest.Rewards.Spawner
 
         private RewardPotionObjectFactory _rewardPotionObjectFactory;
         private RewardSwordObjectFactory _rewardSwordObjectFactory;
-        private Room _roomParent;
+        private BaseRoom _roomParent;
         private Vector3 _offset;
         private Collider _collider;
         private CircleOffsetCalculator _circleOffsetCalculator;
@@ -19,7 +20,7 @@ namespace Assets.Scripts.Quest.Rewards.Spawner
         {
             _rewardPotionObjectFactory = GetComponent<RewardPotionObjectFactory>();
             _rewardSwordObjectFactory = GetComponent<RewardSwordObjectFactory>();
-            _roomParent = GetComponentInParent<Room>();
+            _roomParent = GetComponentInParent<BaseRoom>();
             _circleOffsetCalculator = new CircleOffsetCalculator();
         }
 

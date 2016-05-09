@@ -19,6 +19,11 @@ TagManager:
   - Collision
   - Floor
   - BoboMinion
+  - Monster
+  - FrenzyAttack
+  - EnemyCollision
+  - SpawnPoint
+  - Scripts
   layers:
   - Default
   - TransparentFX
@@ -53,6 +58,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 393732085
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -14,6 +14,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         protected Enum _movementState;
 
         private AnimatorTrigger _animatorTrigger;
+        private bool _active;
 
         protected virtual void Start()
         {
@@ -27,18 +28,23 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         public IEnumerator WaitThenChangeStateToMove(BossStateMachine bossStateMachine, Enum newState)
         {
             yield return new WaitForSeconds(_waitTimeSet[bossStateMachine.PreviusState]);
-            bossStateMachine.ChangeState(newState);
+            if (_active)
+            {
+                bossStateMachine.ChangeState(newState);
+            }
         }
 
         public virtual void StartState(BossStateMachine bossStateMachine)
         {
             _animatorTrigger.StartAnimation();
+            _active = true;
             StartCoroutine(WaitThenChangeStateToMove(bossStateMachine, _movementState));
+
         }
 
         public virtual void EndState(BossStateMachine bossStateMachine)
         {
-
+            _active = false;
         }
     }
 }

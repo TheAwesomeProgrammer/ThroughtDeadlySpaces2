@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks;
+using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.AcidSpit;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Movement;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Pausers;
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty
                 case BoboState.Bite:
                     return GetComponentInChildren<BoboBiteExecuter>();
                 case BoboState.RapidFrenzy:
-                    break;
+                    return GetComponentInChildren<BoboRapidFrenzyExecuter>();
                 case BoboState.MinionSpawn:
                     return GetComponentInChildren<BoboMinionSpawnExecuter>();
                 case BoboState.Suck:
@@ -30,14 +31,12 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty
                 case BoboState.Jump:
                     return GetComponentInChildren<BoboJumpExecuter>(); 
                 case BoboState.AcidSpit:
-                    break;
+                    return GetComponentInChildren<BoboAcidSpitExecuter>();
                 case BoboState.Idle:
                     return GetComponentInChildren<BoboIdlePauser>();
                 default:
                     throw new ArgumentOutOfRangeException("bossState", bossState, null);
             }
-
-            return null;
         }
     }
 }

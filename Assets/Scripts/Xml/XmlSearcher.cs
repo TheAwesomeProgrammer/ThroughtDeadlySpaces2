@@ -175,6 +175,11 @@ namespace Assets.Scripts.Xml
             return GetSpecs(GetNodeInArrayWithId(id, node));
         }
 
+        public int[] GetSpecsInNodeWithId(int id, XmlNode node, string specName)
+        {
+            return GetSpecs(GetNodeInArrayWithId(id, node));
+        }
+
         public int[] GetSpecs(XmlNode node)
         {
             int[] specs = _specsConverter.Convert(node.InnerText).Select(i => (int)i).ToArray(); ;
@@ -194,6 +199,11 @@ namespace Assets.Scripts.Xml
         public int[] GetSpecsInChildrenWithId(int id, string arrayNodeName, string specNodeName)
         {
             return GetSpecsInNode(GetNodeInArrayWithId(id, arrayNodeName), specNodeName);
+        }
+
+        public int[] GetSpecsInChildrenWithId(int id, XmlNode xmlNode, string specNodeName)
+        {
+            return GetSpecsInNode(GetNodeInArrayWithId(id, xmlNode), specNodeName);
         }
 
         public float[] GetSpecsInChildrenWithIdFloat(int id, string arrayNodeName, string specNodeName)
