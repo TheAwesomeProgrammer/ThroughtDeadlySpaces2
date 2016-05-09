@@ -869,6 +869,11 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010130677598, guid: 42079a95ff901bc40a133a709e426ed2,
+        type: 2}
+      propertyPath: DestroyOnDeath
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42079a95ff901bc40a133a709e426ed2, type: 2}
   m_IsPrefabParent: 0

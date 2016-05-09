@@ -1,7 +1,16 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Enviroment.Map.Rooms;
+using Assets.Scripts.Player.Swords.Abstract;
+using UnityEngine;
 public class RoomObjectSpawner : ObjectSpawner
 {
     public GameObject Room;
+
+    private Map _map;
+
+    void Start()
+    {
+        _map = GameObject.FindGameObjectWithTag(Tag.Map).GetComponent<Map>();
+    }
 
     public override GameObject Spawn(Vector3 spawnPosition)
     {
@@ -15,6 +24,7 @@ public class RoomObjectSpawner : ObjectSpawner
     private void CallSpawnEventOnRoom(GameObject roomSpawned)
     {
         Room room = roomSpawned.GetComponent<Room>();
+        room.transform.parent = _map.transform;
         room.OnJustSpawned();
     }
 }

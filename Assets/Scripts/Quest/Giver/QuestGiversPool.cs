@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Quest
 {
@@ -14,7 +15,13 @@ namespace Assets.Scripts.Quest
 
         static QuestGiversPool()
         {
+            Init();
+        }
+
+        private static void Init()
+        {
             _questGivers = new List<QuestGiver>();
+            SceneManager.sceneLoaded += (arg0, mode) => Init();
             _generateQuestGivers = new GenerateQuestGivers();
             InitPool();
         }
