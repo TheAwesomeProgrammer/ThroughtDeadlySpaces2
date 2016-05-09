@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Player.Swords
         protected override void Start()
         {
             base.Start();
-            Tags.Add("Enemy");
+            Tags.Add(Tag.Enemy);
         }
     }
 }

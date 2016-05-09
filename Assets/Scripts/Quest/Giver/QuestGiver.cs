@@ -11,8 +11,18 @@ namespace Assets.Scripts.Quest
 {
     public sealed class QuestGiver : MonoBehaviour
     {
-        public int Id;
-        public int UiId;
+        public int Id
+        {
+            get { return _questGiverProperties.Id; }
+            set { _questGiverProperties.UiId = value; }
+        }
+
+        public int UiId
+        {
+            get { return _questGiverProperties.UiId; }
+            set { _questGiverProperties.UiId = value; }
+        }
+
         public int Health
         {
             get { return _questGiverProperties.Health; }
@@ -25,17 +35,14 @@ namespace Assets.Scripts.Quest
             }
         }
 
-        private QuestGiverProperties _questGiverProperties;
+        private QuestGiverProperties _questGiverProperties = new QuestGiverProperties();
         private RewardFactory _rewardFactory;
         private XmlNode _questGiverNode;
         private XmlSearcher _xmlSearcher;
         private BossGenerator _bossGenerator;
-        private Map _map;
 
         public void Init()
         {
-            _map = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>();
-            _questGiverProperties = new QuestGiverProperties(Id) { QuestPropertieses = new List<QuestProperties>() };
             _bossGenerator = GameObject.FindWithTag("Scripts").GetComponent<BossGenerator>();
             _rewardFactory = new RewardFactory();
             _xmlSearcher = new XmlSearcher(Location.QuestGiver);
@@ -87,16 +94,12 @@ namespace Assets.Scripts.Quest
             return bossGeneratorProperties;
         }
 
-        public void SpawnRewards()
+        public void SpawnRewardsInRoom(Room room)
         {
-            Room activeRoom = _map.GetActiveRoom();
-            RewardSpawner rewardSpawner = activeRoom.GetComponentInChildren<RewardSpawner>();
-            if (rewardSpawner)
+            RewardSpawner rewardSpawner = room.GetComponentInChildren<RewardSpawner>();
+            foreach (var quest in _questGiverProperties.QuestPropertieses)
             {
-                foreach (var quest in _questGiverProperties.QuestPropertieses)
-                {
-                    quest.Reward.SpawnReward(rewardSpawner);
-                }
+                quest.Reward.SpawnReward(rewardSpawner);
             }
         }
 

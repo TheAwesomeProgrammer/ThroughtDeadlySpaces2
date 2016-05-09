@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
+using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
@@ -70,6 +71,7 @@ namespace Assets.Scripts.Player.Swords
             if (damageable != null)
             {
                 AddCombatAttacker(damageable);
+                Debug.Break();
             }
         }
 

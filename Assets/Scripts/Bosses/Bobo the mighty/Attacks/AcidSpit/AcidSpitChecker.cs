@@ -1,6 +1,7 @@
 ﻿using System;
 using Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.AcidSpit;
 using Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         {
             _bossTransform = GameObject.FindWithTag("Monster").transform.FindChildByTag("EnemyCollision");
             _boboTheMighty = GameObject.FindWithTag("Monster").GetComponent<BossStateMachine>();
-            _playerTransform = GameObject.FindWithTag("Player").transform;
+            _playerTransform = GameObject.FindWithTag(Tag.Player).transform;
             _boboAttackChoser = GetComponent<BossAttackChoserBase>();
             _boboTheMighty.ChangingState += OnChangingState;
         }

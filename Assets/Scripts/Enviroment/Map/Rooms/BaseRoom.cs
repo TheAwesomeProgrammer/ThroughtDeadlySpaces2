@@ -14,7 +14,7 @@ namespace Assets.Scripts.Enviroment.Map.Rooms
             QuestGiver questGiver = QuestGiversPool.GetAliveQuestGiver();
             if (questGiver)
             {
-                questGiver.SpawnRewards();
+                questGiver.SpawnRewardsInRoom(this);
             }
         }
     }

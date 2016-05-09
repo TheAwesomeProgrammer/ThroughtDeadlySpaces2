@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
+using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Shop;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class MoneyDrop : Trigger
     protected override void Start()
     {
         base.Start();
-        Tags.Add("Player");
+        Tags.Add(Tag.PlayerCollision);
         _moneyExecute = new MoneyExecute(MoneyToGive);
     }
 

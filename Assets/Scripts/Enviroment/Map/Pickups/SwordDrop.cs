@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
 using Assets.Scripts.Player.Swords;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups
@@ -13,7 +14,7 @@ namespace Assets.Scripts.Enviroment.Map.Pickups
         protected override void Start()
         {
             base.Start();
-            Tags.Add("Player");
+            Tags.Add(Tag.PlayerCollision);
             _swordExecute = new SwordExecute(SwordId);
         }
 

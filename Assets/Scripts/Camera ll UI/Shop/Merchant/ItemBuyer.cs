@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes;
+using Assets.Scripts.Player.Swords.Abstract;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ namespace Assets.Scripts.Shop.Merchant
         private void BuyItem(ShopItem shopItem)
         {
             Executeable executeable = _itemFactory.GetItemExecuteable(shopItem);
-            executeable.Execute(GameObject.FindWithTag("Player"));
+            executeable.Execute(GameObject.FindWithTag(Tag.Player));
         }
 
         private bool CanBuy(int money)

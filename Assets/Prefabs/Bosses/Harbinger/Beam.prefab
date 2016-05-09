@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4dd1fdfa4d9114bb87bddfd7126c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndDelay: 0.5
 --- !u!114 &114000012766188382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -264,7 +263,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1000011708206324}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.15
   m_Height: 20
   m_Direction: 2

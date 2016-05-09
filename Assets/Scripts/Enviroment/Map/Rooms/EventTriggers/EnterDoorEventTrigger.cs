@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Player.Swords.Abstract;
+using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Rooms.EventTriggers
 {
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Enviroment.Map.Rooms.EventTriggers
         {
             base.Start();
             TriggerOnEnter = true;
-            Tags.Add("Player");
+            Tags.Add(Tag.PlayerCollision);
         }
 
         protected override void DoEvent()

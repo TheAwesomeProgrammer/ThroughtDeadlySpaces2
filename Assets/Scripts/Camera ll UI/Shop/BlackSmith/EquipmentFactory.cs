@@ -2,6 +2,7 @@
 using Assets.Scripts.Player.Armors;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Shop.BlackSmith
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Shop.BlackSmith
     {
         public Equipment GetEquipment(EquipmentType equipmentType)
         {
-            GameObject player = GameObject.FindWithTag("Player");
+            GameObject player = GameObject.FindWithTag(Tag.Player);
 
             switch (equipmentType)
             {

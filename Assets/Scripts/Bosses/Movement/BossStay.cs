@@ -10,7 +10,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses
         {
             base.Start();
             _rigidbody = GetComponent<Rigidbody>();
-            Tags.Add("Player");
+            Tags.Add(Tag.PlayerCollision);
         }
 
         public override void OnEnterWithTag()

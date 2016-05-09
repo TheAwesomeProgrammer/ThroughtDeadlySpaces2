@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 public abstract class Door : Trigger
@@ -18,7 +19,7 @@ public abstract class Door : Trigger
         {
             Lock();
         }
-        Tags.Add("Player");
+        Tags.Add(Tag.PlayerCollision);
     }
 
     public void Lock()

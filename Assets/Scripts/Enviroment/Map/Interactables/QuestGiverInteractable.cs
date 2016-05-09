@@ -48,7 +48,7 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
 
         private void ActivateQuestGivers()
         {
-            var questGiversWithRandomIds = QuestGiversPool.GetAliveQuestGivers(2);
+            var questGiversWithRandomIds = QuestGiversPool.GenerateAliveQuestGivers(2);
 
             for (int i = 0; i < questGiversWithRandomIds.Count; i++)
             {

@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Player.Swords.Abstract;
+using UnityEngine;
 
 namespace Assets.Scripts.Movement
 {
     public class LookAtTargetXz : MonoBehaviour
     {
-        public string TargetTag = "Player";
+        public string TargetTag = Tag.Player;
         public float LookTime;
 
         private Transform _target;

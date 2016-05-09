@@ -48,7 +48,7 @@ namespace Assets.Scripts.Quest
             return questGiver;
         }
 
-        public static List<QuestGiver> GetAliveQuestGivers(int numberOfQuestGivers)
+        public static List<QuestGiver> GenerateAliveQuestGivers(int numberOfQuestGivers)
         {
             List<QuestGiver> questGivers = new List<QuestGiver>();
 
@@ -56,7 +56,7 @@ namespace Assets.Scripts.Quest
             int missingQuestGivers = numberOfQuestGivers - questGivers.Count;
             if (missingQuestGivers > 0)
             {
-                questGivers.AddRange(GetRandomQuestGivers(numberOfQuestGivers - questGivers.Count));
+                questGivers.AddRange(GenerateRandomQuestGivers(numberOfQuestGivers - questGivers.Count));
             }
 
             return questGivers;
@@ -64,7 +64,7 @@ namespace Assets.Scripts.Quest
 
         public static QuestGiver GetAliveQuestGiver()
         {
-            List<QuestGiver> oneQuestGiver = GetAliveQuestGivers(1);
+            List<QuestGiver> oneQuestGiver = FindAliveQuestGivers(1);
             if (oneQuestGiver.Count > 0)
             {
                 return oneQuestGiver[0];
@@ -90,7 +90,7 @@ namespace Assets.Scripts.Quest
             return questGivers;
         }
 
-        private static List<QuestGiver> GetRandomQuestGivers(int numberOfQuestGivers)
+        private static List<QuestGiver> GenerateRandomQuestGivers(int numberOfQuestGivers)
         {
             List<QuestGiver> randomQuestGivers = new List<QuestGiver>();
             QuestGiver randomQuestGiver = GetQuestGiverWithRandomId();

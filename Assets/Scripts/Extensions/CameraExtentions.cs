@@ -15,11 +15,11 @@ public static class CameraExtentions {
 
     public static float GetCameraHeight(this Camera pCamera)
     {
-        float theightOfCamera = 0;
+        float cameraHeight = 0;
 
-        theightOfCamera = 2f * pCamera.orthographicSize;
+        cameraHeight = 2f * pCamera.orthographicSize;
 
-        return theightOfCamera;
+        return cameraHeight;
     }
 
     public static Vector2 GetCameraSize(this Camera pCamera)

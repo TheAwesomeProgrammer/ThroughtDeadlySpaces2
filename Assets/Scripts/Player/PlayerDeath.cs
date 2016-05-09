@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player
 
         void Start()
         {
-            _life = GetComponentInParent<Life>();
+            _life = transform.root.GetComponentInChildren<Life>();
             _animatorTrigger = GetComponent<AnimatorTrigger>();
             _playerMovement = GetComponentInParent<PlayerMovement>();
             _collisionRigidbody = GetComponentInParent<Rigidbody>();

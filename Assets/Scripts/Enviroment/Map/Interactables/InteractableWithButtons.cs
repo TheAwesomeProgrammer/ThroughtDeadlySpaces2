@@ -1,6 +1,7 @@
 using Assets.Scripts.Camera_ll_UI;
 using Assets.Scripts.Enviroment.Collisions.Abstract;
 using Assets.Scripts.Input;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.InputInteractables
@@ -15,7 +16,7 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
         protected override void Start()
         {
             base.Start();
-            Tags.Add("Player");
+            Tags.Add(Tag.PlayerCollision);
             _interactableButton = transform.FindComponentInChildWithName<InputButton>("InteractableButton");
             _backButton = transform.FindComponentInChildWithName<InputButton>("BackButton");
             _interactableButton.ButtonDown += ShouldCallInteractableButtonDown;

@@ -11,22 +11,20 @@ namespace Assets.Scripts.Quest
         public int Health;
         public DropType DropType;
         public List<QuestProperties> QuestPropertieses;
+        public int[] RewardIds;
+        public int Id;
+        public int UiId;
+        public int CurrentQuestId;
+
+        private XmlSearcher _xmlSearcher;
 
         public BossGeneratorProperties BossGeneratorProperties
         {
             get { return QuestPropertieses[CurrentQuestId].BossGeneratorProperties; }
         }
-        public int[] RewardIds;
-        public int Id;
-        public int CurrentQuestId;
 
-        private static int _id;
-
-        private XmlSearcher _xmlSearcher;
-
-        public QuestGiverProperties(int id)
+        public QuestGiverProperties()
         {
-            Id = id;
             _xmlSearcher = new XmlSearcher(Location.QuestGiver);
             LoadXml();
         }

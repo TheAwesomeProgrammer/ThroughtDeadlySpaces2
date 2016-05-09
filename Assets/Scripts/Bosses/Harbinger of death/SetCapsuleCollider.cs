@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Player.Swords.Abstract;
+using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death
 {
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
         void Start()
         {
             _capsuleCollider = GetComponent<CapsuleCollider>();
-            _player = GameObject.FindWithTag("Player").transform;
+            _player = GameObject.FindWithTag(Tag.Player).transform;
         }
 
         public void TargetPlayer()

@@ -13,6 +13,7 @@ namespace Assets.Scripts.Camera_ll_UI
         private Text[] _rewardTexts;
         private Text _targetText;
         private Text _difficultyText;
+        private QuestGiverProperties _questGiverProperties;
 
         protected override void OnActivate()
         {
@@ -29,17 +30,16 @@ namespace Assets.Scripts.Camera_ll_UI
 
         public void SetActiveQuestGiver(QuestGiverManager questGiverManager)
         {
-            questGiverManager.SetActiveQuestGiver(UiId);
+            questGiverManager.SetActiveQuestGiver(_questGiverProperties.Id);
         }
 
         public override void SetProperties(params object[] properties)
         {
-            QuestGiverProperties questGiverProperties = (QuestGiverProperties)properties[0];
-            _title.text = questGiverProperties.Name + "(" + questGiverProperties.Health + ")";
-            UiId = questGiverProperties.Id;
-            List<QuestProperties> rewards = questGiverProperties.QuestPropertieses;
-            AddBossGenerationPropertiesText(rewards, questGiverProperties);
-            SetRewardTexts(rewards, questGiverProperties);
+            _questGiverProperties = (QuestGiverProperties)properties[0];
+            _title.text = _questGiverProperties.Name + "(" + _questGiverProperties.Health + ")";
+            List<QuestProperties> rewards = _questGiverProperties.QuestPropertieses;
+            AddBossGenerationPropertiesText(rewards, _questGiverProperties);
+            SetRewardTexts(rewards, _questGiverProperties);
         }
 
         private void AddBossGenerationPropertiesText(List<QuestProperties> rewards, QuestGiverProperties questGiverProperties)

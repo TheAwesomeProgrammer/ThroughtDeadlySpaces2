@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Player.Swords.Abstract.Bosses.Attack;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             base.Start();
             _possibleAttacks = new PossibleAttacks();
-            Tags.Add("Player");
+            Tags.Add(Tag.PlayerCollision);
         }
 
         public override void OnEnterWithTag()

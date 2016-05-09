@@ -3,6 +3,7 @@ using Assets.Scripts.Combat.Attack.Projectile;
 using Assets.Scripts.Combat.Attack.Projectile.Data;
 using Assets.Scripts.Combat.Attack.Projectile.DataSetters;
 using Assets.Scripts.Player.Swords;
+using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Player.Swords.Abstract.Bosses.Attack;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         protected override void Start()
         {
             base.Start();
-            Tags.Add("Player");
+            Tags.Add(Tag.PlayerCollision);
             Tags.Add("EnemyCollision");
 
             _projectileSpawner = GetComponent<ProjectileSpawner>();
