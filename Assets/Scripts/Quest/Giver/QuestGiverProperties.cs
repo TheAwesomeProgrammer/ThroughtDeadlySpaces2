@@ -28,7 +28,6 @@ namespace Assets.Scripts.Quest
         {
             QuestPropertieses = new List<QuestProperties>();
             _xmlSearcher = new XmlSearcher(Location.QuestGiver);
-            LoadXml();
         }
 
         public void AddReward(int id, Reward reward, BossGeneratorProperties bossGeneratorProperties)

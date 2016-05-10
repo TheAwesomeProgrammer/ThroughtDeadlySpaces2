@@ -197,7 +197,7 @@ GameObject:
   - 4: {fileID: 4000010786263760}
   - 54: {fileID: 54000014241856282}
   - 114: {fileID: 114000010294055882}
-  - 114: {fileID: 114000013096157142}
+  - 114: {fileID: 114000010876258760}
   m_Layer: 0
   m_Name: Beam
   m_TagString: Untagged
@@ -388,6 +388,7 @@ GameObject:
   - 4: {fileID: 4000013623988968}
   - 114: {fileID: 114000010519705656}
   - 114: {fileID: 114000014076136316}
+  - 114: {fileID: 114000010441977132}
   m_Layer: 0
   m_Name: Harbinger of death
   m_TagString: Untagged
@@ -1132,7 +1133,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012781332356}
-  m_LocalRotation: {x: 0.6339357, y: 0.6342208, z: -0.30763143, w: -0.31820187}
+  m_LocalRotation: {x: 0.63393575, y: 0.63422084, z: -0.30763146, w: -0.3182019}
   m_LocalPosition: {x: -0.12701261, y: -0.24211055, z: 0.07106301}
   m_LocalScale: {x: 1.0000023, y: 1.0000018, z: 0.99999607}
   m_Children:
@@ -1615,6 +1616,18 @@ MonoBehaviour:
   SpeedAnimatorVariableName: Speed
   Animator: {fileID: 95000011049453478}
   AutoSet: 1
+--- !u!114 &114000010441977132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012972678588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8d9db18d64e264e9ad846df48b4669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Difficulty: 0
 --- !u!114 &114000010448952044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1675,6 +1688,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa56d14626b14a4fb644f2250219658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000010876258760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011629637746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1000011143075784, guid: 3f265ff203db56740822e82d7d30f9bc, type: 2}
 --- !u!114 &114000010970918838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1874,18 +1899,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartAttackOnAnimation: 1
   EndAttackOnAnimation: 1
---- !u!114 &114000013096157142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011629637746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee80a44ea5df37e45b6d17bd7fcaa583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011143075784, guid: 3f265ff203db56740822e82d7d30f9bc, type: 2}
 --- !u!114 &114000013229834960
 MonoBehaviour:
   m_ObjectHideFlags: 1

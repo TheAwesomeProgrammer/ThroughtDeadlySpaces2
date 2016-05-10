@@ -6,7 +6,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
     public class HarbingerBeamExecuter : BossAttackBase
     {
-        private float StartDelay = 1.5f;
+        private float StartDelay = 0.6f;
         private BossBeam _bossBeam;
 
         protected override void Start()

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters;
+﻿using Assets.Scripts.Bosses.Abstract;
+using Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters;
 using Assets.Scripts.Combat.Attack.Projectile;
 using Assets.Scripts.Combat.Attack.Projectile.Data;
 using Assets.Scripts.Combat.Attack.Projectile.DataSetters;
@@ -14,13 +15,13 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         private const int MinionsToSpawn = 3;
         private const float MinionSpawnDelay = 1.75f;
 
-        private ProjectileSpawner _projectileSpawner;
+        private BossProjectileSpawner _projectileSpawner;
         private int _minionsSpawned;
 
         protected override void Start()
         {
             base.Start();
-            _projectileSpawner = GetComponent<ProjectileSpawner>();
+            _projectileSpawner = GetComponent<BossProjectileSpawner>();
             _possiblePauseStates.Add(BoboState.Idle);
             _baseDamageXmlId = 2;
         } 

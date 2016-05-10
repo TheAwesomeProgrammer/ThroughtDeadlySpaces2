@@ -59,7 +59,7 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        IEnumerator CheckAnimationEnd()
+        protected virtual IEnumerator CheckAnimationEnd()
         {
             bool isInNextState = false;
             int currentHash = 0;
@@ -69,7 +69,8 @@ namespace Assets.Scripts.Player.Swords
                 if (IsNextAnimationFound() && !isInNextState)
                 {
                     isInNextState = true;
-                    currentHash = Animator.GetNextAnimatorStateInfo(0).fullPathHash;
+                
+                    currentHash = GetNextAnimatorStateInfo().fullPathHash;
                 }
                 else if (IsNextAnimationNotEquals(currentHash) && IsNextAnimationFound() && isInNextState)
                 {
@@ -81,9 +82,13 @@ namespace Assets.Scripts.Player.Swords
                 }
                 yield return 0;
             }
-
-            
         }
+
+        protected virtual AnimatorStateInfo GetNextAnimatorStateInfo()
+        {
+            return Animator.GetNextAnimatorStateInfo(0);
+        }
+
 
         private bool IsNextAnimationNotEquals(int currentHash)
         {

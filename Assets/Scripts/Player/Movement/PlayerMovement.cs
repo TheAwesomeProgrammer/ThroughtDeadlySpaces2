@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
     private PlayerProperties _playerProperties;
     private InputAxis XAxis;
     private InputAxis ZAxis;
+    private float _speed;
+    private bool _haveTriedToMovePlayer;
 
     private Vector3 _moveDirection;
     private Vector3 _inputDirection;
-
 
     // Use this for initialization
     void Start()
@@ -58,10 +59,11 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         _moveDirection = Vector3.zero;
+        _speed = _playerProperties.Speed;
 
         if (_inputDirection.magnitude > 0.5f){
             
-            _moveDirection = -transform.forward *_playerProperties.Speed;
+            _moveDirection = -transform.forward * _speed;
             _movementRotater.SetRotation(_inputDirection);
         }
 

@@ -50,7 +50,7 @@ namespace Assets.Scripts.Player.Equipments
             _xmlSearcher = new XmlSearcher(XmlLocation);
             _specs = _xmlSearcher.GetSpecsInChildrenWithId(XmlId, XmlArrayName);
             _rarity = _xmlSearcher.GetSpecsInChildrenWithId(XmlId, XmlArrayName, XmlRaritySpecNodeName)[0];
-            _equipmentSpecs = new EquipmentSpecs(_specs[0], _specs[1], _specs[2], _specs[3], _specs[4],(EquipmentRarity) _rarity);
+            _equipmentSpecs = new EquipmentSpecs(_specs[0], _specs[1], _specs[2], _specs[3], _specs[4], (EquipmentRarity) _rarity);
         }
 
         protected void AddAttributes<T>() where T : IConvertible

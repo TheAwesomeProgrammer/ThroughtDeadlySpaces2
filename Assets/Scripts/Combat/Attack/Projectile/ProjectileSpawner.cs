@@ -9,11 +9,14 @@ namespace Assets.Scripts.Combat.Attack.Projectile
     {
         public GameObject Projectile;
 
-        public GameObject Spawn(Vector3 spawnPosition, List<SetableData> setableDatas, ProjectileData projectileData)
+        protected List<SetableData> _setableDatas = new List<SetableData>();
+
+        public GameObject Spawn(Vector3 spawnPosition, ProjectileData projectileData, params SetableData[] setableDatas)
         {
             GameObject spawnedProjectile = Spawn(spawnPosition);
+            _setableDatas.AddRange(setableDatas);
 
-            foreach (var setableData in setableDatas)
+            foreach (var setableData in _setableDatas)
             {
                 SetData(setableData, spawnedProjectile, projectileData);
             }
@@ -21,16 +24,16 @@ namespace Assets.Scripts.Combat.Attack.Projectile
             return spawnedProjectile;
         }
 
-        public GameObject Spawn(Vector3 spawnPosition, SetableData setableData, ProjectileData projectileData)
+        public virtual GameObject Spawn(Vector3 spawnPosition, SetableData setableData, ProjectileData projectileData)
         {
             GameObject spawnedProjectile = Spawn(spawnPosition);
             SetData(setableData, spawnedProjectile, projectileData);
             return spawnedProjectile;
         }
 
-        private GameObject Spawn(Vector3 spawnPosition)
+        protected virtual GameObject Spawn(Vector3 spawnPosition)
         {
-            return Object.Instantiate(Projectile, spawnPosition, Quaternion.identity) as GameObject;
+            return Instantiate(Projectile, spawnPosition, Quaternion.identity) as GameObject;
         }
 
         private void SetData(SetableData setableData,GameObject spawnedProjectile, ProjectileData projectileData)

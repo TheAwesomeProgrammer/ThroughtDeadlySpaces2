@@ -23,7 +23,7 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
         {
             base.OnInteractableButtonDownAndCollidingWithPlayer();
             _uiManager.ActivateItemWithTypeAndId<UiShop>(ShopUiId);
-            _uiManager.SelectUiItemWithTypeAndId<RepairItem>(0);
+            _uiManager.SelectUiItemWithTypeAndId<RepairItem>(15);
             _movementChanger.StopMovement(_player);
         }
 

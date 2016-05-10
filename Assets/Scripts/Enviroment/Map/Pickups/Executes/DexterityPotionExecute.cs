@@ -14,7 +14,7 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
 
         public void Execute(GameObject gameObject)
         {
-            DexterityFiller dexterityFiller = gameObject.GetComponent<DexterityFiller>();
+            DexterityFiller dexterityFiller = gameObject.GetComponentInParent<DexterityFiller>();
             dexterityFiller.MaxDexterity += _dexterity;
         }
     }

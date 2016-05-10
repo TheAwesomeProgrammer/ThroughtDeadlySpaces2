@@ -9,12 +9,14 @@ public abstract class Door : Trigger
     public bool LockOnStart = true;
 
     protected bool _locked;
-    protected Collider _collisionCollider;
+    protected GameObject _lockedChild;
+    protected GameObject _unLockedChild;
 
     protected override void Start()
     {
         base.Start();
-        _collisionCollider = transform.parent.GetComponent<Collider>();
+        _lockedChild = transform.parent.FindChild("Lock").gameObject;
+        _unLockedChild = transform.parent.FindChild("UnLock").gameObject;
         if (LockOnStart)
         {
             Lock();
@@ -25,13 +27,15 @@ public abstract class Door : Trigger
     public void Lock()
     {
         _locked = true;
-        _collisionCollider.isTrigger = false;
+        _lockedChild.SetActive(true);
+        _unLockedChild.SetActive(false);
     }
 
     public void UnLock()
     {
         _locked = false;
-        _collisionCollider.isTrigger = true;
+        _lockedChild.SetActive(false);
+        _unLockedChild.SetActive(true);
     }
 
     public override void OnEnterWithTag()

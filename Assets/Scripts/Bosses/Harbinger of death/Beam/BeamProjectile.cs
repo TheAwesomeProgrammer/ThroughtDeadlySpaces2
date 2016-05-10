@@ -17,22 +17,28 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 
         private void Start()
         {
+            GetComponents();
+            _setCapsuleCollider.Start(); // Called before target player, because some stuff needs to be loaded.
+            TargetPlayer();
+
+            Timer.Start(StartDelay, DelayedStart);
+        }
+
+        private void TargetPlayer()
+        {
+            _fxDirectionSetter.SetPositonToTarget(GameObject.FindWithTag(Tag.Player).transform.position);
+            _setCapsuleCollider.TargetPlayer();
+            _followTarget.target = GameObject.FindWithTag(Tag.BeamSpawn).transform;
+        }
+
+        private void GetComponents()
+        {
             _pkfxFx = GetComponent<PKFxFX>();
             _setCapsuleCollider = GetComponentInChildren<SetCapsuleCollider>();
             _capsuleCollider = GetComponentInChildren<CapsuleCollider>();
             _bossAttack = GetComponentInChildren<BossAttack>();
             _fxDirectionSetter = GetComponent<FxDirectionSetter>();
             _followTarget = GetComponent<FollowTarget>();
-           
-            Timer.Start(0.0001f, VerySmallDelayedStart);
-            Timer.Start(StartDelay, DelayedStart);
-        }
-
-        private void VerySmallDelayedStart()
-        {
-            _fxDirectionSetter.SetPositonToTarget(GameObject.FindWithTag(Tag.Player).transform.position);
-            _setCapsuleCollider.TargetPlayer();
-            _followTarget.target = GameObject.FindWithTag(Tag.BeamSpawn).transform;
         }
 
         private void DelayedStart()

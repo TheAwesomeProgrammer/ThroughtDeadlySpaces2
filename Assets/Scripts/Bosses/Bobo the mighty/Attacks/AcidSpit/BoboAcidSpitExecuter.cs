@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters;
+﻿using Assets.Scripts.Bosses.Abstract;
+using Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters;
 using Assets.Scripts.Combat.Attack.Projectile;
 using Assets.Scripts.Combat.Attack.Projectile.Data;
 using Assets.Scripts.Combat.Attack.Projectile.DataSetters;
@@ -12,14 +13,14 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.AcidSpit
         public Transform AcidSpawnTransform;
 
         private LookAtTargetXz _lookAtTargetXz;
-        private ProjectileSpawner _projectileSpawner;
+        private BossProjectileSpawner _projectileSpawner;
         private GameObject _spawnedAcid;
 
         protected override void Start()
         {
             _baseDamageXmlId = 3;
             base.Start();
-            _projectileSpawner = GetComponent<ProjectileSpawner>();
+            _projectileSpawner = GetComponent<BossProjectileSpawner>();
             _lookAtTargetXz = transform.root.GetComponentInChildren<LookAtTargetXz>();
             _possiblePauseStates.Add(BoboState.Idle);
         }
@@ -40,7 +41,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.AcidSpit
 
         public GameObject Spawn(Vector3 spawnPosition)
         {
-            return _projectileSpawner.Spawn(spawnPosition, new BossSetExtraBaseDamage(), new ProjectileData(_baseDamage));
+            return _projectileSpawner.Spawn(spawnPosition, new ProjectileData(_baseDamage));
         }
     }
 }

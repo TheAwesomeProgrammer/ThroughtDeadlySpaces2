@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Shop.Merchant
 {
-    public abstract class ShopItem : UiItem, XmlLoadable
+    public abstract class ShopItem : MonoBehaviour, XmlLoadable
     {
-        public int SpecId;
+        public int MoneySpecId;
         public string XmlShopName = "Merchant";
 
         public int Money { get; set; }
@@ -22,7 +22,7 @@ namespace Assets.Scripts.Shop.Merchant
         public void LoadXml()
         {
             int[] specs = _xmlSearcher.GetSpecsInChildren("Shop", XmlShopName);
-            Money = specs[SpecId];
+            Money = specs[MoneySpecId];
         }
     }
 }

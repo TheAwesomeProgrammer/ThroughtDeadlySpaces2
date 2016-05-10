@@ -472,7 +472,7 @@ GameObject:
   - 114: {fileID: 114000014057984010}
   - 114: {fileID: 114000012142159942}
   - 114: {fileID: 114000010677275120}
-  - 114: {fileID: 114000013135035370}
+  - 114: {fileID: 114000013323397210}
   m_Layer: 0
   m_Name: MinionSpawn
   m_TagString: Untagged
@@ -608,8 +608,8 @@ GameObject:
   - 114: {fileID: 114000011005467774}
   - 65: {fileID: 65000013249870620}
   - 114: {fileID: 114000011858468840}
-  - 114: {fileID: 114000013615709360}
   - 114: {fileID: 114000012817429114}
+  - 114: {fileID: 114000011835401776}
   m_Layer: 0
   m_Name: Collision
   m_TagString: EnemyCollision
@@ -774,6 +774,7 @@ GameObject:
   - 4: {fileID: 4000013517157424}
   - 114: {fileID: 114000011729137008}
   - 114: {fileID: 114000010830781892}
+  - 114: {fileID: 114000012270415068}
   m_Layer: 0
   m_Name: Bobo the mighty
   m_TagString: Monster
@@ -1982,7 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77eca03aec2bf9c4b9d8bf549f3ae5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetTag: Player
+  TargetTag: PlayerCollision
   LookTime: 0.1
 --- !u!114 &114000011023725166
 MonoBehaviour:
@@ -2095,6 +2096,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0433ff0518317d429851df96e88437e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000011835401776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013404157960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1000011849060754, guid: ce6e169e2cd59cc4bbb90b871b762abc, type: 2}
 --- !u!114 &114000011858468840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2158,6 +2171,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1000011731746918, guid: bb304ec4321a6b64aa7bc4fd724f2125, type: 2}
+--- !u!114 &114000012270415068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014031764262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8d9db18d64e264e9ad846df48b4669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Difficulty: 0
 --- !u!114 &114000012369077292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2254,18 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975bab6dc8cc8fc42825ddc70eb732f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000013135035370
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012738910690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee80a44ea5df37e45b6d17bd7fcaa583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011103241098, guid: cc9e6071a09c3654895347382844a737, type: 2}
 --- !u!114 &114000013241947798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2295,6 +2308,18 @@ MonoBehaviour:
   StartHealth: 3
   ObjectToKillOnDeath: {fileID: 1000014031764262}
   DestroyOnDeath: 1
+--- !u!114 &114000013323397210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012738910690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1000011103241098, guid: cc9e6071a09c3654895347382844a737, type: 2}
 --- !u!114 &114000013345048178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2309,18 +2334,6 @@ MonoBehaviour:
   Animator: {fileID: 95000010569421110}
   TriggerName: RapidFrenzyStart
   TriggerEndName: RapidFrenzyEnd
---- !u!114 &114000013615709360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013404157960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee80a44ea5df37e45b6d17bd7fcaa583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011849060754, guid: ce6e169e2cd59cc4bbb90b871b762abc, type: 2}
 --- !u!114 &114000013739649378
 MonoBehaviour:
   m_ObjectHideFlags: 1

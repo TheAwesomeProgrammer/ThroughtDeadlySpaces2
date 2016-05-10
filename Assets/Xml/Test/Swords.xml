@@ -16,7 +16,7 @@
     </Sword>
     
      <Sword id="2" name="Standard">
-        <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+        <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
         <Specs>(2,3,4,5,6)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->

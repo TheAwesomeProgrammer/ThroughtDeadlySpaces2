@@ -8,7 +8,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
     public class HarbingerMultiBeamExecuter : BossAttackBase
     {
         private float _attackSpeed;
-        private const float StartDelay = 2.4f;
+        private const float StartDelay = 1.1f;
         private const float EndDelay = 0.75f;
         private const int TimesToAttack = 3;
         private BossBeam _bossBeam;

@@ -59,6 +59,7 @@ namespace Assets.Scripts.Quest
             _rewardFactory = new RewardFactory();
             _xmlSearcher = new XmlSearcher(Location.QuestGiver);
             _questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, "QuestGivers");
+            QuestGiverProperties.LoadXml();
             InitQuests(_questGiverProperties.RewardIds);
             SetQuestUI();
         }
@@ -118,7 +119,7 @@ namespace Assets.Scripts.Quest
         public GameObject SpawnBoss(Vector3 spawnPosition)
         {
             BossGeneratorProperties bossGeneratorProperties = _questGiverProperties.BossGeneratorProperties;
-            return Instantiate(bossGeneratorProperties.Boss, spawnPosition, Quaternion.identity) as GameObject;
+            return bossGeneratorProperties.Spawn(spawnPosition);
         }
     }
 }   

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Combat.Attack;
+﻿using Assets.Scripts.Bosses.Abstract;
+using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Attack.Projectile;
 using Assets.Scripts.Combat.Attack.Projectile.Data;
 using Assets.Scripts.Combat.Attack.Projectile.DataSetters;
@@ -15,7 +16,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
 
         private const float StartInvinsibleTime = 2;
 
-        private ProjectileSpawner _projectileSpawner;
+        private BossProjectileSpawner _projectileSpawner;
         private Life _life;
         private bool _canExplode;
 
@@ -25,7 +26,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             Tags.Add(Tag.PlayerCollision);
             Tags.Add("EnemyCollision");
 
-            _projectileSpawner = GetComponent<ProjectileSpawner>();
+            _projectileSpawner = GetComponent<BossProjectileSpawner>();
             _life = GetComponent<Life>();
             _life.Death += SpawnExplosion;
             Timer.Start(StartInvinsibleTime, () => _canExplode = true);
@@ -51,7 +52,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
 
         void SpawnExplosion()
         {
-            _projectileSpawner.Spawn(transform.position, new BossSetExtraBaseDamage(), new ProjectileData(Damage));
+            _projectileSpawner.Spawn(transform.position, new ProjectileData(Damage));
         }
     }
 }
