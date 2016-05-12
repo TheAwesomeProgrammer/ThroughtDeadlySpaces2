@@ -116,7 +116,7 @@ namespace TeamUtility.IO.Examples
 			}
 		}
 		
-		private void OnLevelWasLoaded(int levelIndex)
+		private void LevelWasLoaded()
 		{
 			if(m_state != PauseManagerState.Idle)
 			{

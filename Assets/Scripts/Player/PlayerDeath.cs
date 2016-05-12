@@ -23,7 +23,7 @@ namespace Assets.Scripts.Player
 
         void OnDeath()
         {
-            _animatorTrigger.StartAnimation();
+            _animatorTrigger.StartAnimation(AnimatorRunMode.AlwaysRun);
             _playerMovement.CanMove = false;
             _collisionRigidbody.isKinematic = false;
             _collisionRigidbody.useGravity = false;

@@ -25,6 +25,7 @@ TagManager:
   - SpawnPoint
   - Scripts
   - PlayerCollision
+  - Wall
   layers:
   - Default
   - TransparentFX

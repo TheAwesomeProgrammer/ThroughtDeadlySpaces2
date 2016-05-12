@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Enviroment.Collisions.Abstract;
+using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
 {

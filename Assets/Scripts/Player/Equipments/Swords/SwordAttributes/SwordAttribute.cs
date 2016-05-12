@@ -8,6 +8,7 @@
         Worn,
         Vsteel,
         LifeDrain,
-        Enchant
+        Enchant,
+        Miss
     }
 }

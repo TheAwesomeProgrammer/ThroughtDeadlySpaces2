@@ -8,12 +8,18 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 {
     public class BossAttack : Attacker
     {
+        public bool AttackOnStart;
+
         private BaseDamageData _extraBaseDamageData;
         private BossProperties _bossProperties;
 
         protected override void Start()
         {
             base.Start();
+            if (AttackOnStart)
+            {
+                StartAttack();
+            }
             _bossProperties = GetComponentInParent<BossProperties>();
             SetupDamageDatas();
         }

@@ -33,6 +33,8 @@ namespace Assets.Scripts.Player.Swords
                     return _attributeManager.AddNewAttribute<VsteelSwordBaseBlessing>(EquipmentAttributeType.Blessing);
                 case SwordAttribute.Worn:
                     return _attributeManager.AddNewAttribute<WornSwordCurse>(EquipmentAttributeType.Curse);
+                case SwordAttribute.Miss:
+                    return _attributeManager.AddNewAttribute<MissAttackSwordCurse>(EquipmentAttributeType.Curse);
                 default:
                     return new EmptySwordComponent();
             }

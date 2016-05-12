@@ -9,6 +9,7 @@ public abstract class Room : MonoBehaviour
     public Transform RoomSpawnTransform;
 
     private RoomObjectSpawner _roomObjectSpawner;
+    private bool _hasSpawnedNextRoom;
 
     void Start()
     {
@@ -17,12 +18,17 @@ public abstract class Room : MonoBehaviour
 
     public void OnMoveToNextRoom()
     {
-        if (MoveToNextRoom != null)
+        if (!_hasSpawnedNextRoom)
         {
-            MoveToNextRoom();
-        }
+            if (MoveToNextRoom != null)
+            {
+                MoveToNextRoom();
+            }
 
-        _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
+            _hasSpawnedNextRoom = true;
+            _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
+        }
+        
     }
 
     public virtual void OnPlayerJustEnteredRoom()

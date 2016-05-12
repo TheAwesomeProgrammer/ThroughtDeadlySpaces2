@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Combat.Attack
 {
+    [System.Serializable]
     public class DamageData : CombatData, ICloneable
     {
         private int _damage;

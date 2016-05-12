@@ -5,11 +5,11 @@
         <Specs>(1,1,1,1,1)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>()</Att>
+        <Att>(Miss)</Att>
         <!-- 
         Possible attributes :
         Curses : 
-        [Rusty],[Broken],[Heavy],[Worn]
+        [Rusty],[Broken],[Heavy],[Worn][Miss]
         Blessings : 
         [Vsteel],[LifeDrain],[Enchant]
         -->

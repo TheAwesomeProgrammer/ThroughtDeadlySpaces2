@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Combat.Attack.Projectile;
 using Assets.Scripts.Combat.Attack.Projectile.Data;
 using Assets.Scripts.Combat.Attack.Projectile.DataSetters;
@@ -9,11 +10,17 @@ namespace Assets.Scripts.Bosses.Abstract
 {
     public class BossProjectileSpawner : ProjectileSpawner
     {
+        public Difficulty BossDifficulty;
+
         private BossProperties _bossProperties;
 
         void Start()
         {
             _bossProperties = GetComponentInParent<BossProperties>();
+            if (_bossProperties != null)
+            {
+                BossDifficulty = _bossProperties.Difficulty;
+            }
             _setableDatas.Add(new BossSetExtraBaseDamage());
         }
 
@@ -22,9 +29,9 @@ namespace Assets.Scripts.Bosses.Abstract
             GameObject spawnedObject = base.Spawn(spawnPosition);
 
             BossAttack bossAttack = spawnedObject.GetComponentInChildren<BossAttack>();
-            if (bossAttack != null)
+            if (bossAttack != null && _bossProperties)
             {
-                bossAttack.AddRandomAllocatedDamage((int)_bossProperties.Difficulty);
+                bossAttack.AddRandomAllocatedDamage((int)BossDifficulty);
             }
 
             return spawnedObject;

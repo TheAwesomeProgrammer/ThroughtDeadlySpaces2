@@ -5,7 +5,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
 {
     public class BoboJumpExecuter : BossAttackBase
     {
-        private const float StartDelay = 1f;
+        private const float StartDelay = 0.5f;
 
         private const float JumpForce = 10;
 
@@ -36,7 +36,6 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         public override void SwitchState()
         {
             base.SwitchState();
-            _jumpCollisionDetector.Disable();
         }
     }
 }

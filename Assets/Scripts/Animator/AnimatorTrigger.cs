@@ -6,6 +6,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
+    public enum AnimatorRunMode
+    {
+        AlwaysRun,
+        RunIfNoAnimationPlaying
+    }
+
     public class AnimatorTrigger : MonoBehaviour
     {
         public Animator Animator;
@@ -14,15 +20,19 @@ namespace Assets.Scripts.Player.Swords
         public event Action AnimationEnded;
         public event Action AnimationStarting;
 
+        protected int _layerNumber;
+
         private InputButton _inputButton;
         private bool _shouldCancel;
+        private bool _running;
 
-        void Start()
+        protected virtual void Start()
         {
+            _layerNumber = 0;
             _inputButton = GetComponent<InputButton>();
             if (_inputButton)
             {
-                _inputButton.ButtonDown += StartAnimation;
+                _inputButton.ButtonDown += () => StartAnimation(AnimatorRunMode.RunIfNoAnimationPlaying);
             }
         }
 
@@ -34,12 +44,33 @@ namespace Assets.Scripts.Player.Swords
         public void End()
         {
             Animator.SetTrigger(TriggerEndName);
+            _running = false;
         }
 
-        public void StartAnimation()
+        public void StartAnimation(AnimatorRunMode animatorRunMode)
+        {
+            switch (animatorRunMode)
+            {
+                case AnimatorRunMode.AlwaysRun:
+                    StartAnimation();
+                    break;
+                case AnimatorRunMode.RunIfNoAnimationPlaying:
+                    if (!_running)
+                    {
+                        StartAnimation();
+                    }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("animatorRunMode", animatorRunMode, null);
+            }
+        }
+
+        private void StartAnimation()
         {
             StartCoroutine(DoAnimation());
+            _running = true;
         }
+
 
         IEnumerator DoAnimation()
         {
@@ -63,13 +94,13 @@ namespace Assets.Scripts.Player.Swords
         {
             bool isInNextState = false;
             int currentHash = 0;
-
+            
             while (true)
             {
                 if (IsNextAnimationFound() && !isInNextState)
                 {
                     isInNextState = true;
-                
+
                     currentHash = GetNextAnimatorStateInfo().fullPathHash;
                 }
                 else if (IsNextAnimationNotEquals(currentHash) && IsNextAnimationFound() && isInNextState)
@@ -78,6 +109,7 @@ namespace Assets.Scripts.Player.Swords
                     {
                         AnimationEnded();
                     }
+                    _running = false;
                     break;
                 }
                 yield return 0;
@@ -86,18 +118,18 @@ namespace Assets.Scripts.Player.Swords
 
         protected virtual AnimatorStateInfo GetNextAnimatorStateInfo()
         {
-            return Animator.GetNextAnimatorStateInfo(0);
+            return Animator.GetNextAnimatorStateInfo(_layerNumber);
         }
 
 
         private bool IsNextAnimationNotEquals(int currentHash)
         {
-            return Animator.GetNextAnimatorStateInfo(0).fullPathHash != currentHash;
+            return Animator.GetNextAnimatorStateInfo(_layerNumber).fullPathHash != currentHash;
         }
 
         private bool IsNextAnimationFound()
         {
-            return Animator.GetNextAnimatorStateInfo(0).fullPathHash != 0;
+            return Animator.GetNextAnimatorStateInfo(_layerNumber).fullPathHash != 0;
         }
     }
 }

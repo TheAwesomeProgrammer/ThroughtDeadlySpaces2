@@ -49,13 +49,13 @@ public class GeneralEventsListenersCS : MonoBehaviour {
 
 	// ****** Physics / AI Stuff
 
-	void OnCollisionEnter(CollisionChecking collisionChecking) {
-		if(collisionChecking.gameObject.layer!=2)
+	void OnCollisionEnter(Collision collision) {
+		if(collision.gameObject.layer!=2)
 			towardsRotation = new Vector3(0f, Random.Range(-180, 180), 0f);
     }
 
-     void OnCollisionStay(CollisionChecking collisionChecking) {
-     	if(collisionChecking.gameObject.layer!=2){
+     void OnCollisionStay(Collision collision) {
+     	if(collision.gameObject.layer!=2){
      		turnForIter = 0f;
 	    	turnForLength = Random.Range(0.5f, 1.5f);
 	    }

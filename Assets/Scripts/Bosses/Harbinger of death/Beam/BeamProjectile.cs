@@ -26,7 +26,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 
         private void TargetPlayer()
         {
-            _fxDirectionSetter.SetPositonToTarget(GameObject.FindWithTag(Tag.Player).transform.position);
+            _fxDirectionSetter.SetPositonToTarget(GameObject.FindWithTag(Tag.PlayerCollision).transform.position);
             _setCapsuleCollider.TargetPlayer();
             _followTarget.target = GameObject.FindWithTag(Tag.BeamSpawn).transform;
         }

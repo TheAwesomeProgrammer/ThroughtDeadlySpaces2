@@ -36,7 +36,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 
         public virtual void StartState(BossStateMachine bossStateMachine)
         {
-            _animatorTrigger.StartAnimation();
+            _animatorTrigger.StartAnimation(AnimatorRunMode.AlwaysRun);
             _active = true;
             StartCoroutine(WaitThenChangeStateToMove(bossStateMachine, _movementState));
 

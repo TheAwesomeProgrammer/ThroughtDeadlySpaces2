@@ -27,7 +27,6 @@ namespace Assets.Scripts.Quest
         public QuestGiverProperties()
         {
             QuestPropertieses = new List<QuestProperties>();
-            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
         }
 
         public void AddReward(int id, Reward reward, BossGeneratorProperties bossGeneratorProperties)
@@ -37,6 +36,7 @@ namespace Assets.Scripts.Quest
 
         public void LoadXml()
         {
+            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
             XmlNode questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, "QuestGivers");
             SetSpecs(questGiverNode);
             Name = questGiverNode.Attributes["name"].InnerText;

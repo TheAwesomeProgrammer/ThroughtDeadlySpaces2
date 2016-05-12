@@ -6,9 +6,10 @@ namespace Assets.Scripts.Player.Swords
     {
         public int LayerNumber;
 
-        protected override AnimatorStateInfo GetNextAnimatorStateInfo()
+        protected override void Start()
         {
-            return Animator.GetNextAnimatorStateInfo(LayerNumber);
+            base.Start();
+            _layerNumber = LayerNumber;
         }
     }
 }

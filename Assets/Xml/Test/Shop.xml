@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shop>
     <Merchant>
-        <Specs>(10,20,30,40,50,60,70)</Specs>
+        <Specs>(10,20,30,40,50,60,70)</Specs> <!--[1 - 2 sword costs], [3 - 4 armor cost], [4 - 7 potion cost in order(strength, dexterity, speed) -->
     </Merchant>
 
     <BlackSmith>
-        <Specs>(10,20,30,40,50,60)</Specs> <!-- 1 - 3 sword repair cost. 4 - 6 armor repair cost. -->
+        <Specs>(10,20,30,40,50,60)</Specs> <!-- [1 - 3 sword repair cost.], [4 - 6 armor repair cost.] -->
     </BlackSmith>
 </Shop>

@@ -18,8 +18,8 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         void Start()
         {
             _abillityTiming = GetComponent<AbillityTiming>();
-            _playerMovement = GetComponent<PlayerMovement>();
-            _rigidbody = GetComponent<Rigidbody>();
+            _playerMovement = GetComponentInParent<PlayerMovement>();
+            _rigidbody = GetComponentInParent<Rigidbody>();
             _animatorTrigger = GetComponent<AnimatorTrigger>();
             _dexterityFiller = GetComponentInParent<DexterityFiller>();
             _animatorTrigger.AnimationStarting += OnDashAnimationStarting;

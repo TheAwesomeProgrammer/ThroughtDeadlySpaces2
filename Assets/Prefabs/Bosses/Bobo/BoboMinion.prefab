@@ -281,11 +281,11 @@ GameObject:
   - 114: {fileID: 114000011232600672}
   - 114: {fileID: 114000014280369598}
   - 114: {fileID: 114000013823344290}
-  - 114: {fileID: 114000011948578864}
   - 114: {fileID: 114000012200367284}
   - 114: {fileID: 114000010037194838}
   - 114: {fileID: 114000014236725290}
   - 114: {fileID: 114000014012708222}
+  - 114: {fileID: 114000011211814540}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Enemy
@@ -921,6 +921,18 @@ MonoBehaviour:
   Animator: {fileID: 95000013791312232}
   TriggerName: Run
   TriggerEndName: 
+--- !u!114 &114000011211814540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012485427644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1000013198285764, guid: b526dfc0aa805034fba75607071c5ad4, type: 2}
 --- !u!114 &114000011232600672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -933,18 +945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionCheckingWhenDisabled: 0
---- !u!114 &114000011948578864
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012485427644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee80a44ea5df37e45b6d17bd7fcaa583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000013198285764, guid: b526dfc0aa805034fba75607071c5ad4, type: 2}
 --- !u!114 &114000012200367284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77eca03aec2bf9c4b9d8bf549f3ae5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetTag: Player
+  TargetTag: PlayerCollision
   LookTime: 0.5
 --- !u!137 &137000014113986780
 SkinnedMeshRenderer:

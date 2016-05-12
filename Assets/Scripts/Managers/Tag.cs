@@ -10,5 +10,6 @@ namespace Assets.Scripts.Player.Swords.Abstract
         public static string EnemyCollision = "EnemyCollsion";
         public static string BeamSpawn = "BeamSpawn";
         public static string Map = "Map";
+        public static string Wall = "Wall";
     }
 }

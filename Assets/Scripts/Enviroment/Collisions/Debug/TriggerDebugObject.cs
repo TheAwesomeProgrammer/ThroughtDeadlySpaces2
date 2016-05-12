@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Enviroment.Collisions.Abstract;
+using UnityEngine;
 
 public class TriggerDebugObject : Trigger
 {

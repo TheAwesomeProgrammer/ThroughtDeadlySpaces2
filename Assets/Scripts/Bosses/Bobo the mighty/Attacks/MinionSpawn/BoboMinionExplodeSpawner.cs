@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Bosses.Abstract;
+using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Attack.Projectile;
 using Assets.Scripts.Combat.Attack.Projectile.Data;
@@ -13,6 +14,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
     public class BoboMinionExplodeSpawner : CollisionChecking
     {
         public int Damage { get; set; }
+        public Difficulty BossDifficulty { get; set; }
 
         private const float StartInvinsibleTime = 2;
 
@@ -27,6 +29,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             Tags.Add("EnemyCollision");
 
             _projectileSpawner = GetComponent<BossProjectileSpawner>();
+            _projectileSpawner.BossDifficulty = BossDifficulty;
             _life = GetComponent<Life>();
             _life.Death += SpawnExplosion;
             Timer.Start(StartInvinsibleTime, () => _canExplode = true);

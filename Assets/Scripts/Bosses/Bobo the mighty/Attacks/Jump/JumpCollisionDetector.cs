@@ -41,6 +41,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             {
                 GameObject spawnedObject = _projectileSpawner.Spawn(_aoeSpawnPoint.position, new ProjectileData(_damage));
                 Destroy(spawnedObject, AoeLiveTime);
+                _enabled = false;
             }
         }
     }

@@ -489,9 +489,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010813296792}
   - 114: {fileID: 114000010270583416}
-  - 114: {fileID: 114000012260146392}
   - 114: {fileID: 114000013050435868}
   - 114: {fileID: 114000011415982908}
+  - 114: {fileID: 114000010911119412}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -610,6 +610,8 @@ GameObject:
   - 114: {fileID: 114000011858468840}
   - 114: {fileID: 114000012817429114}
   - 114: {fileID: 114000011835401776}
+  - 114: {fileID: 114000013401147474}
+  - 114: {fileID: 114000010306763202}
   m_Layer: 0
   m_Name: Collision
   m_TagString: EnemyCollision
@@ -1882,6 +1884,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AcidSpawnTransform: {fileID: 4000010039750280}
+--- !u!114 &114000010306763202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013404157960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66504911650bac489b197ffb2e96525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionCheckingWhenDisabled: 0
 --- !u!114 &114000010344363630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1904,6 +1918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3523526edeb79f4792b1c0e7d5f7f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackOnStart: 0
 --- !u!114 &114000010645474244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1972,6 +1987,19 @@ MonoBehaviour:
     PauseTimeSpecs: []
     SpecialSpecs: []
   BossId: 2
+--- !u!114 &114000010911119412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012836268994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Projectile: {fileID: 1000011731746918, guid: bb304ec4321a6b64aa7bc4fd724f2125, type: 2}
+  BossDifficulty: 0
 --- !u!114 &114000011005467774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2107,7 +2135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011849060754, guid: ce6e169e2cd59cc4bbb90b871b762abc, type: 2}
+  Projectile: {fileID: 1000011776840026, guid: 477c4efd8c127184e9249da09dc2bb4e, type: 2}
+  BossDifficulty: 0
 --- !u!114 &114000011858468840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2159,18 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3523526edeb79f4792b1c0e7d5f7f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000012260146392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012836268994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee80a44ea5df37e45b6d17bd7fcaa583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011731746918, guid: bb304ec4321a6b64aa7bc4fd724f2125, type: 2}
+  AttackOnStart: 0
 --- !u!114 &114000012270415068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2320,6 +2338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1000011103241098, guid: cc9e6071a09c3654895347382844a737, type: 2}
+  BossDifficulty: 0
 --- !u!114 &114000013345048178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2334,6 +2353,18 @@ MonoBehaviour:
   Animator: {fileID: 95000010569421110}
   TriggerName: RapidFrenzyStart
   TriggerEndName: RapidFrenzyEnd
+--- !u!114 &114000013401147474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013404157960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe6251b5e3b014fb3b735d738c22df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionCheckingWhenDisabled: 0
 --- !u!114 &114000013739649378
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -208,15 +208,30 @@ GameObject:
   - 114: {fileID: 114000011964067686}
   - 54: {fileID: 54000011368620818}
   - 114: {fileID: 114000012177349136}
-  - 114: {fileID: 114000011705316642}
-  - 114: {fileID: 114000010966869640}
   - 114: {fileID: 114000011577361638}
-  - 114: {fileID: 114000010741812560}
-  - 114: {fileID: 114000011838159804}
   - 114: {fileID: 114000012892044578}
   m_Layer: 0
   m_Name: Collision
   m_TagString: PlayerCollision
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012256483316
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013046106562}
+  - 114: {fileID: 114000013037550626}
+  - 114: {fileID: 114000013888171392}
+  - 114: {fileID: 114000010351135978}
+  - 114: {fileID: 114000011383179192}
+  m_Layer: 0
+  m_Name: Dash
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,6 +910,7 @@ Transform:
   - {fileID: 4000010710901012}
   - {fileID: 4000012085514796}
   - {fileID: 4000012096306654}
+  - {fileID: 4000013046106562}
   m_Father: {fileID: 4000013941433502}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1010,6 +1026,19 @@ Transform:
   - {fileID: 4000012613448680}
   m_Father: {fileID: 4000013757716894}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4000013046106562
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012256483316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000012645474086}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013078967852
 Transform:
@@ -1265,6 +1294,18 @@ MonoBehaviour:
   StartHealth: 3
   ObjectToKillOnDeath: {fileID: 1000013943599082}
   DestroyOnDeath: 0
+--- !u!114 &114000010351135978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012256483316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b62b47a21467c46be34e2c2f834145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 1
 --- !u!114 &114000010594560116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1302,19 +1343,6 @@ MonoBehaviour:
   SpeedAnimatorVariableName: Speed
   Animator: {fileID: 95000011962922900}
   AutoSet: 0
---- !u!114 &114000010741812560
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011702734766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144fecf6123f2f7479768445b2edfb11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonNames:
-  - Dash
 --- !u!114 &114000010906973698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1341,17 +1369,6 @@ MonoBehaviour:
   Animator: {fileID: 95000011962922900}
   TriggerName: Death
   TriggerEndName: 
---- !u!114 &114000010966869640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011702734766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8677efeaed1cb64aa43f3f9bc154d44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000011332979430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1367,6 +1384,20 @@ MonoBehaviour:
   TriggerName: Attack
   TriggerEndName: 
   LayerNumber: 1
+--- !u!114 &114000011383179192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012256483316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 95000011962922900}
+  TriggerName: Dash
+  TriggerEndName: DashEnd
 --- !u!114 &114000011466289172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1392,20 +1423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b293df59ca4dfc4478f6df4d8fa40a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000011705316642
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011702734766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011962922900}
-  TriggerName: Dash
-  TriggerEndName: DashEnd
 --- !u!114 &114000011782590902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1417,18 +1434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975bab6dc8cc8fc42825ddc70eb732f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000011838159804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011702734766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5b62b47a21467c46be34e2c2f834145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Duration: 1
 --- !u!114 &114000011855356846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1535,6 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionCheckingWhenDisabled: 0
+  Smoothing: 200
 --- !u!114 &114000013016557838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1548,6 +1554,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AxisNames:
   - Horizontal
+--- !u!114 &114000013037550626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012256483316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144fecf6123f2f7479768445b2edfb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonNames:
+  - Dash
 --- !u!114 &114000013210873766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1577,6 +1596,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 3
+--- !u!114 &114000013888171392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012256483316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8677efeaed1cb64aa43f3f9bc154d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013956985002
 MonoBehaviour:
   m_ObjectHideFlags: 1

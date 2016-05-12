@@ -21,6 +21,7 @@ namespace Assets.Scripts.Quest.Rewards.Spawner
             _rewardPotionObjectFactory = GetComponent<RewardPotionObjectFactory>();
             _rewardSwordObjectFactory = GetComponent<RewardSwordObjectFactory>();
             _roomParent = GetComponentInParent<BaseRoom>();
+            _offset = Vector3.zero;
             _circleOffsetCalculator = new CircleOffsetCalculator();
         }
 

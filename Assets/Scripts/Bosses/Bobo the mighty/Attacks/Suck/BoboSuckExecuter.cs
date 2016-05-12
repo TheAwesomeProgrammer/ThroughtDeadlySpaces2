@@ -22,7 +22,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
             _lookAtTargetXz = transform.root.FindComponentInChildWithTag<LookAtTargetXz>("EnemyCollision");
             _attackChoserExecuter = GetComponentInParent<BoboAttackChoserExecuter>();
             _possiblePauseStates.Add(BoboState.Idle);
-            _baseDamageXmlId = 2;
+            _baseDamageXmlId = 0;
         }
 
         protected override void Attack()

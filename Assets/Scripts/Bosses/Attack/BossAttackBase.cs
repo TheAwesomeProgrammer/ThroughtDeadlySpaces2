@@ -86,7 +86,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 
         protected void StartAnimation()
         {
-            _animatorTrigger.StartAnimation();
+            _animatorTrigger.StartAnimation(AnimatorRunMode.AlwaysRun);
         }
 
         public void EndState(BossStateMachine bossStateMachine)

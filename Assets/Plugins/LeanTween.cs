@@ -138,6 +138,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public enum TweenAction{
 	MOVE_X,
@@ -1331,6 +1332,7 @@ public static int tweensRunning{
 *   LeanTween.init( 800 );
 */
 public static void init(int maxSimultaneousTweens){
+
 	if(tweens==null){
 		maxTweens = maxSimultaneousTweens;
 		tweens = new LTDescrImpl[maxTweens];
@@ -1339,6 +1341,7 @@ public static void init(int maxSimultaneousTweens){
 		_tweenEmpty.name = "~LeanTween";
 		_tweenEmpty.AddComponent(typeof(LeanTween));
 		_tweenEmpty.isStatic = true;
+        SceneManager.sceneLoaded += _tweenEmpty.GetComponent<LeanTween>().LevelWasLoaded;
 		#if !UNITY_EDITOR
 		_tweenEmpty.hideFlags = HideFlags.HideAndDontSave;
 		#endif
@@ -1347,7 +1350,7 @@ public static void init(int maxSimultaneousTweens){
 			tweens[i] = new LTDescrImpl();
 		}
 	}
-}
+    }
 
 public static void reset(){
 	for (int i = 0; i <= tweenMaxSearch; i++){
@@ -1361,7 +1364,8 @@ public void Update(){
 	LeanTween.update();
 }
 
-public void OnLevelWasLoaded( int lvl ){
+public void LevelWasLoaded(Scene arg0, LoadSceneMode loadSceneMode)
+{
 	// Debug.Log("reseting gui");
 	LTGUI.reset();
 }

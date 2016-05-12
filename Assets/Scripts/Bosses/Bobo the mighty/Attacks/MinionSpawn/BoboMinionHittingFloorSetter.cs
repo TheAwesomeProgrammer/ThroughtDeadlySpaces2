@@ -21,7 +21,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         public override void OnEnterWithTag()
         {
             base.OnEnterWithTag();
-            _animatorTrigger.StartAnimation();
+            _animatorTrigger.StartAnimation(AnimatorRunMode.AlwaysRun);
             _moveForward.enabled = true;
         }
     }

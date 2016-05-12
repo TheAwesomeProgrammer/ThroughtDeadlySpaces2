@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77eca03aec2bf9c4b9d8bf549f3ae5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetTag: Player
+  TargetTag: PlayerCollision
   LookTime: 1
 --- !u!114 &114000014041043086
 MonoBehaviour:

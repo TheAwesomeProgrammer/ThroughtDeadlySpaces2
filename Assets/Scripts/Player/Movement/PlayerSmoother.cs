@@ -8,8 +8,6 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 
         private Rigidbody _rigidbody;
 
-        private Vector3 _startVelocity;
-
         protected override void Start()
         {
             base.Start();
@@ -25,9 +23,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
                 Vector3 collisionPoint = contact.point;
                 if (collisionPoint.y > transform.position.y)
                 {
-                    _startVelocity = _rigidbody.velocity;
                     _rigidbody.velocity.Scale(new Vector3(0, 0, Smoothing));
-                    print("Smoothing");
                     break;
                 }
             }
