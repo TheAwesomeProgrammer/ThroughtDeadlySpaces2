@@ -43,7 +43,7 @@
 
 			sampler2D _CameraDepthTexture;
 
-#ifndef SHADER_API_D3D9
+#if !defined(SHADER_API_D3D9) && !defined(SHADER_API_D3D11_9X)
 			fixed frag(v2f i) : SV_Depth
 			{
 				fixed4 col = tex2D(_CameraDepthTexture, i.uv);

@@ -10,27 +10,37 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         private const float ForwardDistanceCheck = 1;
 
         private Rigidbody _rigidbody;
-        private Collider _collider;
+        private CapsuleCollider _capsuleCollider;
         private bool _fall;
 
         protected override void Start()
         {
             base.Start();
             _rigidbody = GetComponent<Rigidbody>();
-            _collider = GetComponent<Collider>();
+            _capsuleCollider = GetComponent<CapsuleCollider>();
         }
 
         public override void OnEnter()
         {
             base.OnEnter();
-            RaycastHit[] forwardRaycastHits = Physics.RaycastAll(new Ray(transform.position, transform.forward * ForwardDistanceCheck));
-            RaycastHit[] downRaycastHits = Physics.RaycastAll(new Ray(transform.position, Vector3.down * DownDistanceCheck));
+            
+            RaycastHit[] forwardRaycastHits = CapsuleCastAllInDirection(Vector3.forward);
+            RaycastHit[] downRaycastHits = CapsuleCastAllInDirection(Vector3.down);
 
             if (forwardRaycastHits.Length > 0 && downRaycastHits.Length <= 0)
             {
                 _fall = true;
-                _collider.material = PhysicMaterial;
+                _capsuleCollider.material = PhysicMaterial;
             }
+        }
+
+        private RaycastHit[] CapsuleCastAllInDirection(Vector3 direction)
+        {
+            Vector3 capsuleCenter = _capsuleCollider.center;
+            float capsuleHeight = _capsuleCollider.height;
+            float capsuleRadius = _capsuleCollider.radius;
+            return Physics.CapsuleCastAll(capsuleCenter + new Vector3(0, capsuleHeight),
+                capsuleCenter + new Vector3(0, -capsuleHeight), capsuleRadius, direction * DownDistanceCheck);
         }
 
         void LateUpdate()

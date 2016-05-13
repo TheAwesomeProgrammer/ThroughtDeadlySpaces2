@@ -14,9 +14,9 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         {
             _possibleRangedAttacks = new List<Enum>()
             {
-                //BoboState.Suck,
+                BoboState.Suck,
                 BoboState.Jump,
-                //BoboState.MinionSpawn
+                BoboState.MinionSpawn
             };
             _possibleMeleeAttacks = new List<Enum>()
             {
