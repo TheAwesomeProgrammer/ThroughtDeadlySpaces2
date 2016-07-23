@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player.Swords.Abstract
     {
         protected List<TGenericType> _components = new List<TGenericType>();
 
-        void Start()
+        protected virtual void Start()
         {
             _components = new List<TGenericType>();
         }
@@ -23,6 +23,11 @@ namespace Assets.Scripts.Player.Swords.Abstract
         public T AddNewComponent<T>() where T : TGenericType
         {
             return (T)AddExistingComponent(gameObject.AddComponent<T>());
+        }
+
+        public T AddNewComponent<T>(GameObject gameObjectAddingOn) where T : TGenericType
+        {
+            return (T)AddExistingComponent(gameObjectAddingOn.AddComponent<T>());
         }
 
         public List<T> GetComponentsList<T>() where T : TGenericType

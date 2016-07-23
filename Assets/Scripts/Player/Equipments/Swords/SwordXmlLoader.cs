@@ -10,12 +10,12 @@ namespace Assets.Scripts.Player.Swords
 {
     public sealed class SwordXmlLoader : EquipmentXmlLoader
     {
-        public SwordXmlLoader(AttributeManager armorAttributeManager, int xmlId, string xmlArrayName) : base(armorAttributeManager, xmlId, xmlArrayName)
+        public SwordXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId, string xmlArrayName) : base(equipmentAttributeManager, xmlId, xmlArrayName)
         {
             XmlId = xmlId;
             XmlLocation = Location.Sword;
             XmlArrayName = xmlArrayName;
-            _attributeAdder = new SwordAttributeAdder(armorAttributeManager);
+            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager);
         }
 
         public override void Load()

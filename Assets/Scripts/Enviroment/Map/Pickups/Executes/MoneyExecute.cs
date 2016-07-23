@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Shop;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Shop;
 using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes

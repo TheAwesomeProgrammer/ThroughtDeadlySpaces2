@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
@@ -13,7 +14,7 @@ namespace Assets.Scripts.Player.Swords
         public event Action Attacking;
         public event Action AttackEnded;
 
-        protected AttributeManager _attributeManager;
+        protected EquipmentAttributeManager _equipmentAttributeManager;
         protected List<DamageData> _damageDatas = new List<DamageData>();
         protected bool _attacking;
         protected bool _canAttack;
@@ -26,7 +27,7 @@ namespace Assets.Scripts.Player.Swords
             EnableAttack();
             _damageDatas = new List<DamageData>();
             _damageTrigger = GetComponent<DamageTrigger>();
-            _attributeManager = GetComponent<AttributeManager>();
+            _equipmentAttributeManager = GameObject.FindGameObjectWithTag(Tag.Player).GetComponent<EquipmentAttributeManager>();
             _animationEventListener = GetComponent<AnimationEventListener>();
             if (_animationEventListener != null)
             {
@@ -130,7 +131,7 @@ namespace Assets.Scripts.Player.Swords
 
         private List<DamageModifier> GetDamageModifiers()
         {
-            return _attributeManager.GetComponentsList<DamageModifier>();
+            return _equipmentAttributeManager.GetComponentsList<DamageModifier>();
         }
     }
 }

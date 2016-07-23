@@ -1,11 +1,13 @@
 ﻿using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Curses
 {
+    [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
     public class BrokenSwordCurse : BaseDamageModifier,XmlLoadable
     {
         public int BrokenSwordMinusProcentDamage = -40;
@@ -27,7 +29,7 @@ namespace Assets.Scripts.Player.Swords.Curses
         public void LoadXml()
         {
             _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Curse));
-            BrokenSwordMinusProcentDamage = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Curses")[0];
+            BrokenSwordMinusProcentDamage = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Attributes")[0];
         }
     }
 }

@@ -2,11 +2,13 @@
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
+    [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
     public class EnchantedBlessing : DamagesDataModifier
     {
         public int ProcentChangeToEnchant = 10;

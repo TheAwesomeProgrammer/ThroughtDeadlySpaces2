@@ -1,11 +1,13 @@
 ﻿using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Curses
 {
+    [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
     public class RustySwordCurse : BaseDamageModifier
     {
         public int MinusProcentDamage = -20;
@@ -24,7 +26,7 @@ namespace Assets.Scripts.Player.Swords.Curses
         public void LoadSpecs()
         {
             _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Curse));
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Curses");
+            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Attributes");
             MinusProcentDamage = specs[0];
             ProcentToBreakSword = specs[1];
         }
@@ -36,9 +38,9 @@ namespace Assets.Scripts.Player.Swords.Curses
 
         void OnAttacking()
         {
-            if (MathHelper.IsBetweenRandomProcentFrom0To100(ProcentToBreakSword) && !_swordAttributeManager.HasComponent<BrokenSwordCurse>())
+            if (MathHelper.IsBetweenRandomProcentFrom0To100(ProcentToBreakSword) && !_swordEquipmentAttributeManager.HasComponent<BrokenSwordCurse>())
             {
-                _swordAttributeManager.AddNewComponent<BrokenSwordCurse>();
+                _swordEquipmentAttributeManager.AddNewComponent<BrokenSwordCurse>();
             }
         }
 

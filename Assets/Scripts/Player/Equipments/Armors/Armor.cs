@@ -10,21 +10,21 @@ namespace Assets.Scripts.Player.Armors
         public int ArmorId = 1;
 
         private ArmorXmlLoader _armorXmlLoader;
-        private AttributeManager _attributeManager;
+        private EquipmentAttributeManager _equipmentAttributeManager;
 
         protected override void Start()
         {
             base.Start();
-            _attributeManager = GetComponent<AttributeManager>();
+            _equipmentAttributeManager = GetComponent<EquipmentAttributeManager>();
             GetComponent<Resistance>().Defending += OnUse;
-            _armorXmlLoader = new ArmorXmlLoader(_attributeManager, transform.root.FindComponentInChildWithName<AttributeManager>("Sword"), ArmorId, "Armors");
+            _armorXmlLoader = new ArmorXmlLoader(_equipmentAttributeManager, transform.root.FindComponentInChildWithName<EquipmentAttributeManager>("Sword"), ArmorId, "Armors");
             _armorXmlLoader.Load();
             Specs = _armorXmlLoader.EquipmentSpecs;
         }
 
         void OnDestroy()
         {
-            _attributeManager.RemoveComponents();
+            _equipmentAttributeManager.RemoveComponents();
         }
     }
 }

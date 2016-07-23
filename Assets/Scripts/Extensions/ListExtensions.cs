@@ -21,5 +21,15 @@ namespace Assets.Scripts.Extensions
         {
             return listToClone.Select(item => (T)item.Clone()).ToList();
         }
+
+        public static T Random<T>(this List<T> list)
+        {
+            return list[UnityEngine.Random.Range(0, list.Count)];
+        }
+
+        public static TValue RandomValue<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
+        {
+            return dictionary.Values.ElementAt(UnityEngine.Random.Range(0, dictionary.Count));
+        }
     }
 }

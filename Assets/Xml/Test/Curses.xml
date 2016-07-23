@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Curses>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Attributes>
     <BrokenSwordCurse id="0">
         <Specs>(-40)</Specs>    <!-- [1 = Minus procent base damage] -->    
     </BrokenSwordCurse>
@@ -12,4 +12,4 @@
     <RustryArmorCurse id="3">
         <Specs>(8)</Specs>  <!-- [ [1 = procent chance to break armor] -->    
     </RustryArmorCurse>   
-</Curses>
+</Attributes>

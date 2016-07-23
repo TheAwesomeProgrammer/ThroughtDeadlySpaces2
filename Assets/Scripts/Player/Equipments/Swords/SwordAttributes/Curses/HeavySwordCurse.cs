@@ -1,9 +1,11 @@
 ﻿using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Curses
 {
+    [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
     public class HeavySwordCurse : SwordComponent
     {
         public int SpeedToLose = 2;
@@ -23,7 +25,7 @@ namespace Assets.Scripts.Player.Swords.Curses
         public void LoadSpecs()
         {
             _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Curse));
-            SpeedToLose = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Curses")[0];
+            SpeedToLose = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Attributes")[0];
         }
 
         void Activate()

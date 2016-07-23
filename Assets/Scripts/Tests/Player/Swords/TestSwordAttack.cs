@@ -20,14 +20,14 @@ namespace Assets.Scripts.Tests.Player.Swords
         private Life _enemyLife;
         private Life _life;
         private Weakness _enemyWeakness;
-        private AttributeManager _swordAttributeManager;
+        private EquipmentAttributeManager _swordEquipmentAttributeManager;
 
         void Start()
         {
             _swordAttack = GetComponent<SwordAttack>();
             _enemyLife = Enemy.GetComponent<Life>();
             _enemyWeakness = Enemy.GetComponent<Weakness>();
-            _swordAttributeManager = GetComponent<AttributeManager>();
+            _swordEquipmentAttributeManager = GetComponent<EquipmentAttributeManager>();
             _life = GetComponent<Life>();
             Invoke("DelayedStart", 0.5f);
         }
@@ -60,9 +60,9 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             _swordAttack.ClearDamageDatas();
             _enemyWeakness.Weaknesses.Clear();
-            _swordAttributeManager.RemoveComponents<BaseDamageModifier>();
-            _swordAttributeManager.RemoveComponents<SwordStrengthDamageModifier>();
-            _swordAttributeManager.RemoveComponents<DamagesDataModifier>();
+            _swordEquipmentAttributeManager.RemoveComponents<BaseDamageModifier>();
+            _swordEquipmentAttributeManager.RemoveComponents<SwordStrengthDamageModifier>();
+            _swordEquipmentAttributeManager.RemoveComponents<DamagesDataModifier>();
         }
 
         #region Sword attack only tests
@@ -121,7 +121,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             int damage = 10;
             _enemyLife.SetHealth(10);
             _swordAttack.AddDamageDatas(new List<DamageData>() {new BaseDamageData(damage)});
-            BrokenSwordCurse brokenSwordCurse = _swordAttributeManager.AddNewComponent<BrokenSwordCurse>();
+            BrokenSwordCurse brokenSwordCurse = _swordEquipmentAttributeManager.AddNewComponent<BrokenSwordCurse>();
 
             Assert.IsEquals(MathHelper.GetValueMultipliedWithProcent(damage, brokenSwordCurse.BrokenSwordMinusProcentDamage),
                 _swordAttack.Attack()[0].Damage, 
@@ -133,7 +133,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             int damage = 10;
             _enemyLife.SetHealth(10);
             _swordAttack.AddDamageDatas(new List<DamageData>() { new BaseDamageData(damage) });
-            RustySwordCurse rustySwordCurse = _swordAttributeManager.AddNewComponent<RustySwordCurse>();
+            RustySwordCurse rustySwordCurse = _swordEquipmentAttributeManager.AddNewComponent<RustySwordCurse>();
 
             Assert.IsEquals(MathHelper.GetValueMultipliedWithProcent(damage, rustySwordCurse.MinusProcentDamage),
                 _swordAttack.Attack()[0].Damage,
@@ -145,7 +145,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             int damage = 10;
             _enemyLife.SetHealth(10);
             _swordAttack.AddDamageDatas(new List<DamageData>() { new StrengthDamageData(damage) });
-            _swordAttributeManager.AddNewComponent<WornSwordCurse>();
+            _swordEquipmentAttributeManager.AddNewComponent<WornSwordCurse>();
 
             Assert.IsEquals(0,_swordAttack.Attack()[0].Damage,
                 "Testing if strength is set to zero, when has worn sword curse");
@@ -161,7 +161,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             int damage = 10;
             _enemyLife.SetHealth(10);
             _swordAttack.AddDamageDatas(new List<DamageData>() { new BaseDamageData(damage) });
-            VsteelSwordBaseBlessing vsteelSwordBaseBlessing = _swordAttributeManager.AddNewComponent<VsteelSwordBaseBlessing>();
+            VsteelSwordBaseBlessing vsteelSwordBaseBlessing = _swordEquipmentAttributeManager.AddNewComponent<VsteelSwordBaseBlessing>();
             vsteelSwordBaseBlessing.ProcentChanceOfCriticalHit = 100;
 
             Assert.IsEquals(MathHelper.GetValueMultipliedWithProcent(damage, vsteelSwordBaseBlessing.CriticalHitDamageProcent),
@@ -174,7 +174,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             int damage = 1;
             _enemyLife.SetHealth(10);
             _swordAttack.AddDamageDatas(new List<DamageData>() { new DamageData(CombatType.Type1, damage) });
-            EnchantedBlessing enchantedBlessing = _swordAttributeManager.AddNewComponent<EnchantedBlessing>();
+            EnchantedBlessing enchantedBlessing = _swordEquipmentAttributeManager.AddNewComponent<EnchantedBlessing>();
             enchantedBlessing.ProcentChangeToEnchant = 100;
 
             Assert.IsEquals(damage + enchantedBlessing.EnchantDamage,
@@ -186,7 +186,7 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             _life.SetHealth(StartHealth);
 
-            LifeDrainSwordBlessing lifeDrainSwordBlessing = _swordAttributeManager.AddNewComponent<LifeDrainSwordBlessing>();
+            LifeDrainSwordBlessing lifeDrainSwordBlessing = _swordEquipmentAttributeManager.AddNewComponent<LifeDrainSwordBlessing>();
             lifeDrainSwordBlessing.ProcentChanceOfGainingLifeOnHit = 100;
             _life.MaxHealth = StartHealth + lifeDrainSwordBlessing.LifeOnHit;
 

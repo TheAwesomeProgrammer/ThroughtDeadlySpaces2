@@ -1,11 +1,13 @@
 ﻿using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
+    [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
     public class VsteelSwordBaseBlessing : BaseDamageModifier
     {
         public int ProcentChanceOfCriticalHit = 10;

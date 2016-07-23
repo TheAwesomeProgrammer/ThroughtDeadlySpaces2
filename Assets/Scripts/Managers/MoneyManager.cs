@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Shop
+namespace Assets.Scripts.Managers
 {
     public class MoneyManager
     {

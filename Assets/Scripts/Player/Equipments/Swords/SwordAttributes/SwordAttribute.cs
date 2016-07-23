@@ -6,9 +6,9 @@
         Broken,
         Heavy,
         Worn,
+        Miss,
         Vsteel,
         LifeDrain,
-        Enchant,
-        Miss
+        Enchant
     }
 }

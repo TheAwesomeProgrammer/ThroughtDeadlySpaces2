@@ -8,11 +8,11 @@ namespace Assets.Scripts.Player.Armors
 {
     public class ArmorXmlLoader : EquipmentXmlLoader
     {
-        public ArmorXmlLoader(AttributeManager armorAttributeManager, AttributeManager swordAttributeManager,
-            int xmlId, string xmlArrayName) : base(armorAttributeManager, xmlId, xmlArrayName)
+        public ArmorXmlLoader(EquipmentAttributeManager equipmentAttributeManager, EquipmentAttributeManager swordEquipmentAttributeManager,
+            int xmlId, string xmlArrayName) : base(equipmentAttributeManager, xmlId, xmlArrayName)
         {
             XmlLocation = Location.Armor;
-            _attributeAdder = new ArmorAttributeAdder(armorAttributeManager, swordAttributeManager);
+            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager);
         }
 
         public override void Load()

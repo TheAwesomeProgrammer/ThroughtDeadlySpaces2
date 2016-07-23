@@ -5,15 +5,13 @@ namespace Assets.Scripts.Player.Swords
 {
     public abstract class SwordComponent : MonoBehaviour
     {
-        protected AttributeManager _swordAttributeManager;
+        protected EquipmentAttributeManager _swordEquipmentAttributeManager;
         protected Sword _sword;
 
         protected virtual void Start()
         {
-            _swordAttributeManager = GetComponent<AttributeManager>();
+            _swordEquipmentAttributeManager = GetComponent<EquipmentAttributeManager>();
             _sword = GetComponent<Sword>();
-
         }
-
     }
 }

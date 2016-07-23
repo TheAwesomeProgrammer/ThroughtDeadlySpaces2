@@ -27,16 +27,16 @@ namespace Assets.Scripts.Player.Equipments
         protected XmlSearcher _xmlSearcher;
         protected AttributeAdder _attributeAdder;
         protected EquipmentSpecs _equipmentSpecs;
-        protected AttributeManager _armorAttributeManager;
+        protected EquipmentAttributeManager _equipmentAttributeManager;
 
         private int[] _specs;
         private int _rarity;
 
-        public EquipmentXmlLoader(AttributeManager armorAttributeManager, int xmlId, string xmlArrayName)
+        public EquipmentXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId, string xmlArrayName)
         {
             XmlId = xmlId;
             XmlArrayName = xmlArrayName;
-            _armorAttributeManager = armorAttributeManager;
+            _equipmentAttributeManager = equipmentAttributeManager;
             _enumConverter = new EnumConverter();
         }
 

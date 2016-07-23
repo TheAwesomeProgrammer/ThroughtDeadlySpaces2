@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Shop.BlackSmith.MoneyLoaders;
 using Assets.Scripts.Shop.Merchant;
@@ -27,8 +28,8 @@ namespace Assets.Scripts.Shop.BlackSmith
         private void Repair(Equipment equipment)
         {
             equipment.ResetBrokenState();
-            AttributeManager attributeManager = equipment.GetComponent<AttributeManager>();
-            foreach (var attributeData in attributeManager.GetAttributes(EquipmentAttributeType.Curse))
+            EquipmentAttributeManager equipmentAttributeManager = equipment.GetComponent<EquipmentAttributeManager>();
+            foreach (var attributeData in equipmentAttributeManager.GetAttributes(EquipmentAttributeType.Curse))
             {
                 Object.Destroy(attributeData.Attribute);
             }
