@@ -3,10 +3,12 @@ using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Armors.ArmorModifier;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 
 namespace Assets.Scripts.Player.Armors.Blessing
 {
+    [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Blessing)]
     public class ArmorEnchantedBlessing : ArmorReduceDefenseDataModifier, XmlLoadable
     {
         private int _enchantedChance = 0;

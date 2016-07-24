@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Enviroment.Map.Statues;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Shop;
 using UnityEngine;
@@ -34,11 +35,16 @@ namespace Assets.Scripts.Player.Swords
         public abstract MonoBehaviour AddAttribute(Type equipmentAttribute);
         public abstract MonoBehaviour AddAttribute(Enum theEnum);
 
+        protected AttributeAdder()
+        {
+            Attributes = new List<AttributeInfo>();
+        }
+
         public virtual List<EquipmentAttributeMetaData> GetTypesMatchingCriteria(Predicate<EquipmentAttributeMetaData> predicate)
         {
             List<EquipmentAttributeMetaData> equipmentAttributeMetaDatas = new List<EquipmentAttributeMetaData>();
 
-            foreach (var type in typeof(MonoBehaviour).Assembly.GetTypes())
+            foreach (var type in typeof(ScriptAssembly).Assembly.GetTypes())
             {
                 if (type.IsDefined(typeof(EquipmentAttributeMetaData), false))
                 {

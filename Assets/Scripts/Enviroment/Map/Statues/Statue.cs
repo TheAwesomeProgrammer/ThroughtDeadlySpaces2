@@ -20,7 +20,6 @@ namespace Assets.Scripts.Enviroment.Map.Statues
             if (_statueData == null)
             {
                 UpdateStatueData();
-                InvokeRepeating("UpdateStatueData", StatueDataUpdateInterval, StatueDataUpdateInterval);
             }
 
             if (StatueDatas != null && StatueDatas.Length > 0)

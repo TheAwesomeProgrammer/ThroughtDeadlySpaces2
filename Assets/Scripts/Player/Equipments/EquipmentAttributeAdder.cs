@@ -84,7 +84,20 @@ namespace Assets.Scripts.Player.Swords
         {
             MonoBehaviour attribute = new EmptySwordComponent();
 
-            TypeSwitch.Do(equipmentAttribute, TypeSwitch.Case<BrokenSwordCurse>(() => attribute = AddNLoadAttribute<BrokenSwordCurse>()), TypeSwitch.Case<EnchantedBlessing>(() => attribute = AddNLoadAttribute<EnchantedBlessing>()), TypeSwitch.Case<HeavySwordCurse>(() => attribute = AddNLoadAttribute<HeavySwordCurse>()), TypeSwitch.Case<LifeDrainSwordBlessing>(() => attribute = AddNLoadAttribute<LifeDrainSwordBlessing>()), TypeSwitch.Case<RustySwordCurse>(() => attribute = AddNLoadAttribute<RustySwordCurse>()), TypeSwitch.Case<VsteelSwordBaseBlessing>(() => attribute = AddNLoadAttribute<VsteelSwordBaseBlessing>()), TypeSwitch.Case<WornSwordCurse>(() => attribute = AddNLoadAttribute<WornSwordCurse>()), TypeSwitch.Case<MissAttackSwordCurse>(() => attribute = AddNLoadAttribute<MissAttackSwordCurse>()), TypeSwitch.Case<ArmorBrokenCurse>(() => attribute = AddNLoadAttribute<ArmorBrokenCurse>()), TypeSwitch.Case<ArmorRustyCurse>(() => attribute = AddNLoadAttribute<ArmorRustyCurse>()), TypeSwitch.Case<LifeDrainSwordBlessing>(() => attribute = AddNLoadAttribute<LifeDrainSwordBlessing>()), TypeSwitch.Case<ArmorEnchantedBlessing>(() => attribute = AddNLoadAttribute<ArmorEnchantedBlessing>()), TypeSwitch.Case<VstellArmorBlessing>(() => attribute = AddNLoadAttribute<VstellArmorBlessing>()));
+            TypeSwitch.Do(equipmentAttribute, 
+                TypeSwitch.Case<BrokenSwordCurse>(() => attribute = AddNLoadAttribute<BrokenSwordCurse>()),
+                TypeSwitch.Case<EnchantedBlessing>(() => attribute = AddNLoadAttribute<EnchantedBlessing>()),
+                TypeSwitch.Case<HeavySwordCurse>(() => attribute = AddNLoadAttribute<HeavySwordCurse>()),
+                TypeSwitch.Case<LifeDrainSwordBlessing>(() => attribute = AddNLoadAttribute<LifeDrainSwordBlessing>()),
+                TypeSwitch.Case<RustySwordCurse>(() => attribute = AddNLoadAttribute<RustySwordCurse>()),
+                TypeSwitch.Case<VsteelSwordBaseBlessing>(() => attribute = AddNLoadAttribute<VsteelSwordBaseBlessing>()),
+                TypeSwitch.Case<WornSwordCurse>(() => attribute = AddNLoadAttribute<WornSwordCurse>()),
+                TypeSwitch.Case<MissAttackSwordCurse>(() => attribute = AddNLoadAttribute<MissAttackSwordCurse>()),
+                TypeSwitch.Case<ArmorBrokenCurse>(() => attribute = AddNLoadAttribute<ArmorBrokenCurse>()),
+                TypeSwitch.Case<ArmorRustyCurse>(() => attribute = AddNLoadAttribute<ArmorRustyCurse>()),
+                TypeSwitch.Case<LifeDrainSwordBlessing>(() => attribute = AddNLoadAttribute<LifeDrainSwordBlessing>()), 
+                TypeSwitch.Case<ArmorEnchantedBlessing>(() => attribute = AddNLoadAttribute<ArmorEnchantedBlessing>()), 
+                TypeSwitch.Case<VstellArmorBlessing>(() => attribute = AddNLoadAttribute<VstellArmorBlessing>()));
 
             return attribute;
         }

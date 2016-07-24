@@ -7,12 +7,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enviroment.Map.Statues
 {
-    public abstract class RandomStatueAttribute : MonoBehaviour, StatueAttribute
+    public abstract class RandomStatueAttribute : StatueAttribute
     {
         protected EquipmentAttributeAdder _equipmentAttributeAdder;
         private EquipmentAttributeManager _equipmentAttributeManager;
 
-        public void Curse()
+        protected RandomStatueAttribute()
         {
             _equipmentAttributeManager =
                 GameObject.FindGameObjectWithTag(Tag.Player)

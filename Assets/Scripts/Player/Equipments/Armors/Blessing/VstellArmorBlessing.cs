@@ -2,10 +2,12 @@
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Armors.ArmorModifier;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 
 namespace Assets.Scripts.Player.Armors.Blessing
 {
+    [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Blessing)]
     public class VstellArmorBlessing : ArmorReduceModifier, XmlLoadable
     {
         private const int BlessingId = 4;

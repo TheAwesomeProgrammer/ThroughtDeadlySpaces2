@@ -5,11 +5,11 @@ using UnityEngine;
 namespace Assets.Scripts.Enviroment.Map.Statues
 {
     [StatueDescription("Add money. Amount specified in xml.")]
-    public class StatueMoneyLoader : MonoBehaviour, StatueAttribute, XmlLoadable
+    public sealed class StatueMoneyLoader : StatueAttribute, XmlLoadable
     {
-        private int _moneyToLoad;
+        private int _moneyToLoad = 100;
 
-        public void Start()
+        public StatueMoneyLoader()
         {
             LoadXml();
         }

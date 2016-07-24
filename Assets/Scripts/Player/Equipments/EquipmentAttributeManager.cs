@@ -25,15 +25,34 @@ namespace Assets.Scripts.Player.Equipments
     public class EquipmentAttributeManager : ComponentManager<MonoBehaviour>
     {
         private List<AttributeData> _attributes = new List<AttributeData>();
+
+        private Sword _mySword
+        {
+            get
+            {
+                if (_sword == null)
+                {
+                    _sword = GetComponentInChildren<Sword>();
+                }
+                return _sword;
+            }
+        }
+
+        private Armor _myArmor
+        {
+            get
+            {
+                if (_armor == null)
+                {
+                    _armor = GetComponentInChildren<Armor>();
+                }
+                return _armor;
+            }
+        }
+
         private Sword _sword;
         private Armor _armor;
 
-        protected override void Start()
-        {
-            base.Start();
-            _sword = GetComponentInChildren<Sword>();
-            _armor = GetComponentInChildren<Armor>();
-        }
 
         public void AddExistingAttribute(EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
         {
@@ -56,11 +75,11 @@ namespace Assets.Scripts.Player.Equipments
             switch (attributeInfo.EquipmentType)
             {
                 case EquipmentType.Sword:
-                    attribute = AddNewComponent<T>(_sword.gameObject);
+                    attribute = AddNewComponent<T>(_mySword.gameObject);
                     _attributes.Add(new AttributeData(equipmentAttributeType, attribute));
                     break;
                 case EquipmentType.Armor:
-                    attribute = AddNewComponent<T>(_armor.gameObject);
+                    attribute = AddNewComponent<T>(_myArmor.gameObject);
                     _attributes.Add(new AttributeData(equipmentAttributeType, attribute));
                     break;
                 default:

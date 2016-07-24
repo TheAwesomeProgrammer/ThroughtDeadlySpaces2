@@ -11,15 +11,13 @@ namespace Assets.Scripts.Extensions
             public Action<object> Action { get; set; }
         }
 
-        public static void Do(object source, params CaseInfo[] cases)
+        public static void Do(Type type, params CaseInfo[] cases)
         {
-            var type = source.GetType();
-
             foreach (var entry in cases)
             {
                 if (entry.IsDefault || type == entry.Target)
                 {
-                    entry.Action(source);
+                    entry.Action(type);
                     break;
                 }
             }

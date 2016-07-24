@@ -1,10 +1,12 @@
 ﻿using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Armors.Curses
 {
+    [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Curse)]
     public class ArmorRustyCurse : ArmorComponent, XmlLoadable
     {
         private const int CurseId = 3;
