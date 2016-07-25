@@ -39,7 +39,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 
         private void OnAbillityStart()
         {
-            if (_dexterityFiller.Dexterity >= Cost)
+            if (_dexterityFiller.Dexterity >= Cost && _playerMovement.CanMove)
             {
                 _dexterityFiller.Dexterity -= Cost;
                 _playerMovement.CanMove = false;

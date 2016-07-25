@@ -8,14 +8,13 @@ using Assets.Scripts.Player.Swords.Abstract.Movement;
 public class PlayerMovement : MonoBehaviour
 {
     public bool CanMove = true;
+    public float Speed;
 
     private Rigidbody _rigidbody;
     private MovementRotater _movementRotater;
     private MovementAnimator _movementAnimator;
-    private PlayerProperties _playerProperties;
     private InputAxis XAxis;
     private InputAxis ZAxis;
-    private float _speed;
     private bool _haveTriedToMovePlayer;
 
     private Vector3 _moveDirection;
@@ -32,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _movementRotater = GetComponent<MovementRotater>();
         _movementAnimator = GetComponentInChildren<MovementAnimator>();
-        _playerProperties = GetComponentInParent<PlayerProperties>();
         _rigidbody.freezeRotation = true;
     }
 
@@ -59,11 +57,10 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         _moveDirection = Vector3.zero;
-        _speed = _playerProperties.Speed;
 
-        if (_inputDirection.magnitude > 0.5f){
-            
-            _moveDirection = -transform.forward * _speed;
+        if (_inputDirection.magnitude > 0.5f)
+        {
+            _moveDirection = -transform.forward * Speed;
             _movementRotater.SetRotation(_inputDirection);
         }
 

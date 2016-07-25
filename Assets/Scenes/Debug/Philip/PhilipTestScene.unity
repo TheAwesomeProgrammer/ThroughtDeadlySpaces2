@@ -311,9 +311,10 @@ GameObject:
   - 65: {fileID: 82164818}
   - 23: {fileID: 82164817}
   - 54: {fileID: 82164816}
-  - 114: {fileID: 82164822}
-  - 114: {fileID: 82164821}
+  - 114: {fileID: 82164824}
   - 114: {fileID: 82164823}
+  - 114: {fileID: 82164821}
+  - 114: {fileID: 82164822}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Untagged
@@ -424,11 +425,13 @@ MonoBehaviour:
   StatueDatas:
   - Procent: 100
     StatueAttributeNames:
-    - Receiving random blessing(Among all blessings) on sword or armor.
-    - Receiving random curse(Among all curses) on sword or armor.
-    - Do nothing
+    - Receiving random blessing(Chosen among all blessings)
+    - Receiving random blessing on sword or armor.
     - Add money. Amount specified in xml.
-    AttributeIndex: 1
+    - Receiving random curse(Chosen among all curses)
+    - Receiving random curse on sword or armor.
+    - Do nothing
+    AttributeIndex: 0
 --- !u!114 &82164823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +443,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b1bf294e876914c9d4d7dcaebe91b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisableAfterUse: 0
+--- !u!114 &82164824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82164815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae00dc2acf965a74b89626f263974d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountToSacrifice: 1
+  StatueSacrificeType: 2
 --- !u!1 &98722400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanMove: 1
+  Speed: 0
 --- !u!114 &443917727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,6 +2775,184 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 3342fa588c6875a47b56ed18bebff9ee, type: 3}
+    - target: {fileID: 33000010895630952, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000011360539230, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000011015160300, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000010899194224, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000012630403742, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300004, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000012781303262, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300004, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000010654447776, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300006, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000010693884754, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300006, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000010245340372, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300008, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000012907016604, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300008, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000013477638424, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000012805446698, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000012806831712, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000011852315722, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000011983640590, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300014, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000013867696582, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300014, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000013935269102, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300016, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000010646821582, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300016, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000010671397960, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300018, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000010356732160, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300018, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000013563436958, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300020, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000011207020132, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300020, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000011516513408, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300022, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000012859439752, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300022, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000014200864148, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300024, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000013607266416, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300024, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000011884659118, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300026, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000014147554304, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300026, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 33000010717067244, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300028, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 64000011005081494, guid: 9d3ac09c847cb87438186cc4d93ed2fc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300028, guid: 14944ce427c563a43a65bd977e17e768, type: 3}
+    - target: {fileID: 1000013204427934, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010368940726, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013732722958, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013620615120, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.911
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013620615120, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013830219058, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013830219058, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -7.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d3ac09c847cb87438186cc4d93ed2fc, type: 2}
   m_IsPrefabParent: 0
@@ -2874,10 +3070,12 @@ MonoBehaviour:
   StatueDatas:
   - Procent: 0
     StatueAttributeNames:
-    - Receiving random blessing(Among all blessings) on sword or armor.
-    - Receiving random curse(Among all curses) on sword or armor.
-    - Do nothing
+    - Receiving random blessing(Chosen among all blessings)
+    - Receiving random blessing on sword or armor.
     - Add money. Amount specified in xml.
+    - Receiving random curse(Chosen among all curses)
+    - Receiving random curse on sword or armor.
+    - Do nothing
     AttributeIndex: 0
 --- !u!114 &1221262431
 MonoBehaviour:

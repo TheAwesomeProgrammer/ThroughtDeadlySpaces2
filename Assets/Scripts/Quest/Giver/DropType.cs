@@ -2,6 +2,9 @@
 {
     public enum DropType
     {
-        Weapon
+        Gear,
+        Life,
+        Coin,
+        Random
     }
 }

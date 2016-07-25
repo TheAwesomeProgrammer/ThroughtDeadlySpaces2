@@ -27,7 +27,7 @@ namespace Assets.Scripts.Shop.BlackSmith
 
         private void Repair(Equipment equipment)
         {
-            equipment.ResetBrokenState();
+            equipment.Repair();
             EquipmentAttributeManager equipmentAttributeManager = equipment.GetComponent<EquipmentAttributeManager>();
             foreach (var attributeData in equipmentAttributeManager.GetAttributes(EquipmentAttributeType.Curse))
             {

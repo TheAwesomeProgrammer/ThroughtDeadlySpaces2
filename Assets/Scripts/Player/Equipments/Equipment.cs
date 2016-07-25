@@ -17,7 +17,7 @@ namespace Assets.Scripts.Player.Equipments
             _equipmentBrokenState.Breaking += () => Broken = true;
         }
 
-        public void ResetBrokenState()
+        public void Repair()
         {
             Broken = false;
             _equipmentBrokenState.Reset();

@@ -3,6 +3,7 @@
     public enum EquipmentType
     {
         Sword,
-        Armor
+        Armor,
+        Nothing
     }
 }

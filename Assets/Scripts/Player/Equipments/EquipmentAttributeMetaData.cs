@@ -14,5 +14,11 @@ namespace Assets.Scripts.Player.Equipments
             EquipmentType = equipmentType;
             EquipmentAttributeType = equipmentAttributeType;
         }
+
+        public EquipmentAttributeMetaData(EquipmentAttributeType equipmentAttributeType)
+        {
+            EquipmentType = EquipmentType.Nothing;
+            EquipmentAttributeType = equipmentAttributeType;
+        }
     }
 }

@@ -23,7 +23,6 @@ namespace Assets.Scripts.Player.Swords
         public AttributeInfo(EquipmentAttributeMetaData equipmentAttributeMetaData, Type type)
         {
             Type = type;
-            EquipmentType = equipmentAttributeMetaData.EquipmentType;
             EquipmentAttributeType = equipmentAttributeMetaData.EquipmentAttributeType;
         }
     }

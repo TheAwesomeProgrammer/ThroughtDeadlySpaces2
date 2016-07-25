@@ -2,7 +2,7 @@
 <QuestGivers>
 
     <QuestGiver id="0" name="Standard">      
-        <Specs>(0,1)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Specs>(0,1)</Specs> <!-- [1 = (1 = Gear, 2 = Life, 3 = Coin and Random = 4)], [2 = HP] -->    
         <Quests>
             <Quest id="1">
                 <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->

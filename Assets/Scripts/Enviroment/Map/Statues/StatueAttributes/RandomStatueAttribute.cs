@@ -1,9 +1,13 @@
-﻿using Assets.Scripts.Extensions.Enums;
+﻿using System;
+using System.Collections.Generic;
+using Assets.Scripts.Extensions;
+using Assets.Scripts.Extensions.Enums;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Shop;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Enviroment.Map.Statues
 {
@@ -26,6 +30,14 @@ namespace Assets.Scripts.Enviroment.Map.Statues
         {
             EquipmentType equipmentType = EquipmentType.Armor;
             return (EquipmentType) Random.Range(0, equipmentType.Length());
+        }
+
+        protected void AddRandomAttribute(Predicate<AttributeInfo> predicate)
+        {
+            List<AttributeInfo> attributes =
+                _equipmentAttributeAdder.GetAttributeInfos(predicate);
+
+            _equipmentAttributeAdder.AddAttribute(attributes.Random().Type);
         }
     }
 }
