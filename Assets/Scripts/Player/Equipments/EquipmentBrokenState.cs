@@ -9,6 +9,12 @@ namespace Assets.Scripts.Player.Equipments
     public class EquipmentBrokenState
     {
         public int HitsForBrokenEquipment = 50;
+
+        public bool Damaged
+        {
+            get { return _equipmentState < HitsForBrokenEquipment; }
+        }
+
         public event Action Breaking;
 
         private int _equipmentState;

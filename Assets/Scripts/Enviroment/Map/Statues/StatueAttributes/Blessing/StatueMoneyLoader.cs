@@ -14,7 +14,7 @@ namespace Assets.Scripts.Enviroment.Map.Statues
             LoadXml();
         }
 
-        public void DoFunction()
+        public void DoFunction(StatuePick statuePick)
         {
             MoneyManager.Money += _moneyToLoad;
         }

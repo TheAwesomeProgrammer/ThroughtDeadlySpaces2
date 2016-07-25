@@ -8,6 +8,11 @@ namespace Assets.Scripts.Player.Equipments
     {
         public bool Broken { get; private set; }
 
+        public bool Damaged
+        {
+            get { return _equipmentBrokenState.Damaged; }
+        }
+
         private EquipmentBrokenState _equipmentBrokenState;
         public EquipmentSpecs Specs { get; set; }
 

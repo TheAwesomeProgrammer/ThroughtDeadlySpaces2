@@ -6,7 +6,7 @@ namespace Assets.Scripts.Enviroment.Map.Statues
     [StatueDescription("Receiving random blessing(Chosen among all blessings)")]
     public class RandomStatueBlessing : RandomStatueAttribute
     {
-        public override void DoFunction()
+        public override void DoFunction(StatuePick statuePick)
         {
             AddRandomBlessing();
         }

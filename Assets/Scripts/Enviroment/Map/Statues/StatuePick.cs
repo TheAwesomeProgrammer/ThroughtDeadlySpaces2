@@ -32,7 +32,7 @@ namespace Assets.Scripts.Enviroment.Map.Statues
                 if (currentProcent >= randomProcent)
                 {
                     StatueAttribute statueAttribute = (StatueAttribute)Activator.CreateInstance(statueData.GetSelectedAttributeType);
-                    statueAttribute.DoFunction();
+                    statueAttribute.DoFunction(this);
                     break;
                 }
             }

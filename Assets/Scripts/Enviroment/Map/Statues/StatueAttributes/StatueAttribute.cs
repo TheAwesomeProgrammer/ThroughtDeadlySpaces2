@@ -4,6 +4,6 @@ namespace Assets.Scripts.Enviroment.Map.Statues
 {
     public interface StatueAttribute
     {
-        void DoFunction();
+        void DoFunction(StatuePick statuePick);
     }
 }

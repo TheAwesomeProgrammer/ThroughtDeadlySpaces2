@@ -24,7 +24,7 @@ namespace Assets.Scripts.Enviroment.Map.Statues
             _equipmentAttributeAdder = new EquipmentAttributeAdder(_equipmentAttributeManager);
         }
 
-        public abstract void DoFunction();
+        public abstract void DoFunction(StatuePick statuePick);
 
         protected EquipmentType RandomEquipmentType()
         {
