@@ -65,7 +65,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             }
             else if (_attackDelay > 0)
             {
-                Timer.Start(_attackDelay, DelayedAttack);
+                Timer.Start(gameObject, _attackDelay, DelayedAttack);
             }
         }
 

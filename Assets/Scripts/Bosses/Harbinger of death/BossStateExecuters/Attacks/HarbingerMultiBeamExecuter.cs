@@ -61,7 +61,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
             }
             else
             {
-                Timer.Start(EndDelay, SwitchState);
+                Timer.Start(gameObject, EndDelay, SwitchState);
             }
         }
     }

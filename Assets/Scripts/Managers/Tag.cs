@@ -4,12 +4,13 @@ namespace Assets.Scripts.Player.Swords.Abstract
 {
     public static class Tag
     {
-        public static string Player = "Player";
-        public static string PlayerCollision = "PlayerCollision";
-        public static string Enemy = "Enemy";
-        public static string EnemyCollision = "EnemyCollsion";
-        public static string BeamSpawn = "BeamSpawn";
-        public static string Map = "Map";
-        public static string Wall = "Wall";
+        public const string Player = "Player";
+        public const string PlayerCollision = "PlayerCollision";
+        public const string Enemy = "Enemy";
+        public const string EnemyCollision = "EnemyCollsion";
+        public const string BeamSpawn = "BeamSpawn";
+        public const string Map = "Map";
+        public const string Wall = "Wall";
+        public const string Scripts = "Scripts";
     }
 }

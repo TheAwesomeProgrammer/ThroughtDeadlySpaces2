@@ -28,16 +28,20 @@ public interface Callbackable
 public class CallBackInfoWithAction : Callbackable
 {
     private Action _callBackAction;
+    private GameObject _gameObject;
 
-    public CallBackInfoWithAction(Action callbackAction)
+    public CallBackInfoWithAction(GameObject gameObject, Action callbackAction)
     {
+        _gameObject = gameObject;
         _callBackAction = callbackAction;
     }
-    
 
     public void Callback()
     {
-        _callBackAction();
+        if (_callBackAction != null && _gameObject != null)
+        {
+            _callBackAction();
+        }
     }
 }
 
@@ -75,9 +79,9 @@ public class Timer : MonoBehaviour
         mTimers.Add(new TimingInfo(pCallbackInfo, pDurationOfTimer));           
     }
 
-    public static void Start(float pDurationOfTimer, Action callBackAction)
+    public static void Start(GameObject gameObject, float pDurationOfTimer, Action callBackAction)
     {
-        Start(pDurationOfTimer, new CallBackInfoWithAction(callBackAction));
+        Start(pDurationOfTimer, new CallBackInfoWithAction(gameObject, callBackAction));
     }
 
     IEnumerator MakeLoop()

@@ -18,9 +18,11 @@ namespace Assets.Scripts.Player.Swords
     public sealed class EquipmentAttributeAdder : AttributeAdder
     {
         private EquipmentAttributeManager _equipmentAttributeManager;
+        private int _id;
 
-        public EquipmentAttributeAdder(EquipmentAttributeManager equipmentAttributeManager)
+        public EquipmentAttributeAdder(EquipmentAttributeManager equipmentAttributeManager, int id = 0)
         {
+            _id = id;
             _equipmentAttributeManager = equipmentAttributeManager;
             LoadAttributes(attributeData => attributeData.EquipmentAttributeType == EquipmentAttributeType.Blessing ||
             attributeData.EquipmentAttributeType == EquipmentAttributeType.Curse, Attributes);
@@ -105,7 +107,7 @@ namespace Assets.Scripts.Player.Swords
         private MonoBehaviour AddNLoadAttribute<T>() where T : MonoBehaviour
         {
             AttributeInfo attributeInfo = GetEquipmentAttributeInfo(typeof(T));
-            return _equipmentAttributeManager.AddNewAttribute<T>(attributeInfo);
+            return _equipmentAttributeManager.AddNewAttribute<T>(_id, attributeInfo);
         }
     }
 }

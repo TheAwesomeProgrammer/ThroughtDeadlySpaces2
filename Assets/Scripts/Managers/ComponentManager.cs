@@ -14,20 +14,22 @@ namespace Assets.Scripts.Player.Swords.Abstract
             _components = new List<TGenericType>();
         }
 
-        public TGenericType AddExistingComponent(TGenericType swordComponent)
+        public virtual TGenericType AddExistingComponent(TGenericType component)
         {
-            _components.Add(swordComponent);
-            return swordComponent;
+            if (!_components.Contains(component))
+            {
+                _components.Add(component);
+            }
+            return component;
         }
 
-        public T AddNewComponent<T>() where T : TGenericType
+        public virtual T AddNewComponent<T>(GameObject alternativeObjectAddingOn = null) where T : TGenericType
         {
-            return (T)AddExistingComponent(gameObject.AddComponent<T>());
-        }
-
-        public T AddNewComponent<T>(GameObject gameObjectAddingOn) where T : TGenericType
-        {
-            return (T)AddExistingComponent(gameObjectAddingOn.AddComponent<T>());
+            if (alternativeObjectAddingOn == null)
+            {
+                alternativeObjectAddingOn = gameObject;
+            }
+            return (T)AddExistingComponent(alternativeObjectAddingOn.AddComponent<T>());
         }
 
         public List<T> GetComponentsList<T>() where T : TGenericType
@@ -45,15 +47,15 @@ namespace Assets.Scripts.Player.Swords.Abstract
             }
         }
 
-        public void RemoveComponent(TGenericType swordComponent)
+        public void RemoveComponent(TGenericType component)
         {
-            _components.Remove(swordComponent);
-            Destroy(swordComponent);
+            _components.Remove(component);
+            Destroy(component);
         }
 
-        public bool HasComponent(TGenericType swordComponent)
+        public bool HasComponent(TGenericType component)
         {
-            return _components.Contains(swordComponent);
+            return _components.Contains(component);
         }
 
         public bool HasComponent<T>() where T : TGenericType
@@ -67,6 +69,32 @@ namespace Assets.Scripts.Player.Swords.Abstract
             {
                 Destroy(component);
             }
+        }
+
+        public void DisableComponents()
+        {
+            foreach (var component in _components)
+            {
+                DisableComponent(component);
+            }
+        }
+
+        public void DisableComponent(TGenericType component)
+        {
+            component.enabled = false;
+        }
+
+        public void EnableComponents()
+        {
+            foreach (var component in _components)
+            {
+                EnableComponent(component);
+            }
+        }
+
+        public void EnableComponent(TGenericType component)
+        {
+            component.enabled = false;
         }
     }
 }

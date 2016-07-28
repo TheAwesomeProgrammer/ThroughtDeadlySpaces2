@@ -9,13 +9,12 @@ namespace Assets.Scripts.Player.Swords
 {
     public class SwordAttack : SwordAttacker
     {
-        protected override void Start()
+        public void SetSword(Sword sword)
         {
-            base.Start();
-            SetupDamageDatas();
+            _sword = sword;
         }
 
-        void SetupDamageDatas()
+        public void SetupDamageDatas()
         {
             _damageDatas.Add(new BaseDamageData(_sword.Specs.BaseDamage));
             _damageDatas.Add(new DamageData(CombatType.Type1, _sword.Specs.CombatType1Damage));

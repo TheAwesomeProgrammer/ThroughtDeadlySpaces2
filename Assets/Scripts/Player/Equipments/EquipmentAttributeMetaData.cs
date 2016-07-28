@@ -5,7 +5,7 @@ namespace Assets.Scripts.Player.Equipments
 {
     public class EquipmentAttributeMetaData : Attribute
     {
-        public EquipmentType EquipmentType;
+        public EquipmentType? EquipmentType;
         public EquipmentAttributeType EquipmentAttributeType;
         public Type Type;
 
@@ -17,7 +17,7 @@ namespace Assets.Scripts.Player.Equipments
 
         public EquipmentAttributeMetaData(EquipmentAttributeType equipmentAttributeType)
         {
-            EquipmentType = EquipmentType.Nothing;
+            EquipmentType = null;
             EquipmentAttributeType = equipmentAttributeType;
         }
     }

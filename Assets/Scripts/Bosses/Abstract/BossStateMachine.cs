@@ -17,7 +17,7 @@ namespace Assets.Scripts.Bosses
         protected virtual void Start()
         {
             _bossStateExecuterFactory = GetComponentInChildren<BossFactoryable>();
-            Timer.Start(0.1f, DelayedStart);
+            Timer.Start(gameObject, 0.1f, DelayedStart);
         }
 
         protected virtual void DelayedStart()

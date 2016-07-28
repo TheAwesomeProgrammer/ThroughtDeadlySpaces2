@@ -4,12 +4,12 @@ namespace Assets.Scripts.Enviroment.Map.Rooms
 {
     public class BossDoor : Door
     {
-        private BossRoom _parentRoom;
+        private BossRoom _bossRoom;
 
         protected override void Start()
         {
             base.Start();
-            _parentRoom = GetComponentInParent<BossRoom>();
+            _bossRoom = GetComponentInParent<BossRoom>();
         }
 
         void Update()
@@ -19,9 +19,10 @@ namespace Assets.Scripts.Enviroment.Map.Rooms
 
         void ShouldUnlock()
         {
-            if (!_parentRoom.IsBossAlive)
+            if (!_bossRoom.IsBossAlive)
             {
                 UnLock();
+                _bossRoom.OnMoveToNextRoom();
             }
         }
     }

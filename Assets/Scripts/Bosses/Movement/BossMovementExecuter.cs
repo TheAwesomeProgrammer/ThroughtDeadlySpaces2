@@ -33,7 +33,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             _bossStateMachine = bossStateMachine;
             _moveForward.StartMoving();
-            Timer.Start(_timeToFollow, SwitchToAttacking);
+            Timer.Start(gameObject, _timeToFollow, SwitchToAttacking);
         }
 
         protected virtual void SwitchToAttacking()

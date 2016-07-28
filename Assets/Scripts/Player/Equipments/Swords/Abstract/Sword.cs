@@ -11,24 +11,48 @@ namespace Assets.Scripts.Player.Swords
 {
     public abstract class Sword : Equipment
     {
-        public int SwordId = 1;
+        public bool DeactivateAfterLoad;
 
         protected SwordXmlLoader _swordXmlLoader;
-        protected EquipmentAttributeManager _bossEquipmentAttributeManager;
+        protected EquipmentAttributeManager _equipmentAttributeManager;
         protected string _xmlRootNode = "Swords";
+        protected SwordAttack _swordAttack;
 
-        public virtual void Awake()
+        protected override void Awake()
         {
-            _bossEquipmentAttributeManager = transform.root.GetComponentInChildren<EquipmentAttributeManager>();
-            _swordXmlLoader = new SwordXmlLoader(_bossEquipmentAttributeManager, SwordId, _xmlRootNode);
+            base.Awake();
+            _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
+            _swordAttack = GetComponent<SwordAttack>();
+            _swordAttack.AttackStarted += OnUse;
+        }
+
+        public void Load(int swordId)
+        {
+            _swordXmlLoader = new SwordXmlLoader(_equipmentAttributeManager, swordId, _xmlRootNode, Id);
             _swordXmlLoader.Load();
-            GetComponent<SwordAttack>().AttackStarted += OnUse;
             Specs = _swordXmlLoader.EquipmentSpecs;
+            _swordAttack.SetupDamageDatas();
+            if (DeactivateAfterLoad)
+            {
+                enabled = false;
+                DeactivateAfterLoad = false;
+            }
         }
 
         void OnDestroy()
         {
-            _bossEquipmentAttributeManager.RemoveComponents();
+            _equipmentAttributeManager.RemoveAllWithId(Id);
+        }
+
+        void OnDisable()
+        {
+            _equipmentAttributeManager.DisableAllWithId(Id);
+        }
+
+        void OnEnable()
+        {
+            _equipmentAttributeManager.EnableAllWithId(Id);
+            _swordAttack.SetSword(this);
         }
     }
 }

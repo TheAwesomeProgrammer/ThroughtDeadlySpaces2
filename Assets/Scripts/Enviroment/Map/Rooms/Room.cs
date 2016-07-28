@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Room : MonoBehaviour
 {
-    public event Action MoveToNextRoom;
+    public event Action<GameObject> MoveToNextRoom;
     public bool IsPlayerInRoom;
 
     public Transform RoomSpawnTransform;
@@ -20,15 +20,14 @@ public abstract class Room : MonoBehaviour
     {
         if (!_hasSpawnedNextRoom)
         {
+            _hasSpawnedNextRoom = true;
+            GameObject roomSpawned = _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
+
             if (MoveToNextRoom != null)
             {
-                MoveToNextRoom();
+                MoveToNextRoom(roomSpawned);
             }
-
-            _hasSpawnedNextRoom = true;
-            _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
         }
-        
     }
 
     public virtual void OnPlayerJustEnteredRoom()

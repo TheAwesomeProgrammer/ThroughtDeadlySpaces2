@@ -482,7 +482,6 @@ GameObject:
   - 65: {fileID: 65000010225669882}
   - 54: {fileID: 54000014051062178}
   - 114: {fileID: 114000013738850500}
-  - 114: {fileID: 114000010448952044}
   - 114: {fileID: 114000011129283950}
   - 114: {fileID: 114000011460281636}
   m_Layer: 0
@@ -1628,17 +1627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Difficulty: 0
---- !u!114 &114000010448952044
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013389657786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975bab6dc8cc8fc42825ddc70eb732f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000010519705656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1700,6 +1688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1000011143075784, guid: 3f265ff203db56740822e82d7d30f9bc, type: 2}
+  BossDifficulty: 0
 --- !u!114 &114000010970918838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1943,6 +1932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3523526edeb79f4792b1c0e7d5f7f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackOnStart: 0
 --- !u!114 &114000013949691680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2019,6 +2009,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -2031,6 +2022,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -2040,6 +2032,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: d5557171a29cd5d4eaa00b694d40b2d7, type: 3}
   m_Bones:
   - {fileID: 4000012802732068}

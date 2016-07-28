@@ -29,14 +29,14 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
         {
             base.Attack();
             _lookAtTargetXz.StopLooking();
-            Timer.Start(StartDelay, StartSucking);
+            Timer.Start(gameObject, StartDelay, StartSucking);
         }
 
         private void StartSucking()
         {
             SpawnSuckObject();
             SetBoboSuckerProperties();
-            Timer.Start(Duration, StopSucking);
+            Timer.Start(gameObject, Duration, StopSucking);
         }
 
         private void SpawnSuckObject()

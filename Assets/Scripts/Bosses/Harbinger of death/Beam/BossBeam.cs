@@ -31,7 +31,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
                 new BeamSetStartDelay());
 
             Destroy(beamProjectileObject, Duration + startDelay);
-            Timer.Start(Duration + startDelay, EndAttack);
+            Timer.Start(gameObject, Duration + startDelay, EndAttack);
         }
 
         public void EndAttack()

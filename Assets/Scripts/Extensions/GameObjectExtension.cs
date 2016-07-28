@@ -23,4 +23,16 @@ public static class GameObjectExtension {
 
          return tGameObjectsWithLayer.ToArray();
      }
+
+    public static T AddComponentIfNotExist<T>(this GameObject gameObject) where T : MonoBehaviour
+    {
+        T component = gameObject.GetComponent<T>();
+
+        if (component == null)
+        {
+            component = gameObject.AddComponent<T>();
+        }
+
+        return component;
+    }
 }

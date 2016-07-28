@@ -21,7 +21,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
             _setCapsuleCollider.Start(); // Called before target player, because some stuff needs to be loaded.
             TargetPlayer();
 
-            Timer.Start(StartDelay, DelayedStart);
+            Timer.Start(gameObject, StartDelay, DelayedStart);
         }
 
         private void TargetPlayer()

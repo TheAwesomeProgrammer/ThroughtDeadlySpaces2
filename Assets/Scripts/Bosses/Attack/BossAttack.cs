@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Assets.Scripts.Bosses.Abstract;
 using Assets.Scripts.Combat.Attack;
+using Assets.Scripts.Player.Equipments;
 using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack

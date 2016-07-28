@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Camera_ll_UI;
+using Assets.Scripts.Enviroment.Map.Bridge;
 using Assets.Scripts.Enviroment.Map.InputInteractables;
 using Assets.Scripts.Enviroment.Map.Rooms;
 using UnityEngine;
@@ -26,9 +27,16 @@ namespace Assets.Scripts.Quest
         protected override void OnClick()
         {
             base.OnClick();
+            MoveToNextRoom();
             HideAndSetActive();
             UnlockDoorInActiveRoom();
             SetInteractableToUsed();
+        }
+
+        private void MoveToNextRoom()
+        {
+            Room activeRoom = _map.GetActiveRoom();
+            activeRoom.OnMoveToNextRoom();
         }
 
         private void UnlockDoorInActiveRoom()
@@ -45,6 +53,13 @@ namespace Assets.Scripts.Quest
             _uiManager.DeactivateItemWithType<UiQuestGiver>();
         }
 
+        private void SetInteractableToUsed()
+        {
+            Room activeRoom = _map.GetActiveRoom();
+            QuestGiverInteractable questGiverInteractable = activeRoom.GetComponentInChildren<QuestGiverInteractable>();
+            questGiverInteractable.OnUsedInteractable();
+        }
+
         protected override void OnEnter(BaseEventData eventData)
         {
             base.OnEnter(eventData);
@@ -55,13 +70,6 @@ namespace Assets.Scripts.Quest
         {
             base.OnExit(eventData);
             targetGraphic.color = new Color(targetGraphic.color.r, targetGraphic.color.g, targetGraphic.color.b, 0.5f);
-        }
-
-        private void SetInteractableToUsed()
-        {
-            Room activeRoom = _map.GetActiveRoom();
-            QuestGiverInteractable questGiverInteractable = activeRoom.GetComponentInChildren<QuestGiverInteractable>();
-            questGiverInteractable.OnUsedInteractable();
         }
     }
 }

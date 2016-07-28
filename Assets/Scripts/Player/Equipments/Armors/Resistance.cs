@@ -16,7 +16,7 @@ public class Resistance : LifeDamager, Damageable
     public List<DefenseData> DefenseDatas { get; set; }
     public event Action Defending;
 
-    private EquipmentAttributeManager _armorEquipmentAttributeManager;
+    private EquipmentAttributeManager _equipmentAttributeManager;
     private Armor _armor;
 
     public void Start()
@@ -24,7 +24,7 @@ public class Resistance : LifeDamager, Damageable
         DefenseDatas = new List<DefenseData>();
         _armor = GetComponent<Armor>();
         SetupDefenseDamageDatas();
-        _armorEquipmentAttributeManager = GetComponent<EquipmentAttributeManager>();
+        _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
     }
 
     void SetupDefenseDamageDatas()
@@ -54,7 +54,7 @@ public class Resistance : LifeDamager, Damageable
     {
         DefenseData modifiedDefenseData = defenseData;
 
-        foreach (var armorReduceModifier in GetSwordDamageModifiers())
+        foreach (var armorReduceModifier in GetArmorReduceModifiers())
         {
             modifiedDefenseData.Defense = ((DefenseData)armorReduceModifier.GetModifiedCombatData(defenseData)).Defense;
         }
@@ -62,9 +62,9 @@ public class Resistance : LifeDamager, Damageable
         return modifiedDefenseData;
     }
 
-    private ArmorReduceModifier[] GetSwordDamageModifiers()
+    private ArmorReduceModifier[] GetArmorReduceModifiers()
     {
-        return _armorEquipmentAttributeManager.GetComponentsList<ArmorReduceModifier>().ToArray();
+        return _equipmentAttributeManager.GetComponentsList<ArmorReduceModifier>().ToArray();
     }
 
     List<DamageData> GetDamageAfterGoingThroughResistance(List<DamageData> damageDatas)

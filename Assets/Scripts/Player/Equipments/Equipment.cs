@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Extensions.StaticClasses;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
@@ -13,11 +14,15 @@ namespace Assets.Scripts.Player.Equipments
             get { return _equipmentBrokenState.Damaged; }
         }
 
-        private EquipmentBrokenState _equipmentBrokenState;
         public EquipmentSpecs Specs { get; set; }
 
-        protected virtual void Start()
+        protected int Id;
+
+        private EquipmentBrokenState _equipmentBrokenState;
+
+        protected virtual void Awake()
         {
+            Id = IdGenerator.GetId();
             _equipmentBrokenState = new EquipmentBrokenState(gameObject, this);
             _equipmentBrokenState.Breaking += () => Broken = true;
         }

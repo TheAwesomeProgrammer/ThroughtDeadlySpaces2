@@ -12,12 +12,11 @@ namespace Assets.Scripts.Player.Armors
         private ArmorXmlLoader _armorXmlLoader;
         private EquipmentAttributeManager _equipmentAttributeManager;
 
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
-            _equipmentAttributeManager = GetComponent<EquipmentAttributeManager>();
+            _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
             GetComponent<Resistance>().Defending += OnUse;
-            _armorXmlLoader = new ArmorXmlLoader(_equipmentAttributeManager, transform.root.FindComponentInChildWithName<EquipmentAttributeManager>("Sword"), ArmorId, "Armors");
+            _armorXmlLoader = new ArmorXmlLoader(_equipmentAttributeManager, ArmorId, "Armors", Id);
             _armorXmlLoader.Load();
             Specs = _armorXmlLoader.EquipmentSpecs;
         }

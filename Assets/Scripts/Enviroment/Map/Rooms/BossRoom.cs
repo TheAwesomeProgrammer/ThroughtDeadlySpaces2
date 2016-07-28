@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Bosses;
+using Assets.Scripts.Enviroment.Map.Bridge;
 using Assets.Scripts.Quest;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ namespace Assets.Scripts.Enviroment.Map.Rooms
         public Transform BossSpawnTransform;
 
         private bool _playerHasEnteredRoom = false;
-
         public bool IsBossAlive
         {
             get { return GetComponentInChildren<BossStateMachine>() != null; }

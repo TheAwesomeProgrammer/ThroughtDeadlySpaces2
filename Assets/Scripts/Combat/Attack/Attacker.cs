@@ -27,7 +27,7 @@ namespace Assets.Scripts.Player.Swords
             EnableAttack();
             _damageDatas = new List<DamageData>();
             _damageTrigger = GetComponent<DamageTrigger>();
-            _equipmentAttributeManager = GameObject.FindGameObjectWithTag(Tag.Player).GetComponent<EquipmentAttributeManager>();
+            _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
             _animationEventListener = GetComponent<AnimationEventListener>();
             if (_animationEventListener != null)
             {

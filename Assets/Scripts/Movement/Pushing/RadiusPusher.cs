@@ -30,7 +30,7 @@ namespace Assets.Scripts.Combat.Attack
             if (PushOnStart)
             {
                 ShouldCallPushingEvent();
-                Timer.Start(0.1f, Push);
+                Timer.Start(gameObject, 0.1f, Push);
             }
         }
 

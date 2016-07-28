@@ -24,7 +24,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         protected override void Attack()
         {
             base.Attack();
-            Timer.Start(StartDelay, Jump);
+            Timer.Start(gameObject, StartDelay, Jump);
         }
 
         void Jump()

@@ -10,13 +10,16 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Equipments
 {
+    [Serializable]
     public class AttributeData
     {
         public EquipmentAttributeType EquipmentAttributeType;
         public MonoBehaviour Attribute;
+        public int Id;
 
-        public AttributeData(EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
+        public AttributeData(int id, EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
         {
+            Id = id;
             EquipmentAttributeType = equipmentAttributeType;
             Attribute = attribute;
         }
@@ -28,14 +31,7 @@ namespace Assets.Scripts.Player.Equipments
 
         private Sword _mySword
         {
-            get
-            {
-                if (_sword == null)
-                {
-                    _sword = GetComponentInChildren<Sword>();
-                }
-                return _sword;
-            }
+            get { return _sword ?? (_sword = GetComponentInChildren<Sword>()); }
         }
 
         private Armor _myArmor
@@ -53,34 +49,33 @@ namespace Assets.Scripts.Player.Equipments
         private Sword _sword;
         private Armor _armor;
 
-
-        public void AddExistingAttribute(EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
+        public void AddExistingAttribute(int id, EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
         {
-            _attributes.Add(new AttributeData(equipmentAttributeType, attribute));
+            _attributes.Add(new AttributeData(id, equipmentAttributeType, attribute));
             AddExistingComponent(attribute);
         }
 
-        public virtual T AddNewAttribute<T>(EquipmentAttributeType equipmentAttributeType) where T : MonoBehaviour
+        public virtual T AddNewAttribute<T>(int id, EquipmentAttributeType equipmentAttributeType) where T : MonoBehaviour
         {
-            T attribute = AddNewComponent<T>();
-            _attributes.Add(new AttributeData(equipmentAttributeType, attribute));
+            var attribute = AddNewComponent<T>();
+            AddExistingAttribute(id, equipmentAttributeType, attribute);
             return attribute;
         }
 
-        public T AddNewAttribute<T>(AttributeInfo attributeInfo) where T : MonoBehaviour
+        public T AddNewAttribute<T>(int id, AttributeInfo attributeInfo) where T : MonoBehaviour
         {
             T attribute;
-            EquipmentAttributeType equipmentAttributeType = attributeInfo.EquipmentAttributeType;
+            var equipmentAttributeType = attributeInfo.EquipmentAttributeType;
 
             switch (attributeInfo.EquipmentType)
             {
                 case EquipmentType.Sword:
                     attribute = AddNewComponent<T>(_mySword.gameObject);
-                    _attributes.Add(new AttributeData(equipmentAttributeType, attribute));
+                    _attributes.Add(new AttributeData(id, equipmentAttributeType, attribute));
                     break;
                 case EquipmentType.Armor:
                     attribute = AddNewComponent<T>(_myArmor.gameObject);
-                    _attributes.Add(new AttributeData(equipmentAttributeType, attribute));
+                    _attributes.Add(new AttributeData(id, equipmentAttributeType, attribute));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("equipmentType", attributeInfo.EquipmentType, null);
@@ -90,12 +85,38 @@ namespace Assets.Scripts.Player.Equipments
 
         public AttributeData GetAttribute(EquipmentAttributeType equipmentAttributeType)
         {
-            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType)[equipmentAttributeType].First();
+            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType).Cast<AttributeData>().First();
         }
 
         public List<AttributeData> GetAttributes(EquipmentAttributeType equipmentAttributeType)
         {
-            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType)[equipmentAttributeType].ToList();
+            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType).Cast<AttributeData>().ToList();
+        }
+
+        public List<AttributeData> GetAttributesById(int id)
+        {
+            return _attributes.ToLookup(attribute => attribute.Id == id).Cast<AttributeData>().ToList();
+        }
+
+        public void RemoveAllWithId(int id)
+        {
+            _attributes.RemoveAll(item => item.Id == id);
+        }
+
+        public void EnableAllWithId(int id)
+        {
+            SetActiveWithId(id, true);
+        }
+
+        public void DisableAllWithId(int id)
+        {
+            SetActiveWithId(id, false);
+        }
+
+        private void SetActiveWithId(int id, bool active)
+        {
+            List<AttributeData> attributesWithId = _attributes.FindAll(item => item.Id == id);
+            attributesWithId.ForEach(item => item.Attribute.enabled = active);
         }
     }
 }

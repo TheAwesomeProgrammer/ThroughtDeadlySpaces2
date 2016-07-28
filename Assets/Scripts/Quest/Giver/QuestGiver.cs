@@ -3,6 +3,7 @@ using System.Xml;
 using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Camera_ll_UI;
 using Assets.Scripts.Enviroment.Map.Rooms;
+using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Quest.Rewards.Spawner;
 using Assets.Scripts.Xml;
 using UnityEngine;
@@ -55,7 +56,7 @@ namespace Assets.Scripts.Quest
 
         public void Init()
         {
-            _bossGenerator = GameObject.FindWithTag("Scripts").GetComponent<BossGenerator>();
+            _bossGenerator = GameObject.FindWithTag(Tag.Scripts).GetComponent<BossGenerator>();
             _rewardFactory = new RewardFactory();
             _xmlSearcher = new XmlSearcher(Location.QuestGiver);
             _questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, "QuestGivers");

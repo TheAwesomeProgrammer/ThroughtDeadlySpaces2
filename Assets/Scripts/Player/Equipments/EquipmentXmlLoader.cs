@@ -32,12 +32,14 @@ namespace Assets.Scripts.Player.Equipments
         private int[] _specs;
         private int _rarity;
 
-        public EquipmentXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId, string xmlArrayName)
+        public EquipmentXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId, string xmlArrayName,
+            int equipmentId)
         {
             XmlId = xmlId;
             XmlArrayName = xmlArrayName;
             _equipmentAttributeManager = equipmentAttributeManager;
             _enumConverter = new EnumConverter();
+            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, equipmentId);
         }
 
         public virtual void Load()

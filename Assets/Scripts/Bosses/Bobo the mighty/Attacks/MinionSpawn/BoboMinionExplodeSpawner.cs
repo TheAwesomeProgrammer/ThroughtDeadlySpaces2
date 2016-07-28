@@ -32,7 +32,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             _projectileSpawner.BossDifficulty = BossDifficulty;
             _life = GetComponent<Life>();
             _life.Death += SpawnExplosion;
-            Timer.Start(StartInvinsibleTime, () => _canExplode = true);
+            Timer.Start(gameObject, StartInvinsibleTime, () => _canExplode = true);
         }
 
         public override void OnEnterWithTag()

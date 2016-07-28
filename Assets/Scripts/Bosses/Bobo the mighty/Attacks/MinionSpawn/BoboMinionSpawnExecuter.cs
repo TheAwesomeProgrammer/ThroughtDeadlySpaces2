@@ -33,7 +33,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         {
             base.Attack();
             _minionsSpawned = 0;
-            Timer.Start(MinionSpawnDelay, SpawnMinions);
+            Timer.Start(gameObject, MinionSpawnDelay, SpawnMinions);
         }
 
         private void SpawnMinions()
@@ -47,7 +47,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             {
                 StartAnimation();
                 SpawnMinion();
-                Timer.Start(MinionSpawnDelay, SpawnMinions);
+                Timer.Start(gameObject, MinionSpawnDelay, SpawnMinions);
             }
             
             _minionsSpawned++;

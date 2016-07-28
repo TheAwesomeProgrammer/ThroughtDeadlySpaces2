@@ -48,7 +48,7 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
             _lookAtTargetXz.StopLooking();
             StartMoving();
             StartAttacking();
-            Timer.Start(Duration, SwitchState);
+            Timer.Start(gameObject, Duration, SwitchState);
         }
 
         private void StartMoving()

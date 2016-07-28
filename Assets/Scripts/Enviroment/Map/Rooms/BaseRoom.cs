@@ -7,14 +7,21 @@ namespace Assets.Scripts.Enviroment.Map.Rooms
     public class BaseRoom : Room
     {
         public Transform RewardSpawnTransform;
+        public bool SpawnOnPlayerEnter = true;
+
+        private bool _hasEnteredRoom;
 
         public override void OnPlayerJustEnteredRoom()
         {
-            base.OnPlayerJustEnteredRoom();
-            QuestGiver questGiver = QuestGiversPool.GetAliveQuestGiver();
-            if (questGiver)
+            if (!_hasEnteredRoom && SpawnOnPlayerEnter)
             {
-                questGiver.SpawnRewardsInRoom(this);
+                base.OnPlayerJustEnteredRoom();
+                QuestGiver questGiver = QuestGiversPool.GetAliveQuestGiver();
+                if (questGiver)
+                {
+                    questGiver.SpawnRewardsInRoom(this);
+                }
+                _hasEnteredRoom = true;
             }
         }
     }
