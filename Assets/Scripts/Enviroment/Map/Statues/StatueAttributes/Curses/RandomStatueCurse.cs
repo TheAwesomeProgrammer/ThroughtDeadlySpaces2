@@ -6,14 +6,14 @@ namespace Assets.Scripts.Enviroment.Map.Statues
     [StatueDescription("Receiving random curse(Chosen among all curses)")]
     public class RandomStatueCurse : RandomStatueAttribute
     {
-        public override void DoFunction(StatuePick statuePick)
+        protected override void ChoseRandomStatueAttribute()
         {
             AddRandomCurse();
         }
 
         protected void AddRandomCurse()
         {
-            AddRandomAttribute(item => item.EquipmentAttributeType == EquipmentAttributeType.Curse);
+            TryAddRandomAttribute(item => item.EquipmentAttributeType == EquipmentAttributeType.Curse);
         }
     }
 }

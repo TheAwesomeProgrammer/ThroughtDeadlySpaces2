@@ -3,9 +3,9 @@
     public enum CombatType
     {
         BaseType = 0,
-        Type1 = 1,
-        Type2 = 2,
-        Type3 = 3,
-        Type4 = 4
+        Fire = 1,
+        Nature = 2,
+        Life = 3,
+        Death = 4
     }
 }

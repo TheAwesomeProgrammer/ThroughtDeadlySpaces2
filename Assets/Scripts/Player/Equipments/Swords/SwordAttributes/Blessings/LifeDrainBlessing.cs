@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
-    public class LifeDrainSwordBlessing : SwordComponent
+    public class LifeDrainBlessing : SwordComponent, XmlAttributeLoadable
     {
         public int ProcentChanceOfGainingLifeOnHit = 5;
         public int LifeOnHit = 1;
@@ -14,20 +14,19 @@ namespace Assets.Scripts.Player.Swords
 
         private SwordAttack _swordAttack;
         private Life _life;
-        private XmlSearcher _xmlSearcher;
+        private EquipmentAttributeLoader _equipmentAttributeLoader;
 
         void Awake()
         {
-            _swordAttack = GetComponent<SwordAttack>();
+            _swordAttack = transform.root.GetComponentInChildren<SwordAttack>();
             _swordAttack.Attacking += OnAttacking;
             _life = GetComponentInParent<Life>();
-            LoadSpecs();
         }
 
-        public void LoadSpecs()
+        public void LoadXml(int level)
         {
-            _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Blessing));
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(BlessingId, "Blessings");
+            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Blessing));
+            int[] specs = _equipmentAttributeLoader.LoadSpecs(BlessingId, level, XmlName.Blessing);
             ProcentChanceOfGainingLifeOnHit = specs[0];
             LifeOnHit = specs[1];
         }

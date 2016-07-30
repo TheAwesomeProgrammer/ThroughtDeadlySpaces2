@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Xml;
 using Assets.Scripts.Combat;
+using Assets.Scripts.Player.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Xml;
@@ -39,12 +41,12 @@ namespace Assets.Scripts.Player.Equipments
             XmlArrayName = xmlArrayName;
             _equipmentAttributeManager = equipmentAttributeManager;
             _enumConverter = new EnumConverter();
-            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, equipmentId);
         }
 
         public virtual void Load()
         {
             LoadXml();
+            AddAttributes<AttributeType>();
         }
 
         public void LoadXml()
@@ -57,13 +59,14 @@ namespace Assets.Scripts.Player.Equipments
 
         protected void AddAttributes<T>() where T : IConvertible
         {
-            XmlNode swordNode = _xmlSearcher.GetNodeInArrayWithId(XmlId, XmlArrayName);
+            XmlNode attributeNode = _xmlSearcher.GetNodeInArrayWithId(XmlId, XmlArrayName);
 
-            T[] attributes = _enumConverter.Convert<T>(_xmlSearcher.GetAttributesInNode(swordNode));
+            Dictionary<int, T> attributes = _enumConverter.Convert<T>(_xmlSearcher.GetAttributesInNode(attributeNode));
 
-            foreach (T attribute in attributes)
+            foreach (KeyValuePair<int, T> attribute in attributes)
             {
-                _attributeAdder.AddAttribute((Enum)(object)attribute);
+                int attributeLevel = _xmlSearcher.GetAttributeLevelInNode(attributeNode, attribute.Key);
+                _attributeAdder.AddAttribute((Enum)(object)attribute.Value, attributeLevel);
             }
         }
     }

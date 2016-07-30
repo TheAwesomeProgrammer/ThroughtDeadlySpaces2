@@ -5,13 +5,14 @@
         <Specs>(1,1,1,1,1)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>()</Att>
+        <Att>(Broken,Rusty,Enchant,Vsteel,LifeDrain,Swift,Light,Holy)</Att>
+        <AttLevel>(1, 1, 1, 1, 1, 1, 1, 1)</AttLevel>
         <!-- 
         Possible attributes :
         Curses : 
-        [Broken,Rusty]
+        [Broken],[Rusty]
         Blessings : 
-        [Enchant,Vsteel,LifeDrain]
+        [Enchant],[Vsteel],[LifeDrain],[Swift],[Light],[Holy]
         -->
     </Armor>
     
@@ -21,12 +22,13 @@
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
         <Att>()</Att>
+        <AttLevel>()</AttLevel>
         <!-- 
         Possible attributes :
         Curses : 
-        [Broken,Rusty]
+        [Broken],[Rusty]
         Blessings : 
-        [Enchant,Vsteel,LifeDrain]
+        [Enchant],[Vsteel],[LifeDrain],[Swift],[Light]
         -->
     </Armor>
 </Armors>

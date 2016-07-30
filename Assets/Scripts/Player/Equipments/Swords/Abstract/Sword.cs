@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
-    public abstract class Sword : Equipment
+    public abstract class Sword : Equipment, EquipmentLoadable
     {
         public bool DeactivateAfterLoad;
 

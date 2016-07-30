@@ -31,8 +31,8 @@ namespace Assets.Scripts.Player.Swords
     {
         public List<AttributeInfo> Attributes;
 
-        public abstract MonoBehaviour AddAttribute(Type equipmentAttribute);
-        public abstract MonoBehaviour AddAttribute(Enum theEnum);
+        public abstract MonoBehaviour AddAttribute(Type equipmentAttribute, int level = 1);
+        public abstract MonoBehaviour AddAttribute(Enum theEnum, int level = 1);
 
         protected AttributeAdder()
         {
@@ -82,6 +82,7 @@ namespace Assets.Scripts.Player.Swords
 
             return attributeInfo;
         }
+
         protected virtual void LoadAttributes(Predicate<EquipmentAttributeMetaData> predicate, List<AttributeInfo> list)
         {
             foreach (var equipmentAttributeMetaData in GetTypesMatchingCriteria(predicate))

@@ -34,7 +34,7 @@ namespace Assets.Scripts.Player.Swords
         private void SetOtherEnchantTo100Procent(EnchantedBlessing enchantedBlessing)
         {
             enchantedBlessing.ProcentChangeToEnchant = 100;
-            Object.Destroy(_script);
+            //Object.Destroy(_script);
         }
     }
 }

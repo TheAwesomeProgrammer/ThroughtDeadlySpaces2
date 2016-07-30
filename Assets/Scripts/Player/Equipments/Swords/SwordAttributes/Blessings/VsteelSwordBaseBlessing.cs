@@ -8,24 +8,18 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
-    public class VsteelSwordBaseBlessing : BaseDamageModifier
+    public class VsteelSwordBaseBlessing : BaseDamageModifier, XmlAttributeLoadable
     {
         public int ProcentChanceOfCriticalHit = 10;
         public int CriticalHitDamageProcent = 50;
-        public const int BlessingId = 0;
+        public int BlessingId = 0;
 
-        private XmlSearcher _xmlSearcher;
+        private EquipmentAttributeLoader _equipmentAttributeLoader;
 
-        protected override void Start()
+        public virtual void LoadXml(int level)
         {
-            base.Start();
-            LoadSpecs();
-        }
-
-        public void LoadSpecs()
-        {
-            _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Blessing));
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(BlessingId, "Blessings");
+            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Blessing));
+            int[] specs = _equipmentAttributeLoader.LoadSpecs(BlessingId, level, XmlName.Blessing);
             ProcentChanceOfCriticalHit = specs[0];
             CriticalHitDamageProcent = specs[1];
         }

@@ -14,13 +14,31 @@ namespace Assets.Scripts.Player.Swords
         public event Action Attacking;
         public event Action AttackEnded;
 
+        public float AttackSpeed
+        {
+            get { return _attackSpeed; }
+            set
+            {
+                _attackSpeed = Mathf.Clamp(value, MinAttackSpeed, MaxAttackSpeed);
+                _damageTrigger.AttackSpeed = _attackSpeed;
+                _animator.SetFloat(_animatorAttackSpeedName, _attackSpeed);
+            }
+        }
+
+        private const float MaxAttackSpeed = 1;
+        private const float MinAttackSpeed = 0.276f;
+        
+
         protected EquipmentAttributeManager _equipmentAttributeManager;
         protected List<DamageData> _damageDatas = new List<DamageData>();
         protected bool _attacking;
         protected bool _canAttack;
+        protected string _animatorAttackSpeedName = "AttackSpeed";
 
+        private float _attackSpeed;
         private AnimationEventListener _animationEventListener;
         private DamageTrigger _damageTrigger;
+        private Animator _animator;
 
         protected virtual void Start()
         {
@@ -29,6 +47,7 @@ namespace Assets.Scripts.Player.Swords
             _damageTrigger = GetComponent<DamageTrigger>();
             _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
             _animationEventListener = GetComponent<AnimationEventListener>();
+            _animator = GetComponent<AnimatorTrigger>().Animator;
             if (_animationEventListener != null)
             {
                 _animationEventListener.SetupAnimatorTrigger(StartAttack, EndAttack);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts.Extensions
 {
-    public static class TypeSwitch
+    public static class Switch
     {
         public class CaseInfo
         {

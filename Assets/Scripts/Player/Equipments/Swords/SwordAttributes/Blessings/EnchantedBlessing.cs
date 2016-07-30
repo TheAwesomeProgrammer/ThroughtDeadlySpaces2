@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
@@ -9,28 +10,27 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
-    public class EnchantedBlessing : DamagesDataModifier
+    public class EnchantedBlessing : DamagesDataModifier, XmlAttributeLoadable
     {
         public int ProcentChangeToEnchant = 10;
         public int EnchantDamage = 1;
         public const int BlessingId = 2;
 
         private bool _enchant;
-        private XmlSearcher _xmlSearcher;
+        private EquipmentAttributeLoader _equipmentAttributeLoader;
         private DoubleEnchantChecker _doubleEnchantChecker;
 
-        void Awake()
+        public void Awake()
         {
             GetComponent<SwordAttack>().Attacking += OnAttacking;
-            LoadSpecs();
             _doubleEnchantChecker = new DoubleEnchantChecker(this);
             _doubleEnchantChecker.Check();
         }
 
-        public void LoadSpecs()
+        public void LoadXml(int level)
         {
-            _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Blessing));
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(BlessingId, "Blessings");
+            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Blessing));
+            int[] specs = _equipmentAttributeLoader.LoadSpecs(BlessingId, level, XmlName.Blessing);
             ProcentChangeToEnchant = specs[0];
             EnchantDamage = specs[1];
         }
@@ -38,6 +38,11 @@ namespace Assets.Scripts.Player.Swords
         void OnAttacking()
         {
             _enchant = ShouldEnchantedHit();
+        }
+
+        void OnDestroy()
+        {
+            print("GG");
         }
 
         public override DamageData ModifydamageData(DamageData damageDatas)

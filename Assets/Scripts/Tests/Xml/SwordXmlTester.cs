@@ -59,7 +59,7 @@ namespace Assets.Scripts.Tests.Xml
             rustySwordCurse.MinusProcentDamage = 0;
             rustySwordCurse.ProcentToBreakSword = 0;
 
-            rustySwordCurse.LoadSpecs();
+            rustySwordCurse.LoadXml(1);
 
             Assert.IsEquals(specs[0], rustySwordCurse.MinusProcentDamage, "Test minus procent damage");
             Assert.IsEquals(specs[1], rustySwordCurse.ProcentToBreakSword, "Test procent to break sword");
@@ -68,13 +68,13 @@ namespace Assets.Scripts.Tests.Xml
         void TestIfCanFindVStellSwordBlessingSpecs()
         {
             _xmlSearcher = new XmlSearcher(Location.Blessing);
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(VStellSwordBlessingId, "Blessings");
+            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(VStellSwordBlessingId, XmlName.Blessing);
 
             VsteelSwordBaseBlessing vsteelSwordBaseBlessing = gameObject.AddComponent<VsteelSwordBaseBlessing>();
             vsteelSwordBaseBlessing.CriticalHitDamageProcent = 0;
             vsteelSwordBaseBlessing.ProcentChanceOfCriticalHit = 0;
 
-            vsteelSwordBaseBlessing.LoadSpecs();
+            vsteelSwordBaseBlessing.LoadXml(1);
 
             Assert.IsEquals(specs[0], vsteelSwordBaseBlessing.ProcentChanceOfCriticalHit, "Test procent chance of crital hit is loaded correct");
             Assert.IsEquals(specs[1], vsteelSwordBaseBlessing.CriticalHitDamageProcent, "Test critical hit damage procent is loaded correct");
@@ -83,16 +83,16 @@ namespace Assets.Scripts.Tests.Xml
         void TestIfCanFindLifeDrainSwordSpecs()
         {
             _xmlSearcher = new XmlSearcher(Location.Blessing);
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(LifeDrainSwordId, "Blessings");
+            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(LifeDrainSwordId, XmlName.Blessing);
 
-            LifeDrainSwordBlessing lifeDrainSwordBlessing = gameObject.AddComponent<LifeDrainSwordBlessing>();
-            lifeDrainSwordBlessing.LifeOnHit = 0;
-            lifeDrainSwordBlessing.ProcentChanceOfGainingLifeOnHit = 0;
+            LifeDrainBlessing lifeDrainBlessing = gameObject.AddComponent<LifeDrainBlessing>();
+            lifeDrainBlessing.LifeOnHit = 0;
+            lifeDrainBlessing.ProcentChanceOfGainingLifeOnHit = 0;
 
-            lifeDrainSwordBlessing.LoadSpecs();
+            lifeDrainBlessing.LoadXml(1);
 
-            Assert.IsEquals(specs[0], lifeDrainSwordBlessing.ProcentChanceOfGainingLifeOnHit, "Test procent change of ganing life on hit spec is loaded correct");
-            Assert.IsEquals(specs[1], lifeDrainSwordBlessing.LifeOnHit, "Test life on hit spec is loaded correct");
+            Assert.IsEquals(specs[0], lifeDrainBlessing.ProcentChanceOfGainingLifeOnHit, "Test procent change of ganing life on hit spec is loaded correct");
+            Assert.IsEquals(specs[1], lifeDrainBlessing.LifeOnHit, "Test life on hit spec is loaded correct");
         }
     }
 }

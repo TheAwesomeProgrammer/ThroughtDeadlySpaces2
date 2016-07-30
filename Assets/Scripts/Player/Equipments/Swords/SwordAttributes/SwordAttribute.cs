@@ -8,7 +8,12 @@
         Worn,
         Miss,
         Vsteel,
-        LifeDrain,
-        Enchant
+        Enchant,
+        Lethal,
+        Fatiguing,
+        MarkFire,
+        MarkNature,
+        MarkLife,
+        MarkDeath
     }
 }

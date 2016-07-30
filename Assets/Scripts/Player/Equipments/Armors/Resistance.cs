@@ -19,21 +19,20 @@ public class Resistance : LifeDamager, Damageable
     private EquipmentAttributeManager _equipmentAttributeManager;
     private Armor _armor;
 
-    public void Start()
+    protected override void Awake()
     {
         DefenseDatas = new List<DefenseData>();
         _armor = GetComponent<Armor>();
-        SetupDefenseDamageDatas();
         _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
     }
 
-    void SetupDefenseDamageDatas()
+    public void SetupDefenseDamageDatas()
     {
         DefenseDatas.Add(new BaseDefenseData(_armor.Specs.BaseDamage));
-        DefenseDatas.Add(new DefenseData(CombatType.Type1, _armor.Specs.CombatType1Damage));
-        DefenseDatas.Add(new DefenseData(CombatType.Type2, _armor.Specs.CombatType2Damage));
-        DefenseDatas.Add(new DefenseData(CombatType.Type3, _armor.Specs.CombatType3Damage));
-        DefenseDatas.Add(new DefenseData(CombatType.Type4, _armor.Specs.CombatType4Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Fire, _armor.Specs.CombatType1Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Nature, _armor.Specs.CombatType2Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Life, _armor.Specs.CombatType3Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Death, _armor.Specs.CombatType4Damage));
     }
 
     public void DoDamage(List<DamageData> damageDatas)

@@ -26,7 +26,6 @@ namespace Assets.Scripts.Player.Armors.Blessing
             _resistance.Defending += OnDefending;
             _doubleEnchantChecker = new DoubleEnchantChecker(this);
             _doubleEnchantChecker.Check();
-            LoadXml();
         }
 
         void OnDefending()
@@ -46,7 +45,7 @@ namespace Assets.Scripts.Player.Armors.Blessing
         public void LoadXml()
         {
             XmlSearcher xmlSearcher = new XmlSearcher(Location.Blessing);
-            int[] specs = xmlSearcher.GetSpecsInChildrenWithId(XmlId, "Blessings");
+            int[] specs = xmlSearcher.GetSpecsInChildrenWithId(XmlId, XmlName.Blessing);
             _enchantedChance = specs[0];
             _chantedDefense = specs[1];
         }

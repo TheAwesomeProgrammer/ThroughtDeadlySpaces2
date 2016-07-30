@@ -32,9 +32,9 @@ namespace Assets.Scripts.Player.Swords
 
         private Sword AddNewSword(Sword newSword)
         {
-            TypeSwitch.Do(_components.Count,
-                TypeSwitch.Case(new object[] {0, 1}, () => AddSword(newSword)),
-                TypeSwitch.Case(NumberOfSlots, () => SwitchForNewSword(_components[PrimarySword], newSword)));
+            Switch.Do(_components.Count,
+                Switch.Case(new object[] {0, 1}, () => AddSword(newSword)),
+                Switch.Case(NumberOfSlots, () => SwitchForNewSword(_components[PrimarySword], newSword)));
 
             return newSword;
         }

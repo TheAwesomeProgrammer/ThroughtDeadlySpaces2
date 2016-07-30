@@ -5,6 +5,7 @@ using UnityEngine;
 using Assets.Scripts.Combat;
 using Assets.Scripts.Player.Armors;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Shop;
 
 namespace Assets.Scripts.Player.Swords
 {
@@ -17,6 +18,7 @@ namespace Assets.Scripts.Player.Swords
             XmlId = xmlId;
             XmlLocation = Location.Sword;
             XmlArrayName = xmlArrayName;
+            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, EquipmentType.Sword, equipmentId);
         }
 
         public override void Load()

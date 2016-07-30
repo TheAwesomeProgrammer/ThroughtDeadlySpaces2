@@ -10,7 +10,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
             base.Start();
             Tags.Clear();
             Tags.Add(Tag.PlayerCollision);
-            _enemyAttackers = new List<CombatAttacker>();
+            _enemyAttackers = new List<CombatDamage>();
         }
     }
 }

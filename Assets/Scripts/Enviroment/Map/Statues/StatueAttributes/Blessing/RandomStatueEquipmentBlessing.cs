@@ -9,14 +9,14 @@ namespace Assets.Scripts.Enviroment.Map.Statues
     [StatueDescription("Receiving random blessing on sword or armor.")]
     public class RandomStatueEquipmentBlessing : RandomStatueAttribute
     {
-        public override void DoFunction(StatuePick statuePick)
+        protected override void ChoseRandomStatueAttribute()
         {
             AddRandomBlessing(RandomEquipmentType());
         }
 
         protected void AddRandomBlessing(EquipmentType equipmentType)
         {
-           AddRandomAttribute(item => item.EquipmentAttributeType == EquipmentAttributeType.Blessing &&
+           TryAddRandomAttribute(item => item.EquipmentAttributeType == EquipmentAttributeType.Blessing &&
                     item.EquipmentType == equipmentType);
         }
     }

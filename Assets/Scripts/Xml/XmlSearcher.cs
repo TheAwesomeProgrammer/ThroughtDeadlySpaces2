@@ -11,6 +11,11 @@ namespace Assets.Scripts.Xml
 
     public class XmlSearcher
     {
+        private const string SpecNodeName = "Specs";
+        private const string AttributeNodeName = "Att";
+        private const string AttributeLevelNodeName = "AttLevel";
+        private const string AttributeLevelName = "level";
+
         private SpecsConverter _specsConverter = new SpecsConverter();
         private AttributeConverter _attributeConverter = new AttributeConverter();
 
@@ -132,7 +137,7 @@ namespace Assets.Scripts.Xml
             return childrenWithName;
         }
 
-        public int[] GetSpecsInNode(XmlNode node, string specName = "Specs")
+        public int[] GetSpecsInNode(XmlNode node, string specName = SpecNodeName)
         {
             XmlNode specsNode = SelectChildNode(node, specName);
             string specsText = specsNode.InnerText;
@@ -140,7 +145,7 @@ namespace Assets.Scripts.Xml
             return specs;
         }
 
-        public float[] GetSpecsInNodeFloat(XmlNode node, string specName = "Specs")
+        public float[] GetSpecsInNodeFloat(XmlNode node, string specName = SpecNodeName)
         {
             XmlNode specsNode = SelectChildNode(node, specName);
             string specsText = specsNode.InnerText;
@@ -148,17 +153,17 @@ namespace Assets.Scripts.Xml
             return specs;
         }
 
-        public int[] GetSpecsInNode(string nodeName, string specName = "Specs")
+        public int[] GetSpecsInNode(string nodeName, string specName = SpecNodeName)
         {
             return GetSpecsInNode(SelectNodeInDocument(nodeName), specName);
         }
 
-        public float[] GetSpecsInNodeFloat(string nodeName, string specName = "Specs")
+        public float[] GetSpecsInNodeFloat(string nodeName, string specName = SpecNodeName)
         {
             return GetSpecsInNodeFloat(SelectNodeInDocument(nodeName), specName);
         }
 
-        public string[] GetAttributesInNode(XmlNode node, string attributeNodeName = "Att")
+        public string[] GetAttributesInNode(XmlNode node, string attributeNodeName = AttributeNodeName)
         {
             XmlNode attributeNode = SelectChildNode(node, attributeNodeName);
 
@@ -214,6 +219,60 @@ namespace Assets.Scripts.Xml
         public int[] GetSpecsInChildrenWithId(int id, XmlNode arrayNode)
         {
             return GetSpecsInNode(GetNodeInArrayWithId(id, arrayNode));
+        }
+
+        public int GetAttributeLevelInNode(XmlNode attributeNode, int attributeNumber, string xmlAttributeLevelNodeName = AttributeLevelNodeName)
+        {
+            int attributeLevel = -1;
+
+            XmlNode attributeLevelNode = SelectChildNode(attributeNode, xmlAttributeLevelNodeName);
+
+            int[] specs = GetSpecs(attributeLevelNode);
+
+            if (specs != null && specs.Length >= attributeNumber)
+            {
+                attributeLevel = specs[attributeNumber];
+            }
+
+            return attributeLevel;
+        }
+
+        private bool HasAttribute(XmlNode node, string attributeName)
+        {
+            return node != null && node.Attributes != null && node.Attributes[attributeName] != null;
+        }
+
+        private XmlNode GetAttribute(XmlNode node, string attributeName)
+        {
+            XmlNode attributeNode = null;
+
+            if (HasAttribute(node, attributeName))
+            {
+                attributeNode =  node.Attributes[attributeName];
+            }
+
+            return attributeNode;
+        }
+
+        public XmlNode GetLevelNodeInChildren(XmlNode xmlNode, int level, string xmlAttributeLevelName = AttributeLevelName)
+        {
+            XmlNode levelNodeInChildren = null;
+
+            foreach (var childNode in xmlNode.ChildNodes)
+            {
+                XmlAttribute attributeLevelNode = (XmlAttribute)GetAttribute((XmlNode)childNode, xmlAttributeLevelName);
+                if (attributeLevelNode != null)
+                {
+                    int levelInNode = int.Parse(attributeLevelNode.InnerText);
+
+                    if (levelInNode == level)
+                    {
+                        levelNodeInChildren = attributeLevelNode.OwnerElement;
+                    }
+                }
+            }
+
+            return levelNodeInChildren;
         }
     }
 }

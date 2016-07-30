@@ -4,8 +4,8 @@
     {
         Broken,
         Rusty,
-        LifeDrain,
         Enchant,
-        Vsteel
+        Vsteel,
+        Holy
     }
 }

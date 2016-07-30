@@ -5,13 +5,14 @@
         <Specs>(1,1,1,1,1)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Miss)</Att>
+        <Att>(Miss,Broken,Heavy,Worn,Miss,Vsteel,LifeDrain,Enchant,Light,Swift,MarkNature,MarkLife,MarkDeath,MarkFire,Lethal,Fatiguing)</Att>
+        <AttLevel>(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)</AttLevel>
         <!-- 
         Possible attributes :
         Curses : 
-        [Rusty],[Broken],[Heavy],[Worn][Miss]
+        [Rusty],[Broken],[Heavy],[Worn],[Fatiguing]
         Blessings : 
-        [Vsteel],[LifeDrain],[Enchant]
+        [Vsteel],[LifeDrain],[Enchant],[Light],[Swift],[Lethal],[MarkNature],[MarkLife],[MarkDeath],[MarkFire]
         -->
     </Sword>
     
@@ -21,12 +22,13 @@
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
         <Att>(Broken,Heavy)</Att>
+        <AttLevel>(1, 1)</AttLevel>
         <!-- 
         Possible attributes :
         Curses : 
-        [Rusty],[Broken],[Heavy],[Worn]
+        [Rusty],[Broken],[Heavy],[Worn],[Fatiguing]
         Blessings : 
-        [Vsteel],[LifeDrain],[Enchant]
+        [Vsteel],[LifeDrain],[Enchant],[Light],[Swift],[Mark][Lethal]
         -->
     </Sword>
 </Swords>

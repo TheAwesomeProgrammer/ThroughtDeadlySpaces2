@@ -8,28 +8,23 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
-    public class BrokenSwordCurse : BaseDamageModifier,XmlLoadable
+    public class BrokenSwordCurse : BaseDamageModifier, XmlAttributeLoadable
     {
         public int BrokenSwordMinusProcentDamage = -40;
         public const int CurseId = 0;
 
-        private XmlSearcher _xmlSearcher;
-
-        protected  override void Start()
-        {
-            base.Start();
-            LoadXml();
-        }
+        private EquipmentAttributeLoader _equipmentAttributeLoader;
 
         public override DamageData ModifydamageData(DamageData damageData)
         {
             return new BaseDamageData(MathHelper.GetValueMultipliedWithProcent(damageData.Damage, BrokenSwordMinusProcentDamage));
         }
 
-        public void LoadXml()
+        public void LoadXml(int level)
         {
-            _xmlSearcher = new XmlSearcher(XmlFileLocations.GetLocation(Location.Curse));
-            BrokenSwordMinusProcentDamage = _xmlSearcher.GetSpecsInChildrenWithId(CurseId, "Attributes")[0];
+            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Curse));
+            int[] specs = _equipmentAttributeLoader.LoadSpecs(CurseId, level, XmlName.Curses);
+            BrokenSwordMinusProcentDamage = specs[0];
         }
     }
 }

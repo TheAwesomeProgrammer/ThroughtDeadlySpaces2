@@ -20,13 +20,13 @@ namespace Assets.Scripts.Enviroment.Map.Statues
             _equipmentTypes = new List<Type>();
         }
 
-        public override void DoFunction(StatuePick statuePick)
+        protected override void ChoseRandomStatueAttribute()
         {
             _equipmentTypes.Add(typeof(Sword));
             _equipmentTypes.Add(typeof(Armor));
             if (!Repair())
             {
-                statuePick.Pick();
+                ChoseRandomStatueAttribute();
             }
         }
 

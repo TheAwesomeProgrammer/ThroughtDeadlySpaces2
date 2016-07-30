@@ -15,7 +15,6 @@ public class TestResistance : MonoBehaviour
     void Start()
     {
         _resistance = GetComponent<Resistance>();
-        _resistance.Start();
         _life = GetComponent<Life>();
         TestIfDamageNDefenseMitegatesEachOther();
         Reset();
@@ -39,7 +38,7 @@ public class TestResistance : MonoBehaviour
         int damage = 2;
         int defense = 2;
 
-        SetupDamageNDefense(damage, defense, CombatType.Type1, CombatType.Type1);
+        SetupDamageNDefense(damage, defense, CombatType.Fire, CombatType.Fire);
 
         Assert.IsTrue(_life.Health == StartHealth, "Testing if damage n defense mitegaes each other");
     }
@@ -55,7 +54,7 @@ public class TestResistance : MonoBehaviour
         _life.SetHealth(StartHealth);
         int damage = 1;
 
-        _resistance.DoDamage(new List<DamageData>() { new DamageData(CombatType.Type1, damage) });
+        _resistance.DoDamage(new List<DamageData>() { new DamageData(CombatType.Fire, damage) });
 
         Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if damage gets through resistance");
     }
@@ -66,7 +65,7 @@ public class TestResistance : MonoBehaviour
         int damage = 2;
         int defense = 3;
 
-        SetupDamageNDefense(damage, defense, CombatType.Type1, CombatType.Type1);
+        SetupDamageNDefense(damage, defense, CombatType.Fire, CombatType.Fire);
 
         Assert.IsTrue(_life.Health == StartHealth, "Testing if resistrance with extra defense stops damage");
     }
@@ -77,7 +76,7 @@ public class TestResistance : MonoBehaviour
         int damage = 2;
         int defense = 2;
 
-        SetupDamageNDefense(damage, defense, CombatType.Type1, CombatType.Type2);
+        SetupDamageNDefense(damage, defense, CombatType.Fire, CombatType.Nature);
 
         Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if different damage types, than defense still does damage");
     }

@@ -1,15 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Attributes>
+<Curses>
     <BrokenSwordCurse id="0">
-        <Specs>(-40)</Specs>    <!-- [1 = Minus procent base damage] -->    
+        <Specs level="1">(-40)</Specs>    <!-- [1 = Minus procent base damage] -->    
     </BrokenSwordCurse>
     <HeavySwordCurse id="1">
-        <Specs>(2)</Specs>      <!-- [1 = Speed to lose] -->     
+        <Specs level="1">(2)</Specs>      <!-- [1 = Speed to lose] -->     
     </HeavySwordCurse>
     <RustrySwordCurse id="2">
-        <Specs>(-20,8)</Specs>  <!-- [1 = Minus procent base damage], [2 = procent chance to break sword] -->    
+        <Specs level="1">(-20,8)</Specs>  <!-- [1 = Minus procent base damage], [2 = procent chance to break sword] -->    
     </RustrySwordCurse>   
     <RustryArmorCurse id="3">
-        <Specs>(8)</Specs>  <!-- [ [1 = procent chance to break armor] -->    
-    </RustryArmorCurse>   
-</Attributes>
+        <Specs level="1">(8)</Specs>  <!-- [ [1 = procent chance to break armor] -->    
+    </RustryArmorCurse>
+    <MissAttackSwordCurse id="4">
+        <Specs level="1">(10)</Specs><!-- [ [1 = chance to miss attack] -->
+    </MissAttackSwordCurse>
+    <FatiguingCurse id="5">
+        <Specs level="1">(5, 1)</Specs><!-- [ [1 = amount to slow], [1 = dexterity to remove]  -->
+    </FatiguingCurse>
+</Curses>

@@ -23,10 +23,28 @@ namespace Assets.Scripts.Player
         /// Is only for setting start values via unity. Use SetMaxDexterity to set it.
         /// </summary>
         public float MaxDexterity = 2;
+        /// <summary>
+        /// Is only for setting start values via unity. Use SetAttackSpeed to set it.
+        /// </summary>
+        public float AttackSpeed = 1;
 
         private Life _life;
         private DexterityFiller _dexterityFiller;
         private PlayerMovement _playerMovement;
+        private SwordAttack _swordAttack;
+
+        void Start()
+        {
+            _playerMovement = GetComponentInChildren<PlayerMovement>();
+            _life = GetComponentInChildren<Life>();
+            _dexterityFiller = GetComponent<DexterityFiller>();
+            _swordAttack = GetComponentInChildren<SwordAttack>();
+            SetMaxDexterity(MaxDexterity);
+            SetMaxHealth(MaxHealth);
+            SetHealth(Health);
+            SetSpeed(Speed);
+            SetAttackSpeed(AttackSpeed);
+        }
 
         public void SetSpeed(float newSpeed)
         {
@@ -52,15 +70,10 @@ namespace Assets.Scripts.Player
             _dexterityFiller.MaxDexterity = newDexterity;
         }
 
-        void Start()
+        public void SetAttackSpeed(float newAttackSpeed)
         {
-            _playerMovement = GetComponentInChildren<PlayerMovement>();
-            _life = GetComponentInChildren<Life>();
-            _dexterityFiller = GetComponent<DexterityFiller>();
-            SetMaxDexterity(MaxDexterity);
-            SetMaxHealth(MaxHealth);
-            SetHealth(Health);
-            SetSpeed(Speed);
+            AttackSpeed = newAttackSpeed;
+            _swordAttack.AttackSpeed = AttackSpeed;
         }
     }
 }

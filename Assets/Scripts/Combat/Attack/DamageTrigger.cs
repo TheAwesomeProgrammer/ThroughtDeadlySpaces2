@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
@@ -8,13 +9,30 @@ namespace Assets.Scripts.Player.Swords
 {
     public abstract class DamageTrigger : Trigger
     {
-        protected List<CombatAttacker> _enemyAttackers;
-        private const float AttackSpeed = 1;
+        public event Action<CombatDamage> _newEnemyAdded;
+
+        protected List<CombatDamage> _enemyAttackers;
+
+        private float _attackSpeed;
+
+        public float AttackSpeed
+        {
+            get { return _attackSpeed; }
+            set
+            {
+                if (value != _attackSpeed)
+                {
+                    _enemyAttackers.ForEach(item => item.SetAttackSpeed(value));
+                    _attackSpeed = AttackSpeed;
+                }
+            }
+        }
+
 
         protected override void Start()
         {
             base.Start();
-            _enemyAttackers = new List<CombatAttacker>();
+            _enemyAttackers = new List<CombatDamage>();
         }
 
         public void DoDamage(List<DamageData> damageDatas)
@@ -77,10 +95,14 @@ namespace Assets.Scripts.Player.Swords
 
         private void AddCombatAttacker(Damageable damageable)
         {
-            CombatAttacker newCombatAttacker = new CombatAttacker(damageable, AttackSpeed);
-            if (!_enemyAttackers.Contains(newCombatAttacker))
+            CombatDamage newCombatDamage = new CombatDamage(damageable, AttackSpeed);
+            if (!_enemyAttackers.Contains(newCombatDamage))
             {
-                _enemyAttackers.Add(newCombatAttacker);
+                if (_newEnemyAdded != null)
+                {
+                    _newEnemyAdded(newCombatDamage);
+                }
+                _enemyAttackers.Add(newCombatDamage);
             }
         }
     }

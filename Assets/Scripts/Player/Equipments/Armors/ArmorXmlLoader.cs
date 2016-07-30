@@ -2,6 +2,7 @@
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
+using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 
 namespace Assets.Scripts.Player.Armors
@@ -12,7 +13,7 @@ namespace Assets.Scripts.Player.Armors
             int equipmentId) : base(equipmentAttributeManager, xmlId, xmlArrayName, equipmentId)
         {
             XmlLocation = Location.Armor;
-            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager);
+            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, EquipmentType.Armor);
         }
 
         public override void Load()

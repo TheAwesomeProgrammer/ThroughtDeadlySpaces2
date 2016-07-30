@@ -19,7 +19,7 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
             Object.Destroy(armor);
             armorObject.SetActive(false);
             armor = armorObject.AddComponent<Armor>();
-            armor.ArmorId = _armorId;
+            armor.Load(_armorId);
             armorObject.SetActive(true);
         }
     }

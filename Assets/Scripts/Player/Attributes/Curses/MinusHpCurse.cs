@@ -5,14 +5,14 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Curses
 {
     [EquipmentAttributeMetaData(EquipmentAttributeType.Curse)]
-    public class MinusMaxHpCurse : PlayerAttribute
+    public class MinusHpCurse : EquipmentAttribute
     {
-        public const int MaxHpToLose = 1;
+        public const int HpToLose = 1;
 
-        public override void OnActivate()
+        protected override void Activate()
         {
             PlayerProperties playerProperties = GameObject.FindGameObjectWithTag(Tag.Player).GetComponent<PlayerProperties>();
-            playerProperties.SetMaxHealth(playerProperties.MaxHealth - MaxHpToLose);
+            playerProperties.SetHealth(playerProperties.Health - HpToLose);
             Destroy(this);
         }
     }

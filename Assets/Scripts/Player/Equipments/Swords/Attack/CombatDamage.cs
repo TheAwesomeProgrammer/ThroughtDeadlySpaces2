@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
 using UnityEngine;
@@ -6,17 +7,25 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords
 {
     [System.Serializable]
-    public class CombatAttacker
+    public class CombatDamage
     {
         public Damageable Damageable;
+        public float AttackSpeed;
+        public event Action<CombatDamage> Attacked;
 
-        private float _attackSpeed;
         private float _attackTimer;
 
-        public CombatAttacker(Damageable damageable, float attackSpeed)
+        public CombatDamage(Damageable damageable, float attackSpeed)
         {
             Damageable = damageable;
-            _attackSpeed = attackSpeed;
+            AttackSpeed = attackSpeed;
+        }
+
+        public void SetAttackSpeed(float newAttackSpeed)
+        {
+            float attackSpeedDiff = newAttackSpeed - AttackSpeed;
+            _attackTimer += attackSpeedDiff;
+            AttackSpeed = newAttackSpeed;
         }
 
         public void ShouldAttack(List<DamageData> damageDatas)
@@ -29,7 +38,11 @@ namespace Assets.Scripts.Player.Swords
 
         private void Attack(List<DamageData> damageDatas)
         {
-            _attackTimer = Time.time + _attackSpeed;
+            if (Attacked != null)
+            {
+                Attacked(this);
+            }
+            _attackTimer = Time.time + AttackSpeed;
             Damageable.DoDamage(damageDatas);
         }
 
@@ -40,8 +53,8 @@ namespace Assets.Scripts.Player.Swords
 
         public override bool Equals(object obj)
         {
-            CombatAttacker combatAttacker = (CombatAttacker) obj;
-            return combatAttacker.Damageable == Damageable;
+            CombatDamage combatDamage = (CombatDamage) obj;
+            return combatDamage.Damageable == Damageable;
         }
 
         public override int GetHashCode()

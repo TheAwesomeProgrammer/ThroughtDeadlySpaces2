@@ -82,8 +82,8 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             int damage = 2;
             _enemyLife.SetHealth(StartHealth);
-            _swordAttack.AddDamageDatas(new List<DamageData>() {new DamageData(CombatType.Type1, damage)});
-            _enemyWeakness.Weaknesses.Add(CombatType.Type1);
+            _swordAttack.AddDamageDatas(new List<DamageData>() {new DamageData(CombatType.Fire, damage)});
+            _enemyWeakness.Weaknesses.Add(CombatType.Fire);
 
             _swordAttack.Attack();
 
@@ -94,8 +94,8 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             int damage = 2;
             _enemyLife.SetHealth(StartHealth);
-            _swordAttack.AddDamageDatas(new List<DamageData>() {new DamageData(CombatType.Type1, damage)});
-            _enemyWeakness.Weaknesses.Add(CombatType.Type2);
+            _swordAttack.AddDamageDatas(new List<DamageData>() {new DamageData(CombatType.Fire, damage)});
+            _enemyWeakness.Weaknesses.Add(CombatType.Nature);
 
             _swordAttack.Attack();
 
@@ -173,7 +173,7 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             int damage = 1;
             _enemyLife.SetHealth(10);
-            _swordAttack.AddDamageDatas(new List<DamageData>() { new DamageData(CombatType.Type1, damage) });
+            _swordAttack.AddDamageDatas(new List<DamageData>() { new DamageData(CombatType.Fire, damage) });
             EnchantedBlessing enchantedBlessing = _swordEquipmentAttributeManager.AddNewComponent<EnchantedBlessing>();
             enchantedBlessing.ProcentChangeToEnchant = 100;
 
@@ -186,13 +186,13 @@ namespace Assets.Scripts.Tests.Player.Swords
         {
             _life.SetHealth(StartHealth);
 
-            LifeDrainSwordBlessing lifeDrainSwordBlessing = _swordEquipmentAttributeManager.AddNewComponent<LifeDrainSwordBlessing>();
-            lifeDrainSwordBlessing.ProcentChanceOfGainingLifeOnHit = 100;
-            _life.MaxHealth = StartHealth + lifeDrainSwordBlessing.LifeOnHit;
+            LifeDrainBlessing lifeDrainBlessing = _swordEquipmentAttributeManager.AddNewComponent<LifeDrainBlessing>();
+            lifeDrainBlessing.ProcentChanceOfGainingLifeOnHit = 100;
+            _life.MaxHealth = StartHealth + lifeDrainBlessing.LifeOnHit;
 
             _swordAttack.Attack();
 
-            Assert.IsEquals(StartHealth + lifeDrainSwordBlessing.LifeOnHit, _life.Health, 
+            Assert.IsEquals(StartHealth + lifeDrainBlessing.LifeOnHit, _life.Health, 
                 "Testing if life drain blessing drains life on hit");
         }
 

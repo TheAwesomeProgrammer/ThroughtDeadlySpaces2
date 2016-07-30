@@ -6,6 +6,7 @@ using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Player.Swords.Curses;
 using Assets.Scripts.Shop;
+using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Equipments
@@ -16,10 +17,12 @@ namespace Assets.Scripts.Player.Equipments
         public EquipmentAttributeType EquipmentAttributeType;
         public MonoBehaviour Attribute;
         public int Id;
+        public int Level;
 
-        public AttributeData(int id, EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
+        public AttributeData(int id, int level, EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
         {
             Id = id;
+            Level = level;
             EquipmentAttributeType = equipmentAttributeType;
             Attribute = attribute;
         }
@@ -36,33 +39,26 @@ namespace Assets.Scripts.Player.Equipments
 
         private Armor _myArmor
         {
-            get
-            {
-                if (_armor == null)
-                {
-                    _armor = GetComponentInChildren<Armor>();
-                }
-                return _armor;
-            }
+            get { return _armor ?? (_armor = GetComponentInChildren<Armor>()); }
         }
 
         private Sword _sword;
         private Armor _armor;
 
-        public void AddExistingAttribute(int id, EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute)
+        public void AddExistingAttribute(int id, EquipmentAttributeType equipmentAttributeType, MonoBehaviour attribute, int level = 1)
         {
-            _attributes.Add(new AttributeData(id, equipmentAttributeType, attribute));
+            AddAttribute(new AttributeData(id, level, equipmentAttributeType, attribute));
             AddExistingComponent(attribute);
         }
 
-        public virtual T AddNewAttribute<T>(int id, EquipmentAttributeType equipmentAttributeType) where T : MonoBehaviour
+        public virtual T AddNewAttribute<T>(int id, EquipmentAttributeType equipmentAttributeType, int level = 1) where T : MonoBehaviour
         {
             var attribute = AddNewComponent<T>();
-            AddExistingAttribute(id, equipmentAttributeType, attribute);
+            AddExistingAttribute(id, equipmentAttributeType, attribute, level);
             return attribute;
         }
 
-        public T AddNewAttribute<T>(int id, AttributeInfo attributeInfo) where T : MonoBehaviour
+        public T AddNewAttribute<T>(int id, AttributeInfo attributeInfo, int level = 1) where T : MonoBehaviour
         {
             T attribute;
             var equipmentAttributeType = attributeInfo.EquipmentAttributeType;
@@ -71,16 +67,26 @@ namespace Assets.Scripts.Player.Equipments
             {
                 case EquipmentType.Sword:
                     attribute = AddNewComponent<T>(_mySword.gameObject);
-                    _attributes.Add(new AttributeData(id, equipmentAttributeType, attribute));
+                    AddAttribute(new AttributeData(id, level, equipmentAttributeType, attribute));
                     break;
                 case EquipmentType.Armor:
                     attribute = AddNewComponent<T>(_myArmor.gameObject);
-                    _attributes.Add(new AttributeData(id, equipmentAttributeType, attribute));
+                    AddAttribute(new AttributeData(id, level, equipmentAttributeType, attribute));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("equipmentType", attributeInfo.EquipmentType, null);
             }
             return attribute;
+        }
+
+        public void AddAttribute(AttributeData attributeData)
+        {
+            XmlAttributeLoadable xmlAttributeLoadable = attributeData.Attribute as XmlAttributeLoadable;
+            if (xmlAttributeLoadable != null)
+            {
+                xmlAttributeLoadable.LoadXml(attributeData.Level);
+            }
+            _attributes.Add(attributeData);
         }
 
         public AttributeData GetAttribute(EquipmentAttributeType equipmentAttributeType)

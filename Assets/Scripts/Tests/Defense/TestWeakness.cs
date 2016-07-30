@@ -34,7 +34,7 @@ namespace Assets.Scripts.Tests.Defense
         void TestIfDamagesOneWeakness()
         {
             _life.SetHealth(StartHealth);
-            CombatType weaknessType = CombatType.Type1;
+            CombatType weaknessType = CombatType.Fire;
             int damage = 2;
 
             _weakness.Weaknesses.Add(weaknessType);
@@ -59,7 +59,7 @@ namespace Assets.Scripts.Tests.Defense
             _life.SetHealth(StartHealth);
             int damage = 2;
 
-            _weakness.DoDamage(new List<DamageData>() {new DamageData(CombatType.Type1, damage)});
+            _weakness.DoDamage(new List<DamageData>() {new DamageData(CombatType.Fire, damage)});
 
             Assert.IsTrue(_life.Health == StartHealth, "Testing that is dosn't damage when no weakness exists");
         }
@@ -69,9 +69,9 @@ namespace Assets.Scripts.Tests.Defense
             _life.SetHealth(StartHealth);
             int damage = 2;
 
-            _weakness.Weaknesses.Add(CombatType.Type2);
+            _weakness.Weaknesses.Add(CombatType.Nature);
 
-            _weakness.DoDamage(new List<DamageData>() { new DamageData(CombatType.Type1, damage) });
+            _weakness.DoDamage(new List<DamageData>() { new DamageData(CombatType.Fire, damage) });
 
             Assert.IsTrue(_life.Health == StartHealth, "Testing no damage when has weakness but not the right one");
         }
