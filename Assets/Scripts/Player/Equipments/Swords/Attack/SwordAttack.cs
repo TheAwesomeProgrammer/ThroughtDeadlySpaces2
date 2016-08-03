@@ -17,10 +17,10 @@ namespace Assets.Scripts.Player.Swords
         public void SetupDamageDatas()
         {
             _damageDatas.Add(new BaseDamageData(_sword.Specs.BaseDamage));
-            _damageDatas.Add(new DamageData(CombatType.Fire, _sword.Specs.CombatType1Damage));
-            _damageDatas.Add(new DamageData(CombatType.Nature, _sword.Specs.CombatType2Damage));
-            _damageDatas.Add(new DamageData(CombatType.Life, _sword.Specs.CombatType3Damage));
-            _damageDatas.Add(new DamageData(CombatType.Death, _sword.Specs.CombatType4Damage));
+            _damageDatas.Add(new DamageData(CombatType.Fire, _sword.Specs.FireDamage));
+            _damageDatas.Add(new DamageData(CombatType.Nature, _sword.Specs.NatureDamage));
+            _damageDatas.Add(new DamageData(CombatType.Life, _sword.Specs.LifeDamage));
+            _damageDatas.Add(new DamageData(CombatType.Death, _sword.Specs.DeathDamage));
         }
 
         public void AddStrength(int strength)

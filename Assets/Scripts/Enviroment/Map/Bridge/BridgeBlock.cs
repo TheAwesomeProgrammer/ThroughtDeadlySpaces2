@@ -12,9 +12,6 @@ namespace Assets.Scripts.Enviroment.Map.Bridge
         {
             _actionDelayer = GetComponent<ActionDelayer>();
             _moveToPoint = GetComponent<MoveToPoint>();
-            _startPosition = transform.position + (-_moveToPoint.Point);
-            transform.position = _startPosition;
-            _moveToPoint.CalculateTarget();
         }
 
         public void Activate()
@@ -24,7 +21,7 @@ namespace Assets.Scripts.Enviroment.Map.Bridge
 
         private void ActivateAction()
         {
-            _moveToPoint.Activate();
+            _moveToPoint.Move();
         }
 
         public void Deactivate()
@@ -35,7 +32,7 @@ namespace Assets.Scripts.Enviroment.Map.Bridge
         private void DeactivateAction()
         {
             _moveToPoint.SetTargetPoint(_startPosition);
-            _moveToPoint.Activate();
+            _moveToPoint.Move();
         }
     }
 }

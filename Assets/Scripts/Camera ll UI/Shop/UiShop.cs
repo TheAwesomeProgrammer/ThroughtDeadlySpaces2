@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Shop
 {
-    public class UiShop : UiItem
+    public class UiShop : UiItemActive
     {
       
     }

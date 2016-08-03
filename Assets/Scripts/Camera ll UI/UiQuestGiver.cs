@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Camera_ll_UI
 {
-    public class UiQuestGiver : UiItem
+    public class UiQuestGiver : UiItemActive
     {
         private Text _title;
         //private Image _dropTypeImage;
@@ -15,7 +15,7 @@ namespace Assets.Scripts.Camera_ll_UI
         private Text _difficultyText;
         private QuestGiverProperties _questGiverProperties;
 
-        protected override void OnActivate()
+        protected override void OnShow()
         {
             _rewardTexts = new Text[3];
             _title = transform.FindComponentInChildWithName<Text>("Title");

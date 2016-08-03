@@ -24,12 +24,12 @@ namespace Assets.Scripts.Player.Curses
 
         protected override void Activate()
         {
-            _playerProperties.SetAttackSpeed(_playerProperties.AttackSpeed - _extraAttackSpeed);
+            _playerProperties.AttackSpeed -= _extraAttackSpeed;
         }
 
         protected override void Deactivate()
         {
-            _playerProperties.SetAttackSpeed(_playerProperties.AttackSpeed + _extraAttackSpeed);
+            _playerProperties.AttackSpeed += _extraAttackSpeed;
         }
     }
 }

@@ -8,6 +8,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
 {
     public class BoboBiteExecuter : BossAttackBase
     {
+        public override string AnimationName
+        {
+            get { return "BiteBobo"; }
+        }
+
         protected override void Start()
         {
             base.Start();

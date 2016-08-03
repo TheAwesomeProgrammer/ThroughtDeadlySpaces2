@@ -6,8 +6,15 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
     public class HarbingerBeamExecuter : BossAttackBase
     {
+        public override string AnimationName
+        {
+            get { return "LazorJoseph"; }
+        }
+
         private float StartDelay = 0.6f;
         private BossBeam _bossBeam;
+
+       
 
         protected override void Start()
         {

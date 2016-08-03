@@ -35,4 +35,30 @@ public static class GameObjectExtension {
 
         return component;
     }
+
+    // Also sets rect transforms position.
+    public static void SetPosition(this GameObject gameObject, Vector3 position)
+    {
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+        if (rectTransform)
+        {
+            rectTransform.anchoredPosition = position;
+        }
+        else
+        {
+            gameObject.transform.position = position;
+        }
+    }
+    
+    // Also gets rect transforms position.
+    public static Vector3 GetPosition(this GameObject gameObject)
+    {
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+        if (rectTransform)
+        {
+            return rectTransform.anchoredPosition;
+        }
+
+        return gameObject.transform.position;
+    }
 }

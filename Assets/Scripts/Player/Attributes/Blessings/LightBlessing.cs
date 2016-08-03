@@ -27,13 +27,13 @@ namespace Assets.Scripts.Player.Curses
         protected override void Activate()
         {
             _startSpeed = _playerProperties.Speed;
-            _playerProperties.SetSpeed(_startSpeed + _extraSpeed);
+            _playerProperties.Speed += _extraSpeed;
         }
 
         protected override void Deactivate()
         {
             base.Deactivate();
-            _playerProperties.SetSpeed(_startSpeed);
+            _playerProperties.Speed = _startSpeed;
         }
     }
 }

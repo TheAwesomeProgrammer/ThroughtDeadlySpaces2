@@ -24,13 +24,13 @@ namespace Assets.Scripts.Enviroment.Map.Statues
                 case StatueSacrificeType.Nothing:
                     break;
                 case StatueSacrificeType.Dexterity:
-                    _playerProperties.SetMaxDexterity(_playerProperties.MaxDexterity - AmountToSacrifice);
+                    _playerProperties.MaxDexterity -= AmountToSacrifice;
                     break;
                 case StatueSacrificeType.Speed:
-                    _playerProperties.SetSpeed(_playerProperties.Speed - AmountToSacrifice);
+                    _playerProperties.Speed -= AmountToSacrifice;
                     break;
                 case StatueSacrificeType.Health:
-                    _playerProperties.SetMaxHealth(_playerProperties.MaxHealth - AmountToSacrifice);
+                    _playerProperties.MaxHealth -= AmountToSacrifice;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

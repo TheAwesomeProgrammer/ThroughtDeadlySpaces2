@@ -18,6 +18,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         private WallStopChecker _wallStopChecker;
         private float _startSpeed;
 
+        public override string AnimationName
+        {
+            get { return "RapidWithoutStart"; }
+        }
+
         protected override void Start()
         {
             _baseDamageXmlId = 4;

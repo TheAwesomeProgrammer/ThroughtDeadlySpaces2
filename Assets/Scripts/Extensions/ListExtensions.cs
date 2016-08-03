@@ -31,5 +31,11 @@ namespace Assets.Scripts.Extensions
         {
             return dictionary.Values.ElementAt(UnityEngine.Random.Range(0, dictionary.Count));
         }
+
+        public static void Remove<T>(this List<T> list, Predicate<T> predicate)
+        {
+            T item = list.Find(predicate);
+            list.Remove(item);
+        }
     }
 }

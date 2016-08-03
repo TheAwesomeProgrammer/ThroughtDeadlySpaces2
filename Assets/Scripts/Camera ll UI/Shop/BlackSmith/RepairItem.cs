@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Shop.BlackSmith
 {
-    public class RepairItem : UiItem
+    public class RepairItem : UiItemActive
     {
         public EquipmentType EquipmentType;
 

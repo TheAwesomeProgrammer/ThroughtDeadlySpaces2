@@ -6,6 +6,11 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
     public class HarbingerSlashExecuter : BossAttackBase
     {
+        public override string AnimationName
+        {
+            get { return "Slash attackJoseph"; }
+        }
+
         protected override void Start()
         {
             base.Start();

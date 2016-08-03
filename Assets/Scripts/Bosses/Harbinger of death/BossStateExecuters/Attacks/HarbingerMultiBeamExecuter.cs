@@ -7,21 +7,40 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
     public class HarbingerMultiBeamExecuter : BossAttackBase
     {
-        private float _attackSpeed;
-        private const float StartDelay = 1.1f;
-        private const float EndDelay = 0.75f;
+        private float _betweenBeamDelay;
+        private const float BaseStartDelay = 0.83f;
+        private const float BaseEndDelay = 0.33f;
+        private const float BaseBetweenBeamDelay = 1.0035f;
         private const int TimesToAttack = 3;
         private BossBeam _bossBeam;
         private int _beamsFired;
+        private float _startDelay; 
+        private float _endDelay;
+        private float _calculatedAnimationDuration;
+
+        public override string AnimationName
+        {
+            get { return "MultiLazorJoseph"; }
+        }
 
         protected override void Start()
         {
             base.Start();
+            _animator = _animatorTrigger.Animator;
             _bossBeam = transform.root.FindComponentInChildWithName<BossBeam>("Beam");
             _bossAttack = transform.root.FindComponentInChildWithName<BossAttack>("Beam");
             _possiblePauseStates.Add(HarbingerOfDeathState.Exhausted);
             _baseDamageXmlId = 2;
-            _attackSpeed = _bossSpecsLoader.BossSpecs.SpecialSpecs[0];
+            _betweenBeamDelay = _bossSpecsLoader.BossSpecs.SpecialSpecs[0];
+            CalculateDelays();
+        }
+
+        private void CalculateDelays()
+        {
+            float animationProcentIncrease = _betweenBeamDelay / BaseBetweenBeamDelay;
+            _startDelay = BaseStartDelay * animationProcentIncrease;
+            _endDelay = BaseEndDelay * animationProcentIncrease;
+            _calculatedAnimationDuration = _startDelay + (TimesToAttack * _betweenBeamDelay) + _endDelay;
         }
 
         protected override void Attack()
@@ -38,10 +57,11 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 
         void DoMultiBeam()
         {
+            _animator.SetFloat("AttackSpeed", _calculatedAnimationDuration);
             float startDelay = 0;
             if (IsFirstBeam())
             {
-                startDelay = StartDelay;
+                startDelay = _startDelay;
             }
 
             _bossBeam.StartAttack(_baseDamage, startDelay, HasDoneMultiBeam);
@@ -57,11 +77,11 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
         {
             if (_beamsFired < TimesToAttack)
             {
-                Invoke("DoMultiBeam", _attackSpeed);
+                Invoke("DoMultiBeam", _betweenBeamDelay);
             }
             else
             {
-                Timer.Start(gameObject, EndDelay, SwitchState);
+                Timer.Start(gameObject, _endDelay, SwitchState);
             }
         }
     }

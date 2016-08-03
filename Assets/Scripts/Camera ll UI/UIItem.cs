@@ -6,16 +6,14 @@ namespace Assets.Scripts.Camera_ll_UI
     {
         public int UiId;
 
-        public void Activate()
+        public void Show()
         {
-            gameObject.SetActive(true);
-            OnActivate();
+            OnShow();
         }
 
-        public void Deactivate()
+        public void Hide()
         {
-            gameObject.SetActive(false);
-            OnDeactivate();
+            OnHide();
         }
 
         public virtual void SetProperties(params object[] properties)
@@ -23,12 +21,12 @@ namespace Assets.Scripts.Camera_ll_UI
             
         }
 
-        protected virtual void OnActivate()
+        protected virtual void OnShow()
         {
             
         }
 
-        protected virtual void OnDeactivate()
+        protected virtual void OnHide()
         {
             
         }

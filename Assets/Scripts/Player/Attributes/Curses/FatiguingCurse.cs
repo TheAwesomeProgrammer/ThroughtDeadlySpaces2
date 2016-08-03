@@ -30,8 +30,8 @@ namespace Assets.Scripts.Player.Curses
 
         private void ChangePlayerProperties(float newDexterityValue, float newSpeed)
         {
-            _playerProperties.SetSpeed(newDexterityValue);
-            _playerProperties.SetMaxDexterity(newSpeed);
+            _playerProperties.MaxDexterity = newDexterityValue;
+            _playerProperties.Speed = newSpeed;
         }
 
         public void LoadXml(int level)

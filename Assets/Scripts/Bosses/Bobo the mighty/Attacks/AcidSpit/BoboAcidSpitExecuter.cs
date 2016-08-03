@@ -16,6 +16,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.AcidSpit
         private BossProjectileSpawner _projectileSpawner;
         private GameObject _spawnedAcid;
 
+        public override string AnimationName
+        {
+            get { return "AcidBobo"; }
+        }
+
         protected override void Start()
         {
             _baseDamageXmlId = 3;

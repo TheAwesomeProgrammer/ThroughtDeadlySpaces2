@@ -16,6 +16,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks.Suck
         private GameObject _spawnedSuckObject;
         private LookAtTargetXz _lookAtTargetXz;
 
+        public override string AnimationName
+        {
+            get { return "SuckBobo"; }
+        }
+
         protected override void Start()
         {
             base.Start();

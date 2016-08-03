@@ -20,6 +20,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         private BossProperties _bossProperties;
         private int _minionsSpawned;
 
+        public override string AnimationName
+        {
+            get { return "MinionSpawnBobo"; }
+        }
+
         protected override void Start()
         {
             base.Start();

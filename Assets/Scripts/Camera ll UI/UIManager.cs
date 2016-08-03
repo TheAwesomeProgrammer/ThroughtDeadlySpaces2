@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour {
 
         if (itemWithType != null)
         {
-            itemWithType.Activate();
+            itemWithType.Show();
         }
 
         return itemWithType;
@@ -57,9 +57,9 @@ public class UIManager : MonoBehaviour {
         return _uiItems.GetBasesNInterfacesOfType(typeof (T)).Find(item => item.UiId == id);
     }
 
-    public List<UiItem> GetItemsWithTypeAndId<T>(int id) where T : UiItem
+    public List<T> GetItemsWithTypeAndId<T>(int id) where T : UiItem
     {
-        return _uiItems.GetBasesNInterfacesOfType(typeof(T)).FindAll(item => item.UiId == id);
+        return _uiItems.GetBasesNInterfacesOfType(typeof(T)).FindAll(item => item.UiId == id).Cast<T>().ToList();
     }
 
     public void DeactivateItemWithTypeAndId<T>(int id) where T : UiItem
@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour {
 
         if (itemWithType != null)
         {
-            itemWithType.Deactivate();
+            itemWithType.Hide();
         }
     }
 
@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour {
     {
         foreach (var uiItem in _uiItems.GetBasesNInterfacesOfType(typeof(T)))
         {
-            uiItem.Deactivate();
+            uiItem.Hide();
         }
     }
 
@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviour {
         foreach (var item in _uiItems.FindAll(uiItemInList => uiItemInList.GetType() == uiItem.GetType()))
         {
             deactivatedItems.Add(item);
-            item.Deactivate();
+            item.Hide();
         }
 
         return deactivatedItems;

@@ -2930,7 +2930,6 @@ GameObject:
   - 4: {fileID: 4000014219774290}
   - 65: {fileID: 65000011404011664}
   - 54: {fileID: 54000011475180900}
-  - 114: {fileID: 114000011219709900}
   - 114: {fileID: 114000011258308622}
   m_Layer: 0
   m_Name: Trigger
@@ -10991,7 +10990,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11030,7 +11034,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11045,7 +11054,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11099,7 +11113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11114,7 +11133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11191,7 +11215,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11239,7 +11268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11267,7 +11301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11342,7 +11381,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11444,7 +11488,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11473,7 +11522,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11513,7 +11567,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11539,7 +11598,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11640,7 +11704,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11691,7 +11760,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11744,7 +11818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11798,7 +11877,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11890,7 +11974,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -11953,7 +12042,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12060,7 +12154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12075,7 +12174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12114,7 +12218,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12154,7 +12263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12271,7 +12385,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12336,7 +12455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12401,7 +12525,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12602,7 +12731,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12631,7 +12765,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12715,22 +12854,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
---- !u!114 &114000011219709900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014245297226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b1f0bb9a79c0145b737dc50e95f77d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Room: {fileID: 114000013179127358}
 --- !u!114 &114000011227832638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12807,7 +12939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12847,7 +12984,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -12862,7 +13004,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13005,7 +13152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13119,7 +13271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13181,7 +13338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13210,7 +13372,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13333,7 +13500,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13359,7 +13531,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13439,7 +13616,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13520,7 +13702,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13560,7 +13747,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13588,7 +13780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13614,7 +13811,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13629,7 +13831,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13657,7 +13864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13686,7 +13898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13712,7 +13929,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13752,7 +13974,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13780,7 +14007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13821,7 +14053,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13932,7 +14169,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -13974,7 +14216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14051,7 +14298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14066,7 +14318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14094,7 +14351,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 50
@@ -14213,7 +14475,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14261,7 +14528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14276,7 +14548,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14302,7 +14579,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14328,7 +14610,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14524,7 +14811,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14553,7 +14845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14568,7 +14865,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14597,7 +14899,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14625,7 +14932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14665,7 +14977,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14680,7 +14997,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14734,7 +15056,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14812,7 +15139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14838,7 +15170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14853,7 +15190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14943,7 +15285,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -14972,7 +15319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15023,7 +15375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15062,7 +15419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15077,7 +15439,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15118,7 +15485,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15133,7 +15505,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15161,7 +15538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15249,7 +15631,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15317,7 +15704,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15332,7 +15724,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15473,7 +15870,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15510,7 +15912,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15525,7 +15932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15540,7 +15952,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15569,7 +15986,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15584,7 +16006,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15639,7 +16066,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15678,7 +16110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15718,7 +16155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15796,7 +16238,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -15910,7 +16357,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16017,7 +16469,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16059,7 +16516,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16087,7 +16549,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16154,7 +16621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16197,7 +16669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16212,7 +16689,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16267,7 +16749,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16331,7 +16818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16360,7 +16852,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16375,7 +16872,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16502,7 +17004,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16582,7 +17089,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16597,7 +17109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16623,7 +17140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16652,7 +17174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16785,7 +17312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16800,7 +17332,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16815,7 +17352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16911,7 +17453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -16937,7 +17484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -17004,7 +17556,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -17069,7 +17626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -17169,7 +17731,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -17225,7 +17792,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -17303,7 +17875,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0
@@ -17329,7 +17906,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd3510c9074e4c4192227525e705cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {x: 0, y: 10, z: 0}
+  StartPoint:
+    Point: {x: 0, y: -10, z: 0}
+    IsLocalPoint: 1
+  EndPoint:
+    Point: {x: 0, y: 0, z: 0}
+    IsLocalPoint: 1
   LeanTweenType: 13
   IsLocalPoint: 1
   Time: 0

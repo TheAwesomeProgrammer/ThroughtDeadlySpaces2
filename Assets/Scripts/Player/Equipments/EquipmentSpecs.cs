@@ -3,22 +3,22 @@
     [System.Serializable]
     public class EquipmentSpecs
     {
-        public int BaseDamage;
-        public int CombatType1Damage;
-        public int CombatType2Damage;
-        public int CombatType3Damage;
-        public int CombatType4Damage;
-        public EquipmentRarity EquipmentRarity;
-        
+        public int BaseDamage { get; set; }
+        public int FireDamage { get; set; }
+        public int NatureDamage { get; set; }
+        public int LifeDamage { get; set; }
+        public int DeathDamage { get; set; }
+        public EquipmentRarity EquipmentRarity { get; set; }
 
-        public EquipmentSpecs(int baseDamage, int combatType1Damage, int combatType2Damage, int combatType3Damage,
-            int combatType4Damage, EquipmentRarity equipmentRarity)
+
+        public EquipmentSpecs(int baseDamage, int fireDamage, int natureDamage, int lifeDamage,
+            int deathDamage, EquipmentRarity equipmentRarity)
         {
             BaseDamage = baseDamage;
-            CombatType1Damage = combatType1Damage;
-            CombatType2Damage = combatType2Damage;
-            CombatType3Damage = combatType3Damage;
-            CombatType4Damage = combatType4Damage;
+            FireDamage = fireDamage;
+            NatureDamage = natureDamage;
+            LifeDamage = lifeDamage;
+            DeathDamage = deathDamage;
             EquipmentRarity = equipmentRarity;
         }
     }

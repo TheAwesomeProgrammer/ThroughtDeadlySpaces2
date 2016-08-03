@@ -1,5 +1,7 @@
-﻿using Assets.Scripts.Extensions;
+﻿using Assets.Scripts.Camera_ll_UI.HUD;
+using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Swords.Abstract;
+using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
@@ -10,10 +12,12 @@ namespace Assets.Scripts.Player.Swords
         private const int SecoundarySword = 1;
 
         private SwordAttack _swordAttack;
+        private UiSwordSwitching _uiSwordSwitching;
 
         protected override void Start()
         {
             base.Start();
+            _uiSwordSwitching = Camera.main.GetComponentInChildren<UiSwordSwitching>();
             Sword sword = AddNewComponent<DefaultSword>();
             sword.Load(1);
             sword = AddNewComponent<DefaultSword>();
@@ -25,9 +29,18 @@ namespace Assets.Scripts.Player.Swords
             return AddNewSword(component);
         }
 
+        public Sword GetPrimarySword()
+        {
+            return Get(PrimarySword);
+        }
+
         public Sword Get(int index)
         {
-            return _components[index];
+            if (_components.Count > index)
+            {
+                return _components[index];
+            }
+            return null;
         }
 
         private Sword AddNewSword(Sword newSword)
@@ -57,6 +70,7 @@ namespace Assets.Scripts.Player.Swords
 
         public void SwitchSword()
         {
+            _uiSwordSwitching.Switch();
             SwitchSword(_components[PrimarySword], _components[SecoundarySword]);
         }
 

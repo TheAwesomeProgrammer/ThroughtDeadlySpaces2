@@ -29,10 +29,10 @@ public class Resistance : LifeDamager, Damageable
     public void SetupDefenseDamageDatas()
     {
         DefenseDatas.Add(new BaseDefenseData(_armor.Specs.BaseDamage));
-        DefenseDatas.Add(new DefenseData(CombatType.Fire, _armor.Specs.CombatType1Damage));
-        DefenseDatas.Add(new DefenseData(CombatType.Nature, _armor.Specs.CombatType2Damage));
-        DefenseDatas.Add(new DefenseData(CombatType.Life, _armor.Specs.CombatType3Damage));
-        DefenseDatas.Add(new DefenseData(CombatType.Death, _armor.Specs.CombatType4Damage));
+        DefenseDatas.Add(new DefenseData(CombatType.Fire, _armor.Specs.FireDamage));
+        DefenseDatas.Add(new DefenseData(CombatType.Nature, _armor.Specs.NatureDamage));
+        DefenseDatas.Add(new DefenseData(CombatType.Life, _armor.Specs.LifeDamage));
+        DefenseDatas.Add(new DefenseData(CombatType.Death, _armor.Specs.DeathDamage));
     }
 
     public void DoDamage(List<DamageData> damageDatas)

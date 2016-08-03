@@ -9,6 +9,11 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters
 {
     public class HarbingerHeavyExecuter : BossAttackBase
     {
+        public override string AnimationName
+        {
+            get { return "Heavy attackJoseph"; }
+        }
+
         protected override void Start()
         {
             base.Start();

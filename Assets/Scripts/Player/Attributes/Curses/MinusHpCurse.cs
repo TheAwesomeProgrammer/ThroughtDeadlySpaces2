@@ -12,7 +12,7 @@ namespace Assets.Scripts.Player.Curses
         protected override void Activate()
         {
             PlayerProperties playerProperties = GameObject.FindGameObjectWithTag(Tag.Player).GetComponent<PlayerProperties>();
-            playerProperties.SetHealth(playerProperties.Health - HpToLose);
+            playerProperties.Health -= HpToLose;
             Destroy(this);
         }
     }

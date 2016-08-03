@@ -27,16 +27,23 @@ namespace Test
             if (statue.isExpanded)
             {
                 EditorGUI.indentLevel += 1;
-                SerializedProperty statueAttributeNamesProperty = statue.FindPropertyRelative("StatueAttributeNames");
-                List<string> statueAttributes = new List<string>();
-                for (int i = 0; i < statueAttributeNamesProperty.arraySize; i++)
-                {
-                    statueAttributes.Add(statueAttributeNamesProperty.GetArrayElementAtIndex(i).stringValue);
-                }
+                List<string> statueAttributes = GetStringList(statue, "StatueAttributeNames");
                 SerializedProperty statueIndexProperty = statue.FindPropertyRelative("AttributeIndex");
                 statueIndexProperty.intValue = EditorGUILayout.Popup(statueIndexProperty.intValue, statueAttributes.ToArray());
                 EditorGUI.indentLevel -= 1;
             }
+        }
+
+        private List<string> GetStringList(SerializedProperty serializedProperty, string propertyName)
+        {
+            SerializedProperty stringList = serializedProperty.FindPropertyRelative(propertyName);
+            List<string> strings = new List<string>();
+            for (int i = 0; i < stringList.arraySize; i++)
+            {
+                strings.Add(stringList.GetArrayElementAtIndex(i).stringValue);
+            }
+
+            return strings;
         }
 
         public static void Show(SerializedProperty list, Action<SerializedProperty, int> onShowArrayElement = null)

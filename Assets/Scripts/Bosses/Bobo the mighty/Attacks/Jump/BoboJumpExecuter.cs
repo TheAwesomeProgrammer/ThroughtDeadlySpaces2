@@ -12,6 +12,11 @@ namespace Assets.Scripts.Bosses.Bobo_the_mighty.Attacks
         private Rigidbody _boboRigidbody;
         private JumpCollisionDetector _jumpCollisionDetector;
 
+        public override string AnimationName
+        {
+            get { return "JumpBobo"; }
+        }
+
         protected override void Start()
         {
             _baseDamageXmlId = 1;

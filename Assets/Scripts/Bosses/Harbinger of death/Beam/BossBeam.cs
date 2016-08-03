@@ -12,7 +12,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
 {
     public class BossBeam : MonoBehaviour
     {
-        public float Duration = 0.25f;
+        public const float Duration = 0.5f;
 
         public Transform BeamSpawnPoint;
 
