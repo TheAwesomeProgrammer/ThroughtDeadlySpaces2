@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Camera_ll_UI.HUD;
+﻿using System;
+using System.Collections;
+using Assets.Scripts.Camera_ll_UI.HUD;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
@@ -8,8 +10,8 @@ namespace Assets.Scripts.Player.Swords
     public class SwordManager : ComponentManager<Sword>
     {
         private const int NumberOfSlots = 2;
-        private const int PrimarySword = 0;
-        private const int SecoundarySword = 1;
+        private const int PrimarySwordIndex = 0;
+        private const int SecoundarySwordIndex = 1;
 
         private SwordAttack _swordAttack;
         private UiSwordSwitching _uiSwordSwitching;
@@ -29,9 +31,32 @@ namespace Assets.Scripts.Player.Swords
             return AddNewSword(component);
         }
 
+        public void GetPrimarySwordWhenLoaded(Action<Sword> result)
+        {
+            StartCoroutine(GetSwordWhenLoaded(result, PrimarySwordIndex));
+        }
+
+        private IEnumerator GetSwordWhenLoaded(Action<Sword> result, int index)
+        {
+            bool isEquipmentNull = true;
+            Sword sword = null;
+
+            while (isEquipmentNull)
+            {
+                sword = Get(index);
+                if (sword != null)
+                {
+                    isEquipmentNull = false;
+                }
+                yield return null;
+            }
+
+            result.CallIfNotNull(sword);
+        }
+
         public Sword GetPrimarySword()
         {
-            return Get(PrimarySword);
+            return Get(PrimarySwordIndex);
         }
 
         public Sword Get(int index)
@@ -47,7 +72,7 @@ namespace Assets.Scripts.Player.Swords
         {
             Switch.Do(_components.Count,
                 Switch.Case(new object[] {0, 1}, () => AddSword(newSword)),
-                Switch.Case(NumberOfSlots, () => SwitchForNewSword(_components[PrimarySword], newSword)));
+                Switch.Case(NumberOfSlots, () => SwitchForNewSword(_components[PrimarySwordIndex], newSword)));
 
             return newSword;
         }
@@ -71,7 +96,7 @@ namespace Assets.Scripts.Player.Swords
         public void SwitchSword()
         {
             _uiSwordSwitching.Switch();
-            SwitchSword(_components[PrimarySword], _components[SecoundarySword]);
+            SwitchSword(_components[PrimarySwordIndex], _components[SecoundarySwordIndex]);
         }
 
         private void SwitchSword(Sword oldSword, Sword newSword)
@@ -82,13 +107,13 @@ namespace Assets.Scripts.Player.Swords
 
         private void SwitchTo(Sword sword)
         {
-            _components[PrimarySword] = sword;
+            _components[PrimarySwordIndex] = sword;
             ActivateSword(sword);
         }
 
         private void SwitchOut(Sword sword)
         {
-            _components[SecoundarySword] = sword;
+            _components[SecoundarySwordIndex] = sword;
             DeactivateSword(sword);
         }
 

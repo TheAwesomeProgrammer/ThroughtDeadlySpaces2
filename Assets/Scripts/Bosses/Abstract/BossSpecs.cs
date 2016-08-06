@@ -10,7 +10,8 @@ namespace Assets.Scripts.Bosses.Abstract
         public float[] PauseTimeSpecs;
         public float[] SpecialSpecs;
 
-        public BossSpecs(float[] movementSpecs = null, int[] damageSpecs = null, float[] pauseTimeSpecs = null, float[] specialSpecs = null)
+        public BossSpecs(float[] movementSpecs = null, int[] damageSpecs = null, float[] pauseTimeSpecs = null, 
+            float[] specialSpecs = null)
         {
             MovementSpecs = movementSpecs ?? new float[0];
             DamageSpecs = damageSpecs ?? new int[0];

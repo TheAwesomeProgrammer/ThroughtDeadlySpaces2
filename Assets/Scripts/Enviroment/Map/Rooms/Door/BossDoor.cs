@@ -19,7 +19,7 @@ namespace Assets.Scripts.Enviroment.Map.Rooms
 
         void ShouldUnlock()
         {
-            if (!_bossRoom.IsBossAlive)
+            if (!_bossRoom.IsBossAlive && _bossRoom.IsPlayerInRoom)
             {
                 UnLock();
                 _bossRoom.OnMoveToNextRoom();

@@ -7,11 +7,13 @@ public abstract class Room : MonoBehaviour
     public bool IsPlayerInRoom;
 
     public Transform RoomSpawnTransform;
+    
+    public GameObject SpawnedRoomObject { get; set; }
 
     private RoomObjectSpawner _roomObjectSpawner;
     private bool _hasSpawnedNextRoom;
 
-    void Start()
+    protected virtual void Start()
     {
         _roomObjectSpawner = GetComponentInChildren<RoomObjectSpawner>();
     }
@@ -21,11 +23,11 @@ public abstract class Room : MonoBehaviour
         if (!_hasSpawnedNextRoom)
         {
             _hasSpawnedNextRoom = true;
-            GameObject roomSpawned = _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
+            SpawnedRoomObject = _roomObjectSpawner.Spawn(RoomSpawnTransform.position);
 
             if (MoveToNextRoom != null)
             {
-                MoveToNextRoom(roomSpawned);
+                MoveToNextRoom(SpawnedRoomObject);
             }
         }
     }

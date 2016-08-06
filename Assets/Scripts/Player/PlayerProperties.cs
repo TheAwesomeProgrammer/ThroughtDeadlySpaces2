@@ -3,7 +3,6 @@ using System.Runtime.Remoting.Messaging;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
-using Vexe.Runtime.Types;
 
 namespace Assets.Scripts.Player
 {

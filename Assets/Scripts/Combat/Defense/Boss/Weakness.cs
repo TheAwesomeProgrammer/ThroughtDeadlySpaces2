@@ -6,7 +6,7 @@ namespace Assets.Scripts.Combat.Defense.Boss
 {
     public class Weakness : LifeDamager, Damageable
     {
-        public List<CombatType> Weaknesses;
+        public List<CombatType> Weaknesses { get; set; }
 
         protected void Start()
         {

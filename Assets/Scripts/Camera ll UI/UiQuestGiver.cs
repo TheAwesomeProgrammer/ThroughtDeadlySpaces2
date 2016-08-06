@@ -17,6 +17,7 @@ namespace Assets.Scripts.Camera_ll_UI
 
         protected override void OnShow()
         {
+            base.OnShow();
             _rewardTexts = new Text[3];
             _title = transform.FindComponentInChildWithName<Text>("Title");
             //_dropTypeImage = transform.FindComponentInChildWithName<Image>("DropTypeImage");
@@ -35,6 +36,7 @@ namespace Assets.Scripts.Camera_ll_UI
 
         public override void SetProperties(params object[] properties)
         {
+            base.SetProperties(properties);
             _questGiverProperties = (QuestGiverProperties)properties[0];
             _title.text = _questGiverProperties.Name + "(" + _questGiverProperties.Health + ")";
             List<QuestProperties> rewards = _questGiverProperties.QuestPropertieses;

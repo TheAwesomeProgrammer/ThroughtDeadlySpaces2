@@ -42,7 +42,6 @@ GameObject:
   - 136: {fileID: 136000010443535044}
   - 54: {fileID: 54000010260932318}
   - 114: {fileID: 114000010467382820}
-  - 114: {fileID: 114000012766188382}
   - 114: {fileID: 114000013916765504}
   m_Layer: 0
   m_Name: Collision
@@ -218,17 +217,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4dd1fdfa4d9114bb87bddfd7126c55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114000012766188382
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011708206324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975bab6dc8cc8fc42825ddc70eb732f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114000013675128172

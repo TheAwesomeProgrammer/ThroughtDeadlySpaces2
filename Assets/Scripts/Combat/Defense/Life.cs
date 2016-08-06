@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Life : MonoBehaviour
 {
-    public int MaxHealth;
+    public int MaxHealth { get; set; }
     public int StartHealth;
     public GameObject ObjectToKillOnDeath;
     public bool DestroyOnDeath = true;
@@ -22,6 +22,7 @@ public class Life : MonoBehaviour
 
     void Start()
     {
+        MaxHealth = StartHealth;
         Health = StartHealth;
         _lastHealth = Health;
     }

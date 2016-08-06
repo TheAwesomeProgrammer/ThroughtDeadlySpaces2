@@ -2228,7 +2228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ab1d873bb0d07468e9c916ed1a135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weaknesses: 
 --- !u!114 &114000012817429114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2296,9 +2295,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013892116572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975bab6dc8cc8fc42825ddc70eb732f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e58e610b4513fc409453d87eaa0a6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PushOnStart: 0
+  PushingForce: 1000
+  OwnerRigidbody: {fileID: 54000013776616198}
 --- !u!114 &114000013241947798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2324,7 +2326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388be0ff8e38302469165a9ea502792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 30
   StartHealth: 30
   ObjectToKillOnDeath: {fileID: 1000014031764262}
   DestroyOnDeath: 1

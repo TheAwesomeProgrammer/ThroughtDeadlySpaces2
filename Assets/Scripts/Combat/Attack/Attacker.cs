@@ -63,6 +63,7 @@ namespace Assets.Scripts.Player.Swords
             if (_canAttack)
             {
                 _attacking = false;
+                _damageTrigger.ClearAttackers();
                 if (AttackEnded != null)
                 {
                     AttackEnded();

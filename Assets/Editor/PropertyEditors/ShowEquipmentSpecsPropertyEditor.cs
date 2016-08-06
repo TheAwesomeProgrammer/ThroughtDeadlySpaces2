@@ -3,14 +3,10 @@ using UnityEditor;
 
 namespace Test
 {
-    [CustomEditor(typeof(EquipmentPropertiesStat))]
+    [CustomEditor(typeof(EquipmentSpecsPropertiesStat))]
     [CanEditMultipleObjects]
-    public class ShowEquipmentSpecsPropertyEditor : ShowPropertyStatEditor
+    public class ShowEquipmentSpecsPropertyEditor : ShowPropertyEditorWithEquipmentType
     {
-        public override void OnInspectorGUI()
-        {
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("EquipmentType"));
-            base.OnInspectorGUI();
-        }
+       
     }
 }

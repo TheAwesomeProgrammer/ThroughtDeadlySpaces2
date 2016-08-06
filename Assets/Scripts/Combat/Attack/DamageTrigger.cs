@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
 using Assets.Scripts.Enviroment.Collisions.Abstract;
+using Assets.Scripts.Extensions;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
@@ -20,14 +21,10 @@ namespace Assets.Scripts.Player.Swords
             get { return _attackSpeed; }
             set
             {
-                if (value != _attackSpeed)
-                {
-                    _enemyAttackers.ForEach(item => item.SetAttackSpeed(value));
-                    _attackSpeed = AttackSpeed;
-                }
+                _attackSpeed = value;
+                _enemyAttackers.ForEach(item => item.SetAttackSpeed(value));
             }
         }
-
 
         protected override void Start()
         {
@@ -41,6 +38,11 @@ namespace Assets.Scripts.Player.Swords
             {
                 enemyAttacker.ShouldAttack(damageDatas);
             }
+        }
+
+        public void ClearAttackers()
+        {
+            _enemyAttackers.Clear();
         }
 
         public override void OnStayWithTag()
@@ -98,10 +100,7 @@ namespace Assets.Scripts.Player.Swords
             CombatDamage newCombatDamage = new CombatDamage(damageable, AttackSpeed);
             if (!_enemyAttackers.Contains(newCombatDamage))
             {
-                if (_newEnemyAdded != null)
-                {
-                    _newEnemyAdded(newCombatDamage);
-                }
+                _newEnemyAdded.CallIfNotNull(newCombatDamage);
                 _enemyAttackers.Add(newCombatDamage);
             }
         }

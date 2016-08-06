@@ -12,12 +12,13 @@ namespace Assets.Scripts.Player.Equipments
 
         public bool Damaged
         {
-            get { return _equipmentState < HitsForBrokenEquipment; }
+            get { return EquipmentState < HitsForBrokenEquipment; }
         }
 
         public event Action Breaking;
 
-        private int _equipmentState;
+        public int EquipmentState;
+
         private GameObject _ownerGameObject;
         private Equipment _equipment;
         private BreakingFactory _breakingFactory;
@@ -27,24 +28,24 @@ namespace Assets.Scripts.Player.Equipments
         {
             _ownerGameObject = ownerGameObject;
             _equipment = equipment;
-            _equipmentState = HitsForBrokenEquipment;
+            EquipmentState = HitsForBrokenEquipment;
             _breakingFactory = new BreakingFactory();
         }
 
         public void Reset()
         {
-            _equipmentState = HitsForBrokenEquipment;
+            EquipmentState = HitsForBrokenEquipment;
         }
 
         public void OnHit()
         {
-            _equipmentState--;
+            EquipmentState--;
             ShouldBreak();
         }
 
         void ShouldBreak()
         {
-            if (_equipmentState <= 0)
+            if (EquipmentState <= 0)
             {
                 Break();
             }

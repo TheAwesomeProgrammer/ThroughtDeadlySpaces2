@@ -14,6 +14,16 @@ namespace Assets.Scripts.Player.Equipments
             get { return _equipmentBrokenState.Damaged; }
         }
 
+        public int BrokenState
+        {
+            get { return _equipmentBrokenState.EquipmentState; }
+        }
+
+        public int HitsForBrokenEquipment
+        {
+            get { return _equipmentBrokenState.HitsForBrokenEquipment; }
+        }
+
         public EquipmentSpecs Specs { get; set; }
 
         protected int Id;

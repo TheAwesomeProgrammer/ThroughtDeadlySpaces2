@@ -7,6 +7,7 @@ using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Xml;
 using UnityEngine;
+using Attribute = Assets.Scripts.Player.Attributes.Attribute;
 
 namespace Assets.Scripts.Player.Equipments
 {
@@ -46,7 +47,7 @@ namespace Assets.Scripts.Player.Equipments
         public virtual void Load()
         {
             LoadXml();
-            AddAttributes<AttributeType>();
+            AddAttributes<Attribute>();
         }
 
         public void LoadXml()

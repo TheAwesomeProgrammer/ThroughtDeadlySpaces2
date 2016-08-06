@@ -4,24 +4,24 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Camera_ll_UI.HUD
 {
-    public abstract class DrawBar<TStat> : MonoBehaviour where TStat : PropertyStat
+    public class DrawBar : MonoBehaviour
     {
-        protected TStat _maxObjectStat;
-        protected TStat _currentObjectStat;
+        public PropertyStat MaxObjectStat;
+        public PropertyStat CurrentObjectStat;
 
         protected Image _image;
 
         public void Start()
         {
             _image = GetComponent<Image>();
-            LoadObjectStats();
         }
-
-        protected abstract void LoadObjectStats();
 
         public virtual void Update()
         {
-            _image.fillAmount = _currentObjectStat.FloatValue / _maxObjectStat.FloatValue;
+            if (CurrentObjectStat && MaxObjectStat)
+            {
+                _image.fillAmount = CurrentObjectStat.FloatValue / MaxObjectStat.FloatValue;
+            }
         }
     }
 }

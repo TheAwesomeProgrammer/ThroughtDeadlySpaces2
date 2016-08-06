@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Combat.Attack;
+using Assets.Scripts.Extensions;
 using UnityEngine;
 
 namespace Assets.Scripts.Combat.Defense
@@ -12,7 +13,6 @@ namespace Assets.Scripts.Combat.Defense
         {
             _life = GetComponent<Life>();
         }
-      
 
         protected virtual void Damage(List<DamageData> damageDatas)
         {
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Combat.Defense
 
         protected virtual void Damage(DamageData damageData)
         {
-            _life.Health -= damageData.Damage;
+            Null.OnNot(_life, () => _life.Health -= damageData.Damage);
         }
     }
 }

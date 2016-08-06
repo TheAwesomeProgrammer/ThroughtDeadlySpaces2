@@ -13,7 +13,7 @@ namespace Assets.Scripts.Camera_ll_UI
 
         public bool IsImmovable(int id1, int id2)
         {
-            return Exist(id1) && Exist(id2);
+            return Exist(id1) && Exist(id2) && id1 != id2;
         }
 
         private bool Exist(int id)
@@ -57,13 +57,13 @@ namespace Assets.Scripts.Camera_ll_UI
 
         public void Move(int id, Switchable switchable, Action onCompleteSwitch = null)
         {
-            _runningSwitches.Add(new SwitchInfo(id, switchable, onCompleteSwitch));
             if (ExistImmovableCombination(id) && !CanAlwaysMove)
             {
                 OnImmovableCombination(switchable);
             }
             else
             {
+                _runningSwitches.Add(new SwitchInfo(id, switchable, onCompleteSwitch));
                 switchable.Switch(SwitchingDone);
             }
         }
