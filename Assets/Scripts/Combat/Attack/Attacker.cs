@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Equipments;
@@ -15,18 +16,20 @@ namespace Assets.Scripts.Player.Swords
         public event Action AttackEnded;
 
         protected EquipmentAttributeManager _equipmentAttributeManager;
-        protected List<DamageData> _damageDatas = new List<DamageData>();
+        protected List<CombatData> _damageDatas = new List<CombatData>();
         protected bool _attacking;
         protected bool _canAttack;
         protected string _animatorAttackSpeedName = "AttackSpeed";
         protected DamageTrigger _damageTrigger;
 
         private AnimationEventListener _animationEventListener;
+        private CombatModifierCaller _combatModifierCaller;
 
         protected virtual void Start()
         {
             EnableAttack();
-            _damageDatas = new List<DamageData>();
+            _combatModifierCaller = new CombatModifierCaller();
+            _damageDatas = new List<CombatData>();
             _damageTrigger = GetComponent<DamageTrigger>();
             _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
             _animationEventListener = GetComponent<AnimationEventListener>();
@@ -71,12 +74,12 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        public void AddDamageDatas(List<DamageData> damageDatas)
+        public void AddDamageDatas(List<CombatData> damageDatas)
         {
             _damageDatas.AddRange(damageDatas);
         }
 
-        public void AddDamageData(DamageData damageData)
+        public void AddDamageData(CombatData damageData)
         {
             _damageDatas.Add(damageData);
         }
@@ -94,10 +97,10 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        public virtual List<DamageData> Attack()
+        public virtual List<CombatData> Attack()
         {
             IsAttacking();
-            List<DamageData> cloneOfDamageDatas = _damageDatas.Clone();
+            List<CombatData> cloneOfDamageDatas = _damageDatas.Clone();
             for (int i = 0; i < cloneOfDamageDatas.Count; i++)
             {
                 cloneOfDamageDatas[i] = GetModifiedDamage(cloneOfDamageDatas[i]);
@@ -106,7 +109,7 @@ namespace Assets.Scripts.Player.Swords
             return cloneOfDamageDatas;
         }
 
-        protected virtual void DoDamage(List<DamageData> damageDatas)
+        protected virtual void DoDamage(List<CombatData> damageDatas)
         {
             _damageTrigger.DoDamage(damageDatas);
         }
@@ -119,21 +122,21 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        protected virtual DamageData GetModifiedDamage(DamageData damageData)
+        protected virtual CombatData GetModifiedDamage(CombatData damageData)
         {
-            DamageData modfiedDamageData = damageData;
+            CombatData modfiedDamageData = damageData;
 
             foreach (var damageModifier in GetDamageModifiers())
             {
-                modfiedDamageData.Damage = ((DamageData) damageModifier.GetModifiedCombatData(damageData)).Damage;
+                modfiedDamageData = _combatModifierCaller.GetModifiedData(damageModifier, damageData);
             }
 
             return modfiedDamageData;
         }
 
-        private List<DamageModifier> GetDamageModifiers()
+        private List<EquipmentAttribute> GetDamageModifiers()
         {
-            return _equipmentAttributeManager.GetComponentsList<DamageModifier>();
+            return _equipmentAttributeManager.GetComponentsList<EquipmentAttribute>();
         }
     }
 }

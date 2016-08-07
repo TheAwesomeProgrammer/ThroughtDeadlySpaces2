@@ -6,42 +6,43 @@ using Assets.Scripts.Combat.Defense;
 using Assets.Scripts.Combat.Defense.Boss;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Armors;
-using Assets.Scripts.Player.Armors.ArmorModifier;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
 public class Resistance : LifeDamager, Damageable
 {
-    public List<DefenseData> DefenseDatas { get; set; }
+    public List<CombatData> DefenseDatas { get; set; }
     public event Action Defending;
 
     private EquipmentAttributeManager _equipmentAttributeManager;
+    private CombatModifierCaller _combatModifierCaller;
     private Armor _armor;
 
     protected override void Awake()
     {
-        DefenseDatas = new List<DefenseData>();
+        DefenseDatas = new List<CombatData>();
         _armor = GetComponent<Armor>();
+        _combatModifierCaller = new CombatModifierCaller();
         _equipmentAttributeManager = gameObject.AddComponentIfNotExist<EquipmentAttributeManager>();
     }
 
     public void SetupDefenseDamageDatas()
     {
-        DefenseDatas.Add(new BaseDefenseData(_armor.Specs.BaseDamage));
-        DefenseDatas.Add(new DefenseData(CombatType.Fire, _armor.Specs.FireDamage));
-        DefenseDatas.Add(new DefenseData(CombatType.Nature, _armor.Specs.NatureDamage));
-        DefenseDatas.Add(new DefenseData(CombatType.Life, _armor.Specs.LifeDamage));
-        DefenseDatas.Add(new DefenseData(CombatType.Death, _armor.Specs.DeathDamage));
+        DefenseDatas.Add(new CombatData(CombatType.BaseType, _armor.Specs.BaseDamage));
+        DefenseDatas.Add(new CombatData(CombatType.Fire, _armor.Specs.FireDamage));
+        DefenseDatas.Add(new CombatData(CombatType.Nature, _armor.Specs.NatureDamage));
+        DefenseDatas.Add(new CombatData(CombatType.Life, _armor.Specs.LifeDamage));
+        DefenseDatas.Add(new CombatData(CombatType.Death, _armor.Specs.DeathDamage));
     }
 
-    public void DoDamage(List<DamageData> damageDatas)
+    public void DoDamage(List<CombatData> damageDatas)
     {
         if (Defending != null)
         {
             Defending();
         }
-        List<DefenseData> cloneOfDamageDatas = DefenseDatas.Clone();
+        List<CombatData> cloneOfDamageDatas = DefenseDatas.Clone();
         for (int i = 0; i < cloneOfDamageDatas.Count; i++)
         {
             cloneOfDamageDatas[i] = GetModifiedDefense(cloneOfDamageDatas[i]);
@@ -49,38 +50,38 @@ public class Resistance : LifeDamager, Damageable
         Damage(GetDamageAfterGoingThroughResistance(damageDatas));
     }
 
-    protected virtual DefenseData GetModifiedDefense(DefenseData defenseData)
+    protected virtual CombatData GetModifiedDefense(CombatData defenseData)
     {
-        DefenseData modifiedDefenseData = defenseData;
+        CombatData modifiedDefenseData = defenseData;
 
-        foreach (var armorReduceModifier in GetArmorReduceModifiers())
+        foreach (var attribute in GetAttributes())
         {
-            modifiedDefenseData.Defense = ((DefenseData)armorReduceModifier.GetModifiedCombatData(defenseData)).Defense;
+            modifiedDefenseData = _combatModifierCaller.GetModifiedData(attribute, defenseData);
         }
 
         return modifiedDefenseData;
     }
 
-    private ArmorReduceModifier[] GetArmorReduceModifiers()
+    private EquipmentAttribute[] GetAttributes()
     {
-        return _equipmentAttributeManager.GetComponentsList<ArmorReduceModifier>().ToArray();
+        return _equipmentAttributeManager.GetComponentsList<EquipmentAttribute>().ToArray();
     }
 
-    List<DamageData> GetDamageAfterGoingThroughResistance(List<DamageData> damageDatas)
+    List<CombatData> GetDamageAfterGoingThroughResistance(List<CombatData> damageDatas)
     {
         foreach (var damageData in damageDatas)
         {
-            DefenseData defenseData = AreDamageNotGettingThroughResistance(damageData);
+            CombatData defenseData = AreDamageNotGettingThroughResistance(damageData);
             if (defenseData != null)
             {
-                damageData.Damage -= defenseData.Defense;
+                damageData.CombatValue -= defenseData.CombatValue;
             }
         }
 
         return damageDatas;
     }
 
-    private DefenseData AreDamageNotGettingThroughResistance(DamageData damageData)
+    private CombatData AreDamageNotGettingThroughResistance(CombatData damageData)
     {
         return DefenseDatas.Find(defenseData => defenseData.Equals(damageData));
     }

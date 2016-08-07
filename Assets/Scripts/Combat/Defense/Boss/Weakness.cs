@@ -13,14 +13,14 @@ namespace Assets.Scripts.Combat.Defense.Boss
             Weaknesses = new List<CombatType>();
         }
 
-        public void DoDamage(List<DamageData> damageDatas)
+        public void DoDamage(List<CombatData> damageDatas)
         {
             Damage(GetDamageDatasHittingWeaknesses(damageDatas));
         }
 
-        List<DamageData> GetDamageDatasHittingWeaknesses(List<DamageData> damageDatas)
+        List<CombatData> GetDamageDatasHittingWeaknesses(List<CombatData> damageDatas)
         {
-            List<DamageData> damageDatasHittingWeaknesses = new List<DamageData>();
+            List<CombatData> damageDatasHittingWeaknesses = new List<CombatData>();
 
             foreach (var damageData in damageDatas)
             {
@@ -33,7 +33,7 @@ namespace Assets.Scripts.Combat.Defense.Boss
             return damageDatasHittingWeaknesses;
         }
 
-        bool IsDamageDataHittingWeakness(DamageData damageData)
+        bool IsDamageDataHittingWeakness(CombatData damageData)
         {
             return Weaknesses.Contains(damageData.CombatType) || damageData.CombatType == CombatType.BaseType;
         }

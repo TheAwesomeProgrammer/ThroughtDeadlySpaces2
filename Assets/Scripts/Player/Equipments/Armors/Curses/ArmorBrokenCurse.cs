@@ -1,17 +1,24 @@
-﻿using Assets.Scripts.Combat.Defense;
-using Assets.Scripts.Player.Armors.ArmorModifier;
+﻿using Assets.Scripts.Combat;
+using Assets.Scripts.Combat.Defense;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
 
 namespace Assets.Scripts.Player.Armors.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Curse)]
-    public class ArmorBrokenCurse : ArmorReduceModifier
+    public class ArmorBrokenCurse : EquipmentAttribute, CombatModifier
     {
-        public override DefenseData ReduceDefenseData(DefenseData defenseData)
+        public override void Init()
         {
-            defenseData.Defense = 0;
-            return defenseData;
+            base.Init();
+            ModifierType = ModifierType.All;
+        }
+
+        public CombatData GetModifiedCombatData(CombatData damageData)
+        {
+            damageData.CombatValue = 0;
+            return damageData;
         }
     }
 }

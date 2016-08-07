@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Combat.Attack;
+﻿using Assets.Scripts.Combat;
+using Assets.Scripts.Combat.Attack;
+using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Shop;
 using UnityEngine;
@@ -6,15 +8,21 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
-    public class WornSwordCurse : SwordStrengthDamageModifier
+    public class WornSwordCurse : EquipmentAttribute, CombatModifier
     {
-        public override DamageData ModifydamageData(DamageData damageData)
+        public override void Init()
         {
-            DamageData modifiedDamageData = damageData;
+            base.Init();
+            ModifierType = ModifierType.Strength;
+        }
 
-            modifiedDamageData.Damage = 0;
+        public CombatData GetModifiedCombatData(CombatData damageData)
+        {
+            StrengthDamageData strengthDamageData = damageData as StrengthDamageData;
 
-            return modifiedDamageData;
+            Null.OnNot(strengthDamageData, () =>  strengthDamageData.CombatValue = 0);
+
+            return strengthDamageData;
         }
     }
 }

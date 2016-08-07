@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Armors.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Curse)]
-    public class ArmorRustyCurse : ArmorComponent, XmlAttributeLoadable
+    public class ArmorRustyCurse : EquipmentAttribute, XmlAttributeLoadable
     {
         private const int CurseId = 3;
 
@@ -16,8 +16,9 @@ namespace Assets.Scripts.Player.Armors.Curses
         private EquipmentAttributeLoader _equipmentAttributeLoader;
         private int _procentChanceToBreak;
 
-        void Start()
+        public override void Init()
         {
+            base.Init();
             _resistance = GetComponent<Resistance>();
             _resistance.Defending += OnDefending;
         }
@@ -26,15 +27,14 @@ namespace Assets.Scripts.Player.Armors.Curses
         {
             if (MathHelper.IsBetweenRandomProcentFrom0To100(_procentChanceToBreak))
             {
-                gameObject.AddComponent<ArmorBrokenCurse>();
+                gameObject.AddComponentIfNotExist<ArmorBrokenCurse>();
                 Destroy(this);
             }
         }
 
         public void LoadXml(int level)
         {
-            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Curse));
-            int[] specs = _equipmentAttributeLoader.LoadSpecs(CurseId, level, XmlName.Curses);
+            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Curse), CurseId, level, XmlName.Curses);
             _procentChanceToBreak = specs[0];
         }
     }

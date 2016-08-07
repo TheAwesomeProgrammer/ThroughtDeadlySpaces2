@@ -24,4 +24,7 @@
     <LightBlessing id="7">
         <Specs level="1">(1)</Specs><!-- [1 = extra movement speed -->
     </LightBlessing>
+    <HolyBlessing id="8">
+        <Specs level="1">(3,1)</Specs><!-- [1 = interval to give dexterity], [2 = Dexterity to give in each interval] -->
+    </HolyBlessing>
 </Blessings>

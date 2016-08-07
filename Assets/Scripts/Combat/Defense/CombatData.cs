@@ -1,17 +1,42 @@
 ﻿using System;
 using Assets.Scripts.Combat.Attack;
+using Assets.Scripts.Player.Equipments;
 using UnityEngine;
 
 namespace Assets.Scripts.Combat
 {
-    public abstract class CombatData
+    public class CombatData : ICloneable
     {
         public CombatType CombatType;
 
-        protected CombatData(CombatType combatType)
+        private int _combatValue;
+
+        public int CombatValue
+        {
+            get { return _combatValue; }
+            set { _combatValue = Mathf.Clamp(value, 0, int.MaxValue); }
+        }
+
+        public CombatData(CombatType combatType, int combatValue)
         {
             CombatType = combatType;
+            CombatValue = combatValue;
         }
+
+        public virtual ModifierType GetModifierType()
+        {
+            if (CombatType == CombatType.BaseType)
+            {
+                return ModifierType.Base;
+            }
+            if (CombatType != CombatType.BaseType)
+            {
+                return ModifierType.AllButBase | ModifierType.All;
+            }
+
+            return ModifierType.None;
+        }
+
 
         public override bool Equals(object obj)
         {
@@ -23,7 +48,12 @@ namespace Assets.Scripts.Combat
             return false;
         }
 
-        public override int GetHashCode()
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
+
+    public override int GetHashCode()
         {
             return 1;
         }

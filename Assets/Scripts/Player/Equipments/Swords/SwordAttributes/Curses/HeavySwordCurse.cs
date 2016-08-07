@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
-    public class HeavySwordCurse : SwordComponent, XmlAttributeLoadable
+    public class HeavySwordCurse : EquipmentAttribute, XmlAttributeLoadable
     {
         public int SpeedToLose = 2;
         private const int CurseId = 1;
@@ -15,33 +15,29 @@ namespace Assets.Scripts.Player.Swords.Curses
         private float _startSpeed;
         private EquipmentAttributeLoader _equipmentAttributeLoader;
 
-        protected override void Start()
+        public override void Init()
         {
+            base.Init();
             _playerProperties = GetComponentInParent<PlayerProperties>();
-            Activate();
         }
 
         public void LoadXml(int level)
         {
-            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Curse));
-            int[] specs = _equipmentAttributeLoader.LoadSpecs(CurseId, level, XmlName.Curses);
+            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Curse), CurseId, level, XmlName.Curses);
             SpeedToLose = specs[0];
         }
 
-        void Activate()
+        protected override void Activate()
         {
+            base.Activate();
             _startSpeed = _playerProperties.Speed;
             _playerProperties.Speed -= SpeedToLose;
         }
 
-        void Deactivate()
+        protected override void Deactivate()
         {
+            base.Activate();
             _playerProperties.Speed = _startSpeed;
-        }
-
-        void OnDestroy()
-        {
-            Deactivate();
         }
     }
 }

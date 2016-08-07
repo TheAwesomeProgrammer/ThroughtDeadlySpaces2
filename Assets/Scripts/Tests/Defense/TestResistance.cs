@@ -45,8 +45,8 @@ public class TestResistance : MonoBehaviour
 
     void SetupDamageNDefense(int damage, int defense, CombatType defenseType, CombatType combatType)
     {
-        _resistance.DefenseDatas.Add(new DefenseData(defenseType, defense));
-        _resistance.DoDamage(new List<DamageData>() { new DamageData(combatType, damage) });
+        _resistance.DefenseDatas.Add(new CombatData(defenseType, defense));
+        _resistance.DoDamage(new List<CombatData>() { new CombatData(combatType, damage) });
     }
 
     void TestIfDamageGetsThroughDefense()
@@ -54,7 +54,7 @@ public class TestResistance : MonoBehaviour
         _life.SetHealth(StartHealth);
         int damage = 1;
 
-        _resistance.DoDamage(new List<DamageData>() { new DamageData(CombatType.Fire, damage) });
+        _resistance.DoDamage(new List<CombatData>() { new CombatData(CombatType.Fire, damage) });
 
         Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if damage gets through resistance");
     }
@@ -86,7 +86,7 @@ public class TestResistance : MonoBehaviour
         _life.SetHealth(StartHealth);
         int baseDamage = 2;
 
-        _resistance.DoDamage(new List<DamageData>() { new BaseDamageData(baseDamage) });
+        _resistance.DoDamage(new List<CombatData>() { new CombatData(CombatType.BaseType, baseDamage) });
 
         Assert.IsTrue(_life.Health == StartHealth - baseDamage, "Testing if does base damage");
     }

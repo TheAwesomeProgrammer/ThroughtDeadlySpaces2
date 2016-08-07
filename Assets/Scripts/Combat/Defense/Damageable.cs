@@ -5,6 +5,6 @@ namespace Assets.Scripts.Combat.Defense.Boss
 {
     public interface Damageable
     {
-        void DoDamage(List<DamageData> damageDatas);
+        void DoDamage(List<CombatData> damageDatas);
     }
 }

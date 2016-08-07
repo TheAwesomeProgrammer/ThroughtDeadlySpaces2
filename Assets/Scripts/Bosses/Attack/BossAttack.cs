@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Scripts.Bosses.Abstract;
+using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Player.Equipments;
 using Random = UnityEngine.Random;
@@ -11,7 +12,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
     {
         public bool AttackOnStart;
 
-        private BaseDamageData _extraBaseDamageData;
+        private CombatData _extraBaseDamageData;
         private BossProperties _bossProperties;
 
         protected override void Start()
@@ -47,29 +48,29 @@ namespace Assets.Scripts.Player.Swords.Abstract.Bosses.Attack
         {
             if (combatType == CombatType.BaseType)
             {
-                BaseDamageData baseDamageData = (BaseDamageData)_damageDatas.Find(damageData => damageData is BaseDamageData);
+                CombatData baseDamageData = _damageDatas.Find(damageData => damageData.CombatType == CombatType.BaseType);
                 if (baseDamageData != null)
                 {
-                    baseDamageData.Damage += damage;
+                    baseDamageData.CombatValue += damage;
                 }
                 else
                 {
-                    _damageDatas.Add(new BaseDamageData(damage));
+                    _damageDatas.Add(new CombatData(CombatType.BaseType, damage));
                 }
               
             }
             else if (combatType != CombatType.BaseType)
             {
-                _damageDatas.Add(new DamageData(combatType, damage));
+                _damageDatas.Add(new CombatData(combatType, damage));
             }
         }
 
         public void SetExtraBaseDamage(int damage)
         {
-            _extraBaseDamageData = new BaseDamageData(damage);
+            _extraBaseDamageData = new CombatData(CombatType.BaseType, damage);
         }
 
-        protected override void DoDamage(List<DamageData> damageDatas)
+        protected override void DoDamage(List<CombatData> damageDatas)
         {
             damageDatas.Add(_extraBaseDamageData);
             base.DoDamage(damageDatas);

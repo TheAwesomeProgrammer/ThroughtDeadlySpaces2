@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
 using Assets.Scripts.Tests.Helper;
@@ -39,7 +40,7 @@ namespace Assets.Scripts.Tests.Defense
 
             _weakness.Weaknesses.Add(weaknessType);
 
-            _weakness.DoDamage(new List<DamageData>() { new DamageData(weaknessType, damage) } );
+            _weakness.DoDamage(new List<CombatData>() { new CombatData(weaknessType, damage) } );
 
             Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if damages one weakness");
         }
@@ -49,7 +50,7 @@ namespace Assets.Scripts.Tests.Defense
             _life.SetHealth(StartHealth);
             int damage = 2;
 
-            _weakness.DoDamage(new List<DamageData>() {new BaseDamageData(damage) });
+            _weakness.DoDamage(new List<CombatData>() {new CombatData(CombatType.BaseType, damage) });
 
             Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if base damage works");
         }
@@ -59,7 +60,7 @@ namespace Assets.Scripts.Tests.Defense
             _life.SetHealth(StartHealth);
             int damage = 2;
 
-            _weakness.DoDamage(new List<DamageData>() {new DamageData(CombatType.Fire, damage)});
+            _weakness.DoDamage(new List<CombatData>() {new CombatData(CombatType.Fire, damage)});
 
             Assert.IsTrue(_life.Health == StartHealth, "Testing that is dosn't damage when no weakness exists");
         }
@@ -71,7 +72,7 @@ namespace Assets.Scripts.Tests.Defense
 
             _weakness.Weaknesses.Add(CombatType.Nature);
 
-            _weakness.DoDamage(new List<DamageData>() { new DamageData(CombatType.Fire, damage) });
+            _weakness.DoDamage(new List<CombatData>() { new CombatData(CombatType.Fire, damage) });
 
             Assert.IsTrue(_life.Health == StartHealth, "Testing no damage when has weakness but not the right one");
         }

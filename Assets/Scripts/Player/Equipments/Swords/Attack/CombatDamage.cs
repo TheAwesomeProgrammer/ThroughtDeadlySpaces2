@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace Assets.Scripts.Player.Swords
             AttackSpeed = newAttackSpeed;
         }
 
-        public void ShouldAttack(List<DamageData> damageDatas)
+        public void ShouldAttack(List<CombatData> damageDatas)
         {
             if (CanAttack())
             {
@@ -36,7 +37,7 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        private void Attack(List<DamageData> damageDatas)
+        private void Attack(List<CombatData> damageDatas)
         {
             if (Attacked != null)
             {

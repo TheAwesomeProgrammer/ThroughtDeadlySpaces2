@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.Combat.Defense;
+﻿using Assets.Scripts.Combat;
+using Assets.Scripts.Combat.Defense;
 using Assets.Scripts.Extensions.Math;
-using Assets.Scripts.Player.Armors.ArmorModifier;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
@@ -9,7 +9,7 @@ using Assets.Scripts.Xml;
 namespace Assets.Scripts.Player.Armors.Blessing
 {
     [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Blessing)]
-    public class ArmorEnchantedBlessing : ArmorReduceDefenseDataModifier, XmlLoadable
+    public class ArmorEnchantedBlessing : EquipmentAttribute, XmlAttributeLoadable, CombatModifier
     {
         private int _enchantedChance = 0;
         private int _chantedDefense = 0;
@@ -20,8 +20,10 @@ namespace Assets.Scripts.Player.Armors.Blessing
 
         private bool _enchant;
 
-        void Start()
+        public override void Init()
         {
+            base.Init();
+            ModifierType = ModifierType.All;
             _resistance = GetComponent<Resistance>();
             _resistance.Defending += OnDefending;
             _doubleEnchantChecker = new DoubleEnchantChecker(this);
@@ -33,21 +35,20 @@ namespace Assets.Scripts.Player.Armors.Blessing
             _enchant = MathHelper.IsBetweenRandomProcentFrom0To100(_enchantedChance);
         }
 
-        public override DefenseData ReduceDefenseData(DefenseData defenseData)
+        public void LoadXml(int level)
+        {
+            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), XmlId, level, XmlName.Blessing);
+            _enchantedChance = specs[0];
+            _chantedDefense = specs[1];
+        }
+
+        public CombatData GetModifiedCombatData(CombatData damageData)
         {
             if (_enchant)
             {
-                defenseData.Defense += _chantedDefense;
+                damageData.CombatValue += _chantedDefense;
             }
-            return defenseData;
-        }
-
-        public void LoadXml()
-        {
-            XmlSearcher xmlSearcher = new XmlSearcher(Location.Blessing);
-            int[] specs = xmlSearcher.GetSpecsInChildrenWithId(XmlId, XmlName.Blessing);
-            _enchantedChance = specs[0];
-            _chantedDefense = specs[1];
+            return damageData;
         }
     }
 }

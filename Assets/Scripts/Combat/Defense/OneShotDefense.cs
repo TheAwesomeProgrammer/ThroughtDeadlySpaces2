@@ -7,7 +7,7 @@ namespace Assets.Scripts.Combat.Defense
 {
     public class OneShotDefense : LifeDamager, Damageable
     {
-        public void DoDamage(List<DamageData> damageDatas)
+        public void DoDamage(List<CombatData> damageDatas)
         {
             Damage(damageDatas);
         }

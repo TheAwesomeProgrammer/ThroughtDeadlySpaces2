@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Combat.Attack;
+﻿using Assets.Scripts.Combat;
+using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Shop;
@@ -8,40 +9,41 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
-    public class RustySwordCurse : BaseDamageModifier, XmlAttributeLoadable
+    public class RustySwordCurse : EquipmentAttribute, XmlAttributeLoadable, CombatModifier
     {
         public int MinusProcentDamage = -20;
         public int ProcentToBreakSword = 8;
         public const int CurseId = 2;
 
-        private EquipmentAttributeLoader _equipmentAttributeLoader;
+        private EquipmentAttributeManager _equipmentAttributeManager;
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
+            ModifierType = ModifierType.Base;
             transform.root.GetComponentInChildren<SwordAttack>().AttackStarted += OnAttacking;
+            _equipmentAttributeManager = GetComponent<EquipmentAttributeManager>();
         }
-
+        
         public void LoadXml(int level)
         {
-            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Curse));
-            int[] specs = _equipmentAttributeLoader.LoadSpecs(CurseId, level, XmlName.Curses);
+            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Curse), CurseId, level, XmlName.Curses);
             MinusProcentDamage = specs[0];
             ProcentToBreakSword = specs[1];
         }
 
-        public override DamageData ModifydamageData(DamageData damageData)
-        {
-            return new BaseDamageData(MathHelper.GetValueMultipliedWithProcent(damageData.Damage, MinusProcentDamage));
-        }
-
         void OnAttacking()
         {
-            if (MathHelper.IsBetweenRandomProcentFrom0To100(ProcentToBreakSword) && !_swordEquipmentAttributeManager.HasComponent<BrokenSwordCurse>())
+            if (MathHelper.IsBetweenRandomProcentFrom0To100(ProcentToBreakSword) && !_equipmentAttributeManager.HasComponent<BrokenSwordCurse>())
             {
-                _swordEquipmentAttributeManager.AddNewComponent<BrokenSwordCurse>();
+                _equipmentAttributeManager.AddNewComponent<BrokenSwordCurse>();
             }
         }
 
+        public CombatData GetModifiedCombatData(CombatData damageData)
+        {
+            damageData.CombatValue = MathHelper.GetValueMultipliedWithProcent(damageData.CombatValue, MinusProcentDamage);
+            return damageData;
+        }
     }
 }

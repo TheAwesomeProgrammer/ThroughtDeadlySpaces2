@@ -14,7 +14,7 @@ namespace Assets.Scripts.Combat.Defense
             _life = GetComponent<Life>();
         }
 
-        protected virtual void Damage(List<DamageData> damageDatas)
+        protected virtual void Damage(List<CombatData> damageDatas)
         {
             foreach (var damageData in damageDatas)
             {
@@ -22,9 +22,9 @@ namespace Assets.Scripts.Combat.Defense
             }
         }
 
-        protected virtual void Damage(DamageData damageData)
+        protected virtual void Damage(CombatData damageData)
         {
-            Null.OnNot(_life, () => _life.Health -= damageData.Damage);
+            Null.OnNot(_life, () => _life.Health -= damageData.CombatValue);
         }
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player.Swords.Curses
 {
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Curse)]
-    public class MissAttackSwordCurse : MonoBehaviour, XmlAttributeLoadable
+    public class MissAttackSwordCurse : EquipmentAttribute, XmlAttributeLoadable
     {
         private int MissChange = 10;
         private const int CurseId = 4;
@@ -16,8 +16,9 @@ namespace Assets.Scripts.Player.Swords.Curses
         private SwordAttack _swordAttack;
         private EquipmentAttributeLoader _equipmentAttributeLoader;
 
-        void Start()
+        public override void Init()
         {
+            base.Init();
             _swordAttack = GetComponent<SwordAttack>();
             _swordAttack.AttackStarted += OnAttackStarted;
         }
@@ -32,8 +33,7 @@ namespace Assets.Scripts.Player.Swords.Curses
 
         public void LoadXml(int level)
         {
-            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Curse));
-            int[] specs = _equipmentAttributeLoader.LoadSpecs(CurseId, level, XmlName.Curses);
+            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Curse), CurseId, level, XmlName.Curses);
             MissChange = specs[0];
         }
     }

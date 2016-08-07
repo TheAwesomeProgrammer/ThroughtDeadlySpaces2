@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions;
 using UnityEngine;
@@ -16,16 +17,16 @@ namespace Assets.Scripts.Player.Swords
 
         public void SetupDamageDatas()
         {
-            _damageDatas.Add(new BaseDamageData(_sword.Specs.BaseDamage));
-            _damageDatas.Add(new DamageData(CombatType.Fire, _sword.Specs.FireDamage));
-            _damageDatas.Add(new DamageData(CombatType.Nature, _sword.Specs.NatureDamage));
-            _damageDatas.Add(new DamageData(CombatType.Life, _sword.Specs.LifeDamage));
-            _damageDatas.Add(new DamageData(CombatType.Death, _sword.Specs.DeathDamage));
+            _damageDatas.Add(new CombatData(CombatType.BaseType, _sword.Specs.BaseDamage));
+            _damageDatas.Add(new CombatData(CombatType.Fire, _sword.Specs.FireDamage));
+            _damageDatas.Add(new CombatData(CombatType.Nature, _sword.Specs.NatureDamage));
+            _damageDatas.Add(new CombatData(CombatType.Life, _sword.Specs.LifeDamage));
+            _damageDatas.Add(new CombatData(CombatType.Death, _sword.Specs.DeathDamage));
         }
 
         public void AddStrength(int strength)
         {
-            _damageDatas.Find(damageData => damageData.CombatType == CombatType.BaseType).Damage += strength;
+            _damageDatas.Find(damageData => damageData is StrengthDamageData).CombatValue += strength;
         }
     }
 }

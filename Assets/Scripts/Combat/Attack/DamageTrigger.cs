@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Combat.Defense.Boss;
 using Assets.Scripts.Enviroment.Collisions.Abstract;
@@ -32,7 +33,7 @@ namespace Assets.Scripts.Player.Swords
             _enemyAttackers = new List<CombatDamage>();
         }
 
-        public void DoDamage(List<DamageData> damageDatas)
+        public void DoDamage(List<CombatData> damageDatas)
         {
             foreach (var enemyAttacker in _enemyAttackers)
             {

@@ -5,8 +5,12 @@ namespace Assets.Scripts.Player.Equipments
 {
     public abstract class EquipmentAttribute : MonoBehaviour
     {
+        public ModifierType ModifierType;
+
         protected EquipmentAttributeLoader _equipmentAttributeLoader;
         protected int _attributeId = 5;
+
+        private bool _hasInited;
 
         protected int[] LoadSpecs(string locationToXmlDocument, int xmlId, int level, string xmlRootName)
         {
@@ -16,12 +20,15 @@ namespace Assets.Scripts.Player.Equipments
 
         public virtual void Init()
         {
-            
         }
 
         private void OnEnable()
         {
-            Init();
+            if (_hasInited == false)
+            {
+                _hasInited = true;
+                Init();
+            }
             Activate();
         }
 
@@ -35,11 +42,12 @@ namespace Assets.Scripts.Player.Equipments
             Deactivate();
         }
 
-        protected abstract void Activate();
+        protected virtual void Activate()
+        {
+        }
 
         protected virtual void Deactivate()
         {
-            
         }
     }
 }

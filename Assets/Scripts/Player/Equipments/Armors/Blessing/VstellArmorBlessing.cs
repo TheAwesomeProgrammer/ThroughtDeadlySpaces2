@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.Combat.Defense;
+﻿using Assets.Scripts.Combat;
+using Assets.Scripts.Combat.Defense;
 using Assets.Scripts.Extensions.Math;
-using Assets.Scripts.Player.Armors.ArmorModifier;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
@@ -9,17 +9,18 @@ using Assets.Scripts.Xml;
 namespace Assets.Scripts.Player.Armors.Blessing
 {
     [EquipmentAttributeMetaData(EquipmentType.Armor, EquipmentAttributeType.Blessing)]
-    public class VstellArmorBlessing : ArmorReduceModifier, XmlAttributeLoadable
+    public class VstellArmorBlessing : EquipmentAttribute, XmlAttributeLoadable, CombatModifier
     {
         private const int BlessingId = 4;
 
-        private EquipmentAttributeLoader _equipmentAttributeLoader;
         private int _changeOfPreventingAllDamage;
         private Resistance _resistance;
         private bool _preventAllDamage;
 
-        void Start()
+        public override void Init()
         {
+            base.Init();
+            ModifierType = ModifierType.All;
             _resistance = GetComponent<Resistance>();
             _resistance.Defending += OnDefending;
         }
@@ -34,18 +35,17 @@ namespace Assets.Scripts.Player.Armors.Blessing
 
         public void LoadXml(int level)
         {
-            _equipmentAttributeLoader = new EquipmentAttributeLoader(XmlFileLocations.GetLocation(Location.Blessing));
-            int[] specs = _equipmentAttributeLoader.LoadSpecs(BlessingId, level, XmlName.Blessing);
+            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), BlessingId, level, XmlName.Blessing);
             _changeOfPreventingAllDamage = specs[0];
         }
 
-        public override DefenseData ReduceDefenseData(DefenseData defenseData)
+        public CombatData GetModifiedCombatData(CombatData damageData)
         {
             if (_preventAllDamage)
             {
-                defenseData.Defense = int.MaxValue;
+                damageData.CombatValue = int.MaxValue;
             }
-            return defenseData;
+            return damageData;
         }
     }
 }
