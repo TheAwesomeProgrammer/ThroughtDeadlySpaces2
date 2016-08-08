@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Blessings>
-    <VstellSwordBlessing id="0">
+    <VstellSwordBlessing id="0" name="Vsteel">
         <Specs level="1">(10,50)</Specs>    <!-- [1 = procent chance of critical hit], [2 = critical hit base damage procent] -->     
     </VstellSwordBlessing>    
-    <LifeDrainSwordBlessing id="1">
+    <LifeDrainSwordBlessing id="1" name="Life drain">
         <Specs level="1">(5,1)</Specs>      <!-- [1 = procent chance of gaining life on hit], [2 = life on hit] -->   
     </LifeDrainSwordBlessing> 
-    <EnchantedSwordBlessing id="2">
+    <EnchantedSwordBlessing id="2" name="Enchant">
         <Specs level="1">(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
     </EnchantedSwordBlessing> 
-      <EnchantedArmorBlessing id="3">
+      <EnchantedArmorBlessing id="3" name="Enchant">
         <Specs level="1">(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
     </EnchantedArmorBlessing> 
-    <VSteelArmorBlessing id="4">
+    <VSteelArmorBlessing id="4" name="Vsteel">
         <Specs level="1">(8)</Specs>     <!-- [1 = procent chance of preventing all damage] -->   
     </VSteelArmorBlessing>
-    <LethalBlessing id="5">
+    <LethalBlessing id="5" name="Lethal">
         <Specs level="1">(10,50)</Specs><!-- [1 = procent chance of critical hit], [2 = critical hit base damage procent] -->
     </LethalBlessing>
-    <SwiftBlessing id="6">
+    <SwiftBlessing id="6" name="Swift">
         <Specs level="1">(0.25)</Specs><!-- [1 = extra attack speed] -->
     </SwiftBlessing>
-    <LightBlessing id="7">
-        <Specs level="1">(1)</Specs><!-- [1 = extra movement speed -->
+    <LightBlessing id="7" name="Light">
+        <Specs level="1">(1)</Specs><!-- [1 = extra movement speed] -->
     </LightBlessing>
-    <HolyBlessing id="8">
+    <HolyBlessing id="8" name="Holy">
         <Specs level="1">(3,1)</Specs><!-- [1 = interval to give dexterity], [2 = Dexterity to give in each interval] -->
     </HolyBlessing>
+    <MarkBlessing id ="9" name="Mark">  
+       <Specs level="1">(5)</Specs><!-- [1 = times to attack boss, before the mark is applied.] -->
+    </MarkBlessing>
 </Blessings>

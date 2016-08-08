@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
@@ -13,8 +14,17 @@ namespace Assets.Scripts.Player.Armors.Curses
         private const int CurseId = 3;
 
         private Resistance _resistance;
-        private EquipmentAttributeLoader _equipmentAttributeLoader;
         private int _procentChanceToBreak;
+
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Curse), CurseId,
+                                                XmlName.Curses);
+            }
+        }
 
         public override void Init()
         {
@@ -34,7 +44,7 @@ namespace Assets.Scripts.Player.Armors.Curses
 
         public void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Curse), CurseId, level, XmlName.Curses);
+            int[] specs = LoadSpecs(level);
             _procentChanceToBreak = specs[0];
         }
     }

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Extensions;
 
 public class CallbackInfo : Callbackable
 {
@@ -42,6 +43,21 @@ public class CallBackInfoWithAction : Callbackable
         {
             _callBackAction();
         }
+    }
+}
+
+public class CallBackWithNoGameObject : Callbackable
+{
+    private Action _callback;
+
+    public CallBackWithNoGameObject(Action callback)
+    {
+        _callback = callback;
+    }
+
+    public void Callback()
+    {
+        _callback.CallIfNotNull();
     }
 }
 

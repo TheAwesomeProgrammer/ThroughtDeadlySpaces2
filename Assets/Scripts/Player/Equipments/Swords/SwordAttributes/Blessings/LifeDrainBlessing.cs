@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
@@ -15,6 +16,16 @@ namespace Assets.Scripts.Player.Swords
         private SwordAttack _swordAttack;
         private Life _life;
 
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), BlessingId,
+                                                XmlName.Blessing);
+            }
+        }
+
         public override void Init()
         {
             base.Init();
@@ -25,7 +36,7 @@ namespace Assets.Scripts.Player.Swords
 
         public void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), BlessingId, level, XmlName.Blessing);
+            int[] specs = LoadSpecs(level);
             ProcentChanceOfGainingLifeOnHit = specs[0];
             LifeOnHit = specs[1];
         }

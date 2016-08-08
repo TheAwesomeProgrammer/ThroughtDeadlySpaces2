@@ -24,6 +24,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
             SetType();
             LoadProperties();
             LoadPropertyObject();
+            UpdateValue();
         }
 
         protected abstract void SetType();
@@ -80,7 +81,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
 
             foreach (var memberInfo in type.GetMembers())
             {
-                if (memberInfo.MemberType == MemberTypes.Property)
+                if (memberInfo.MemberType == MemberTypes.Property && memberInfo.DeclaringType == _typeToLoad)
                 {
                     properties.Add(memberInfo.Name);
                 }
@@ -89,13 +90,31 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
             return properties;
         }
 
+        public void SetValue(object newValue)
+        {
+            if (CanSetValue())
+            {
+                _typeToLoad.GetProperty(Properties[Index]).SetValue(_propertyObject, newValue, null);
+            }
+        }
+
+        private bool CanSetValue()
+        {
+            return _typeToLoad != null && _propertyObject != null;
+        }
+
         protected virtual void Update()
+        {
+            UpdateValue();
+        }
+
+        private void UpdateValue()
         {
             if (Application.isPlaying && _propertyObject != null)
             {
                 _value = GetValue(_typeToLoad, _propertyObject, Properties[Index]);
             }
-            else if(_propertyObject == null)
+            else if (_propertyObject == null)
             {
                 LoadPropertyObject();
             }

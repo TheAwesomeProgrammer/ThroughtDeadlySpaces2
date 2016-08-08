@@ -7,9 +7,9 @@ namespace Assets.Scripts.Player.Curses
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
     public class MarkNatureBlessing : MarkBlessing
     {
-        public override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             CombatType = CombatType.Nature;
         }
     }

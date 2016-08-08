@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Player.Swords;
+﻿using Assets.Scripts.Player.Equipments.Attributes;
+using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Equipments
@@ -6,20 +7,34 @@ namespace Assets.Scripts.Player.Equipments
     public abstract class EquipmentAttribute : MonoBehaviour
     {
         public ModifierType ModifierType;
-
-        protected EquipmentAttributeLoader _equipmentAttributeLoader;
-        protected int _attributeId = 5;
+        public string Name;
+  
+        protected int _attributeId;
+        protected AttributeXmlData _attributeXmlData;
 
         private bool _hasInited;
 
-        protected int[] LoadSpecs(string locationToXmlDocument, int xmlId, int level, string xmlRootName)
+        public abstract AttributeXmlData AttributeXmlData { get; }
+        protected EquipmentAttributeLoader EquipmentAttributeLoader
         {
-            _equipmentAttributeLoader = new EquipmentAttributeLoader(locationToXmlDocument);
-            return _equipmentAttributeLoader.LoadSpecs(xmlId, level, xmlRootName);
+            get
+            {
+                return _equipmentAttributeLoader = _equipmentAttributeLoader ?? new EquipmentAttributeLoader(AttributeXmlData.LocationToXmlDocument);
+            }
         }
+
+        private EquipmentAttributeLoader _equipmentAttributeLoader;
 
         public virtual void Init()
         {
+        }
+
+        private void LoadName()
+        {
+            if (AttributeXmlData != null)
+            {
+                Name = EquipmentAttributeLoader.GetName(AttributeXmlData.XmlId, AttributeXmlData.XmlRootName);
+            }
         }
 
         private void OnEnable()
@@ -28,8 +43,19 @@ namespace Assets.Scripts.Player.Equipments
             {
                 _hasInited = true;
                 Init();
+                LoadName();
             }
             Activate();
+        }
+
+        protected int[] LoadSpecs(int level)
+        {
+            return EquipmentAttributeLoader.LoadSpecs(AttributeXmlData.XmlId, level, AttributeXmlData.XmlRootName);
+        }
+
+        protected float[] LoadSpecsFloat(int level)
+        {
+            return EquipmentAttributeLoader.LoadSpecsFloat(AttributeXmlData.XmlId, level, AttributeXmlData.XmlRootName);
         }
 
         private void OnDisable()

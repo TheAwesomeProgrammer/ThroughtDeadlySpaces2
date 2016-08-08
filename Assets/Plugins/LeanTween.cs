@@ -2795,11 +2795,15 @@ public static LTDescr destroyAfter( LTRect rect, float delayTime){
 */
 public static LTDescr move(GameObject gameObject, Vector3 to, float time)
 {
-    RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-    if (rectTransform != null)
+    if (gameObject != null)
     {
-        return move(rectTransform, to, time);
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            return move(rectTransform, to, time);
+        }
     }
+    
 	return pushNewTween( gameObject, to, time, TweenAction.MOVE, options() );
 }
 public static LTDescr move(GameObject gameObject, Vector2 to, float time){

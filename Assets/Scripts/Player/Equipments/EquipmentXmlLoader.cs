@@ -62,7 +62,7 @@ namespace Assets.Scripts.Player.Equipments
         {
             XmlNode attributeNode = _xmlSearcher.GetNodeInArrayWithId(XmlId, XmlArrayName);
 
-            Dictionary<int, T> attributes = _enumConverter.Convert<T>(_xmlSearcher.GetAttributesInNode(attributeNode));
+            Dictionary<int, T> attributes = _enumConverter.Convert<T>(_xmlSearcher.GetEquipmentAttributesInNode(attributeNode));
 
             foreach (KeyValuePair<int, T> attribute in attributes)
             {

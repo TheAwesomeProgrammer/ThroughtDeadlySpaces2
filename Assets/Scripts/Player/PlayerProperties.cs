@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using Assets.Scripts.Extensions;
+using Assets.Scripts.Extensions.StaticClasses;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
@@ -17,21 +18,47 @@ namespace Assets.Scripts.Player
         public float StartDexterity;
         public float StartAttackSpeed;
 
+        private PlayerPropertiesSetter _attackSpeedSetter;
+        private PlayerPropertiesSetter _speedSetter;
+
+        public PlayerPropertiesSetter AttackSpeedSetter
+        {
+            get
+            {
+                Null.On(_attackSpeedSetter,
+                    () => _attackSpeedSetter = transform.FindComponentInChildWithName<PlayerPropertiesSetter>("AttackSpeedSetter"));
+                return _attackSpeedSetter;
+            }
+        }
+
+        public PlayerPropertiesSetter SpeedSetter
+        {
+            get
+            {
+                Null.On(_speedSetter,
+                    () => _speedSetter = transform.FindComponentInChildWithName<PlayerPropertiesSetter>("SpeedSetter"));
+                return _speedSetter;
+            }
+        }
+
         public int MaxHealth
         {
-            get { return _life.MaxHealth; }
+            get
+            {
+                return Null.OnNot(_life, () => _life.MaxHealth);
+            }
             set
             {
-                _life.MaxHealth = value;
+                Null.OnNot(_life, () => _life.MaxHealth = value);
             }
         }
 
         public int Health
         {
-            get { return _life.Health; }
+            get { return Null.OnNot(_life, () => _life.Health); }
             set
             {
-                _life.Health = value;
+                Null.OnNot(_life, () => _life.Health = value);
             }
         }
 
@@ -61,10 +88,10 @@ namespace Assets.Scripts.Player
 
         public float MaxDexterity
         {
-            get { return _dexterityFiller.MaxDexterity; }
+            get { return Null.OnNot(_dexterityFiller, () => _dexterityFiller.MaxDexterity); }
             set
             {
-                _dexterityFiller.MaxDexterity = value;
+                Null.OnNot(_dexterityFiller, () => _dexterityFiller.MaxDexterity = value);
             }
         }
 
@@ -91,7 +118,7 @@ namespace Assets.Scripts.Player
         private PlayerMovement _playerMovement;
         private SwordAttack _swordAttack;
 
-        public void Start()
+        public void Awake()
         {
             _playerMovement = GetComponentInChildren<PlayerMovement>();
             _life = GetComponentInChildren<Life>();

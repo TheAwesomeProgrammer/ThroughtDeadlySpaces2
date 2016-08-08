@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
+using Assets.Scripts.Extensions;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -93,7 +94,7 @@ namespace Assets.Scripts.Xml
             return nodeId == id;
         }
 
-        private string GetAttributeText(XmlNode node, string attributeName)
+        public string GetAttributeText(XmlNode node, string attributeName)
         {
             if (node.Attributes != null && node.Attributes.Count > 0)
             {
@@ -163,14 +164,14 @@ namespace Assets.Scripts.Xml
             return GetSpecsInNodeFloat(SelectNodeInDocument(nodeName), specName);
         }
 
-        public string[] GetAttributesInNode(XmlNode node, string attributeNodeName = AttributeNodeName)
+        public string[] GetEquipmentAttributesInNode(XmlNode node, string attributeNodeName = AttributeNodeName)
         {
             XmlNode attributeNode = SelectChildNode(node, attributeNodeName);
 
-            return GetAttributes(attributeNode);
+            return GetEquipmentAttributes(attributeNode);
         }
 
-        public string[] GetAttributes(XmlNode node)
+        public string[] GetEquipmentAttributes(XmlNode node)
         {
             return _attributeConverter.Convert(node.InnerText);
         }
@@ -184,10 +185,16 @@ namespace Assets.Scripts.Xml
         {
             return GetSpecs(GetNodeInArrayWithId(id, node));
         }
-
+        
         public int[] GetSpecs(XmlNode node)
         {
             int[] specs = _specsConverter.Convert(node.InnerText).Select(i => (int)i).ToArray(); ;
+            return specs;
+        }
+
+        public float[] GetSpecsFloat(XmlNode node)
+        {
+            float[] specs = _specsConverter.Convert(node.InnerText);
             return specs;
         }
 
@@ -242,7 +249,7 @@ namespace Assets.Scripts.Xml
             return node != null && node.Attributes != null && node.Attributes[attributeName] != null;
         }
 
-        private XmlNode GetAttribute(XmlNode node, string attributeName)
+        public XmlNode GetAttributeNode(XmlNode node, string attributeName)
         {
             XmlNode attributeNode = null;
 
@@ -260,7 +267,7 @@ namespace Assets.Scripts.Xml
 
             foreach (var childNode in xmlNode.ChildNodes)
             {
-                XmlAttribute attributeLevelNode = (XmlAttribute)GetAttribute((XmlNode)childNode, xmlAttributeLevelName);
+                XmlAttribute attributeLevelNode = (XmlAttribute)GetAttributeNode((XmlNode)childNode, xmlAttributeLevelName);
                 if (attributeLevelNode != null)
                 {
                     int levelInNode = int.Parse(attributeLevelNode.InnerText);

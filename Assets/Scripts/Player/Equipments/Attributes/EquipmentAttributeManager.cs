@@ -89,19 +89,24 @@ namespace Assets.Scripts.Player.Equipments
             _attributes.Add(attributeData);
         }
 
+        public List<AttributeData> GetAllAttributes()
+        {
+            return _attributes;
+        }
+
         public AttributeData GetAttribute(EquipmentAttributeType equipmentAttributeType)
         {
-            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType).Cast<AttributeData>().First();
+            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType)[equipmentAttributeType].First();
         }
 
         public List<AttributeData> GetAttributes(EquipmentAttributeType equipmentAttributeType)
         {
-            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType).Cast<AttributeData>().ToList();
+            return _attributes.ToLookup(attribute => attribute.EquipmentAttributeType)[equipmentAttributeType].ToList();
         }
 
         public List<AttributeData> GetAttributesById(int id)
         {
-            return _attributes.ToLookup(attribute => attribute.Id == id).Cast<AttributeData>().ToList();
+            return _attributes.ToLookup(attribute => attribute.Id)[id].ToList();
         }
 
         public void RemoveAllWithId(int id)

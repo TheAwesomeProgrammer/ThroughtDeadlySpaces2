@@ -20,5 +20,13 @@ namespace Assets.Scripts.Extensions
             }
             return default(T);
         }
+
+        public static void On(object checkObject, Action nullAction)
+        {
+            if (checkObject == null)
+            {
+                nullAction.CallIfNotNull();
+            }
+        }
     }
 }

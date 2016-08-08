@@ -8,9 +8,9 @@ namespace Assets.Scripts.Player.Attributes.Blessings.Mark
     [EquipmentAttributeMetaData(EquipmentType.Sword, EquipmentAttributeType.Blessing)]
     public class MarkDeathBlessing : MarkBlessing
     {
-        public override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             CombatType = CombatType.Death;
         }
     }

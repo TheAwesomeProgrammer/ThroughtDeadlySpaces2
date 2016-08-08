@@ -2,6 +2,7 @@
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
@@ -14,7 +15,15 @@ namespace Assets.Scripts.Player.Swords.Curses
         public int BrokenSwordMinusProcentDamage = -40;
         public const int CurseId = 0;
 
-        private EquipmentAttributeLoader _equipmentAttributeLoader;
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Curse), CurseId,
+                                                XmlName.Curses);
+            }
+        }
 
         public override void Init()
         {
@@ -24,7 +33,7 @@ namespace Assets.Scripts.Player.Swords.Curses
 
         public void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Curse), CurseId, level, XmlName.Curses);
+            int[] specs = LoadSpecs(level);
             BrokenSwordMinusProcentDamage = specs[0];
         }
 

@@ -2,6 +2,7 @@
 using Assets.Scripts.Combat.Defense;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
@@ -20,6 +21,16 @@ namespace Assets.Scripts.Player.Armors.Blessing
 
         private bool _enchant;
 
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), XmlId,
+                                                XmlName.Blessing);
+            }
+        }
+
         public override void Init()
         {
             base.Init();
@@ -37,7 +48,7 @@ namespace Assets.Scripts.Player.Armors.Blessing
 
         public void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), XmlId, level, XmlName.Blessing);
+            int[] specs = LoadSpecs(level);
             _enchantedChance = specs[0];
             _chantedDefense = specs[1];
         }

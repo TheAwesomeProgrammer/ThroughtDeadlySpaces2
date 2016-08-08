@@ -1,4 +1,5 @@
 using Assets.Scripts.Camera_ll_UI;
+using Assets.Scripts.Camera_ll_UI.HUD;
 using Assets.Scripts.Enviroment.Collisions.Abstract;
 using Assets.Scripts.Input;
 using Assets.Scripts.Player.Swords.Abstract;
@@ -12,11 +13,13 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
         private InputButton _backButton;
 
         protected GameObject _player;
+        protected UiESwitching _uiESwitching;
 
         protected override void Start()
         {
             base.Start();
             Tags.Add(Tag.PlayerCollision);
+            _uiESwitching = Camera.main.GetComponentInChildren<UiESwitching>();
             _interactableButton = transform.FindComponentInChildWithName<InputButton>("InteractableButton");
             _backButton = transform.FindComponentInChildWithName<InputButton>("BackButton");
             _interactableButton.ButtonDown += ShouldCallInteractableButtonDown;
@@ -41,23 +44,25 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
 
         protected virtual void OnInteractableButtonDownAndCollidingWithPlayer()
         {
-         
+           _uiESwitching.Drop();
         }
 
         protected virtual void OnBackButtonDownAndCollidingWithPlayer()
         {
-          
+           
         }
 
         public override void OnEnterWithTag()
         {
             base.OnEnterWithTag();
+            _uiESwitching.Switch();
             _player = _triggerCollider.gameObject;
         }
 
         public override void OnExitWithTag()
         {
             base.OnExitWithTag();
+            _uiESwitching.Switch();
             _player = null;
         }
     }

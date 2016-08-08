@@ -26,7 +26,7 @@ namespace Assets.Scripts.Player.Equipments
 
         public EquipmentSpecs Specs { get; set; }
 
-        protected int Id;
+        public int Id;
 
         private EquipmentBrokenState _equipmentBrokenState;
 

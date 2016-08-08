@@ -2,6 +2,7 @@
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
@@ -15,6 +16,16 @@ namespace Assets.Scripts.Player.Swords
         public int CriticalHitDamageProcent = 50;
         public int BlessingId = 0;
 
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), BlessingId,
+                                                XmlName.Blessing);
+            }
+        }
+
         public override void Init()
         {
             base.Init();
@@ -23,7 +34,7 @@ namespace Assets.Scripts.Player.Swords
 
         public virtual void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), BlessingId, level, XmlName.Blessing);
+            int[] specs = LoadSpecs(level);
             ProcentChanceOfCriticalHit = specs[0];
             CriticalHitDamageProcent = specs[1];
         }

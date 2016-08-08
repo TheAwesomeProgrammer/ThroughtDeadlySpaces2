@@ -4,6 +4,7 @@
     {
         Tab = 1,
         SwordSwitching = 2,
-        BossBarDrop = 3
+        BossBarDrop = 3,
+        EShow = 4,
     }
 }

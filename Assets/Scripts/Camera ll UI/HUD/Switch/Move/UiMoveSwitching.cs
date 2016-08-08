@@ -20,6 +20,11 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
             _uiMoversWithId.ForEach(CountReachedUiMovers);
         }
 
+        public void ForEachOnUiMover(Action<UiMover> action)
+        {
+            _uiMoversWithId.ForEach(action);
+        }
+
         private void Reset()
         {
             _uiMoverReachedTargetCount = 0;

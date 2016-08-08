@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player.Armors
             int equipmentId) : base(equipmentAttributeManager, xmlId, xmlArrayName, equipmentId)
         {
             XmlLocation = Location.Armor;
-            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, EquipmentType.Armor);
+            _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, EquipmentType.Armor, equipmentId);
         }
 
         public override void Load()

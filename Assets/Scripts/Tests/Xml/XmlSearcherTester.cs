@@ -93,7 +93,7 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanGetAttributesInNode()
         {
-            string[] atrributes = _xmlSearcher.GetAttributesInNode(_xmlSearcher.SelectNodeInDocument("Item"));
+            string[] atrributes = _xmlSearcher.GetEquipmentAttributesInNode(_xmlSearcher.SelectNodeInDocument("Item"));
             Assert.IsEquals(atrributes[0], "Rusty", "Test if can get attributes in node");
         }
 

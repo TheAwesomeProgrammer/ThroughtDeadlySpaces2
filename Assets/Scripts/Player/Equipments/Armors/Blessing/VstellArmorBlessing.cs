@@ -2,6 +2,7 @@
 using Assets.Scripts.Combat.Defense;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
@@ -16,6 +17,17 @@ namespace Assets.Scripts.Player.Armors.Blessing
         private int _changeOfPreventingAllDamage;
         private Resistance _resistance;
         private bool _preventAllDamage;
+
+
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), BlessingId,
+                                                XmlName.Blessing);
+            }
+        }
 
         public override void Init()
         {
@@ -35,7 +47,7 @@ namespace Assets.Scripts.Player.Armors.Blessing
 
         public void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), BlessingId, level, XmlName.Blessing);
+            int[] specs = LoadSpecs(level);
             _changeOfPreventingAllDamage = specs[0];
         }
 

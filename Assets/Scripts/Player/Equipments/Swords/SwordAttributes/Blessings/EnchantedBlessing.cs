@@ -4,6 +4,7 @@ using Assets.Scripts.Combat;
 using Assets.Scripts.Combat.Attack;
 using Assets.Scripts.Extensions.Math;
 using Assets.Scripts.Player.Equipments;
+using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Shop;
 using Assets.Scripts.Xml;
 using UnityEngine;
@@ -20,6 +21,16 @@ namespace Assets.Scripts.Player.Swords
         private bool _enchant;
         private DoubleEnchantChecker _doubleEnchantChecker;
 
+        public override AttributeXmlData AttributeXmlData
+        {
+            get
+            {
+                return _attributeXmlData = _attributeXmlData ??
+                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), BlessingId,
+                                                XmlName.Blessing);
+            }
+        }
+
         public override void Init()
         {
             base.Init();
@@ -31,7 +42,7 @@ namespace Assets.Scripts.Player.Swords
 
         public void LoadXml(int level)
         {
-            int[] specs = LoadSpecs(XmlFileLocations.GetLocation(Location.Blessing), BlessingId, level, XmlName.Blessing);
+            int[] specs = LoadSpecs(level);
             ProcentChangeToEnchant = specs[0];
             EnchantDamage = specs[1];
         }
