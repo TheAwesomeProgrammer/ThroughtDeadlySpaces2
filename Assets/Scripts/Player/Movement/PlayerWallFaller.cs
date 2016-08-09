@@ -2,53 +2,52 @@
 
 namespace Assets.Scripts.Player.Swords.Abstract.Movement
 {
-    public class PlayerWallFaller : CollisionChecking
+    public class PlayerWallFaller : MonoBehaviour
     {
-        public PhysicMaterial PhysicMaterial;
-
         private const float DownDistanceCheck = 5;
         private const float ForwardDistanceCheck = 1;
+        private const float UpdateRate = 10;
 
-        private Rigidbody _rigidbody;
         private CapsuleCollider _capsuleCollider;
+        private PlayerMovement _playerMovement;
         private bool _fall;
 
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
-            _rigidbody = GetComponent<Rigidbody>();
             _capsuleCollider = GetComponent<CapsuleCollider>();
+            _playerMovement = GetComponent<PlayerMovement>();
+            //InvokeRepeating("CheckIfFalling", 0.1f, 1f/UpdateRate);
         }
 
-        public override void OnEnter()
+        public void FixedUpdate()
         {
-            base.OnEnter();
-            
-            RaycastHit[] forwardRaycastHits = CapsuleCastAllInDirection(Vector3.forward);
-            RaycastHit[] downRaycastHits = CapsuleCastAllInDirection(Vector3.down);
+            CheckIfFalling();
+        }
 
-            if (forwardRaycastHits.Length > 0 && downRaycastHits.Length <= 0)
+        public void CheckIfFalling()
+        {
+            //aycastHit[] forwardRaycastHits = CapsuleCastAllInDirection(Vector3.forward, ForwardDistanceCheck);
+            bool hittingAnythingDown = CapsuleCastAllInDirection(Vector3.down, DownDistanceCheck);
+
+            if (!hittingAnythingDown && _playerMovement.CanMove)
             {
                 _fall = true;
-                _capsuleCollider.material = PhysicMaterial;
+                _playerMovement.CanMove = false;
             }
-        }
-
-        private RaycastHit[] CapsuleCastAllInDirection(Vector3 direction)
-        {
-            Vector3 capsuleCenter = _capsuleCollider.center;
-            float capsuleHeight = _capsuleCollider.height;
-            float capsuleRadius = _capsuleCollider.radius;
-            return Physics.CapsuleCastAll(capsuleCenter + new Vector3(0, capsuleHeight),
-                capsuleCenter + new Vector3(0, -capsuleHeight), capsuleRadius, direction * DownDistanceCheck);
-        }
-
-        void LateUpdate()
-        {
-            if (_fall)
+            else if (hittingAnythingDown && !_playerMovement.CanMove)
             {
-                _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+                _playerMovement.CanMove = true;
+                _fall = false;
             }
+        }
+
+        private bool CapsuleCastAllInDirection(Vector3 direction, float distanceCheck)
+        {
+            //Vector3 capsuleCenter = _capsuleCollider.center;
+            //Vector3 capsuleTopPoint = transform.position + capsuleCenter + new Vector3(0, _capsuleCollider.height);
+            //Vector3 capsuleBottomPoint = transform.position + capsuleCenter + new Vector3(0, -_capsuleCollider.height);
+            //float capsuleRadius = _capsuleCollider.radius;
+            return Physics.Raycast(new Ray(transform.position, direction), distanceCheck, Physics.AllLayers);
         }
     }
 }

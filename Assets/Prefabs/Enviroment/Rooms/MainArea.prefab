@@ -1321,7 +1321,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000011847337878
 GameObject:
@@ -12643,12 +12643,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010026374256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12702,12 +12704,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010047180874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12735,12 +12739,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010061227278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12890,12 +12896,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010139120756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12923,12 +12931,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010171439442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12981,12 +12991,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010197665952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13130,12 +13142,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010280561392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13191,12 +13205,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010320505478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13211,12 +13227,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010342920578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13292,12 +13310,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010370822692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13323,12 +13343,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010383775618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13354,12 +13376,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010433026752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13388,12 +13412,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010437697228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13471,12 +13497,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010495923496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13502,12 +13530,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010522088156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13591,12 +13621,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010589481620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13666,12 +13698,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010648030644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13721,12 +13755,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010675872878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13752,12 +13788,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010705282352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13836,12 +13874,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010770865308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13856,12 +13896,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 50
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010780684242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13903,12 +13945,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010811162628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13958,12 +14002,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010863722832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14017,12 +14063,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010879184070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14065,12 +14113,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010895285526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14243,12 +14293,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000010998830522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14327,12 +14379,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011048090022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14459,12 +14513,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011119745032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14506,12 +14562,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011160572874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14540,12 +14598,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011169363642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14623,12 +14683,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011226136142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14668,12 +14730,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011239058856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14688,12 +14752,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011245478218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14720,12 +14786,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011251067602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14778,12 +14846,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011279450704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14798,12 +14868,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011296726370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14843,12 +14915,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011336025888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14874,12 +14948,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011357477332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14960,12 +15036,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011430176040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14980,12 +15058,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011430828646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15099,12 +15179,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011527884468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15119,12 +15201,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011528434552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15139,12 +15223,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011531210808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15269,12 +15355,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011601973678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15303,12 +15391,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011620989324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15351,12 +15441,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011637043762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15398,12 +15490,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011655967248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15418,12 +15512,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011672151306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15743,12 +15839,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000011946657146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15927,12 +16025,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012075625380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16052,12 +16152,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012205840096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16072,12 +16174,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012218616326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16092,12 +16196,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012219728064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16177,12 +16283,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012297358810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16369,12 +16477,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012427341290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16428,12 +16538,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012454423358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16448,12 +16560,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012456685284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16482,12 +16596,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012462631144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16539,12 +16655,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012525739022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16572,12 +16690,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012529695226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16592,12 +16712,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012537047138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16636,12 +16758,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012576634718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16667,12 +16791,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012585009796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16767,12 +16893,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012679048990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16878,12 +17006,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012760337842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16948,12 +17078,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012822593478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17016,12 +17148,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012883141986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17036,12 +17170,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012906517340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17118,12 +17254,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000012962037760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17218,12 +17356,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013026712240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17298,12 +17438,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013105764440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17318,12 +17460,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013108012354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17408,12 +17552,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013175269920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17442,12 +17588,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013196984638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17484,12 +17632,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013206551176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17567,12 +17717,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013265322886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17615,12 +17767,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013280066408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17649,12 +17803,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013296752526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17693,12 +17849,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013311044036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17740,12 +17898,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013338591402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17801,12 +17961,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013351047556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17848,12 +18010,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013370420760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17868,12 +18032,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013395810118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17902,12 +18068,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013408257776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17947,12 +18115,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013415177086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17980,12 +18150,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013427592414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18050,12 +18222,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013469178170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18098,12 +18272,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013484346400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18168,12 +18344,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013516838928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18202,12 +18380,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013518866150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18222,12 +18402,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013522327106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18242,12 +18424,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013525609614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18276,12 +18460,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013530371674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18310,12 +18496,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013533051052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18330,12 +18518,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013537044550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18432,12 +18622,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013608677748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18465,12 +18657,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013616394720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18485,12 +18679,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013640911868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18690,12 +18886,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013710269290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18748,12 +18946,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013730440982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18768,12 +18968,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013731771574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18812,12 +19014,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013777859630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18955,12 +19159,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013856534148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18989,12 +19195,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013889856080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19009,12 +19217,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013904026382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19029,12 +19239,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013905908940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19075,12 +19287,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013935337464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19095,12 +19309,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013944182486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19129,12 +19345,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013978023180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19176,12 +19394,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000013989504236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19196,12 +19416,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014000214794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19240,12 +19462,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014044725860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19271,12 +19495,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014053125966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19291,12 +19517,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014069908708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19311,12 +19539,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014073886828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19510,12 +19740,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014172107132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19569,12 +19801,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014189111742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19600,12 +19834,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014193348038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19730,12 +19966,14 @@ MonoBehaviour:
   StartPoint:
     Point: {x: 0, y: -10, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   EndPoint:
     Point: {x: 0, y: 0, z: 0}
     IsLocalPoint: 1
+    CalculateAtStart: 1
   LeanTweenType: 13
-  IsLocalPoint: 1
   Time: 0
+  ObjectToMove: {fileID: 0}
 --- !u!114 &114000014293593354
 MonoBehaviour:
   m_ObjectHideFlags: 1
