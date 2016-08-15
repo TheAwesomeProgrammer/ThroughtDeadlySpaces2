@@ -9,7 +9,7 @@ namespace Assets.Scripts
         private PKFxFX _pkfxFx;
         public float Speed = 10;
 
-        void Start()
+        void Awake()
         {
             _pkfxFx = GetComponent<PKFxFX>();
         }

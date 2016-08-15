@@ -1,7 +1,9 @@
-﻿using System.Xml;
+﻿using System.Diagnostics;
+using System.Xml;
 using Assets.Scripts.Enviroment.Map.Pickups;
 using Assets.Scripts.Quest.Rewards.Spawner;
 using Assets.Scripts.Xml;
+using UnityEngine;
 
 namespace Assets.Scripts.Quest
 {
@@ -17,20 +19,32 @@ namespace Assets.Scripts.Quest
 
         public override void LoadXml()
         {
-            int[] specs = RewardSpecs;
-            SwordId = specs[0];
-            LoadSwordSpecs();
+	        LoadSwordId();
+		    LoadSwordSpecs();
         }
+
+	    private void LoadSwordId()
+	    {
+		    int[] specs = RewardSpecs;
+		    SwordId = specs[0];
+	    }
 
         private void LoadSwordSpecs()
         {
-            _xmlSearcher = new XmlSearcher(Location.Sword);
-            XmlNode swordNode = _xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords");
-            LoadSwordName(swordNode);
-            LoadSwordDamageSpecs(swordNode);
+			_xmlSearcher = new XmlSearcher(Location.Sword);
+	        XmlNode swordNode = _xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords");
+	        UnityEngine.Debug.Log("Sword id"+SwordId);
+			LoadSwordName(swordNode);
+			LoadSwordDamageSpecs(swordNode);
         }
 
-        private void LoadSwordName(XmlNode swordNode)
+	    public override bool IsValid()
+	    {
+		    LoadSwordId();
+		    return SwordId > 0;
+	    }
+
+	    private void LoadSwordName(XmlNode swordNode)
         {
             if (swordNode.Attributes != null)
             {

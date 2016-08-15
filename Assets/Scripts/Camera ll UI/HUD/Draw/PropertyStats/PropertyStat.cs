@@ -14,12 +14,12 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
     {
         public List<string> Properties;
         public int Index;
+
         protected object _value;
         protected Type _typeToLoad;
-
         protected object _propertyObject;
 
-        public virtual void Start()
+	    public virtual void Start()
         {
             SetType();
             LoadProperties();
@@ -110,14 +110,16 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
 
         private void UpdateValue()
         {
-            if (Application.isPlaying && _propertyObject != null)
-            {
-                _value = GetValue(_typeToLoad, _propertyObject, Properties[Index]);
-            }
-            else if (_propertyObject == null)
-            {
-                LoadPropertyObject();
-            }
+	        if (!Application.isPlaying) return;
+
+	        if (_propertyObject != null)
+	        {
+		        _value = GetValue(_typeToLoad, _propertyObject, Properties[Index]);
+	        }
+	        else if (_propertyObject == null)
+	        {
+		        LoadPropertyObject();
+	        }
         }
 
         private object GetValue(Type type, object source, string propertyName)

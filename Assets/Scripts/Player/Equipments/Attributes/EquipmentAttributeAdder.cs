@@ -59,7 +59,7 @@ namespace Assets.Scripts.Player.Swords
                         return AddAttribute(typeof(MissAttackSwordCurse), level);
                     case SwordAttribute.Vsteel:
                         return AddAttribute(typeof(VsteelSwordBaseBlessing), level);
-                    case SwordAttribute.Enchant:
+                    case SwordAttribute.Enchanted:
                         return AddAttribute(typeof(EnchantedBlessing), level);
                     case SwordAttribute.MarkDeath:
                         return AddAttribute(typeof(MarkDeathBlessing), level);
@@ -86,7 +86,7 @@ namespace Assets.Scripts.Player.Swords
                         return AddAttribute(typeof(ArmorBrokenCurse), level);
                     case ArmorAttribute.Rusty:
                         return AddAttribute(typeof(RustySwordCurse), level);
-                    case ArmorAttribute.Enchant:
+                    case ArmorAttribute.Enchanted:
                         return AddAttribute(typeof(ArmorEnchantedBlessing), level);
                     case ArmorAttribute.Vsteel:
                         return AddAttribute(typeof(VstellArmorBlessing), level);

@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Extensions;
 using Assets.Scripts.Extensions.StaticClasses;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
@@ -7,7 +8,13 @@ namespace Assets.Scripts.Player.Equipments
 {
     public class Equipment : MonoBehaviour
     {
-        public bool Broken { get; private set; }
+	    public int Id;
+
+	    public event Action<Equipment> EquipmentChanged;
+
+	    private EquipmentBrokenState _equipmentBrokenState;
+
+	    public bool Broken { get; private set; }
 
         public bool Damaged
         {
@@ -26,10 +33,6 @@ namespace Assets.Scripts.Player.Equipments
 
         public EquipmentSpecs Specs { get; set; }
 
-        public int Id;
-
-        private EquipmentBrokenState _equipmentBrokenState;
-
         protected virtual void Awake()
         {
             Id = IdGenerator.GetId();
@@ -42,6 +45,12 @@ namespace Assets.Scripts.Player.Equipments
             Broken = false;
             _equipmentBrokenState.Reset();
         }
+
+	    public void ChangeEquipment(Equipment newEquipment)
+	    {
+		    EquipmentChanged.CallIfNotNull(newEquipment);
+		    EquipmentChanged = null;
+	    }
 
         protected virtual void OnUse()
         {

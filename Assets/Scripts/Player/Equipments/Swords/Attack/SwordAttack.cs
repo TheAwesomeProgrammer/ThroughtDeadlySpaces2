@@ -17,6 +17,7 @@ namespace Assets.Scripts.Player.Swords
 
         public void SetupDamageDatas()
         {
+            _damageDatas.Clear();
             _damageDatas.Add(new CombatData(CombatType.BaseType, _sword.Specs.BaseDamage));
             _damageDatas.Add(new CombatData(CombatType.Fire, _sword.Specs.FireDamage));
             _damageDatas.Add(new CombatData(CombatType.Nature, _sword.Specs.NatureDamage));

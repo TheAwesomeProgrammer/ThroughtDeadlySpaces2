@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011731746918, guid: bb304ec4321a6b64aa7bc4fd724f2125, type: 2}
+  Projectile: {fileID: 0}
   BossDifficulty: 0
 --- !u!114 &114000011005467774
 MonoBehaviour:
@@ -2137,7 +2137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011776840026, guid: 477c4efd8c127184e9249da09dc2bb4e, type: 2}
+  Projectile: {fileID: 0}
   BossDifficulty: 0
 --- !u!114 &114000011858468840
 MonoBehaviour:
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011103241098, guid: cc9e6071a09c3654895347382844a737, type: 2}
+  Projectile: {fileID: 0}
   BossDifficulty: 0
 --- !u!114 &114000013345048178
 MonoBehaviour:
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4f3ffd20edda94a90e5558621d5742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Suck: {fileID: 1000010954290238, guid: b0241532d88bfb54ea6d3377c368abfe, type: 2}
+  Suck: {fileID: 0}
   SuckSpawnpoint: {fileID: 4000010902543386}
 --- !u!114 &114000014040519580
 MonoBehaviour:

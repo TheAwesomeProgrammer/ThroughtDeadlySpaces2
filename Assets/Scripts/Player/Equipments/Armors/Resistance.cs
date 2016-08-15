@@ -21,6 +21,7 @@ public class Resistance : LifeDamager, Damageable
 
     protected override void Awake()
     {
+        base.Awake();
         DefenseDatas = new List<CombatData>();
         _armor = GetComponent<Armor>();
         _combatModifierCaller = new CombatModifierCaller();

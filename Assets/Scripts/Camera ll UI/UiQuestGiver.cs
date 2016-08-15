@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Bosses.Manager;
+using Assets.Scripts.Extensions;
 using Assets.Scripts.Quest;
 using UnityEngine.UI;
 
@@ -39,12 +40,12 @@ namespace Assets.Scripts.Camera_ll_UI
             base.SetProperties(properties);
             _questGiverProperties = (QuestGiverProperties)properties[0];
             _title.text = _questGiverProperties.Name + "(" + _questGiverProperties.Health + ")";
-            List<QuestProperties> rewards = _questGiverProperties.QuestPropertieses;
+            List<Quest.Quest> rewards = _questGiverProperties.Quests;
             AddBossGenerationPropertiesText(rewards, _questGiverProperties);
             SetRewardTexts(rewards, _questGiverProperties);
         }
 
-        private void AddBossGenerationPropertiesText(List<QuestProperties> rewards, QuestGiverProperties questGiverProperties)
+        private void AddBossGenerationPropertiesText(List<Quest.Quest> rewards, QuestGiverProperties questGiverProperties)
         {
             BossGeneratorProperties bossGeneratorProperties =
                 rewards[questGiverProperties.CurrentQuestId].BossGeneratorProperties;
@@ -52,40 +53,40 @@ namespace Assets.Scripts.Camera_ll_UI
             _difficultyText.text = bossGeneratorProperties.Difficulty.ToString();
         }
 
-        private void SetRewardTexts(List<QuestProperties> rewards, QuestGiverProperties questGiverProperties)
+        private void SetRewardTexts(List<Quest.Quest> rewards, QuestGiverProperties questGiverProperties)
         {
-            for (int i = 1; i <= questGiverProperties.RewardIds.Length; i++)
+            for (int i = 1; i <= questGiverProperties.QuestIds.Length; i++)
             {
                 var rewardText = GetRewardText(rewards, i);
                 _rewardTexts[i-1].text = rewardText;
             }
         }
 
-        private string GetRewardText(List<QuestProperties> rewards, int index)
+        private string GetRewardText(List<Quest.Quest> quests, int index)
         {
             string rewardText = "";
 
-            foreach (var rewardWithId in GetRewardsWithId(rewards, index))
+            foreach (var rewardWithId in GetRewardsWithId(quests, index))
             {
-                rewardText += rewardWithId.Reward + ", ";
+                rewardText += rewardWithId + ", ";
             }
 
             return rewardText;
         }
 
-        private List<QuestProperties> GetRewardsWithId(List<QuestProperties> rewards, int index)
+        private List<Reward> GetRewardsWithId(List<Quest.Quest> quests, int id)
         {
-            List<QuestProperties> rewardsWithId = new List<QuestProperties>();
+	        Quest.Quest questWithId = null;
 
-            foreach (var rewardSet in rewards)
+            foreach (var quest in quests)
             {
-                if (rewardSet.Id == index)
+                if (quest.Id == id)
                 {
-                    rewardsWithId.Add(rewardSet);
+	                questWithId = quest;
                 }
             }
 
-            return rewardsWithId;
+	        return Null.OnNot(questWithId, () => questWithId.Rewards);
         }
     }
 }

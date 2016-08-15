@@ -10,9 +10,8 @@ namespace Assets.Scripts.Quest
     {
         public string Name;
         public int Health;
-        public DropType DropType;
-        public List<QuestProperties> QuestPropertieses;
-        public int[] RewardIds;
+        public List<Quest> Quests;
+        public int[] QuestIds;
         public int Id;
         public int UiId;
         public int CurrentQuestId;
@@ -21,33 +20,40 @@ namespace Assets.Scripts.Quest
 
         public BossGeneratorProperties BossGeneratorProperties
         {
-            get { return QuestPropertieses[CurrentQuestId].BossGeneratorProperties; }
+            get { return Quests[CurrentQuestId].BossGeneratorProperties; }
         }
 
         public QuestGiverProperties()
         {
-            QuestPropertieses = new List<QuestProperties>();
+            Quests = new List<Quest>();
         }
 
-        public void AddReward(int id, Reward reward, BossGeneratorProperties bossGeneratorProperties)
+        public void LoadQuests(XmlNode questGiverNode)
         {
-            QuestPropertieses.Add(new QuestProperties(reward, id, bossGeneratorProperties));
+	        foreach (var questId in QuestIds)
+	        {
+		        Quests.Add(new Quest(questId, questGiverNode));
+	        }
         }
 
         public void LoadXml()
         {
-            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
-            XmlNode questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, "QuestGivers");
+	        _xmlSearcher = new XmlSearcher(Location.QuestGiver);
+	        XmlNode questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, XmlName.QuestGiverRoot);
             SetSpecs(questGiverNode);
-            Name = questGiverNode.Attributes["name"].InnerText;
+	        Name = _xmlSearcher.GetAttributeText(questGiverNode, "name");
         }
 
         public void SetSpecs(XmlNode questGiverNode)
         {
             int[] specs = _xmlSearcher.GetSpecsInNode(questGiverNode);
-            RewardIds = new[] {1, 2, 3};
-            DropType = (DropType) specs[0];
-            Health = specs[1];
+            QuestIds = new[] {1, 2, 3};
+            Health = specs[0];
         }
+
+	    public List<Reward> GetRewards()
+	    {
+		    return Quests[CurrentQuestId].Rewards;
+	    }
     }
 }

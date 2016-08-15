@@ -11,7 +11,7 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
         public void Start()
         {
             _capsuleCollider = GetComponent<CapsuleCollider>();
-            _player = GameObject.FindWithTag(Tag.Player).transform;
+            _player = GameObject.FindWithTag(Tag.PlayerCollision).transform;
         }
 
         public void TargetPlayer()

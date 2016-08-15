@@ -12,11 +12,12 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         public event Action AbillityUpdate;
         public event Action AbillityEnd;
 
-        private float _AbillityTimer = int.MinValue;
+        private float _abilltyTimer = int.MinValue;
 
         void Start()
         {
             Active = false;
+
         }
 
         public virtual void UseAbillity()
@@ -33,12 +34,12 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
             {
                 OnAbillityUpdate();
             }
-            if (Active && _AbillityTimer > Duration)
+            if (Active && _abilltyTimer > Duration)
             {
                 OnAbillityEnd();
             }
 
-            _AbillityTimer += Time.deltaTime;
+            _abilltyTimer += Time.deltaTime;
         }
 
         private void OnAbillityStart()
@@ -47,7 +48,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
             {
                 AbillityStart();
             }
-            _AbillityTimer = 0;
+            _abilltyTimer = 0;
             Active = true;
         }
 

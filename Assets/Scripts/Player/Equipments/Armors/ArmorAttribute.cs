@@ -4,7 +4,7 @@
     {
         Broken,
         Rusty,
-        Enchant,
+        Enchanted,
         Vsteel,
         Holy
     }

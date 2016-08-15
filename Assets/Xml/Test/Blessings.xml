@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Blessings>
     <VstellSwordBlessing id="0" name="Vsteel">
         <Specs level="1">(10,50)</Specs>    <!-- [1 = procent chance of critical hit], [2 = critical hit base damage procent] -->     
@@ -6,12 +6,12 @@
     <LifeDrainSwordBlessing id="1" name="Life drain">
         <Specs level="1">(5,1)</Specs>      <!-- [1 = procent chance of gaining life on hit], [2 = life on hit] -->   
     </LifeDrainSwordBlessing> 
-    <EnchantedSwordBlessing id="2" name="Enchant">
+    <EnchantededSwordBlessing id="2" name="Enchanted">
         <Specs level="1">(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
-    </EnchantedSwordBlessing> 
-      <EnchantedArmorBlessing id="3" name="Enchant">
+    </EnchantededSwordBlessing> 
+      <EnchantededArmorBlessing id="3" name="Enchanted">
         <Specs level="1">(10,1)</Specs>     <!-- [1 = procent chance of enchanting], [2 = enchant damage] -->   
-    </EnchantedArmorBlessing> 
+    </EnchantededArmorBlessing> 
     <VSteelArmorBlessing id="4" name="Vsteel">
         <Specs level="1">(8)</Specs>     <!-- [1 = procent chance of preventing all damage] -->   
     </VSteelArmorBlessing>

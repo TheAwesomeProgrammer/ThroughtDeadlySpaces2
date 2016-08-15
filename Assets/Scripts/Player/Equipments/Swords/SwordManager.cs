@@ -99,9 +99,10 @@ namespace Assets.Scripts.Player.Swords
             SwitchSword(_components[PrimarySwordIndex], _components[SecoundarySwordIndex]);
         }
 
-        private void SwitchSword(Sword oldSword, Sword newSword)
-        {
-            SwitchOut(oldSword);
+        private void SwitchSword(Sword oldSword, Sword newSword){
+
+	        oldSword.ChangeEquipment(newSword);
+	        SwitchOut(oldSword);
             SwitchTo(newSword);            
         }
 

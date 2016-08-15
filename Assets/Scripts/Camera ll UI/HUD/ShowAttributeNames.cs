@@ -8,47 +8,6 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Camera_ll_UI.HUD
 {
-    [Serializable]
-    public class TextRow
-    {
-        private const int AttributesPerRow = 3;
-
-        private Text _rowText;
-        private int _elementsCount;
-
-        public TextRow(Text rowText)
-        {
-            _rowText = rowText;
-        }
-
-        public bool TryAddText(string text)
-        {
-            if (HasReachedLimit() == false)
-            {
-                AddText(text);
-                return true;
-            }
-            return false;
-        }
-
-        public void AddText(string text)
-        {
-            _elementsCount++;
-            _rowText.text += text + Environment.NewLine;
-        }
-
-        public void Clear()
-        {
-            _rowText.text = "";
-            _elementsCount = 0;
-        }
-
-        private bool HasReachedLimit()
-        {
-            return _elementsCount >= AttributesPerRow;
-        }
-    }
-
     public class ShowAttributeNames : MonoBehaviour
     {
         public EquipmentType EquipmentType;
@@ -57,6 +16,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
         private EquipmentAttributeManager _equipmentAttributeManager;
         private List<TextRow> _textRows;
         private int _textRowIndex;
+	    private int _attributesAdded;
         private bool _hasOverflowed;
         private List<AttributeData> _attributes;
 
@@ -72,55 +32,88 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
             }
         }
 
-        public void Update()
+	    private void UpdateAttributes()
+	    {
+		    StartCoroutine(
+			    _equipmentFinder.LoadEquipment(OnLoadedEquipment, EquipmentType));
+	    }
+
+	    private void OnLoadedEquipment(Equipment equipment)
+	    {
+		    SetAttributes(equipment);
+	    }
+
+	    private void SetAttributes(Equipment equipment)
+	    {
+		    EquipmentAttributeManager equipmentAttributeManager = equipment.GetComponent<EquipmentAttributeManager>();
+		    _attributes = equipmentAttributeManager.GetAttributesById(equipment.Id);
+		    equipment.EquipmentChanged += SetAttributes;
+	    }
+
+	    public void Update()
         {
-            UpdateAttributes();
-            _hasOverflowed = false;
-            foreach (var textRow in _textRows)
-            {
-                textRow.Clear();
-                _textRowIndex = 0;
-            }
-            foreach (var attributeData in _attributes)
-            {
-                string attributeName = GetAttributeName(attributeData);
-                if (string.IsNullOrEmpty(attributeName) == false)
-                {
-                    TextRow currentTextRow = GetCurrentTextRow();
-                    TryAddText(currentTextRow, attributeName);
-                }
-            }
+			ResetTextRows();
+	        UpdateTextRows();
         }
 
-        private void UpdateAttributes()
-        {
-            StartCoroutine(
-                _equipmentFinder.LoadEquipment(OnLoadedEquipment, EquipmentType));
-        }
+	    private void ResetTextRows()
+	    {
+		    _hasOverflowed = false;
+		    _attributesAdded = 0;
+		    foreach (var textRow in _textRows)
+		    {
+			    textRow.Clear();
+			    _textRowIndex = 0;
+		    }
+	    }
 
-        private void OnLoadedEquipment(Equipment equipment)
-        {
-            EquipmentAttributeManager equipmentAttributeManager = equipment.GetComponent<EquipmentAttributeManager>();
-            _attributes =  equipmentAttributeManager.GetAttributesById(equipment.Id);
-        }
+	    private void UpdateTextRows()
+	    {
+		    foreach (var attributeData in _attributes)
+		    {
+			    string attributeName = GetAttributeName(attributeData);
+			    if (string.IsNullOrEmpty(attributeName) == false)
+			    {
+				    TextRow currentTextRow = GetCurrentTextRow();
+				    TryAddText(currentTextRow, attributeName);
+			    }
+		    }
+	    }
 
         private void TryAddText(TextRow textRow, string text)
         {
-            if (_hasOverflowed)
+	        _attributesAdded++;
+	        if (textRow.TryAddText(text, IsNotLastRow()) == false || _hasOverflowed)
             {
-                textRow.AddText(text);
-                _textRowIndex++;
+	            NextTextRow();
+	            textRow.AddText(text, IsNotLastRow());
             }
-            else if(textRow.TryAddText(text) == false)
-            {
-                _textRowIndex++;
-            }
-            if (_textRows.Count <= _textRowIndex)
-            {
-                _textRowIndex = 0;
-                _hasOverflowed = true;
-            }
+	        ShouldOverflow();
         }
+
+	    private void NextTextRow()
+	    {
+		    _textRowIndex++;
+	    }
+
+	    private bool IsNotLastRow()
+	    {
+		    return _attributes.Count > _attributesAdded;
+	    }
+
+	    private void ShouldOverflow()
+	    {
+		    if (_textRows.Count <= _textRowIndex)
+		    {
+				Overflow();
+		    }
+	    }
+
+	    private void Overflow()
+	    {
+		    _textRowIndex = 0;
+		    _hasOverflowed = true;
+	    }
 
         private TextRow GetCurrentTextRow()
         {

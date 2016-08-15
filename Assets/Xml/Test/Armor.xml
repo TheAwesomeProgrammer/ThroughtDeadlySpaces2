@@ -1,34 +1,635 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Armors>
-    <Armor id="1" name="Standard">
+
+    <Armor id="1" name="Light Armor">
         <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
         <Specs>(1,1,1,1,1)</Specs> 
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Broken,Rusty,Enchant,Vsteel,LifeDrain,Swift,Light,Holy)</Att>
-        <AttLevel>(1, 1, 1, 1, 1, 1, 1, 1)</AttLevel>
+        <Att>(Light1)</Att>
+        <Hp>(14)</Hp>
         <!-- 
         Possible attributes :
         Curses : 
-        [Broken],[Rusty]
+        [Broken,Rusty]
         Blessings : 
-        [Enchant],[Vsteel],[LifeDrain],[Swift],[Light],[Holy]
+        [Enchant,Vsteel,LifeDrain]
+        
+         BACKGROUND:
+         
+         Standard armor from the world before the scatter. 
+
+         DESIGN NOTE:
+         
+         Common armor without any specific attributes. 
+         _______________________________________________________________________________________________________________________
         -->
     </Armor>
-    
-    <Armor id="2" name="Standard">
-        <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
-        <Specs>(2,3,4,5,6)</Specs> 
-        <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+  
+
+  <Armor id="2" name="Celestine armor">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(3,3,3,3,3)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>()</Att>
-        <AttLevel>()</AttLevel>
-        <!-- 
+    <Att>(Light1)</Att>
+    <Hp>(8)</Hp>
+    <!-- 
         Possible attributes :
         Curses : 
-        [Broken],[Rusty]
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
         Blessings : 
-        [Enchant],[Vsteel],[LifeDrain],[Swift],[Light]
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         Celestine armor was the most common used armor of the Calderian armor. 
+         
+         DESIGN NOTE:
+         
+         
+         
+         _______________________________________________________________________________________________________________________
         -->
-    </Armor>
+  </Armor>
+
+  <Armor id="3" name="Sun armor">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Heavy)</Att>
+    <Hp>(20)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         Sun armor was worn by the Selgoth army. They often fought the Kemrian army, so they were naturally forged like their swords to be burning hot.
+         
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="4" name="Assassin's cloak">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(0,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Light4)</Att>
+    <Hp>(3)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         The cloak was used by the assassins. The cloak are enchanted to make the wearer move faster and not to block damage. 
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  <Armor id="5" name="Warlock's chainmail">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(2,5,5,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Enchanteded,Enchanteded, Heavy)</Att>
+    <Hp>(16)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="6" name="Giant's Chainmail">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(4,4,4,4,4)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(16)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+        
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="7" name="Celmothian leather armor">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(7)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="8" name="Bloodstained virium cloak">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(0,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Light3,Swift2)</Att>
+    <Hp>(4)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  <Armor id="9" name="Vampiric ropes">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(LifeDrain)</Att>
+    <Hp>(6)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  <Armor id="10" name="Manticore scale armor">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(7,7,7,7,7)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Enchanteded,Enchanteded,LifeDrain)</Att>
+    <Hp>(20)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         ++
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="11" name="Anmast Shadow armor">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(3,3,3,10,3)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(4)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+      
+         DESIGN NOTE:
+         ++
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="12" name="Enchanteded celestine armor">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(3,3,3,3,3)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Enchanteded,Enchanteded,Holy)</Att>
+    <Hp>(14)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+        
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="13" name="Wind Armor">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(0,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Light5,Swift5,Holy)</Att>
+    <Hp>(3)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="14" name="Vasua's ropes">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(2,2,2,2,2)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Light3,Swift3,LifeDrain,Holy)</Att>
+    <Hp>(6)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  <Armor id="15" name="Abomination's husk">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(5,5,5,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(25)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  <Armor id="16" name="Nosgelith's Golden glory">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(25,5,5,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(25)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  <Armor id="17" name="Vokstrider's plate armor">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(20,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Holy)</Att>
+    <Hp>(60)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="18" name="Blackbone Dragon scale">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(3,3,12,3,3)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(25)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="19" name="Heart's chassis">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(3,3,3,3,15)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(10)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+        
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="20" name="Bright stone armor">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,7)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(12)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="21" name="Dragon scale armor">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,7,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(12)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+        
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="22" name="Darkwood liana armor">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,7,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(12)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="23" name="Molith's Shadow">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(15,15,15,15,15)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Holy,Light5)</Att>
+    <Hp>(35)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  <Armor id="24" name=" Frozen armor">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(6,6,6,6,6)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(20)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="25" name=" Kemrian Elite armor">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(13,13,13,13,13)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(20)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+
+  <Armor id="26" name=" Nosgelith king armor">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(30,30,30,30,30)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(15)</Hp>
+    <!-- 
+        Possible attributes :
+        Curses : 
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings : 
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
+        -->
+  </Armor>
+  
+  
+  
 </Armors>

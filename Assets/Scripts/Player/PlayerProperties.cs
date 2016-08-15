@@ -124,6 +124,7 @@ namespace Assets.Scripts.Player
             _life = GetComponentInChildren<Life>();
             _dexterityFiller = GetComponent<DexterityFiller>();
             _swordAttack = GetComponentInChildren<SwordAttack>();
+            _swordAttack = GetComponentInChildren<SwordAttack>();
             AttackSpeed = StartAttackSpeed;
             MaxHealth = StartMaxHealth;
             Health = StartHealth;

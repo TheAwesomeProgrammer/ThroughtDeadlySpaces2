@@ -15021,7 +15021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Elements:
-  - {fileID: 1000013801507732, guid: 8a9fb5375051b1540b82794435ac9b9e, type: 2}
+  - {fileID: 0}
 --- !u!114 &114000011423090836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15290,7 +15290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8a77d118f078a4181351c88f68f5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: {fileID: 1000014116390304, guid: ce926540b63ed8d4eb56ce228a0a3994, type: 2}
+  Money: {fileID: 0, guid: ce926540b63ed8d4eb56ce228a0a3994, type: 2}
 --- !u!114 &114000011569627308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16405,11 +16405,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Elements:
-  - {fileID: 1000012632972490, guid: b9bb5ee8bb954d844b4f37c1dcc2e914, type: 2}
-  - {fileID: 1000011945347002, guid: 411b9b40b65d07147b590335bec53328, type: 2}
-  - {fileID: 1000010609472012, guid: 7f0eec32ba5e46f42b6081e65a95bbae, type: 2}
-  - {fileID: 1000010053495486, guid: 2d73951dd55aca541ba8196a37dd29b6, type: 2}
-  - {fileID: 1000014039116398, guid: a9a9ac8cb895f1346b9e2af3a024d988, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114000012370936520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17751,7 +17751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlayerInRoom: 1
   RoomSpawnTransform: {fileID: 4000010809560944}
-  RewardSpawnTransform: {fileID: 4000010212188918}
+  RewardSpawnTransform: {fileID: 4000011954990790}
   SpawnOnPlayerEnter: 0
 --- !u!114 &114000013274534052
 MonoBehaviour:

@@ -1,139 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QuestGivers>
+ <!--_____________________________________________________________________________________________________________________________________________________________-->
+   <!--MERCENARY GUILT-->
+    <QuestGiver id="0" name="Mercenary Guilt">      
+        <Specs>(3)</Specs> <!-- [1 = HP] -->
+        <Quests>
+            <Quest id="1"> <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                 <Type id="1">(1,1)</Type> <!-- Potion can have two arguments. [1 = which potion type(Speed = 1, Strength = 2, Dexterity = 3, small heart = 4,
+                                                    large heart = 5)]
+                                                    [2 = how many of the potion, you want to have spawned]-->
 
-    <QuestGiver id="0" name="Standard">      
-        <Specs>(0,1)</Specs> <!-- [1 = (1 = Gear, 2 = Life, 3 = Coin and Random = 4)], [2 = HP] -->    
-        <Quests>
-            <Quest id="1">
-                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <!-- Potion can have two arguments. [1 = which potion type(Speed = 1, Strength = 2, Dexterity = 3, small heart = 4,
-                                                    large heart = 5)]
-                                                    [2 = how many of the potion, you want to have spawned]
-                    Sword can have 1 argument      [1 = the sword id]
-                    Money can have 1 argument      [1 = the amount of money to get]  -->
-                <BossSpawn>(0)</BossSpawn> <!-- Takes one argument 1 =  [How to choose boss(0 = Taking random boss), (1 = Taking specified boss, defined below in "BossId")] -->     
-                <BossId>(0)</BossId> <!-- Takes one argument [1 = boss to spawn, if specified above]  -->    
-            </Quest>
-            <Quest id="2">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <BossSpawn>(0)</BossSpawn>    
-                <BossId>(0)</BossId> 
-            </Quest>
-            <Quest id="3">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <BossSpawn>(0)</BossSpawn>     
-                <BossId>(0)</BossId> 
-            </Quest>
-        </Quests>
-    </QuestGiver>
-    
-      <QuestGiver id="1" name="Standard1">      
-        <Specs>(0,1)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
-        <Quests>
-            <Quest id="1">
-                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <!-- Potion can have two arguments. [1 = which potion type(Speed = 1, Strength = 2, Dexterity = 3, small heart = 4,
-                                                    large heart = 5)]
-                                                    [2 = how many of the potion, you want to have spawned]
-                    Sword can have 1 argument      [1 = the sword id]
-                    Money can have 1 argument      [1 = the amount of money to get]  -->
-                <BossSpawn>(0)</BossSpawn> <!--[ -->     
-                <BossId>(0)</BossId> 
-            </Quest>
-            <Quest id="2">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <BossSpawn>(0)</BossSpawn>    
-                <BossId>(0)</BossId> 
-            </Quest>
-            <Quest id="3">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <BossSpawn>(0)</BossSpawn>     
-                <BossId>(0)</BossId> 
-            </Quest>
-        </Quests>
-    </QuestGiver>
-    
-      <QuestGiver id="2" name="Standard2">      
-        <Specs>(0,1)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
-        <Quests>
-            <Quest id="1">
-                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <!-- Potion can have two arguments. [1 = which potion type(Speed = 1, Strength = 2, Dexterity = 3, small heart = 4,
-                                                    large heart = 5)]
-                                                    [2 = how many of the potion, you want to have spawned]
-                    Sword can have 1 argument      [1 = the sword id]
-                    Money can have 1 argument      [1 = the amount of money to get]  -->
-                <BossSpawn>(0)</BossSpawn> <!--[ -->     
-                <BossId>(0)</BossId> 
-            </Quest>
-            <Quest id="2">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <BossSpawn>(0)</BossSpawn>    
-                <BossId>(0)</BossId> 
-            </Quest>
-            <Quest id="3">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <BossSpawn>(0)</BossSpawn>     
-                <BossId>(0)</BossId> 
-            </Quest>
-        </Quests>
-    </QuestGiver>
-
-
-  <QuestGiver id="3" name="Standard3">      
-        <Specs>(0,1)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
-        <Quests>
-            <Quest id="1">
-                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
-                <!-- Potion can have two arguments. [1 = which potion type(Speed = 1, Strength = 2, Dexterity = 3, small heart = 4,
-                                                    large heart = 5)]
-                                                    [2 = how many of the potion, you want to have spawned]
-                    Sword can have 1 argument      [1 = the sword id]
-                    Money can have 1 argument      [1 = the amount of money to get]  -->
+                <Type id="2">(0)</Type> <!-- Sword can have 1 argument      [1 = the sword id] -->
+                <Type id="3">(20)</Type> <!-- Money can have 1 argument      [1 = the amount of money to get]  -->
+                <Type id="4">(0)</Type>  <!-- Armor can have 1 argument      [1 = the armor id] -->
+                <DropType>(4)</DropType> <!--[1 = (1 = Gear, 2 = Life and 3 = Coin)]-->
                 <BossSpawn>(0)</BossSpawn> <!-- Takes one argument 1 =  [How to choose boss(0 = Taking random boss), (1 = Taking specified boss, defined below in "BossId")] -->     
                 <BossId>(0)</BossId> <!-- Takes one argument [1 = boss to spawn, if specified above]  -->
+            
             </Quest>
+          
             <Quest id="2">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
+                <Type id="3">(20)</Type> 
+                <Type id="4">(4)</Type> 
+                <DropType>(4)</DropType> <!--[1 = (1 = Gear, 2 = Life and 3 = Coin)]-->
+                <BossSpawn>(0)</BossSpawn>
+                <BossId>(0)</BossId>
+              
+            
+          </Quest>
+            <Quest id="3">
+              
+                <Type id="1">(5,1)</Type>
+                <Type id="2">(29)</Type>
+                <Type id="3">(10)</Type>
+                <DropType>(4)</DropType><!--[1 = (1 = Gear, 2 = Life and 3 = Coin)]-->
+                <BossSpawn>(0)</BossSpawn>
+                <BossId>(0)</BossId>
+            
+            </Quest>
+        </Quests>
+    </QuestGiver>
+    <!--_____________________________________________________________________________________________________________________________________________________________-->
+  
+  <!--ABOMINATION-->
+  
+      <QuestGiver id="1" name="Abomination">      
+        <Specs>(3)</Specs> <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  --> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Quests>
+            <Quest id="1">
+                <Type id="1">(3,2)</Type>
+                <Type id="3">(10)</Type>
+                <!-- Potion can have two arguments. [1 = which potion type(Speed = 1, Strength = 2, Dexterity = 3, small heart = 4,
+                                                    large heart = 5)]
+                                                    [2 = how many of the potion, you want to have spawned]
+                    Sword can have 1 argument      [1 = the sword id]
+                    Money can have 1 argument      [1 = the amount of money to get]  -->
+                <DropType>(4)</DropType> <!--[1 = (1 = Gear, 2 = Life and 3 = Coin)]-->
                 <BossSpawn>(0)</BossSpawn>    
                 <BossId>(0)</BossId> 
             </Quest>
+          
+            <Quest id="2">
+                <Type id="1">(3,2)</Type>
+               <Type id="1">(2,1)</Type><!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                <Type id="2">(0)</Type> <!--Abomination's corruption (ID30)-->
+                <Type id="3">(20)</Type>
+                <Type id="4">(0)</Type> <!--Abomination's husk (ID15)-->
+               <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>    
+                <BossId>(0)</BossId> 
+            </Quest>
+          
             <Quest id="3">
-                <Type id="1">(2,3)</Type>
-                <Type id="2">(1)</Type>
-                <Type id="3">(150)</Type>
+                <Type id="1">(3,2)</Type>
+               <Type id="1">(2,2)</Type>
+              <Type id="1">(1,2)</Type>
+              <Type id="1">(4,1)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(0)</Type>
+                <Type id="4">(0)</Type>
+                <DropType>(4)</DropType> <!--[1 = (1 = Gear, 2 = Life and 3 = Coin)]-->
                 <BossSpawn>(0)</BossSpawn>     
                 <BossId>(0)</BossId> 
             </Quest>
         </Quests>
     </QuestGiver>
+  
+     <!--_____________________________________________________________________________________________________________________________________________________________-->
+      <QuestGiver id="2" name="Vampire">      
+        <Specs>(2)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Quests>
+            <Quest id="1">
+                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                <Type id="1">(5,1)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(8)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn> <!--[ -->     
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="2">
+                <Type id="1">(5,2)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(9)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>    
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="3">
+                <Type id="1">(5,2)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(14)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>     
+                <BossId>(0)</BossId> 
+            </Quest>
+        </Quests>
+    </QuestGiver>
+ <!--_____________________________________________________________________________________________________________________________________________________________-->
+   <QuestGiver id="3" name="Selgoth">
+        <Specs>(3)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Quests>
+            <Quest id="1">
+                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                <Type id="1">(2,1)</Type>
+                <Type id="2">(20)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn> <!--[ -->     
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="2">
+                <Type id="1">(1,1)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(60)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>    
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="3">
+                <Type id="1">(5,1)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(30)</Type>
+              <Type id="4">(10)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>     
+                <BossId>(0)</BossId> 
+            </Quest>
+        </Quests>
+    </QuestGiver>
+  
+<QuestGiver id="4" name="Vokstrider">
+        <Specs>(3)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Quests>
+            <Quest id="1">
+                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                <Type id="1">(0,0)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(30)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn> <!--[ -->     
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="2">
+                <Type id="1">(0,0)</Type>
+                <Type id="2">(11)</Type>
+                <Type id="3">(30)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>    
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="3">
+                <Type id="1">(0,0)</Type>
+                <Type id="2">(0)</Type>
+                <Type id="3">(60)</Type>
+              <Type id="4">(17)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>     
+                <BossId>(0)</BossId> 
+            </Quest>
+        </Quests>
+    </QuestGiver>
+  
+<QuestGiver id="5" name="Nosgelith">
+        <Specs>(2)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Quests>
+            <Quest id="1">
+                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                <Type id="1">(4,1)</Type>
+                <Type id="2">(22)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn> <!--[ -->     
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="2">
+                <Type id="1">(5,1)</Type>
+              <Type id="1">(3,1)</Type>
+                <Type id="2">(15)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>    
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="3">
+                <Type id="1">(5,1)</Type>
+              <Type id="1">(3,1)</Type>
+                <Type id="2">(34)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>     
+                <BossId>(0)</BossId> 
+            </Quest>
+        </Quests>
+    </QuestGiver>
+  
 
-
+<QuestGiver id="6" name="Calderia">
+        <Specs>(3)</Specs> <!-- [1 = boss drop type], [2 = HP] -->    
+        <Quests>
+            <Quest id="1">
+                <!-- ids [1 = Potion], [2 = Sword], [3 = Money]  -->
+                <Type id="1">(2,1)</Type>
+                <Type id="2">(21)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(0)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn> <!--[ -->     
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="2">
+                <Type id="1">(2,1)</Type>
+              <Type id="1">(3,1)</Type>
+                <Type id="2">(21)</Type>
+                <Type id="3">(0)</Type>
+              <Type id="4">(22)</Type>
+              <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>    
+                <BossId>(0)</BossId> 
+            </Quest>
+          
+            <Quest id="3">
+                <Type id="1">(2,2)</Type>
+                <Type id="2">(33)</Type>
+                <Type id="3">(0)</Type>
+                <Type id="4">(0)</Type>
+                <DropType>(4)</DropType>
+                <BossSpawn>(0)</BossSpawn>
+                <BossId>(0)</BossId>
+            </Quest>
+        </Quests>
+    </QuestGiver>
 
 </QuestGivers>

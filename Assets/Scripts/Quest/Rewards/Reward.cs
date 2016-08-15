@@ -37,9 +37,17 @@ namespace Assets.Scripts.Quest
             RewardTypeId = rewardTypeId;
             QuestId = questId;
             QuestsNode = questsNode;
-            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
-            LoadXml();
+	        _xmlSearcher = new XmlSearcher(Location.QuestGiver);
+	        if (IsValid())
+	        {
+		        LoadXml();
+	        }
         }
+
+	    public virtual bool IsValid()
+	    {
+		    return true;
+	    }
 
         public abstract void LoadXml();
 

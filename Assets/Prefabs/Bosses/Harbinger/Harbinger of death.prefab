@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: MultiLazor
   TriggerEndName: 
 --- !u!114 &114000010242691964
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartHealth: 10
-  ObjectToKillOnDeath: {fileID: 1000012972678588}
+  ObjectToKillOnDeath: {fileID: 0}
   DestroyOnDeath: 1
 --- !u!114 &114000010294055882
 MonoBehaviour:
@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779db37f857326f4fb6d48f81eb68747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BeamSpawnPoint: {fileID: 4000014110952326}
+  BeamSpawnPoint: {fileID: 0}
 --- !u!114 &114000010366096664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedAnimatorVariableName: Speed
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   AutoSet: 1
 --- !u!114 &114000010441977132
 MonoBehaviour:
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: Exhausted
   TriggerEndName: 
 --- !u!114 &114000010638677078
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630f365484a12e40919ac45ec527aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1000011143075784, guid: 3f265ff203db56740822e82d7d30f9bc, type: 2}
+  Projectile: {fileID: 0, guid: 3f265ff203db56740822e82d7d30f9bc, type: 2}
   BossDifficulty: 0
 --- !u!114 &114000010970918838
 MonoBehaviour:
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: Enraged
   TriggerEndName: 
 --- !u!114 &114000011129283950
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: Idle
   TriggerEndName: 
 --- !u!114 &114000011460281636
@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: Slash
   TriggerEndName: 
 --- !u!114 &114000012276647374
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: Lazor
   TriggerEndName: 
 --- !u!114 &114000012336925514
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85070d3246a7ef248babbff3c8a8e974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 95000011049453478}
+  Animator: {fileID: 0}
   TriggerName: Heavy
   TriggerEndName: 
 --- !u!114 &114000014076136316

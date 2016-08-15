@@ -41,10 +41,10 @@ namespace Assets.Scripts.Player.Equipments
                 yield return null;
             }
 
-            result.CallIfNotNull(equipment);
+	        result.CallIfNotNull(equipment);
         }
 
-        private Equipment GetEquipment<T>() where T : Equipment
+	    private Equipment GetEquipment<T>() where T : Equipment
         {
             return GameObject.FindGameObjectWithTag(Tag.Player).GetComponentInChildren<T>();
         }

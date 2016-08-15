@@ -17,6 +17,7 @@ namespace Assets.Scripts.Player.Swords
         protected EquipmentAttributeManager _equipmentAttributeManager;
         protected string _xmlRootNode = "Swords";
         protected SwordAttack _swordAttack;
+        private bool _hasLoaded;
 
         protected override void Awake()
         {
@@ -31,7 +32,8 @@ namespace Assets.Scripts.Player.Swords
             _swordXmlLoader = new SwordXmlLoader(_equipmentAttributeManager, swordId, _xmlRootNode, Id);
             _swordXmlLoader.Load();
             Specs = _swordXmlLoader.EquipmentSpecs;
-            _swordAttack.SetupDamageDatas();
+            UpdateSword();
+            _hasLoaded = true;
             if (DeactivateAfterLoad)
             {
                 enabled = false;
@@ -49,10 +51,19 @@ namespace Assets.Scripts.Player.Swords
             _equipmentAttributeManager.DisableAllWithId(Id);
         }
 
+        private void UpdateSword()
+        {
+            _swordAttack.SetSword(this);
+            _swordAttack.SetupDamageDatas();
+        }
+
         void OnEnable()
         {
             _equipmentAttributeManager.EnableAllWithId(Id);
-            _swordAttack.SetSword(this);
+            if (_hasLoaded)
+            {
+                UpdateSword();
+            }
         }
     }
 }

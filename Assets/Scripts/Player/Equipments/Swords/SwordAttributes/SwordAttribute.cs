@@ -8,7 +8,7 @@
         Worn,
         Miss,
         Vsteel,
-        Enchant,
+        Enchanted,
         Lethal,
         Fatiguing,
         MarkFire,

@@ -1,34 +1,927 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Swords>
-    <Sword id="1" name="Standard">
-        <Type>(1)</Type>
-        <Specs>(1,1,1,1,1)</Specs> 
+
+  <!-- GREAT SWORD OF HOUMONCU -->
+  
+    <Sword id="1" name="Great sword of Houmoncu">
+        <Type>(3)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+        <Specs>(20,10,10,10,10)</Specs>
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Miss,Broken,Heavy,Worn,Miss,Vsteel,LifeDrain,Enchant,Light,Swift,MarkNature,MarkLife,MarkDeath,MarkFire,Lethal,Fatiguing)</Att>
-        <AttLevel>(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)</AttLevel>
-        <!-- 
+        <Att>(Rusty, Worn, Heavy, Enchanted)</Att>
+        <Hp>(2)</Hp>
+        <!--
         Possible attributes :
-        Curses : 
-        [Rusty],[Broken],[Heavy],[Worn],[Fatiguing]
-        Blessings : 
-        [Vsteel],[LifeDrain],[Enchant],[Light],[Swift],[Lethal],[MarkNature],[MarkLife],[MarkDeath],[MarkFire]
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn][Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         In the old times before the shatter, it's said that great giants roomed the mountains. Their weapons crafted from splinters of the spine of the old father.
+         Gifts from the Shahirii so that they could fend themselves against the armies of man. In the hand of mortal men, the weapon is unstable and easily broken.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
         -->
     </Sword>
-    
-     <Sword id="2" name="Standard">
-        <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
-        <Specs>(2,3,4,5,6)</Specs> 
+
+      <!--
+
+      FROZEN SWORD OF KEMRIA -->
+
+     <Sword id="2" name="Frozen sword of Kemria">
+        <Type>(3)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+        <Specs>(10,20,5,0,0)</Specs>
         <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
         [5 = DamageType4] -->
-        <Att>(Broken,Heavy)</Att>
-        <AttLevel>(1, 1)</AttLevel>
-        <!-- 
+        <Att>(Enchanted, Heavy, Vsteel)</Att>
+        <Hp>(20)</Hp>
+        <!--
+
+
+       BACKGROUND:
+
+       The sword was wielded by the knight of dawn and managed to cut off a leg of Molith, the beast of shadows.
+       As punishment Molith turned him into a spawn of the dark who ate his brethren in arms.
+       It can always be obtained by killing the Bobo variant with burning Armor.
+
+       DESIGN NOTES:
+
+       Frozen sword of Kemria and Burning sword of Ashii is a set. You can only receive the quest from Kaldiri of Wasaris* if you have both swords.
+
+
+
+       _______________________________________________________________________________________________________
+       -->
+
+
+
+    </Sword>
+
+  <!-- BURNING SWORD OF ASHII -->
+
+  <Sword id="3" name="Burning Sword of Ashii">
+    <Type>(3)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,0,20,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Enchanted, Heavy, Vsteel)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn][Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+       BACKGROUND:
+
+       This sword was wielded by Roshaque, lord of Kemria.
+       Together with Ashii, they held back Molith for a moment while the king flet the battlefield. Roshaque was flayed alive and thrown into the shadow realm.
+       He's been spotted roaming the map as Lord of flames, hollow and consumed by the hate from the dark realm.
+
+       DESIGN NOTES:
+
+       Frozen sword of Kemria and Burning sword of Ashii is a set. You can only receive the quest from Kaldiri of Wasaris* if you have both swords.
+       Burning Sword of Ashii can be obtained by killing the lord of flames variant "eternal flame".
+
+        -->
+  </Sword>
+
+
+  <Sword id="4" name="Musa sapientum fixa">
+    <Type>(3)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(100,100,100,100,100)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Rusty, Worn, Heavy, Enchanted, Miss)</Att>
+    <Hp>(1)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         The banana sword. Pulled from the Dark world, there's nothing that can stop it's devestating blows.
+
+         DESIGN NOTE:
+
+         Easter egg sword.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="5" name="Great Sword">
+    <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(15,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(2)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         In the old times before the shatter, it's said that great giants roomed the mountains. Their weapons crafted from splinters of the spine of the old father.
+         Gifts from the Shahirii so that they could fend themselves against the armies of man. In the hand of mortal men, the weapon is unstable and easily broken.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="6" name="Flesbane">
+    <Type>(2)</Type><!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(30)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         In the old times before the shatter, it's said that great giants roomed the mountains. Their weapons crafted from splinters of the spine of the old father.
+         Gifts from the Shahirii so that they could fend themselves against the armies of man. In the hand of mortal men, the weapon is unstable and easily broken.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+  <Sword id="7" name="Common Sword">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(5,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Heavy)</Att>
+    <Hp>(30)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         In the old times before the shatter, it's said that great giants roomed the mountains. Their weapons crafted from splinters of the spine of the old father.
+         Gifts from the Shahirii so that they could fend themselves against the armies of man. In the hand of mortal men, the weapon is unstable and easily broken.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="8" name="Rusty Sword">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(5,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Rusty)</Att>
+    <Hp>(30)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Plenty of rusten swords can be found scattered around the world. Most of them origin from the great scatter.
+
+         DESIGN NOTE:
+
+         A terrible sword, though a better alternative than a completely broken sword.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="9" name="Blade of tears">
+    <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(15,2,2,2,10)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Heavy,Enchanted)</Att>
+    <Hp>(10)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Before the shatter, the giant Tondor was to marry the princess of caldera. However, dark creatures from the meteor kidnapped her and killed her.
+         It's said that the giant tondor cried tears of steel as he prepared to march to war against the cursed object and its dark spawns.
+         The tears were forged into swords by caldera's house who aided Tondor and his men in the great war.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="10" name="Blade of the undying">
+    <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(8,1,1,10,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(LifeDrain, Enchanted)</Att>
+    <Hp>(5)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Blade of the undying is mostly carried by the vampires of the shattered world.
+         It's quick and slashes deep into the target, covering the entire blade with blood, ready to be licked up by the vampire.
+
+         DESIGN NOTE:
+
+         The blade is really effective against creatures of light. It's only just a dagger, so it's not the most enduring type of blade.
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="11" name="Greater Vokstrider sword">
+    <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(20,0,0,0,20)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(LifeDrain, Vsteel)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         The Iron souls was a known band of Mercenaries known for single handedly slaying the army of the tainted giants during the rebellion of the five Dragons.
+         They were known for holding Great swords crafted from vokstrider steel. Carving through their enemies were they made of nothing but paper.
+         Stories tell how their swords cleeve their assailant's soul and how they kept some of the pieces so when they entered the shadow land, they'd be missing pieces of them selves.
+
+         DESIGN NOTE:
+
+         The blade is really effective against creatures of light. It's only just a dagger, so it's not the most enduring type of blade.
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="12" name="Shattered blade of Sha'vah">
+    <Type>(3)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(60,20,50,10,20)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Vsteel,Enchanted,Enchanted)</Att>
+    <Hp>(10)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Sha'vah was a Shadow creature born from the blood of a thousand men. His only existing purpose; to lay waste to all life.
+         He brought such a havoc and terror through the battle that it took men from all 7 factions to take him down.
+         It's said that even after Sha'vah was defeated, his blade kept going until it was shattered by Molith himself.
+         Some splinters of the sword was found and used by Talco the slayer who managed to use it to cut his way through the kingdom of the giants and slayed their king.
+         The main part of the sword was never found.
+
+         DESIGN NOTE:
+
+         The blade is really effective against creatures of light. It's only just a dagger, so it's not the most enduring type of blade.
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="13" name="Vasiria's justice">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,1,15,10,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Vsteel)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Before the time of the king, Vasiria was once attacked by the people Selgoth who claimed the land for themselves.
+         Driven out of their homes, the people of Vasiria begged the clan of the Vokstriders to equip them with powerful weapons to take back their home,
+         promising that the Vokstriders would be rewarded a part of that land. The Vokstriders agreed and mass produced Vasiria vokstrider blades that came to be known as Vasiria's justice.
+
+         However, as they were about to retake their land, Molith's raw was heard across the lands.
+
+         DESIGN NOTE:
+
+         A common blade which functions really great against fire creatures.
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="14" name="Gnaw">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,5,5,5,5)</Specs> <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(LifeDrain)</Att>
+    <Hp>(15)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Gnaw is a common vampire blade.
+
+         DESIGN NOTE:
+
+         A blade with life drain capabilities.
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="15" name="Enchanted Light bearer">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(8,3,3,3,15)</Specs> <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(Enchanted)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Enchanted Light bearers were mostly used by the people of Nosgelith. The sword was granted to the soldiers of the Nosgelithian armies who were to fight forces from the shadow realm,
+         but the sword was also granted to adventurers who had proved themselves great champions and protectors of light magic.
+
+         DESIGN NOTE:
+
+         A common sword with extra damage against darkness.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="16" name="Light bearer">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(8,3,3,3,10)</Specs> <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(10)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Light bearers are the signature weapon of Nosgelith.
+
+         DESIGN NOTE:
+
+         A common sword with extra damage against darkness.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+  <Sword id="17" name="Heartbane">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(5,5,15,5,5)</Specs> <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(50)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         The swords used by the people of Selgoth. The blades never fully cooled down from when they were forged, yet they're know to be almost indestructable.
+
+         DESIGN NOTE:
+
+         A common sword with extra damage against darkness.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="18" name="Frost blade">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,15,8,8,8)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>()</Att>
+    <Hp>(6)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         The swords of Kemria are know to cause great damage. Unfortunately the blade itself is fragile and easily broken.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="19" name="Mark of Darkness">
+    <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,1)</Specs> <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(MarkDeath)</Att>
+    <Hp>(6)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+        Other:
+        [Fatiguing],[MarkDeath],[MarkFire],[MarkNature],[MarkLight],[Light]
+
+         BACKGROUND:
+
+         The swords of Kemria are know to cause great damage. Unfortunately the blade itself is fragile and easily broken.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="20" name="Mark of Fire">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(MarkFire)</Att>
+    <Hp>(6)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+        Other:
+        [Fatiguing],[MarkDeath],[MarkFire],[MarkNature],[MarkLight],[Light]
+
+         BACKGROUND:
+
+         The swords of Kemria are know to cause great damage. Unfortunately the blade itself is fragile and easily broken.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="21" name="Mark of Nature">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(MarkNature)</Att>
+    <Hp>(6)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+        Other:
+        [Fatiguing],[MarkDeath],[MarkFire],[MarkNature],[MarkLight],[Light]
+
+         BACKGROUND:
+
+         The swords of Kemria are know to cause great damage. Unfortunately the blade itself is fragile and easily broken.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="22" name="Mark of Life">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(1,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(MarkLight)</Att>
+    <Hp>(6)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+        Other:
+        [Fatiguing],[MarkDeath],[MarkFire],[MarkNature],[MarkLight],[Light]
+
+         BACKGROUND:
+
+         The swords of Kemria are know to cause great damage. Unfortunately the blade itself is fragile and easily broken.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="23" name="Wind Wisper">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,5,5,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(Light)</Att>
+    <Hp>(2)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+        Other:
+        [Fatiguing],[MarkDeath],[MarkFire],[MarkNature],[MarkLight],[Light]
+
+         BACKGROUND:
+
+         The swords of Kemria are know to cause great damage. Unfortunately the blade itself is fragile and easily broken.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="24" name="Tombo's great sword">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(30,30,30,30,30)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(Fatiguing, Lethal, Enchanted, MarkDeath)</Att>
+    <Hp>(5)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+        Other:
+        [Fatiguing],[MarkDeath],[MarkFire],[MarkNature],[MarkLight],[Light][Lethal]
+
+         BACKGROUND:
+
+         Tombo was the king of the giants before the scatter.
+         After he was murdered by Talco his sword was shrinked so that Talco could slay the rest of Tombo's people with the king's own sword.
+         He never fully succeeded however, as Molith tore the world apart before Talco could swing the sword.
+
+         DESIGN NOTE:
+
+         A powerful common sword that'll need to be repaired often.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="25" name="Rusty Gnaw">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,5,5,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(LifeDrain,Rusty)</Att>
+    <Hp>(13)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         A rusty Gnaw.
+
+         DESIGN NOTE:
+
+         Rusty means repair.
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="26" name="Light bearer">
+    <Type>(1)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(8,3,3,3,10)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3], [5 = DamageType4] -->
+    <Att>(Rusty)</Att>
+    <Hp>(8)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Light bearers are the signature weapon of Nosgelith.
+
+         DESIGN NOTE:
+
+         A common sword with extra damage against darkness.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="27" name="Great Sword">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(15,0,0,0,0)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Rusty)</Att>
+    <Hp>(15)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         In the old times before the shatter, it's said that great giants roomed the mountains. Their weapons crafted from splinters of the spine of the old father.
+         Gifts from the Shahirii so that they could fend themselves against the armies of man. In the hand of mortal men, the weapon is unstable and easily broken.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="28" name="Assassin's shiv">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Swift, Light)</Att>
+    <Hp>(40)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         A classic weapons used by the assassins.
+
+         DESIGN NOTE:
+
+         Makes the player really quick and can quickly deal hand out a lot of blows. Works really good with life drain and/or Lethal and Vsteel.
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="29" name="Daukorv's Shiv">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(10,1,1,1,1)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Swift,light,LifeDrain,MarkFire,MarkNature,MarkLight,MarkDeath,Vsteel)</Att>
+    <Hp>(50)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Daukorv's shiv is quite legendary. Daukorv is a famous assassin who supposedly killed Lords and kings through the ages with nothing else but his Shiv.
+
+         DESIGN NOTE:
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="30" name="Ambomination's corruption">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(20,5,5,5,5)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Lethal,Fatiguing, Rusty)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         Abomination's corruption are simple swords covered in the mukus and pus from the abomination itself.
+         The corruption burns the skin on contact, making their swords extra lethal in combat.
+
+         DESIGN NOTE:
+
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+
+  <Sword id="31" name="Shadow blade">
+    <Type>(2)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(20,0,0,10,0)</Specs> <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Lethal,Swift1)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+        Shadow blades are wielded by the dark creatures from beyond the rift. They warp through the armor of their opponent, easily dealing lethal blows.
+
+
+         DESIGN NOTE:
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="32" name="Blood fed Shadow blade">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(30,20,20,20,20)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Lethal,Swift3)</Att>
+    <Hp>(20)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+         Shadow blades feed and grows stronger by obsorbing the blood from the men they have slayin.
+         Blood fed shadow blades have seen much battle and are well fed.
+
+         DESIGN NOTE:
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="33" name="The honor of celmothia">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(40,40,40,40,40)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Fatuiging,Heavy,MarkLight,MarkFire)</Att>
+    <Hp>(10)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+         Celmothia was a proud people before the scatter. Their weapons heavy´, but powerful and just.
+
+
+         DESIGN NOTE:
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="34" name="The dawn cleaver">
+    <Type>(3)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(70,70,70,70,70)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Fatuiging,Heavy,Rusty)</Att>
+    <Hp>(1)</Hp>
+    <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         The dawn cleaver was the sword that cut through the meteor, but also ended up creating the rift and was the result of Molith's arrival.
+
+         DESIGN NOTE:
+
+         _______________________________________________________________________________________________________________________
+        -->
+  </Sword>
+
+  <Sword id="35" name="celmothia great sword">
+    <Type>(2)</Type>
+    <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+    <Specs>(20,20,20,20,20)</Specs>
+    <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+    <Att>(Fatuiging,Heavy,Rusty)</Att>
+    <Hp>(8)</Hp>
+    <!-- 
         Possible attributes :
         Curses : 
-        [Rusty],[Broken],[Heavy],[Worn],[Fatiguing]
+        [Rusty],[Broken],[Heavy],[Worn],[Miss]
         Blessings : 
-        [Vsteel],[LifeDrain],[Enchant],[Light],[Swift],[Mark][Lethal]
+        [Vsteel],[LifeDrain],[Enchant]
+        
+         BACKGROUND:
+         
+         The dawn cleaver was the sword that cut through the meteor, but also ended up creating the rift and was the result of Molith's arrival.
+
+         DESIGN NOTE:
+         
+         _______________________________________________________________________________________________________________________
         -->
-    </Sword>
+  </Sword>
+  
+  
+
 </Swords>

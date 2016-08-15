@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Xml;
 using Assets.Scripts.Combat;
 using Assets.Scripts.Player.Attributes;
@@ -11,6 +12,18 @@ using Attribute = Assets.Scripts.Player.Attributes.Attribute;
 
 namespace Assets.Scripts.Player.Equipments
 {
+	public class AttributeLoaderData<T>
+	{
+		public T AttributeType;
+		public int Level;
+
+		public AttributeLoaderData(int level, T attributeType)
+		{
+			Level = level;
+			AttributeType = attributeType;
+		}
+	}
+
     public class EquipmentXmlLoader : XmlLoadable
     {
         public int XmlId;
@@ -61,14 +74,48 @@ namespace Assets.Scripts.Player.Equipments
         protected void AddAttributes<T>() where T : IConvertible
         {
             XmlNode attributeNode = _xmlSearcher.GetNodeInArrayWithId(XmlId, XmlArrayName);
+	        List<AttributeLoaderData<T>> attributeLoaderDatas = LoadAttributeDatas<T>(attributeNode);
 
-            Dictionary<int, T> attributes = _enumConverter.Convert<T>(_xmlSearcher.GetEquipmentAttributesInNode(attributeNode));
-
-            foreach (KeyValuePair<int, T> attribute in attributes)
+	        foreach (AttributeLoaderData<T> attributeLoaderData in attributeLoaderDatas)
             {
-                int attributeLevel = _xmlSearcher.GetAttributeLevelInNode(attributeNode, attribute.Key);
-                _attributeAdder.AddAttribute((Enum)(object)attribute.Value, attributeLevel);
+                _attributeAdder.AddAttribute((Enum)(object) attributeLoaderData.AttributeType, attributeLoaderData.Level);
             }
         }
+
+	    private List<AttributeLoaderData<T>> LoadAttributeDatas<T>(XmlNode attributeNode) where T : IConvertible
+	    {
+		    List<AttributeLoaderData<T>> attributeLoaderDatas = new List<AttributeLoaderData<T>>();
+
+		    foreach (var attributeText in _xmlSearcher.GetEquipmentAttributesInNode(attributeNode))
+		    {
+			    int attributeLevel = GetLevelInAttribute(attributeText);
+			    Result<T> attributeTypeResult = _enumConverter.Convert<T>(GetAttributeTextWithoutLevel(attributeText, attributeLevel));
+			    if (attributeTypeResult.Succes)
+			    {
+				    attributeLoaderDatas.Add(new AttributeLoaderData<T>(attributeLevel, attributeTypeResult.Value));
+			    }
+		    }
+
+		    return attributeLoaderDatas;
+	    }
+
+	    private int GetLevelInAttribute(string attributeText)
+	    {
+		    int level = 1;
+
+		    Match numberMatch = Regex.Match(attributeText, @"\d+");
+
+		    if (numberMatch.Success)
+		    {
+			    int.TryParse(numberMatch.Value, out level);
+		    }
+
+		    return level;
+	    }
+
+	    private string GetAttributeTextWithoutLevel(string attributeText, int level)
+	    {
+		    return attributeText.Replace(level.ToString(), "");
+	    }
     }
 }

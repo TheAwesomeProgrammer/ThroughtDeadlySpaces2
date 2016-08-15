@@ -8,8 +8,6 @@ using UnityEngine.Assertions;
 
 namespace Assets.Scripts.Xml
 {
-    
-
     public class XmlSearcher
     {
         private const string SpecNodeName = "Specs";
@@ -103,7 +101,14 @@ namespace Assets.Scripts.Xml
             return "";
         }
 
-        public List<XmlNode> GetNodesInArrayWithId(int id, XmlNode arrayNode)
+	    public int GetAttributeNumber(XmlNode node, string attributeName)
+	    {
+		    int attributeNumber = 0;
+		    int.TryParse(GetAttributeText(node, attributeName), out attributeNumber);
+		    return attributeNumber;
+	    }
+
+	    public List<XmlNode> GetNodesInArrayWithId(int id, XmlNode arrayNode)
         {
             List<XmlNode> nodesWithId = new List<XmlNode>();
 

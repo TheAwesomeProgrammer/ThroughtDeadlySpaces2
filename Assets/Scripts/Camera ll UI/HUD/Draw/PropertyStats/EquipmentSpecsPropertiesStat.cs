@@ -14,6 +14,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
         public EquipmentType EquipmentType;
 
         private EquipmentFinder _equipmentFinder;
+	    private Equipment _currentEquipment;
 
         public override void Start()
         {
@@ -33,7 +34,13 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
 
         private void LoadEquipment(Equipment equipment)
         {
-            _propertyObject = equipment.Specs;
+	        SetPropertyObject(equipment);
         }
+
+	    private void SetPropertyObject(Equipment equipment)
+	    {
+			_propertyObject = equipment.Specs;
+		    equipment.EquipmentChanged += SetPropertyObject;
+	    }
     }
 }

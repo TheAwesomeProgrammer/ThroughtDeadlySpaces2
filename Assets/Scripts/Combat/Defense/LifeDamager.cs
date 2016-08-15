@@ -24,7 +24,7 @@ namespace Assets.Scripts.Combat.Defense
 
         protected virtual void Damage(CombatData damageData)
         {
-            Null.OnNot(_life, () => _life.Health -= damageData.CombatValue);
+            _life.Health -= damageData.CombatValue;
         }
     }
 }

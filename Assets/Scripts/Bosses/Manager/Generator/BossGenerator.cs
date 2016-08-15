@@ -8,7 +8,7 @@ namespace Assets.Scripts.Bosses.Manager
     {
         private BossObjectFactory _bossObjectFactory;
 
-        void Start()
+        void Awake()
         {
             _bossObjectFactory = GetComponent<BossObjectFactory>();
         }
