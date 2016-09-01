@@ -3,7 +3,7 @@ using Assets.Scripts.Managers;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Shop.BlackSmith.MoneyLoaders;
 using Assets.Scripts.Shop.Merchant;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using Object = UnityEngine.Object;
 
 namespace Assets.Scripts.Shop.BlackSmith

@@ -18,5 +18,7 @@
     <FatiguingCurse id="5" name="Fatiguing">
         <Specs level="1">(5, 1)</Specs><!-- [ [1 = amount to slow], [1 = dexterity to remove]  -->
     </FatiguingCurse>
-    <WornSwordCurse id="6" name="Worn"></WornSwordCurse>
+    <WornSwordCurse id="6" name="Worn">
+        <Specs level="1">(5, 1)</Specs> <!-- [ [1 = amount to slow], [1 = dexterity to remove]  -->
+    </WornSwordCurse>
 </Curses>

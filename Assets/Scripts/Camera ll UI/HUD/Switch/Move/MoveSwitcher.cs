@@ -5,11 +5,11 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
 {
     public abstract class MoveSwitcher : MonoBehaviour, Switchable
     {
-        protected bool _moved;
+        public bool Moved;
 
         public void Switch(Action<int> callback)
         {
-            if (_moved)
+            if (Moved)
             {
                 MoveBack(callback);
             }

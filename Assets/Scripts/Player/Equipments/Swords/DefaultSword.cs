@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Xml;
+﻿using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords

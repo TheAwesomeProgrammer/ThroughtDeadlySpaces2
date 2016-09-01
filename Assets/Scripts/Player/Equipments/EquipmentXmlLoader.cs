@@ -6,7 +6,7 @@ using Assets.Scripts.Combat;
 using Assets.Scripts.Player.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 using Attribute = Assets.Scripts.Player.Attributes.Attribute;
 
@@ -27,9 +27,8 @@ namespace Assets.Scripts.Player.Equipments
     public class EquipmentXmlLoader : XmlLoadable
     {
         public int XmlId;
-        public string XmlArrayName;
         public string XmlRaritySpecNodeName = "Type";
-        public Location XmlLocation;
+        public XmlLocation XmlLocation;
 
         public EquipmentSpecs EquipmentSpecs
         {
@@ -40,7 +39,8 @@ namespace Assets.Scripts.Player.Equipments
         }
 
         protected EnumConverter _enumConverter;
-        protected XmlSearcher _xmlSearcher;
+        protected XmlPath _equipmentXmlPath;
+        protected XmlPath _rarityPath;
         protected AttributeAdder _attributeAdder;
         protected EquipmentSpecs _equipmentSpecs;
         protected EquipmentAttributeManager _equipmentAttributeManager;
@@ -48,13 +48,13 @@ namespace Assets.Scripts.Player.Equipments
         private int[] _specs;
         private int _rarity;
 
-        public EquipmentXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId, string xmlArrayName,
+        public EquipmentXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId,
             int equipmentId)
         {
             XmlId = xmlId;
-            XmlArrayName = xmlArrayName;
             _equipmentAttributeManager = equipmentAttributeManager;
             _enumConverter = new EnumConverter();
+            
         }
 
         public virtual void Load()
@@ -65,16 +65,17 @@ namespace Assets.Scripts.Player.Equipments
 
         public void LoadXml()
         {
-            _xmlSearcher = new XmlSearcher(XmlLocation);
-            _specs = _xmlSearcher.GetSpecsInChildrenWithId(XmlId, XmlArrayName);
-            _rarity = _xmlSearcher.GetSpecsInChildrenWithId(XmlId, XmlArrayName, XmlRaritySpecNodeName)[0];
+             _equipmentXmlPath = new DefaultXmlPath(XmlLocation, new XmlPathData(XmlId));
+            XmlPath equipmentSpecsXmlPath = new SpecXmlPath(_equipmentXmlPath);
+            _specs = equipmentSpecsXmlPath.GetSpecs();
+            XmlPath equipmentRarityPath = new DefaultXmlPath(_equipmentXmlPath, new XmlPathData(XmlRaritySpecNodeName));
+            _rarity = equipmentRarityPath.GetSpecs()[0];
             _equipmentSpecs = new EquipmentSpecs(_specs[0], _specs[1], _specs[2], _specs[3], _specs[4], (EquipmentRarity) _rarity);
         }
 
         protected void AddAttributes<T>() where T : IConvertible
         {
-            XmlNode attributeNode = _xmlSearcher.GetNodeInArrayWithId(XmlId, XmlArrayName);
-	        List<AttributeLoaderData<T>> attributeLoaderDatas = LoadAttributeDatas<T>(attributeNode);
+            List<AttributeLoaderData<T>> attributeLoaderDatas = LoadAttributeDatas<T>();
 
 	        foreach (AttributeLoaderData<T> attributeLoaderData in attributeLoaderDatas)
             {
@@ -82,11 +83,13 @@ namespace Assets.Scripts.Player.Equipments
             }
         }
 
-	    private List<AttributeLoaderData<T>> LoadAttributeDatas<T>(XmlNode attributeNode) where T : IConvertible
+	    private List<AttributeLoaderData<T>> LoadAttributeDatas<T>() where T : IConvertible
 	    {
 		    List<AttributeLoaderData<T>> attributeLoaderDatas = new List<AttributeLoaderData<T>>();
 
-		    foreach (var attributeText in _xmlSearcher.GetEquipmentAttributesInNode(attributeNode))
+            XmlPath equipmentAttributePath = new DefaultXmlPath(_equipmentXmlPath, new XmlPathData(XmlName.AttributeNodeName));
+
+		    foreach (var attributeText in equipmentAttributePath.GetEquipmentAttributesInNode())
 		    {
 			    int attributeLevel = GetLevelInAttribute(attributeText);
 			    Result<T> attributeTypeResult = _enumConverter.Convert<T>(GetAttributeTextWithoutLevel(attributeText, attributeLevel));

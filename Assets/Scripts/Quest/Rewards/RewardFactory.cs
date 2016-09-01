@@ -5,20 +5,20 @@ namespace Assets.Scripts.Quest
 {
     public class RewardFactory
     {
-        public Reward GetReward(RewardType rewardType, int rewardId, XmlNode questsNode)
+        public Reward GetReward(RewardType rewardType, int rewardId, int questGiverId)
         {
             int rewardTypeId = (int) rewardType;
 
             switch (rewardType)
             {
                 case RewardType.Potion:
-                    return new RewardPotion(rewardTypeId, rewardId, questsNode);
+                    return new RewardPotion(rewardTypeId, rewardId, questGiverId);
                 case RewardType.Money:
-                    return new RewardMoney(rewardTypeId, rewardId, questsNode);
+                    return new RewardMoney(rewardTypeId, rewardId, questGiverId);
                 case RewardType.Sword:
-                    return new RewardSword(rewardTypeId, rewardId, questsNode);
+                    return new RewardSword(rewardTypeId, rewardId, questGiverId);
                 default:
-                    return new EmptyReward(rewardTypeId, rewardId, questsNode);
+                    return new EmptyReward(rewardTypeId, rewardId, questGiverId);
             }
         }
     }

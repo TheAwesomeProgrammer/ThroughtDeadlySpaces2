@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Player.Equipments;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Shop.BlackSmith.MoneyLoaders
 {
@@ -7,19 +7,19 @@ namespace Assets.Scripts.Shop.BlackSmith.MoneyLoaders
     {
         public int SpecStartId = 0;
 
-        private XmlSearcher _xmlSearcher;
+        private XmlPath _blackSmithPath;
 
         protected int[] _specs;
 
         protected RarityMoneyLoader()
         {
-            _xmlSearcher = new XmlSearcher(Location.Shop);
+            _blackSmithPath = new DefaultXmlPath(XmlLocation.Shop, new XmlPathData("BlackSmith"));
             LoadXml();
         }
 
         public void LoadXml()
         {
-            _specs = _xmlSearcher.GetSpecsInChildren("Shop", "BlackSmith");
+            _specs = _blackSmithPath.GetSpecs();
         }
 
         public int GetMoney(EquipmentRarity equipmentRarity)

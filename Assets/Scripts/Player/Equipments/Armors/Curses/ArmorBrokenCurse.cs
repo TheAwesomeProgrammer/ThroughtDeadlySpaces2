@@ -4,7 +4,6 @@ using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
 
 namespace Assets.Scripts.Player.Armors.Curses
 {

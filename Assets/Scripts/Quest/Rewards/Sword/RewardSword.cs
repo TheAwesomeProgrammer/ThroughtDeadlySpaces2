@@ -2,7 +2,7 @@
 using System.Xml;
 using Assets.Scripts.Enviroment.Map.Pickups;
 using Assets.Scripts.Quest.Rewards.Spawner;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Quest
@@ -13,7 +13,9 @@ namespace Assets.Scripts.Quest
         public string SwordName;
         public int[] SwordDamageSpecs;
 
-        public RewardSword(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
+        private XmlPath _swordPath;
+
+        public RewardSword(int rewardTypeId, int questId, int questGiverId) : base(rewardTypeId, questId, questGiverId)
         {
         }
 
@@ -31,11 +33,9 @@ namespace Assets.Scripts.Quest
 
         private void LoadSwordSpecs()
         {
-			_xmlSearcher = new XmlSearcher(Location.Sword);
-	        XmlNode swordNode = _xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords");
-	        UnityEngine.Debug.Log("Sword id"+SwordId);
-			LoadSwordName(swordNode);
-			LoadSwordDamageSpecs(swordNode);
+            _swordPath = new DefaultXmlPath(XmlLocation.Sword, new XmlPathData(SwordId));
+            LoadSwordName();
+			LoadSwordDamageSpecs(SwordId);
         }
 
 	    public override bool IsValid()
@@ -44,18 +44,15 @@ namespace Assets.Scripts.Quest
 		    return SwordId > 0;
 	    }
 
-	    private void LoadSwordName(XmlNode swordNode)
-        {
-            if (swordNode.Attributes != null)
-            {
-                SwordName = swordNode.Attributes["name"].InnerText;
-            }
-        }
+	    private void LoadSwordName()
+	    {
+	        SwordName = _swordPath.GetAttributeText("name");
+	    }
 
-        private void LoadSwordDamageSpecs(XmlNode swordNode)
+        private void LoadSwordDamageSpecs(int swordId)
         {
-            swordNode = _xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords");
-            SwordDamageSpecs = _xmlSearcher.GetSpecsInNode(swordNode);
+            XmlPath swordSpecsPath = new DefaultXmlPath(_swordPath, new XmlPathData(XmlName.SpecNodeName));
+            SwordDamageSpecs = _swordPath.GetSpecs();
         }
 
         public override void SpawnReward(RewardSpawner rewardSpawner)

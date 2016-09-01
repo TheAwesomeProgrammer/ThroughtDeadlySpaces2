@@ -4,7 +4,6 @@ using Assets.Scripts.Combat;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords.Abstract;
-using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
@@ -15,7 +14,6 @@ namespace Assets.Scripts.Player.Swords
 
         protected SwordXmlLoader _swordXmlLoader;
         protected EquipmentAttributeManager _equipmentAttributeManager;
-        protected string _xmlRootNode = "Swords";
         protected SwordAttack _swordAttack;
         private bool _hasLoaded;
 
@@ -29,7 +27,7 @@ namespace Assets.Scripts.Player.Swords
 
         public void Load(int swordId)
         {
-            _swordXmlLoader = new SwordXmlLoader(_equipmentAttributeManager, swordId, _xmlRootNode, Id);
+            _swordXmlLoader = new SwordXmlLoader(_equipmentAttributeManager, swordId, Id);
             _swordXmlLoader.Load();
             Specs = _swordXmlLoader.EquipmentSpecs;
             UpdateSword();

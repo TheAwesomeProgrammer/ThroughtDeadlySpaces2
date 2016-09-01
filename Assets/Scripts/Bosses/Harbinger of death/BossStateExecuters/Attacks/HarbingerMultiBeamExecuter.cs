@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using Assets.Scripts.Player.Swords.Abstract.Bosses.Attack;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters

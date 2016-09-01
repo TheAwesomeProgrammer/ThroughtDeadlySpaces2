@@ -4,7 +4,6 @@ using Assets.Scripts.Bosses.Abstract;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract.Bosses.Attack;
-using Assets.Scripts.Xml;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

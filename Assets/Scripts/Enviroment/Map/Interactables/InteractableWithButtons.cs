@@ -55,14 +55,14 @@ namespace Assets.Scripts.Enviroment.Map.InputInteractables
         public override void OnEnterWithTag()
         {
             base.OnEnterWithTag();
-            _uiESwitching.Switch();
             _player = _triggerCollider.gameObject;
+	        _uiESwitching.Switch(true);
         }
 
-        public override void OnExitWithTag()
+	    public override void OnExitWithTag()
         {
             base.OnExitWithTag();
-            _uiESwitching.Switch();
+			_uiESwitching.Switch(true);
             _player = null;
         }
     }

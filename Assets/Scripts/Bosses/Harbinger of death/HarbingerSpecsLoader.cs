@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Bosses.Abstract;
+using XmlLibrary;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death
 {
@@ -13,7 +14,8 @@ namespace Assets.Scripts.Bosses.Harbinger_of_death
         public override void LoadXml()
         {
             base.LoadXml();
-            BossSpecs.SpecialSpecs = _xmlSearcher.GetSpecsInChildrenWithIdFloat(BossId, _xmlArrayNodeName, "Beam");
+            XmlPath beamPath = new DefaultXmlPath(_bossPath, new XmlPathData("Beam"));
+            BossSpecs.SpecialSpecs = beamPath.GetSpecsFloat();
         }
     }
 }

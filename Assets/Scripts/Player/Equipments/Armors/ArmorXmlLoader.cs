@@ -3,16 +3,16 @@ using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Player.Armors
 {
     public class ArmorXmlLoader : EquipmentXmlLoader
     {
-        public ArmorXmlLoader(EquipmentAttributeManager equipmentAttributeManager,int xmlId, string xmlArrayName,
-            int equipmentId) : base(equipmentAttributeManager, xmlId, xmlArrayName, equipmentId)
+        public ArmorXmlLoader(EquipmentAttributeManager equipmentAttributeManager,int xmlId,
+            int equipmentId) : base(equipmentAttributeManager, xmlId, equipmentId)
         {
-            XmlLocation = Location.Armor;
+            XmlLocation = XmlLocation.Armor;
             _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, EquipmentType.Armor, equipmentId);
         }
 

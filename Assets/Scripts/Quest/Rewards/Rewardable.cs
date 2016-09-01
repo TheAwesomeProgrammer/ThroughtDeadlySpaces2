@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Quest.Rewards.Spawner;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Quest
 {

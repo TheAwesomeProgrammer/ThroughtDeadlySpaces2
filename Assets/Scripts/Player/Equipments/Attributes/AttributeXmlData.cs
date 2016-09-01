@@ -1,16 +1,16 @@
-﻿namespace Assets.Scripts.Player.Equipments.Attributes
+﻿using XmlLibrary;
+
+namespace Assets.Scripts.Player.Equipments.Attributes
 {
     public class AttributeXmlData
     {
-        public string LocationToXmlDocument;
+        public XmlLocation XmlLocation;
         public int XmlId;
-        public string XmlRootName;
 
-        public AttributeXmlData(string locationToXmlDocument, int xmlId, string xmlRootName)
+        public AttributeXmlData(XmlLocation xmlLocation, int xmlId)
         {
-            LocationToXmlDocument = locationToXmlDocument;
+            XmlLocation = xmlLocation;
             XmlId = xmlId;
-            XmlRootName = xmlRootName;
         }
     }
 }

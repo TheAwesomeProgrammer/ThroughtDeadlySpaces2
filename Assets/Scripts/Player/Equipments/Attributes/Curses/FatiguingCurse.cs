@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Player.Curses
 {
@@ -18,8 +18,7 @@ namespace Assets.Scripts.Player.Curses
             get
             {
                 return _attributeXmlData = _attributeXmlData ??
-                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Curse), _attributeId,
-                                                XmlName.Curses);
+                                            new AttributeXmlData(XmlLocation.Curse, _attributeId);
             }
         }
 

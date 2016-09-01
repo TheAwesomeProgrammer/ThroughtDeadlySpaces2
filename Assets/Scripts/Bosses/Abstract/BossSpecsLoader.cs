@@ -1,5 +1,6 @@
-﻿using Assets.Scripts.Xml;
+﻿using XmlLibrary;
 using UnityEngine;
+using XmlLibrary;
 
 namespace Assets.Scripts.Bosses.Abstract
 {
@@ -8,20 +9,25 @@ namespace Assets.Scripts.Bosses.Abstract
         public BossSpecs BossSpecs;
         public int BossId;
 
-        protected string _xmlArrayNodeName = "Bosses";
-        protected XmlSearcher _xmlSearcher;
+        protected XmlPath _bossPath;
+        protected XmlPath _movementPath;
+        protected XmlPath _damagePath;
+        protected XmlPath _pauseTimePath;
 
         protected virtual void Awake()
         {
-            _xmlSearcher = new XmlSearcher(Location.Boss);
+            _bossPath = new DefaultXmlPath(XmlLocation.Boss, new XmlPathData(BossId));
+            _movementPath = new DefaultXmlPath(_bossPath);
+            _movementPath.AddPathData(new XmlPathData("Movement"));
+            _damagePath = new DefaultXmlPath(_bossPath);
+            _damagePath.AddPathData(new XmlPathData("Damage"));
+            _pauseTimePath = new DefaultXmlPath(_bossPath);
+            _pauseTimePath.AddPathData(new XmlPathData("PauseTime"));
         }
 
         public virtual void LoadXml()
         {
-            float[] movementSpecs = _xmlSearcher.GetSpecsInChildrenWithIdFloat(BossId, _xmlArrayNodeName, "Movement");
-            int[] damageSpecs = _xmlSearcher.GetSpecsInChildrenWithId(BossId, _xmlArrayNodeName, "Damage");
-            float[] pauseTimeSpecs = _xmlSearcher.GetSpecsInChildrenWithIdFloat(BossId, _xmlArrayNodeName, "PauseTime");
-            BossSpecs = new BossSpecs(movementSpecs, damageSpecs, pauseTimeSpecs);
+            BossSpecs = new BossSpecs(_movementPath.GetSpecsFloat(), _movementPath.GetSpecs(), _damagePath.GetSpecsFloat());
         }
     }
 }

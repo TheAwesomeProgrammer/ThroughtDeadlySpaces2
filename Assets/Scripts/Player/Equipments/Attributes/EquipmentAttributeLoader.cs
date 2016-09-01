@@ -1,5 +1,6 @@
-﻿using System.Xml;
-using Assets.Scripts.Xml;
+﻿using System;
+using System.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Player.Swords
 {
@@ -7,32 +8,38 @@ namespace Assets.Scripts.Player.Swords
     {
         private const string AttributeName = "name";
 
-        private XmlSearcher _xmlSearcher;
+        private XmlLocation _xmlLocation;
 
-        public EquipmentAttributeLoader(string xmlDocumentLocation)
+        public EquipmentAttributeLoader(XmlLocation xmlLocation)
         {
-            _xmlSearcher = new XmlSearcher(xmlDocumentLocation);
+            _xmlLocation = xmlLocation;
         }
 
-        public string GetName(int xmlId,string rootXmlNodeName, string attributeName = AttributeName)
+        public string GetName(int xmlId, string attributeName = AttributeName)
         {
-           return _xmlSearcher.GetAttributeText(_xmlSearcher.GetNodeInArrayWithId(xmlId, rootXmlNodeName), attributeName);
+            XmlPath xmlPath = new DefaultXmlPath(_xmlLocation, new XmlPathData(xmlId));
+            return xmlPath.GetAttributeText(attributeName);
         }
 
-        public int[] LoadSpecs(int xmlId, int level, string xmlArrayName)
+        public int[] LoadSpecs(int xmlId, int level)
         {
-            return _xmlSearcher.GetSpecs(GetSpecsNode(xmlId, level, xmlArrayName));
+            return Array.ConvertAll(LoadSpecsFloat(xmlId, level), item => (int) item);
         }
 
-        private XmlNode GetSpecsNode(int xmlId, int level, string xmlArrayName)
+        private XmlNode GetSpecsNode(int xmlId, int level)
         {
-            var attributeWithIdNode = _xmlSearcher.GetNodeInArrayWithId(xmlId, xmlArrayName);
-            return _xmlSearcher.GetLevelNodeInChildren(attributeWithIdNode, level);
+            XmlPath xmlPath = new DefaultXmlPath(_xmlLocation, new XmlPathData(xmlId),
+                new XmlPathData(level, XmlName.AttributeLevelName));
+            XmlPathData xmlPathData = xmlPath.GetDefaultPathData();
+            return xmlPathData.GetDefaultPathNode();
         }
 
-        public float[] LoadSpecsFloat(int xmlId, int level, string xmlArrayName)
+        public float[] LoadSpecsFloat(int xmlId, int level)
         {
-            return _xmlSearcher.GetSpecsFloat(GetSpecsNode(xmlId, level, xmlArrayName));
+            XmlPath specsPath = new DefaultXmlPath(_xmlLocation, new XmlPathData(xmlId),
+                new XmlPathData(XmlName.SpecNodeName),
+                new XmlPathData(level, XmlName.AttributeLevelName));
+            return specsPath.GetSpecsFloat();
         }
     }
 }

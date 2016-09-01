@@ -3,7 +3,7 @@ using System.Xml;
 using Assets.Scripts.Bosses.Manager;
 using Assets.Scripts.Extensions.Enums;
 using Assets.Scripts.Player.Swords.Abstract;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Quest
@@ -15,17 +15,15 @@ namespace Assets.Scripts.Quest
 	    public DropType DropType;
         public BossGeneratorProperties BossGeneratorProperties;
 
-	    private XmlSearcher _xmlSearcher;
-	    private XmlNode _questGiverNode;
 	    private RewardFactory _rewardFactory;
 	    private BossGenerator _bossGenerator;
+        private int _questGiverId;
 
-        public Quest(int id, XmlNode questGiverNode)
+        public Quest(int id, int questGiverId)
         {
             Id = id;
-	        _rewardFactory = new RewardFactory();
-	        _questGiverNode = questGiverNode;
-	        _xmlSearcher = new XmlSearcher(Location.QuestGiver);
+            _questGiverId = questGiverId;
+            _rewardFactory = new RewardFactory();
 	        _bossGenerator = GameObject.FindWithTag(Tag.Scripts).GetComponent<BossGenerator>();
 	        Rewards = new List<Reward>();
 	        LoadQuestData(id);
@@ -33,21 +31,27 @@ namespace Assets.Scripts.Quest
 
 	    private void LoadQuestData(int questId)
 	    {
-		    XmlNode questsNode = _xmlSearcher.SelectChildNode(_questGiverNode, XmlName.QuestRoot);
-		    XmlNode questNode = _xmlSearcher.GetNodeInArrayWithId(questId, questsNode);
-		    LoadBossGeneratorProperties(questNode);
-		    LoadDropType(questNode);
-		    LoadRewards(questId, questNode, questsNode);
+            XmlPath questsPath = new DefaultXmlPath(XmlLocation.QuestGiver,
+                new XmlPathData(_questGiverId),
+                new XmlPathData(Id),
+                new XmlPathData(XmlName.QuestRoot));
+            XmlPath questPath = new DefaultXmlPath(questsPath, new XmlPathData(questId));
+
+            LoadBossGeneratorProperties(questPath);
+		    LoadDropType(questPath);
+		    LoadRewards(questId, questPath, questsPath);
 	    }
 
-	    private void LoadBossGeneratorProperties(XmlNode questNode)
+	    private void LoadBossGeneratorProperties(XmlPath questPath)
 	    {
-		    BossGeneratorProperties = GetBossGeneratorProperties(questNode);
+		    BossGeneratorProperties = GetBossGeneratorProperties(questPath);
 	    }
 
-	    private void LoadDropType(XmlNode questNode)
+	    private void LoadDropType(XmlPath questPath)
 	    {
-		    int dropTypeNumber = _xmlSearcher.GetSpecsInNode(questNode, XmlName.BossDropType)[0];
+            XmlPath dropTypePath = new DefaultXmlPath(questPath, new XmlPathData(XmlName.BossDropType));
+
+            int dropTypeNumber = dropTypePath.GetSpecs()[0];
 		    DropType = (DropType) dropTypeNumber;
 		    if (DropType == DropType.Random)
 		    {
@@ -60,31 +64,33 @@ namespace Assets.Scripts.Quest
 		    DropType = (DropType) Random.Range(0, dropTypeLength - 1);
 	    }
 
-	    private void LoadRewards(int questId, XmlNode questNode, XmlNode questsNode)
+	    private void LoadRewards(int questId, XmlPath questPath, XmlPath questsPath)
 	    {
-		    if (questNode != null)
+		    if (questPath != null)
 		    {
-			    foreach (XmlNode rewardTypeNode in _xmlSearcher.GetChildrensWithName(questNode, "Type"))
-			    {
-				    LoadReward(questId, rewardTypeNode, questsNode);
-			    }
+                XmlPath typePath = new DefaultXmlPath(questPath, new XmlPathData("Type"));
+		        for (int i = 0; i < typePath.PathLength; i++)
+		        {
+                    LoadReward(questId, new DefaultXmlPath(questPath, new XmlPathData("Type", i)));
+                }
 		    }
 	    }
 
-	    private void LoadReward(int rewardId, XmlNode rewardTypeNode, XmlNode questsNode)
+	    private void LoadReward(int questId, XmlPath typePath)
 	    {
-		    int rewardTypeId = _xmlSearcher.GetAttributeNumber(rewardTypeNode, "id");
-		    Reward reward = _rewardFactory.GetReward((RewardType) rewardTypeId, rewardId, questsNode);
+		    int rewardTypeId = typePath.GetAttributeNumber("id");
+		    Reward reward = _rewardFactory.GetReward((RewardType) rewardTypeId, questId, _questGiverId);
 		    if (reward.IsValid())
 		    {
 			    Rewards.Add(reward);
 		    }
 	    }
 
-	    private BossGeneratorProperties GetBossGeneratorProperties(XmlNode questNode)
+	    private BossGeneratorProperties GetBossGeneratorProperties(XmlPath questPath)
 	    {
-		    BossSpawnType bossSpawnType =
-			    (BossSpawnType) _xmlSearcher.GetSpecsInNode(questNode, "BossSpawn")[0];
+            XmlPath bossSpawnPath = new DefaultXmlPath(questPath, new XmlPathData("BossSpawn"));
+            BossSpawnType bossSpawnType =
+			    (BossSpawnType)bossSpawnPath.GetSpecs()[0];
 		    BossGeneratorProperties bossGeneratorProperties = _bossGenerator.GetBoss(bossSpawnType);
 		    return bossGeneratorProperties;
 	    }

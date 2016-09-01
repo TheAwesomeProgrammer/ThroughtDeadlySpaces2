@@ -19,7 +19,7 @@ namespace Assets.Scripts.Player.Equipments
         {
             get
             {
-                return _equipmentAttributeLoader = _equipmentAttributeLoader ?? new EquipmentAttributeLoader(AttributeXmlData.LocationToXmlDocument);
+                return _equipmentAttributeLoader = _equipmentAttributeLoader ?? new EquipmentAttributeLoader(AttributeXmlData.XmlLocation);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Assets.Scripts.Player.Equipments
         {
             if (AttributeXmlData != null)
             {
-                Name = EquipmentAttributeLoader.GetName(AttributeXmlData.XmlId, AttributeXmlData.XmlRootName);
+                Name = EquipmentAttributeLoader.GetName(AttributeXmlData.XmlId);
             }
         }
 
@@ -50,12 +50,12 @@ namespace Assets.Scripts.Player.Equipments
 
         protected int[] LoadSpecs(int level)
         {
-            return EquipmentAttributeLoader.LoadSpecs(AttributeXmlData.XmlId, level, AttributeXmlData.XmlRootName);
+            return EquipmentAttributeLoader.LoadSpecs(AttributeXmlData.XmlId, level);
         }
 
         protected float[] LoadSpecsFloat(int level)
         {
-            return EquipmentAttributeLoader.LoadSpecsFloat(AttributeXmlData.XmlId, level, AttributeXmlData.XmlRootName);
+            return EquipmentAttributeLoader.LoadSpecsFloat(AttributeXmlData.XmlId, level);
         }
 
         private void OnDisable()

@@ -606,7 +606,7 @@
         -->
   </Armor>
 
-  <Armor id="26" name=" Nosgelith king armor">
+  <Armor id="26" name="Nosgelith king armor">
     <Type>(3)</Type>
     <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
     <Specs>(30,30,30,30,30)</Specs>

@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Curses;
 using Assets.Scripts.Tests.Helper;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Tests.Xml
@@ -14,6 +14,7 @@ namespace Assets.Scripts.Tests.Xml
         private const int LifeDrainSwordId = 1;
 
         private XmlSearcher _xmlSearcher;
+        private XmlPath _swordPath;
 
         void Start()
         {
@@ -31,7 +32,8 @@ namespace Assets.Scripts.Tests.Xml
 
         void Reset()
         {
-            _xmlSearcher = new XmlSearcher(Location.Sword);
+            _xmlSearcher = new XmlSearcher(XmlLocation.Sword);
+            _swordPath = new DefaultXmlPath(XmlLocation.Sword, new XmlPathData(SwordId));
         }
 
         void TestIfCanFindSwordBySwordId()
@@ -42,7 +44,7 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanFindSwordSpecs()
         {
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(SwordId, "Swords");
+            int[] specs = _swordPath.GetSpecs();
             Assert.IsEquals(specs[0], 1, "Test sword base damage");
             Assert.IsEquals(specs[1], 2, "Test sword combat type1 damage");
             Assert.IsEquals(specs[2], 3, "Test sword combat type2 damage");
@@ -52,8 +54,8 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanFindRustyCurseSpecs()
         {
-            _xmlSearcher = new XmlSearcher(Location.Curse);
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(RustySwordCurseId, "Curses");
+            XmlPath rustyPath = new DefaultXmlPath(XmlLocation.Curse, new XmlPathData(RustySwordCurseId));
+            int[] specs = rustyPath.GetSpecs();
 
             RustySwordCurse rustySwordCurse = gameObject.AddComponent<RustySwordCurse>();
             rustySwordCurse.MinusProcentDamage = 0;
@@ -67,8 +69,8 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanFindVStellSwordBlessingSpecs()
         {
-            _xmlSearcher = new XmlSearcher(Location.Blessing);
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(VStellSwordBlessingId, XmlName.Blessing);
+            XmlPath vstellSwordBlessingPath = new DefaultXmlPath(XmlLocation.Blessing, new XmlPathData(VStellSwordBlessingId));
+            int[] specs = vstellSwordBlessingPath.GetSpecs();
 
             VsteelSwordBaseBlessing vsteelSwordBaseBlessing = gameObject.AddComponent<VsteelSwordBaseBlessing>();
             vsteelSwordBaseBlessing.CriticalHitDamageProcent = 0;
@@ -82,8 +84,8 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanFindLifeDrainSwordSpecs()
         {
-            _xmlSearcher = new XmlSearcher(Location.Blessing);
-            int[] specs = _xmlSearcher.GetSpecsInChildrenWithId(LifeDrainSwordId, XmlName.Blessing);
+            XmlPath lifeDrainSwordPath = new DefaultXmlPath(XmlLocation.Blessing, new XmlPathData(LifeDrainSwordId));
+            int[] specs = lifeDrainSwordPath.GetSpecs();
 
             LifeDrainBlessing lifeDrainBlessing = gameObject.AddComponent<LifeDrainBlessing>();
             lifeDrainBlessing.LifeOnHit = 0;

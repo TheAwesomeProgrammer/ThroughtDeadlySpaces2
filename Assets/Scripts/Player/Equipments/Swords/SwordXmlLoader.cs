@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 using Assets.Scripts.Player.Swords.Abstract;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 using Assets.Scripts.Combat;
 using Assets.Scripts.Player.Armors;
@@ -11,13 +11,12 @@ namespace Assets.Scripts.Player.Swords
 {
     public sealed class SwordXmlLoader : EquipmentXmlLoader
     {
-        public SwordXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId, string xmlArrayName,
+        public SwordXmlLoader(EquipmentAttributeManager equipmentAttributeManager, int xmlId,
             int equipmentId) : 
-            base(equipmentAttributeManager, xmlId, xmlArrayName, equipmentId)
+            base(equipmentAttributeManager, xmlId, equipmentId)
         {
             XmlId = xmlId;
-            XmlLocation = Location.Sword;
-            XmlArrayName = xmlArrayName;
+            XmlLocation = XmlLocation.Sword;
             _attributeAdder = new EquipmentAttributeAdder(equipmentAttributeManager, EquipmentType.Sword, equipmentId);
         }
 

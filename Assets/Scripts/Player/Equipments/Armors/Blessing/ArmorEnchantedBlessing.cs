@@ -5,7 +5,7 @@ using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Player.Armors.Blessing
 {
@@ -26,8 +26,7 @@ namespace Assets.Scripts.Player.Armors.Blessing
             get
             {
                 return _attributeXmlData = _attributeXmlData ??
-                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), XmlId,
-                                                XmlName.Blessing);
+                                            new AttributeXmlData(XmlLocation.Blessing, XmlId);
             }
         }
 

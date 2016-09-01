@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Camera_ll_UI;
-using Assets.Scripts.Xml;
 using UnityEngine;
+using XmlLibrary;
 
 namespace Assets.Scripts.Shop.Merchant
 {
@@ -11,17 +11,17 @@ namespace Assets.Scripts.Shop.Merchant
 
         public int Money { get; set; }
 
-        private XmlSearcher _xmlSearcher;
+        private XmlPath _merchantPath;
 
         void Start()
         {
-            _xmlSearcher = new XmlSearcher(Location.Shop);
+            _merchantPath = new DefaultXmlPath(XmlLocation.Shop, new XmlPathData(XmlShopName));
             LoadXml();
         }
 
         public void LoadXml()
         {
-            int[] specs = _xmlSearcher.GetSpecsInChildren("Shop", XmlShopName);
+            int[] specs = _merchantPath.GetSpecs();
             Money = specs[MoneySpecId];
         }
     }

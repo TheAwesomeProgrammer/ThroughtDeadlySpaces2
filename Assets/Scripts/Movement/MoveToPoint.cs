@@ -85,7 +85,7 @@ namespace Assets.Scripts.Enviroment.Map.Bridge
 
         public void Move()
         {
-            LeanTween.move(ObjectToMove, _targetPoint, Time).setEase(LeanTweenType).setOnComplete(OnCompleteTween);
+	        LeanTween.move(ObjectToMove, _targetPoint, Time).setEase(LeanTweenType).setOnComplete(OnCompleteTween);
         }
 
         private void OnCompleteTween()
@@ -117,7 +117,7 @@ namespace Assets.Scripts.Enviroment.Map.Bridge
 
         public void SetTargetPoint(PointInformation targetPoint)
         {
-            _targetPoint = targetPoint.GetPosition(ObjectToMove);
+	        _targetPoint = targetPoint.GetPosition(ObjectToMove);
         }
 
         public void SetSpeed(float speed)

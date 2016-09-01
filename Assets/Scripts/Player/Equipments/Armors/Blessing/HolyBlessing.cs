@@ -3,7 +3,7 @@ using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Armors.Blessing
@@ -20,8 +20,7 @@ namespace Assets.Scripts.Player.Armors.Blessing
             get
             {
                 return _attributeXmlData = _attributeXmlData ??
-                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Blessing), _attributeId,
-                                                XmlName.Blessing);
+                                            new AttributeXmlData(XmlLocation.Blessing, _attributeId);
             }
         }
 

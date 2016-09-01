@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Assets.Scripts.Extensions.Enums;
 
-namespace Assets.Scripts.Xml
+namespace XmlLibrary
 {
 	public class Result<T>
 	{
@@ -38,7 +36,8 @@ namespace Assets.Scripts.Xml
             {
                 if (xmlEnumStrings[i].Length > 0)
                 {
-	                enumsSet.Add(Convert<T>(i, xmlEnumStrings[i]));
+	                KeyValuePair<int, Result<T>> enumSet = Convert<T>(i, xmlEnumStrings[i]);
+	                enumsSet.Add(enumSet.Key, enumSet.Value);
                 }
             }
 

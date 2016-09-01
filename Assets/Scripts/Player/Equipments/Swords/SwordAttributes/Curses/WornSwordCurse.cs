@@ -4,7 +4,7 @@ using Assets.Scripts.Extensions;
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Equipments.Attributes;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords.Curses
@@ -18,8 +18,7 @@ namespace Assets.Scripts.Player.Swords.Curses
             get
             {
                 return _attributeXmlData = _attributeXmlData ??
-                                            new AttributeXmlData(XmlFileLocations.GetLocation(Location.Curse), _attributeId,
-                                                XmlName.Curses);
+                                            new AttributeXmlData(XmlLocation.Curse, _attributeId);
             }
         }
 

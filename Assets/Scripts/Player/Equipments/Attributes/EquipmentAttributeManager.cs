@@ -6,7 +6,6 @@ using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Player.Swords.Curses;
 using Assets.Scripts.Shop;
-using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Equipments

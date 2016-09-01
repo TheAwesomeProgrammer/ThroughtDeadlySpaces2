@@ -4,7 +4,7 @@ namespace Assets.Scripts.Quest
 {
     public class EmptyReward : Reward
     {
-        public EmptyReward(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
+        public EmptyReward(int rewardTypeId, int questId, int questGiverId) : base(rewardTypeId, questId, questGiverId)
         {
         }
 

@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Xml;
+﻿using XmlLibrary;
 
 namespace Assets.Scripts.Player.Equipments
 {

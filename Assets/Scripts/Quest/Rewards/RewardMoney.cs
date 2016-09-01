@@ -7,7 +7,7 @@ namespace Assets.Scripts.Quest.Rewards
     {
         private int _money;
 
-        public RewardMoney(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
+        public RewardMoney(int rewardTypeId, int questId, int questGiverId) : base(rewardTypeId, questId, questGiverId)
         {
         }
 

@@ -5,7 +5,7 @@ using Assets.Scripts.Camera_ll_UI;
 using Assets.Scripts.Enviroment.Map.Rooms;
 using Assets.Scripts.Player.Swords.Abstract;
 using Assets.Scripts.Quest.Rewards.Spawner;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Quest
@@ -13,8 +13,7 @@ namespace Assets.Scripts.Quest
     public sealed class QuestGiver : MonoBehaviour
     {
         private QuestGiverProperties _questGiverProperties;
-        private XmlNode _questGiverNode;
-        private XmlSearcher _xmlSearcher;
+
 
         public int Id
         {
@@ -54,8 +53,7 @@ namespace Assets.Scripts.Quest
 
         public void Init()
         {
-            _xmlSearcher = new XmlSearcher(Location.QuestGiver);
-            _questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, XmlName.QuestGiverRoot);
+
 			InitQuestProperties();
             SetQuestUI();
         }
@@ -63,7 +61,7 @@ namespace Assets.Scripts.Quest
 	    private void InitQuestProperties()
 	    {
 		    QuestGiverProperties.LoadXml();
-		    QuestGiverProperties.LoadQuests(_questGiverNode);
+		    QuestGiverProperties.LoadQuests(Id);
 	    }
 
 	    private void SetQuestUI()

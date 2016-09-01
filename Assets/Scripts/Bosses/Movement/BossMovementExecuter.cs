@@ -1,7 +1,6 @@
 ﻿using System;
 using Assets.Scripts.Bosses.Abstract;
 using Assets.Scripts.Movement;
-using Assets.Scripts.Xml;
 using UnityEngine;
 
 namespace Assets.Scripts.Bosses.Harbinger_of_death.BossStateExecuters

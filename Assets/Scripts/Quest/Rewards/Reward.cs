@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
 using Assets.Scripts.Quest.Rewards.Spawner;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Quest
@@ -11,10 +11,10 @@ namespace Assets.Scripts.Quest
         public XmlNode QuestsNode;
         public int QuestId;
         public int RewardTypeId;
-
-        protected XmlSearcher _xmlSearcher;
+        public int QuestGiverId;
         
         protected GameObject _objectSpawned;
+        protected XmlPath _rewardTypePath;
 
         protected int[] RewardSpecs
         {
@@ -22,23 +22,22 @@ namespace Assets.Scripts.Quest
             {
                 List<int> rewardSpecs = new List<int>();
 
-                XmlNode questNode = _xmlSearcher.GetNodeInArrayWithId(QuestId, QuestsNode);
-                if (questNode != null)
-                {
-                    rewardSpecs.AddRange(_xmlSearcher.GetSpecsInNodeWithId(RewardTypeId, questNode));
-                }
-
+                _rewardTypePath = new DefaultXmlPath(XmlLocation.QuestGiver, new XmlPathData(QuestGiverId),
+                    new XmlPathData(QuestId),
+                    new XmlPathData(RewardTypeId));
+             
+                rewardSpecs.AddRange(_rewardTypePath.GetSpecs());
                 return rewardSpecs.ToArray();
             }
         }
 
-        protected Reward(int rewardTypeId, int questId, XmlNode questsNode)
+        protected Reward(int rewardTypeId, int questId, int questGiverId)
         {
             RewardTypeId = rewardTypeId;
             QuestId = questId;
-            QuestsNode = questsNode;
-	        _xmlSearcher = new XmlSearcher(Location.QuestGiver);
-	        if (IsValid())
+            QuestGiverId = questGiverId;
+
+            if (IsValid())
 	        {
 		        LoadXml();
 	        }

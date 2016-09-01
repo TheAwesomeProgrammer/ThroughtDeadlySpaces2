@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Managers;
-using Assets.Scripts.Xml;
 using UnityEngine;
+using XmlLibrary;
 
 namespace Assets.Scripts.Enviroment.Map.Statues
 {

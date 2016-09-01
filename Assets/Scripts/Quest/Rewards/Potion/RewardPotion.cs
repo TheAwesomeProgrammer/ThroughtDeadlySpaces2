@@ -9,7 +9,7 @@ namespace Assets.Scripts.Quest
 
         private int _numberOfPotionsToSpawn = 1;
 
-        public RewardPotion(int rewardTypeId, int questId, XmlNode questsNode) : base(rewardTypeId, questId, questsNode)
+        public RewardPotion(int rewardTypeId, int questId, int questGiverId) : base(rewardTypeId, questId, questGiverId)
         {
         }
 

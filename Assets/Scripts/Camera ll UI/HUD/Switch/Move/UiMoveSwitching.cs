@@ -73,7 +73,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
             if (_uiMoverReachedTargetCount >= _uiMoversWithId.Count)
             {
                 Reset();
-                _moved = !_moved;
+                Moved = !Moved;
                 _callback.CallIfNotNull((int)SwitchType);
             }
         }

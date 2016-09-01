@@ -2,7 +2,7 @@
 using Assets.Scripts.Player.Equipments;
 using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Player.Swords.Abstract;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 using UnityEngine;
 
 namespace Assets.Scripts.Player.Armors
@@ -28,7 +28,7 @@ namespace Assets.Scripts.Player.Armors
 
         public void Load(int armorId)
         {
-            _armorXmlLoader = new ArmorXmlLoader(_equipmentAttributeManager, armorId, XmlName.Armor, Id);
+            _armorXmlLoader = new ArmorXmlLoader(_equipmentAttributeManager, armorId, Id);
             _armorXmlLoader.Load();
             Specs = _armorXmlLoader.EquipmentSpecs;
             _resistance.SetupDefenseDamageDatas();

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
 using Assets.Scripts.Bosses.Manager;
-using Assets.Scripts.Xml;
+using XmlLibrary;
 
 namespace Assets.Scripts.Quest
 {
@@ -17,6 +17,8 @@ namespace Assets.Scripts.Quest
         public int CurrentQuestId;
 
         private XmlSearcher _xmlSearcher;
+        private XmlPath _questGiverPath;
+        private XmlPath _questGiverSpecsPath;
 
         public BossGeneratorProperties BossGeneratorProperties
         {
@@ -28,25 +30,26 @@ namespace Assets.Scripts.Quest
             Quests = new List<Quest>();
         }
 
-        public void LoadQuests(XmlNode questGiverNode)
+        public void LoadQuests(int questGiverId)
         {
 	        foreach (var questId in QuestIds)
 	        {
-		        Quests.Add(new Quest(questId, questGiverNode));
+		        Quests.Add(new Quest(questId, questGiverId));
 	        }
         }
 
         public void LoadXml()
         {
-	        _xmlSearcher = new XmlSearcher(Location.QuestGiver);
-	        XmlNode questGiverNode = _xmlSearcher.GetNodeInArrayWithId(Id, XmlName.QuestGiverRoot);
-            SetSpecs(questGiverNode);
-	        Name = _xmlSearcher.GetAttributeText(questGiverNode, "name");
+	        _xmlSearcher = new XmlSearcher(XmlLocation.QuestGiver);
+            _questGiverPath = new DefaultXmlPath(XmlLocation.QuestGiver, new XmlPathData(Id));
+            _questGiverSpecsPath = new DefaultXmlPath(_questGiverPath, new XmlPathData(XmlName.SpecNodeName));
+            SetSpecs();
+	        Name = _questGiverPath.GetAttributeText("name");
         }
 
-        public void SetSpecs(XmlNode questGiverNode)
+        public void SetSpecs()
         {
-            int[] specs = _xmlSearcher.GetSpecsInNode(questGiverNode);
+            int[] specs = _questGiverSpecsPath.GetSpecs();
             QuestIds = new[] {1, 2, 3};
             Health = specs[0];
         }
