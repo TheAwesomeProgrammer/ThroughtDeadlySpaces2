@@ -1,6 +1,35 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Swords>
 
+  
+   <!-- GREAT SWORD OF HOUMONCU -->
+  
+    <Sword id="0" name="Great sword of Hossumoncu">
+        <Type>(3)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+        <Specs>(20,10,10,10,10)</Specs>
+        <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+        [5 = DamageType4] -->
+        <Att>(Rusty, Worn, Heavy, Enchanted)</Att>
+        <Hp>(2)</Hp>
+        <!--
+        Possible attributes :
+        Curses :
+        [Rusty],[Broken],[Heavy],[Worn][Miss]
+        Blessings :
+        [Vsteel],[LifeDrain],[Enchant]
+
+         BACKGROUND:
+
+         In the old times before the shatter, it's said that great giants roomed the mountains. Their weapons crafted from splinters of the spine of the old father.
+         Gifts from the Shahirii so that they could fend themselves against the armies of man. In the hand of mortal men, the weapon is unstable and easily broken.
+
+         DESIGN NOTE:
+
+         It's meant to deal insane damage, but will break after 1-2 hits. It's "rare" so it's expensive to keep repairing it.
+         _______________________________________________________________________________________________________________________
+        -->
+    </Sword>
+  
   <!-- GREAT SWORD OF HOUMONCU -->
   
     <Sword id="1" name="Great sword of Houmoncu">

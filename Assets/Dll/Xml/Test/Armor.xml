@@ -1,6 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Armors>
 
+    <Armor id="0" name="Light Armor">
+      <Type>(1)</Type>
+      <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
+      <Specs>(1,1,1,1,1)</Specs>
+      <!-- [1 = Base damage], [2 = DamageType1], [3 = DamageType2], [4 = DamageType3],
+          [5 = DamageType4] -->
+      <Att>(Light1)</Att>
+      <Hp>(14)</Hp>
+      <!-- 
+          Possible attributes :
+          Curses : 
+          [Broken,Rusty]
+          Blessings : 
+          [Enchant,Vsteel,LifeDrain]
+        
+           BACKGROUND:
+         
+           Standard armor from the world before the scatter. 
+
+           DESIGN NOTE:
+         
+           Common armor without any specific attributes. 
+           _______________________________________________________________________________________________________________________
+          -->
+    </Armor>
+
     <Armor id="1" name="Light Armor">
         <Type>(1)</Type> <!-- [1 = Common], [2 = Uncommon], [3 = Rare] -->
         <Specs>(1,1,1,1,1)</Specs> 
