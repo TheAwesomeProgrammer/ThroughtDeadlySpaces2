@@ -23,6 +23,7 @@ namespace Assets.Scripts.Quest
                 List<int> rewardSpecs = new List<int>();
 
                 _rewardTypePath = new DefaultXmlPath(XmlLocation.QuestGiver, new XmlPathData(QuestGiverId),
+                    new XmlPathData(XmlName.QuestRoot),
                     new XmlPathData(QuestId),
                     new XmlPathData(RewardTypeId));
              

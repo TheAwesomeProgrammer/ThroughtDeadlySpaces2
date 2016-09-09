@@ -33,7 +33,6 @@ namespace Assets.Scripts.Quest
 	    {
             XmlPath questsPath = new DefaultXmlPath(XmlLocation.QuestGiver,
                 new XmlPathData(_questGiverId),
-                new XmlPathData(Id),
                 new XmlPathData(XmlName.QuestRoot));
             XmlPath questPath = new DefaultXmlPath(questsPath, new XmlPathData(questId));
 
