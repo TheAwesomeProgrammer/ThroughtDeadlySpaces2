@@ -22,6 +22,10 @@ namespace Assets.Scripts.Extensions
             return listToClone.Select(item => (T)item.Clone()).ToList();
         }
 
+        /// <summary>
+        /// Get random element from list
+        /// </summary>
+        /// <returns>Random element from list</returns>
         public static T Random<T>(this List<T> list)
         {
             return list[UnityEngine.Random.Range(0, list.Count)];

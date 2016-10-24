@@ -2,8 +2,10 @@
 using System.Runtime.Remoting.Messaging;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Extensions.StaticClasses;
+using Assets.Scripts.Player.Movement;
 using Assets.Scripts.Player.Swords;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 namespace Assets.Scripts.Player
 {
@@ -11,7 +13,8 @@ namespace Assets.Scripts.Player
     {
         public int StartMaxHealth;
         public int StartHealth;
-        public float StartSpeed;
+        public float StartWalkSpeed;
+        public float StartRunSpeed;
         public float StartGravity;
         public int StartStrength;
         public float StartMaxDexterity;
@@ -62,10 +65,16 @@ namespace Assets.Scripts.Player
             }
         }
 
-        public float Speed
+        public float WalkSpeed
         {
-            get { return Null.OnNot(_playerMovement, () => _playerMovement.Speed); }
-            set { Null.OnNot(_playerMovement, () => _playerMovement.Speed = value); }
+            get { return Null.OnNot(_firstPersonController, () => _firstPersonController.WalkSpeed); }
+            set { Null.OnNot(_firstPersonController, () => _firstPersonController.WalkSpeed = value); }
+        }
+
+        public float RunSpeed
+        {
+            get { return Null.OnNot(_firstPersonController, () => _firstPersonController.RunSpeed); }
+            set { Null.OnNot(_firstPersonController, () => _firstPersonController.RunSpeed = value); }
         }
 
         public float Gravity
@@ -115,12 +124,12 @@ namespace Assets.Scripts.Player
 
         private Life _life;
         private DexterityFiller _dexterityFiller;
-        private PlayerMovement _playerMovement;
+        private FirstPersonController _firstPersonController;
         private SwordAttack _swordAttack;
 
         public void Awake()
         {
-            _playerMovement = GetComponentInChildren<PlayerMovement>();
+            _firstPersonController = GetComponentInChildren<FirstPersonController>();
             _life = GetComponentInChildren<Life>();
             _dexterityFiller = GetComponent<DexterityFiller>();
             _swordAttack = GetComponentInChildren<SwordAttack>();
@@ -130,7 +139,8 @@ namespace Assets.Scripts.Player
             Health = StartHealth;
             Dexterity = StartDexterity;
             MaxDexterity = StartMaxDexterity;
-            Speed = StartSpeed;
+            WalkSpeed = StartWalkSpeed;
+            RunSpeed = StartRunSpeed;
             Strength = StartStrength;
             Gravity = StartGravity;
         }

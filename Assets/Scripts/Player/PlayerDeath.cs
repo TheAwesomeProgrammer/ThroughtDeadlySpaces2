@@ -8,14 +8,14 @@ namespace Assets.Scripts.Player
     {
         private Life _life;
         private AnimatorTrigger _animatorTrigger;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementController _playerMovementController;
         private Rigidbody _collisionRigidbody;
 
         void Start()
         {
             _life = transform.root.GetComponentInChildren<Life>();
             _animatorTrigger = GetComponent<AnimatorTrigger>();
-            _playerMovement = GetComponentInParent<PlayerMovement>();
+            _playerMovementController = GetComponentInParent<PlayerMovementController>();
             _collisionRigidbody = GetComponentInParent<Rigidbody>();
             _life.Death += OnDeath;
             _animatorTrigger.AnimationEnded += OnDeathAnimationEnd;
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Player
         void OnDeath()
         {
             _animatorTrigger.StartAnimation(AnimatorRunMode.AlwaysRun);
-            _playerMovement.CanMove = false;
+            _playerMovementController.CanMove = false;
             _collisionRigidbody.isKinematic = false;
             _collisionRigidbody.useGravity = false;
             _collisionRigidbody.velocity = Vector3.zero;

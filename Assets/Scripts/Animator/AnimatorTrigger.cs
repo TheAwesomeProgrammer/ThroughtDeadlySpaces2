@@ -12,11 +12,12 @@ namespace Assets.Scripts.Player.Swords
         RunIfNoAnimationPlaying
     }
 
-    public class AnimatorTrigger : MonoBehaviour
+    public class AnimatorTrigger : AnimatorTriggerBase
     {
         public Animator Animator;
-        public string TriggerName;
-        public string TriggerEndName;
+
+     
+
         public event Action AnimationEnded;
         public event Action AnimationStarting;
 
@@ -36,18 +37,18 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        public void Cancel()
+        public override void Cancel()
         {
             _shouldCancel = true;
         }
 
-        public void End()
+        public override void End()
         {
             Animator.SetTrigger(TriggerEndName);
             _running = false;
         }
 
-        public void StartAnimation(AnimatorRunMode animatorRunMode)
+        public override void StartAnimation(AnimatorRunMode animatorRunMode)
         {
             switch (animatorRunMode)
             {
@@ -120,7 +121,6 @@ namespace Assets.Scripts.Player.Swords
         {
             return Animator.GetNextAnimatorStateInfo(_layerNumber);
         }
-
 
         private bool IsNextAnimationNotEquals(int currentHash)
         {

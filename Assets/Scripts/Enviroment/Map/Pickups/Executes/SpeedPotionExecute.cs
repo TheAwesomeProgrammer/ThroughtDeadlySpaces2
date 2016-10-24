@@ -15,7 +15,7 @@ namespace Assets.Scripts.Enviroment.Map.Pickups.PickupExecutes
         public void Execute(GameObject gameObject)
         {
             PlayerProperties playerProperties = gameObject.GetComponentInParent<PlayerProperties>();
-            playerProperties.Speed += _speed;
+            playerProperties.WalkSpeed += _speed;
         }
     }
 }

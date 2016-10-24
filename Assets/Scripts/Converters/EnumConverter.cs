@@ -57,7 +57,6 @@ namespace XmlLibrary
 	    {
 		    Result<T> result = new Result<T>(default(T), false);
 		    xmlEnumString = xmlEnumString.Replace(" ", "");
-			UnityEngine.Debug.Log("Enum string name"+xmlEnumString);
 		    if (Enum.IsDefined(typeof(T), xmlEnumString))
 		    {
 			    result.Set((T) Enum.Parse(typeof(T), xmlEnumString), true);

@@ -9,14 +9,14 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         private const float UpdateRate = 10;
 
         private CapsuleCollider _capsuleCollider;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementController _playerMovementController;
         private AbillityTiming _playerDash;
         private bool _fall;
 
         protected void Start()
         {
             _capsuleCollider = GetComponent<CapsuleCollider>();
-            _playerMovement = GetComponent<PlayerMovement>();
+            _playerMovementController = GetComponent<PlayerMovementController>();
             _playerDash = GetComponentInChildren<AbillityTiming>();
         }
 
@@ -29,14 +29,14 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         {
             bool hittingAnythingDown = CapsuleCastAllInDirection(Vector3.down, DownDistanceCheck);
 
-            if (!hittingAnythingDown && _playerMovement.CanMove && !_fall)
+            if (!hittingAnythingDown && _playerMovementController.CanMove && !_fall)
             {
                 _fall = true;
-                _playerMovement.CanMove = false;
+                _playerMovementController.CanMove = false;
             }
-            else if (hittingAnythingDown && !_playerMovement.CanMove && !_playerDash.Active && _fall)
+            else if (hittingAnythingDown && !_playerMovementController.CanMove && !_playerDash.Active && _fall)
             {
-                _playerMovement.CanMove = true;
+                _playerMovementController.CanMove = true;
                 _fall = false;
             }
         }

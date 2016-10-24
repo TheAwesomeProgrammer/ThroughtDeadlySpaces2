@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         private const int Cost = 1;
 
         private AnimatorTrigger _animatorTrigger;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementController _playerMovementController;
         private Rigidbody _rigidbody;
         private DexterityFiller _dexterityFiller;
         private AbillityTiming _abillityTiming;
@@ -18,7 +18,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         void Start()
         {
             _abillityTiming = GetComponent<AbillityTiming>();
-            _playerMovement = GetComponentInParent<PlayerMovement>();
+            _playerMovementController = GetComponentInParent<PlayerMovementController>();
             _rigidbody = GetComponentInParent<Rigidbody>();
             _animatorTrigger = GetComponent<AnimatorTrigger>();
             _dexterityFiller = GetComponentInParent<DexterityFiller>();
@@ -39,10 +39,10 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 
         private void OnAbillityStart()
         {
-            if (_dexterityFiller.Dexterity >= Cost && _playerMovement.CanMove)
+            if (_dexterityFiller.Dexterity >= Cost && _playerMovementController.CanMove)
             {
                 _dexterityFiller.Dexterity -= Cost;
-                _playerMovement.CanMove = false;
+                _playerMovementController.CanMove = false;
                 LeanTween.value(gameObject, SetDashSpeed, StartDashSpeed, EndDashSpeed, _abillityTiming.Duration);
             }
             else
@@ -65,7 +65,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
 
         private void OnAbillityEnd()
         {
-            _playerMovement.CanMove = true;
+            _playerMovementController.CanMove = true;
             _animatorTrigger.End();
         }
     }

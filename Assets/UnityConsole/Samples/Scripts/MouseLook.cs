@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TeamUtility.IO;
 
 /// MouseLook rotates the transform based on the mouse delta.
 /// Minimum and Maximum values can be used to constrain the possible rotation
@@ -38,8 +39,8 @@ public class MouseLook : MonoBehaviour
         if (axes == RotationAxes.MouseXAndY)
         {
             // Read the mouse input axis
-            rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+            rotationX += InputManager.GetAxis("Mouse X") * sensitivityX;
+            rotationY += InputManager.GetAxis("Mouse Y") * sensitivityY;
 
             rotationX = ClampAngle(rotationX, minimumX, maximumX);
             rotationY = ClampAngle(rotationY, minimumY, maximumY);
@@ -51,7 +52,7 @@ public class MouseLook : MonoBehaviour
         }
         else if (axes == RotationAxes.MouseX)
         {
-            rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+            rotationX += InputManager.GetAxis("Mouse X") * sensitivityX;
             rotationX = ClampAngle(rotationX, minimumX, maximumX);
 
             Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
@@ -59,7 +60,7 @@ public class MouseLook : MonoBehaviour
         }
         else
         {
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+            rotationY += InputManager.GetAxis("Mouse Y") * sensitivityY;
             rotationY = ClampAngle(rotationY, minimumY, maximumY);
 
             Quaternion yQuaternion = Quaternion.AngleAxis(-rotationY, Vector3.right);

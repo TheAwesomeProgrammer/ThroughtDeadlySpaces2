@@ -24,7 +24,7 @@ namespace Assets.Scripts.Enviroment.Map.Statues
         {
             _equipmentAttributeManager =
                 GameObject.FindGameObjectWithTag(Tag.Player)
-                    .GetComponent<EquipmentAttributeManager>();
+                    .GetComponentInChildren<EquipmentAttributeManager>();
             _equipmentAttributeAdder = new EquipmentAttributeAdder(_equipmentAttributeManager, EquipmentType.SwordOrArmor);
             _sword = GameObject.FindGameObjectWithTag(Tag.Player).GetComponentInChildren<Sword>();
             _armor = GameObject.FindGameObjectWithTag(Tag.Player).GetComponentInChildren<Armor>();

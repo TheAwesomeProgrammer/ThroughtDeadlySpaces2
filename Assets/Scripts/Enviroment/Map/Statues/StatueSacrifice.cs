@@ -27,7 +27,7 @@ namespace Assets.Scripts.Enviroment.Map.Statues
                     _playerProperties.MaxDexterity -= AmountToSacrifice;
                     break;
                 case StatueSacrificeType.Speed:
-                    _playerProperties.Speed -= AmountToSacrifice;
+                    _playerProperties.WalkSpeed -= AmountToSacrifice;
                     break;
                 case StatueSacrificeType.Health:
                     _playerProperties.MaxHealth -= AmountToSacrifice;

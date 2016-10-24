@@ -27,7 +27,7 @@ namespace Assets.Scripts.Player.Swords
         private int _id;
         
 
-        public EquipmentAttributeAdder(EquipmentAttributeManager equipmentAttributeManager,EquipmentType equipmentType,  int id = 0)
+        public EquipmentAttributeAdder(EquipmentAttributeManager equipmentAttributeManager, EquipmentType equipmentType,  int id = 0)
         {
             _id = id;
             EquipmentType = equipmentType;

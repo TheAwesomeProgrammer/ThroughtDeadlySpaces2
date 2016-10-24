@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
-public static class TranformExtension {
+public static class TranformExtension
+{
+
+    private static bool _subscribed;
 
     public static Transform FindChildByTag(this Transform pTransformRoot, string tag)
     {
@@ -68,6 +72,30 @@ public static class TranformExtension {
         pCallBackInfo.Callback();
     }
 
-   
+    public static IEnumerator SubscribeToPositionChanged(this Transform transform, Action<Vector3> onPositionChanged)
+    {
+        Vector3 lastPosition = transform.position;
+
+        _subscribed = true;
+
+        while (_subscribed)
+        {
+            if (onPositionChanged == null)
+            {
+                break;
+            }
+            if (transform.position != lastPosition)
+            {
+                onPositionChanged(transform.position);
+            }
+            lastPosition = transform.position;
+            yield return 0;
+        }
+    }
+
+    public static void UnSubscribeToPositionChanged(this Transform transform)
+    {
+        _subscribed = false;
+    }
 
 }
