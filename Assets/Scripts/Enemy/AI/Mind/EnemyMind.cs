@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Tests;
 using UnityEngine;
 
@@ -8,13 +9,16 @@ namespace Assets.Scripts.Enemy
     public class EnemyMind : MonoBehaviour
     {
         public MonoBehaviour DefaultState;
+        public List<MonoBehaviour> GlobalStateChangersScripts; 
 
         private List<StateData> _stateDatas;
         private StateData _currentStateData;
+        private IEnumerable<StateChanger> _globalStateChangers;
 
         public void Start()
         {
             _stateDatas = new List<StateData>();
+            _globalStateChangers = GlobalStateChangersScripts.Select(item => item.GetComponent<StateChanger>());
             LoadStateDatas();
             ChangeTo(DefaultState.GetType());
         }
@@ -27,22 +31,28 @@ namespace Assets.Scripts.Enemy
                 if (state != null)
                 {
                     StateChanger[] stateChangers = child.GetComponents<StateChanger>();
-                    _stateDatas.Add(new StateData(state, stateChangers));
+                    _stateDatas.Add(new StateData(state, stateChangers, child));
                 }
             }
         }
 
         public void Update()
         {
-            Debug.Log("Current state : "+ _currentStateData.State);
-            CheckForStateChange();
+            Debug.Log("Current state : "+ _currentStateData);
+            CheckForGlobalStateChange();
+            CheckForStateChange(_currentStateData);
             _currentStateData.OnUpdateState();
         }
 
-        private void CheckForStateChange()
+        private void CheckForGlobalStateChange()
+        {
+            CheckForStateChange(new StateData(_currentStateData.State, _globalStateChangers));
+        }
+
+        private void CheckForStateChange(StateData stateData)
         {
             Type newStateType;
-            if (ShouldChangeState(_currentStateData, out newStateType))
+            if (ShouldChangeState(stateData, out newStateType))
             {
                 ChangeTo(newStateType);
             }
@@ -66,14 +76,14 @@ namespace Assets.Scripts.Enemy
         {
             if (_currentStateData != null)
             {
+                print("Exiting old state " + _currentStateData);
                 _currentStateData.OnExitState(newStateType);
-                print("Exiting old state " + _currentStateData.State);
             }
 
             _currentStateData = GetStateDataBy(newStateType);
-            NullAsserter.Assert(_currentStateData, "New state");
+            NullAsserter.Assert(_currentStateData, "Current state data");
+            print("Entering new state " + _currentStateData);
             _currentStateData.OnEnterState();
-            print("Entering new state "+ _currentStateData.State);
         }
 
         private StateData GetStateDataBy(Type stateType)

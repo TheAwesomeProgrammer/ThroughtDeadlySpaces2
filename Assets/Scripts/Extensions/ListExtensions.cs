@@ -36,6 +36,16 @@ namespace Assets.Scripts.Extensions
             return dictionary.Values.ElementAt(UnityEngine.Random.Range(0, dictionary.Count));
         }
 
+        public static T Next<T>(this List<T> list, int index)
+        {
+            int nextIndex = index + 1;
+            if (list.Count > nextIndex)
+            {
+                return list[nextIndex];
+            }
+            return default(T);
+        }
+
         public static void Remove<T>(this List<T> list, Predicate<T> predicate)
         {
             T item = list.Find(predicate);

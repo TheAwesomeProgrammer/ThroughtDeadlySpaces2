@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
@@ -10,10 +11,13 @@ namespace Assets.Scripts.Enemy
         public State State;
         public List<StateChanger> StateChangers;
 
-        public StateData(State state, IEnumerable<StateChanger> stateChangers)
+        private Transform _stateTransform;
+
+        public StateData(State state, IEnumerable<StateChanger> stateChangers, Transform stateTransform = null)
         {
             State = state;
             StateChangers = stateChangers.ToList();
+            _stateTransform = stateTransform;
         }
 
         public void OnEnterState()
@@ -41,6 +45,19 @@ namespace Assets.Scripts.Enemy
         public bool IsStateType(Type typeToCheck)
         {
             return State.GetType() == typeToCheck;
+        }
+
+        public override string ToString()
+        {
+            string stateChangersText = "";
+            foreach (var stateChanger in StateChangers)
+            {
+                stateChangersText += stateChanger + " ";
+            }
+
+            return "State : " + State + Environment.NewLine +
+                   "GameObject name " + _stateTransform.name + Environment.NewLine + 
+                   "State changers : " + stateChangersText;
         }
     }
 }
