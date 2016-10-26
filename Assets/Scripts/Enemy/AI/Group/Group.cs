@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Extensions;
+using Assets.Scripts.Extensions.Enums;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy.AI
@@ -25,6 +26,11 @@ namespace Assets.Scripts.Enemy.AI
             get { return FindGroupData().GroupSize; }
         }
 
+        public List<EnemyMind> Enemies
+        {
+            get { return GetComponentsInChildren<EnemyMind>().ToList(); }
+        }
+
         public event EventHandler<GroupEventArgs> GroupSizeChanged; 
         public List<GroupData> GroupDatas;
 
@@ -41,7 +47,7 @@ namespace Assets.Scripts.Enemy.AI
             _currentGroupData = FindGroupData();
             CheckForGroupSizeChange();
             _lastGroupData = _currentGroupData;
-            Debug.Log("Current group size " + _currentGroupData.GroupSize + Environment.NewLine + 
+            Debug.Log("Current group size " + _currentGroupData.GroupSize.GetDescription() + Environment.NewLine + 
                 "Count of enemies : "+ EnemiesCount());
         }
 
@@ -81,7 +87,7 @@ namespace Assets.Scripts.Enemy.AI
 
         private int EnemiesCount()
         {
-            return GetComponentsInChildren<EnemyMind>().Length;
+            return Enemies.Count;
         }
     }
 }

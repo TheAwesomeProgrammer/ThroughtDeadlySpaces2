@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts.Extensions
 {
@@ -45,6 +46,27 @@ namespace Assets.Scripts.Extensions
             }
             return default(T);
         }
+
+        public static List<T> FindClosestToTarget<T>(this List<T> list, Vector3 target, int lengthOfTargetList) where T : Transform
+        {
+            List<T> targets = new List<T>();
+
+            list.Sort((a, b) => GetDistance(target, a).CompareTo(GetDistance(target, b)));
+
+            for (int i = 0; i < lengthOfTargetList; i++)
+            {
+                targets.Add(list[i]);
+            }
+
+            return targets;
+        }
+
+        private static float GetDistance(Vector3 position, Transform transform)
+        {
+            return Vector3.Distance(position, transform.position);
+        }
+
+
 
         public static void Remove<T>(this List<T> list, Predicate<T> predicate)
         {

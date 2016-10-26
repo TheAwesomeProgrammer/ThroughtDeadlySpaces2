@@ -34,17 +34,12 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public void OnExitState(Type newState)
+        public void OnExitState(State state)
         {
-            if (IsStateType(newState) && State.ExitOnReEntry || !IsStateType(newState))
+            if (state.Equals(State) && State.ExitOnReEntry || !state.Equals(State))
             {
                 State.OnExitState();
             }
-        }
-
-        public bool IsStateType(Type typeToCheck)
-        {
-            return State.GetType() == typeToCheck;
         }
 
         public override string ToString()

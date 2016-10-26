@@ -5,25 +5,25 @@ namespace Assets.Scripts.Player.Swords
 {
     public class AnimationEventListener : MonoBehaviour
     {
-        public bool StartAttackOnAnimation = true;
-        public bool EndAttackOnAnimation = true;
+        public bool ListenToStartAnimation = true;
+        public bool ListenToEndAnimation = true;
         
-        private AnimatorTrigger _animatorTrigger;
+        private AnimatorTriggerBase _animatorTrigger;
 
         void Awake()
         {
-            _animatorTrigger = GetComponent<AnimatorTrigger>();
+            _animatorTrigger = GetComponent<AnimatorTriggerBase>();
         }
 
         public void SetupAnimatorTrigger(Action onStartAttackAction = null, Action onEndAttackAction = null)
         {
             if (_animatorTrigger != null)
             {
-                if (onStartAttackAction != null && StartAttackOnAnimation)
+                if (onStartAttackAction != null && ListenToStartAnimation)
                 {
                     _animatorTrigger.AnimationStarting += onStartAttackAction;
                 }
-                if (onEndAttackAction != null && EndAttackOnAnimation)
+                if (onEndAttackAction != null && ListenToEndAnimation)
                 {
                     _animatorTrigger.AnimationEnded += onEndAttackAction;
                 }

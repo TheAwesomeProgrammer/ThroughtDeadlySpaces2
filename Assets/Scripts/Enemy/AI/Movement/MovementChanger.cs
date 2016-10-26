@@ -5,7 +5,7 @@ namespace Assets.Scripts.Enemy.AI.Abstact
 {
     public class MovementChanger : MonoBehaviour, StateChanger
     {
-        public MonoBehaviour IdleState;
+        public AiState IdleState;
 
         private Pathfinding.NavMeshAgent _navMeshAgent;
         private bool _navMeshAgentReachedTarget;
@@ -23,23 +23,23 @@ namespace Assets.Scripts.Enemy.AI.Abstact
             _navMeshAgentReachedTarget = true;
         }
 
-        public bool ShouldStateChange(State currentState, out Type newStateType)
+        public bool ShouldStateChange(State currentState, out State newState)
         {
             if (_navMeshAgentReachedTarget)
             {
                 if (_enemyVision.CanSeePlayer())
                 {
-                    newStateType = currentState.GetType();
+                    newState = currentState;
                 }
                 else
                 {
-                    newStateType = IdleState.GetType();
+                    newState = IdleState;
                 }
                 _navMeshAgentReachedTarget = false;
                 return true;
             }
 
-            newStateType = null;
+            newState = null;
             return false;
         }
     }

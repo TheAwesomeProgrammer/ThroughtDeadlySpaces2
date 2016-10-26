@@ -15,16 +15,16 @@ namespace Assets.Scripts.Enemy.Test
             Change();
         }
 
-        public bool ShouldStateChange(State currentState, out Type newStateType)
+        public bool ShouldStateChange(State currentState, out State newState)
         {
             if (currentState.GetType() == typeof (AttackStateTest) && _canChange)
             {
                 _canChange = false;
-                newStateType = typeof (AttackStateTest);
+                newState = currentState;
                 return true;
             }
 
-            newStateType = null;
+            newState = null;
             return false;
         }
 

@@ -1,30 +1,31 @@
-﻿using Assets.Scripts.Pathfinding;
+﻿using Assets.Scripts.Enemy.AI.Mind.Abstact;
+using Assets.Scripts.Pathfinding;
 using Assets.Scripts.Player.Movement;
 using Assets.Scripts.Player.Swords.Abstract;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy.AI.Abstact
 {
-    public class MovementState : MonoBehaviour, State
+    public class MovementState : AiState
     {
-        public bool ExitOnReEntry
+        public override StateType StateType
         {
-            get { return false; }
+            get { return StateType.Movement; }
         }
 
         private Moveable _enemyMovement;
 
-        private void Start()
+        protected void Start()
         {
             _enemyMovement = GetComponent<Moveable>();
         }
 
-        public void OnEnterState()
+        public override void OnEnterState()
         {
             _enemyMovement.Resume();
         }
 
-        public void OnExitState()
+        public override void OnExitState()
         {
             _enemyMovement.Stop();
         }

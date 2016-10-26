@@ -16,11 +16,6 @@ namespace Assets.Scripts.Player.Swords
     {
         public Animator Animator;
 
-     
-
-        public event Action AnimationEnded;
-        public event Action AnimationStarting;
-
         protected int _layerNumber;
 
         private InputButton _inputButton;
@@ -75,10 +70,7 @@ namespace Assets.Scripts.Player.Swords
 
         IEnumerator DoAnimation()
         {
-            if (AnimationStarting != null)
-            {
-                AnimationStarting();
-            }
+            OnAnimationStarting();
             yield return 0;
             if (!_shouldCancel)
             {
@@ -106,10 +98,7 @@ namespace Assets.Scripts.Player.Swords
                 }
                 else if (IsNextAnimationNotEquals(currentHash) && IsNextAnimationFound() && isInNextState)
                 {
-                    if (AnimationEnded != null)
-                    {
-                        AnimationEnded();
-                    }
+                    OnAnimationEnded();
                     _running = false;
                     break;
                 }

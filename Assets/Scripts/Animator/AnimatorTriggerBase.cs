@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Assets.Scripts.Extensions;
+using UnityEngine;
 
 namespace Assets.Scripts.Player.Swords
 {
@@ -14,6 +16,9 @@ namespace Assets.Scripts.Player.Swords
             get { return _triggerEndName; }
         }
 
+        public event Action AnimationEnded;
+        public event Action AnimationStarting;
+
         [SerializeField]
         private string _triggerName;
         [SerializeField]
@@ -22,5 +27,15 @@ namespace Assets.Scripts.Player.Swords
         public abstract void StartAnimation(AnimatorRunMode animatorRunMode);
         public abstract void End();
         public abstract void Cancel();
+
+        protected void OnAnimationStarting()
+        {
+            AnimationStarting.CallIfNotNull();
+        }
+
+        protected void OnAnimationEnded()
+        {
+            AnimationEnded.CallIfNotNull();
+        }
     }
 }

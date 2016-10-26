@@ -1,20 +1,21 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Enemy.AI.Mind.Abstact;
+using UnityEngine;
 
 namespace Assets.Scripts.Enemy.AI.Abstact
 {
-    public class IdleState : MonoBehaviour, State
+    public class IdleState : AiState
     {
-        public bool ExitOnReEntry
+        public override StateType StateType
         {
-            get { return false; }
+            get { return StateType.Idle; }
         }
 
-        public void OnEnterState()
+        public override void OnEnterState()
         {
             Debug.Log("Entering idle state");
         }
 
-        public void OnExitState()
+        public override void OnExitState()
         {
             Debug.Log("Exiting idle state");
         }

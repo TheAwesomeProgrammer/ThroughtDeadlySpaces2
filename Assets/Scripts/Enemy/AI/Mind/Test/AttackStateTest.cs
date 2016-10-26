@@ -1,25 +1,24 @@
-﻿using Assets.Scripts.Enemy.Attacks;
+﻿using Assets.Scripts.Enemy.AI.Mind.Abstact;
+using Assets.Scripts.Enemy.Attacks;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy.Test
 {
-    public class AttackStateTest :  MonoBehaviour, State, StateUpdateable
+    public class AttackStateTest :  AiState, StateUpdateable
     {
-        private RandomAttackSet _randomAttackSet;
-
-        public bool ExitOnReEntry
+        public override StateType StateType
         {
-            get { return false; }
+            get { return StateType.Attack; }
         }
 
-        private void Start()
+        private RandomAttackSet _randomAttackSet;
+
+        protected void Start()
         {
             _randomAttackSet = GetComponentInChildren<RandomAttackSet>();
         }
 
-        
-
-        public void OnEnterState()
+        public override void OnEnterState()
         {
             Debug.Log("Entered state");
             _randomAttackSet.GetAttack().DoAttack();
@@ -30,7 +29,7 @@ namespace Assets.Scripts.Enemy.Test
             Debug.Log("Updated state");
         }
 
-        public void OnExitState()
+        public override void OnExitState()
         {
             Debug.Log("Exited state");
         }
