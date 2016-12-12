@@ -23,6 +23,10 @@ namespace Assets.Scripts.Player
 
         private PlayerPropertiesSetter _attackSpeedSetter;
         private PlayerPropertiesSetter _speedSetter;
+        private Life _life;
+        private DexterityFiller _dexterityFiller;
+        private FirstPersonController _firstPersonController;
+        private SwordAttack _swordAttack;
 
         public PlayerPropertiesSetter AttackSpeedSetter
         {
@@ -121,11 +125,6 @@ namespace Assets.Scripts.Player
                 _dexterityFiller.Dexterity = value;
             }
         }
-
-        private Life _life;
-        private DexterityFiller _dexterityFiller;
-        private FirstPersonController _firstPersonController;
-        private SwordAttack _swordAttack;
 
         public void Awake()
         {

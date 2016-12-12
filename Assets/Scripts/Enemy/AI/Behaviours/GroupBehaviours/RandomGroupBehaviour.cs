@@ -25,7 +25,7 @@ namespace Assets.Scripts.Enemy.AI.Factories
 
         public override State GetState()
         {
-            State randomState = _states.Random().State;
+            State randomState = _states.Random();
             Debug.Log("Chosing a random state. That state is "+ randomState);
             return randomState;
         }

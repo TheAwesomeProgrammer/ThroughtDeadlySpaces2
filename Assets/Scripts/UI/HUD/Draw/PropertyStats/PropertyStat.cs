@@ -19,21 +19,6 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
         protected Type _typeToLoad;
         protected object _propertyObject;
 
-	    public virtual void Start()
-        {
-            SetType();
-            LoadProperties();
-            LoadPropertyObject();
-            UpdateValue();
-        }
-
-        protected abstract void SetType();
-
-        protected void LoadProperties()
-        {
-            Properties = FindProperties(_typeToLoad);
-        }
-
         public float FloatValue
         {
             get
@@ -41,11 +26,6 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
                 float value = 0;
                 Null.OnNot(_value, () => float.TryParse(_value.ToString(), out value));
                 return value;
-                //if (_value is float || _value is int)
-                //{
-                //    return (float) _value;
-                //}
-                //return 0;
             }
         }
 
@@ -71,6 +51,21 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
                 }
                 return new List<object>();
             }
+        }
+
+        public virtual void Start()
+        {
+            SetType();
+            LoadProperties();
+            LoadPropertyObject();
+            UpdateValue();
+        }
+
+        protected abstract void SetType();
+
+        protected void LoadProperties()
+        {
+            Properties = FindProperties(_typeToLoad);
         }
 
         protected abstract void LoadPropertyObject();

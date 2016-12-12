@@ -16,7 +16,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
 
         private void OnCompletedSwitch()
         {
-            _onSwordsOutOfScreen.CallIfNotNull();
+            _onSwordsOutOfScreen.InvokeIfNotNull();
             _moveManager.Move(_moveSwitching);
         }
     }

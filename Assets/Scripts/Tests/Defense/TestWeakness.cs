@@ -42,7 +42,7 @@ namespace Assets.Scripts.Tests.Defense
 
             _weakness.DoDamage(new List<CombatData>() { new CombatData(weaknessType, damage) } );
 
-            Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if damages one weakness");
+            IntegrationAssert.IsTrue(_life.Health == StartHealth - damage, "Testing if damages one weakness");
         }
 
         void TestIfBaseDamageWorks()
@@ -52,7 +52,7 @@ namespace Assets.Scripts.Tests.Defense
 
             _weakness.DoDamage(new List<CombatData>() {new CombatData(CombatType.BaseType, damage) });
 
-            Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if base damage works");
+            IntegrationAssert.IsTrue(_life.Health == StartHealth - damage, "Testing if base damage works");
         }
 
         void TestThatItDosntDamageWhenHasNoWeakness()
@@ -62,7 +62,7 @@ namespace Assets.Scripts.Tests.Defense
 
             _weakness.DoDamage(new List<CombatData>() {new CombatData(CombatType.Fire, damage)});
 
-            Assert.IsTrue(_life.Health == StartHealth, "Testing that is dosn't damage when no weakness exists");
+            IntegrationAssert.IsTrue(_life.Health == StartHealth, "Testing that is dosn't damage when no weakness exists");
         }
 
         void TestNoDamageWhenHasWeaknessButIsNotTheRightOne()
@@ -74,7 +74,7 @@ namespace Assets.Scripts.Tests.Defense
 
             _weakness.DoDamage(new List<CombatData>() { new CombatData(CombatType.Fire, damage) });
 
-            Assert.IsTrue(_life.Health == StartHealth, "Testing no damage when has weakness but not the right one");
+            IntegrationAssert.IsTrue(_life.Health == StartHealth, "Testing no damage when has weakness but not the right one");
         }
     }
 }

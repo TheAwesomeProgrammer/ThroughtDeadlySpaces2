@@ -32,7 +32,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         {
             if (_abillityTiming.Active)
             {
-                _animatorTrigger.Cancel();
+                _animatorTrigger.CancelAnimation();
             }
             _abillityTiming.UseAbillity();
         }
@@ -47,7 +47,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
             }
             else
             {
-                _animatorTrigger.Cancel();
+                _animatorTrigger.CancelAnimation();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Player.Swords.Abstract.Movement
         private void OnAbillityEnd()
         {
             _playerMovementController.CanMove = true;
-            _animatorTrigger.End();
+            _animatorTrigger.EndAnimation();
         }
     }
 }

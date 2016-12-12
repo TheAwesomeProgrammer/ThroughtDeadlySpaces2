@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Enemy.AI.Factories;
 using Assets.Scripts.Enemy.AI.Mind.Abstact;
 using UnityEngine;
 
@@ -14,7 +15,13 @@ namespace Assets.Scripts.Enemy
 
         public abstract StateType StateType { get; }
 
-        public abstract void OnEnterState();
-        public abstract void OnExitState();
+        public BehaviourType BehaviourType
+        {
+            get { return _behaviourType; }
+            set { _behaviourType = value; }
+        }
+
+        [SerializeField]
+        private BehaviourType _behaviourType = BehaviourType.None;
     }
 }

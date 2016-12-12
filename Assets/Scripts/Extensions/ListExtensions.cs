@@ -29,6 +29,10 @@ namespace Assets.Scripts.Extensions
         /// <returns>Random element from list</returns>
         public static T Random<T>(this List<T> list)
         {
+            if (list.Count <= 0)
+            {
+                return default(T);
+            }
             return list[UnityEngine.Random.Range(0, list.Count)];
         }
 

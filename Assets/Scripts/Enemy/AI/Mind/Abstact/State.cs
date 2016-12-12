@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Enemy.AI.Mind.Abstact;
+﻿using Assets.Scripts.Enemy.AI.Factories;
+using Assets.Scripts.Enemy.AI.Mind.Abstact;
 
 namespace Assets.Scripts.Enemy
 {
@@ -6,8 +7,6 @@ namespace Assets.Scripts.Enemy
     {
         bool ExitOnReEntry { get; }
         StateType StateType { get; }
-
-        void OnEnterState();
-        void OnExitState();
+        BehaviourType BehaviourType { get; set; }
     }
 }

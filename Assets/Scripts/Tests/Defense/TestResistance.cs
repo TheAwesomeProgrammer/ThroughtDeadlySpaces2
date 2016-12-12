@@ -40,7 +40,7 @@ public class TestResistance : MonoBehaviour
 
         SetupDamageNDefense(damage, defense, CombatType.Fire, CombatType.Fire);
 
-        Assert.IsTrue(_life.Health == StartHealth, "Testing if damage n defense mitegaes each other");
+        IntegrationAssert.IsTrue(_life.Health == StartHealth, "Testing if damage n defense mitegaes each other");
     }
 
     void SetupDamageNDefense(int damage, int defense, CombatType defenseType, CombatType combatType)
@@ -56,7 +56,7 @@ public class TestResistance : MonoBehaviour
 
         _resistance.DoDamage(new List<CombatData>() { new CombatData(CombatType.Fire, damage) });
 
-        Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if damage gets through resistance");
+        IntegrationAssert.IsTrue(_life.Health == StartHealth - damage, "Testing if damage gets through resistance");
     }
 
     void TestIfResistanceWithExtraDefenseStopsDamage()
@@ -67,7 +67,7 @@ public class TestResistance : MonoBehaviour
 
         SetupDamageNDefense(damage, defense, CombatType.Fire, CombatType.Fire);
 
-        Assert.IsTrue(_life.Health == StartHealth, "Testing if resistrance with extra defense stops damage");
+        IntegrationAssert.IsTrue(_life.Health == StartHealth, "Testing if resistrance with extra defense stops damage");
     }
 
     void TestIfDifferentDamageTypeThanDefenseDoesDamage()
@@ -78,7 +78,7 @@ public class TestResistance : MonoBehaviour
 
         SetupDamageNDefense(damage, defense, CombatType.Fire, CombatType.Nature);
 
-        Assert.IsTrue(_life.Health == StartHealth - damage, "Testing if different damage types, than defense still does damage");
+        IntegrationAssert.IsTrue(_life.Health == StartHealth - damage, "Testing if different damage types, than defense still does damage");
     }
 
     void TestIfDoesBaseDamage()
@@ -88,7 +88,7 @@ public class TestResistance : MonoBehaviour
 
         _resistance.DoDamage(new List<CombatData>() { new CombatData(CombatType.BaseType, baseDamage) });
 
-        Assert.IsTrue(_life.Health == StartHealth - baseDamage, "Testing if does base damage");
+        IntegrationAssert.IsTrue(_life.Health == StartHealth - baseDamage, "Testing if does base damage");
     }
 
     

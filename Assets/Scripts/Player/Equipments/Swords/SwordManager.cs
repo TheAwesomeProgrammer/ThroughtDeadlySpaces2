@@ -51,7 +51,7 @@ namespace Assets.Scripts.Player.Swords
                 yield return null;
             }
 
-            result.CallIfNotNull(sword);
+            result.InvokeIfNotNull(sword);
         }
 
         public Sword GetPrimarySword()

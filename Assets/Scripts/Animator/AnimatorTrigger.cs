@@ -32,12 +32,12 @@ namespace Assets.Scripts.Player.Swords
             }
         }
 
-        public override void Cancel()
+        public override void CancelAnimation()
         {
             _shouldCancel = true;
         }
 
-        public override void End()
+        public override void EndAnimation()
         {
             Animator.SetTrigger(TriggerEndName);
             _running = false;

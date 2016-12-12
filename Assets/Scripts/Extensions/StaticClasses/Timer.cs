@@ -57,7 +57,7 @@ public class CallBackWithNoGameObject : Callbackable
 
     public void Callback()
     {
-        _callback.CallIfNotNull();
+        _callback.InvokeIfNotNull();
     }
 }
 

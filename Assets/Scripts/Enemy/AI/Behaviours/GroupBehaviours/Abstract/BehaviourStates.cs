@@ -6,6 +6,6 @@ namespace Assets.Scripts.Enemy.AI.Behaviours.GroupBehaviours.Abstract
 {
     public class BehaviourStates : MonoBehaviour
     {
-        public List<BehavoiourStateData> States;
+        public List<AiState> States;
     }
 }

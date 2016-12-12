@@ -48,7 +48,7 @@ namespace Assets.Scripts.Player.Equipments
 
 	    public void ChangeEquipment(Equipment newEquipment)
 	    {
-		    EquipmentChanged.CallIfNotNull(newEquipment);
+		    EquipmentChanged.InvokeIfNotNull(newEquipment);
 		    EquipmentChanged = null;
 	    }
 

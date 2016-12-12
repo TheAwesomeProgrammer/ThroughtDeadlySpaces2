@@ -1,22 +1,15 @@
-﻿using Assets.Scripts.Player.Swords;
+﻿using Assets.Scripts.Enemy.Attacks.Abstract;
+using Assets.Scripts.Player.Swords;
 using Assets.Scripts.Tests;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy.Attacks
 {
-    public class Attack : MonoBehaviour, Attackable
+    public class Attack : CombatActor<AttackStats>
     {
-        private AnimatorTrigger _animatorTrigger;
-
-        private void Start()
+        private void OnDrawGizmos()
         {
-            _animatorTrigger = GetComponent<AnimatorTrigger>();
-            NullAsserter.Assert(_animatorTrigger, "AnimatorTrigger");
-        }
-
-        public void DoAttack()
-        {
-            _animatorTrigger.StartAnimation(AnimatorRunMode.AlwaysRun);
+            CombatStats.DrawGizmos(transform.position);
         }
     }
 }

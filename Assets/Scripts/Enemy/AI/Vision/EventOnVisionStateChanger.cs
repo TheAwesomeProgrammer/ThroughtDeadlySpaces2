@@ -29,7 +29,7 @@ namespace Assets.Scripts.Enemy.AI.Vision
             {
                 newState = GetState(_stateTypeChooser.GetStateType());
                 Debug.Log("Event on vision. New state type" + _stateTypeChooser.GetStateType());
-                _eventManager.OnEvent(EventOnVision);
+                _eventManager.OnEvent(EventOnVision, this, EventArgs.Empty);
                 return true;
             }
 

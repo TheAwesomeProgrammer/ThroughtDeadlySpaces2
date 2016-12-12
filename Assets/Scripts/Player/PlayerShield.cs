@@ -35,7 +35,7 @@ namespace Assets.Scripts.Player
         {
             if (_abillityTiming.Active)
             {
-                _animatorTrigger.Cancel();
+                _animatorTrigger.CancelAnimation();
             }
             _abillityTiming.UseAbillity();
         }
@@ -48,7 +48,7 @@ namespace Assets.Scripts.Player
             }
             else
             {
-                _animatorTrigger.Cancel();
+                _animatorTrigger.CancelAnimation();
             }
         }
 
@@ -58,7 +58,7 @@ namespace Assets.Scripts.Player
             {
                 stoppedAttacker.EnableAttack();
             }
-            _animatorTrigger.End();
+            _animatorTrigger.EndAnimation();
         }
 
         public override void OnEnterWithTag()

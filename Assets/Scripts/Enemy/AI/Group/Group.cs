@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Enemy.AI.Factories;
 using Assets.Scripts.Extensions;
 using Assets.Scripts.Extensions.Enums;
 using UnityEngine;
@@ -85,9 +86,14 @@ namespace Assets.Scripts.Enemy.AI
             return foundGroupData;
         }
 
-        private int EnemiesCount()
+        public int EnemiesCount()
         {
             return Enemies.Count;
         }
+
+        public List<EnemyMind> GetEnemiesBy(BehaviourType behaviourType)
+        {
+            return Enemies.FindAll(item => item.CurrentStateData.BehaviourType == behaviourType);
+        } 
     }
 }

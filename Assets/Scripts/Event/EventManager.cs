@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Extensions;
 using UnityEngine;
 
@@ -14,21 +15,20 @@ namespace Assets.Scripts.Event
             _subscribers = new List<EventData>();
         }
 
-        public void OnEvent(Enum eventType)
+        public void OnEvent<TEventArgs>(Enum eventType, object sender, TEventArgs e) where TEventArgs : EventArgs
         {
             List<EventData> subscribersWithEventType = _subscribers.FindAll(item => item.EventType.Equals(eventType));
-            subscribersWithEventType.ForEach(item => item.Callback());
+            subscribersWithEventType.ForEach(item => item.Callback(sender, e));
         }
 
-        public void Subscribe(Enum eventType, Action callback)
+        public void Subscribe<TEventArgs>(Enum eventType, EventHandler<TEventArgs> callback) where TEventArgs : EventArgs
         {
-            _subscribers.Add(new EventData(eventType, callback));
+            _subscribers.Add(new EventData<TEventArgs>(eventType, callback));
         }
 
         public void UnSubscribe(Enum eventType)
         {
             _subscribers.Remove(item => item.EventType.Equals(eventType));
         }
-
     }
 }

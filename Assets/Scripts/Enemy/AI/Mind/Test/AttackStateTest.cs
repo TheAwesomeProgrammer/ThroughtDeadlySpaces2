@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy.Test
 {
-    public class AttackStateTest :  AiState, StateUpdateable
+    public class AttackStateTest :  AiState, StateUpdateable, StateEnter, StateExit
     {
         public override StateType StateType
         {
@@ -18,10 +18,10 @@ namespace Assets.Scripts.Enemy.Test
             _randomAttackSet = GetComponentInChildren<RandomAttackSet>();
         }
 
-        public override void OnEnterState()
+        public void OnEnterState()
         {
             Debug.Log("Entered state");
-            _randomAttackSet.GetAttack().DoAttack();
+            _randomAttackSet.GetCombat().DoAttack();
         }
 
         public void OnUpdateState()
@@ -29,7 +29,7 @@ namespace Assets.Scripts.Enemy.Test
             Debug.Log("Updated state");
         }
 
-        public override void OnExitState()
+        public void OnExitState()
         {
             Debug.Log("Exited state");
         }

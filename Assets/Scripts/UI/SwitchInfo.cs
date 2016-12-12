@@ -20,7 +20,7 @@ namespace Assets.Scripts.Camera_ll_UI
 
         public void Callback()
         {
-            _callback.CallIfNotNull();
+            _callback.InvokeIfNotNull();
         }
     }
 }

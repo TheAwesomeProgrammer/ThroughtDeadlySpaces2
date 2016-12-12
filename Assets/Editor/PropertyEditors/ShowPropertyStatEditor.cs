@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Editor;
 using Assets.Scripts.Camera_ll_UI.HUD;
 using Assets.Scripts.Enviroment.Map.Statues;
 using Assets.Scripts.Player;
@@ -19,19 +20,7 @@ namespace Test
         public void ShowPopupBox()
         {
             SerializedProperty index = serializedObject.FindProperty("Index");
-            index.intValue = EditorGUILayout.Popup(index.intValue, GetStringList(serializedObject, "Properties").ToArray());
-        }
-
-        protected List<string> GetStringList(SerializedObject serializedProperty, string propertyName)
-        {
-            SerializedProperty stringArray = serializedProperty.FindProperty(propertyName);
-            List<string> strings = new List<string>();
-            for (int i = 0; i < stringArray.arraySize; i++)
-            {
-                strings.Add(stringArray.GetArrayElementAtIndex(i).stringValue);
-            }
-
-            return strings;
+            index.intValue = EditorGUILayout.Popup(index.intValue, serializedObject.GetStringList("Properties").ToArray());
         }
     }
 }

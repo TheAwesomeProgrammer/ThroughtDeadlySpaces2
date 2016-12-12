@@ -41,7 +41,7 @@ namespace Assets.Scripts.Player.Equipments
                 yield return null;
             }
 
-	        result.CallIfNotNull(equipment);
+	        result.InvokeIfNotNull(equipment);
         }
 
 	    private Equipment GetEquipment<T>() where T : Equipment

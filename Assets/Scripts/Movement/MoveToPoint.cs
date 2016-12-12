@@ -90,7 +90,7 @@ namespace Assets.Scripts.Enviroment.Map.Bridge
 
         private void OnCompleteTween()
         {
-            OnMoved.CallIfNotNull();
+            OnMoved.InvokeIfNotNull();
         }
 
         public void MoveToStartPosition()

@@ -2,20 +2,19 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
-public static class GameObjectExtension {
-
-
-
-     public static GameObject[] FindGameObjectsWithLayer(this GameObject pGameObject,string pLayerName)
+public static class GameObjectExtension
+{
+    public static GameObject[] FindGameObjectsWithLayer(this GameObject gameObject,string payerName)
     {
-         GameObject[] tGameObjectsInScene = MonoBehaviour.FindObjectsOfType<GameObject>();
+         GameObject[] tGameObjectsInScene = Object.FindObjectsOfType<GameObject>();
          List<GameObject> tGameObjectsWithLayer = new List<GameObject>();
 
          foreach(GameObject tGameObjectInScene in tGameObjectsInScene)
          {
 
-             if (tGameObjectInScene.layer == LayerMask.NameToLayer(pLayerName))
+             if (tGameObjectInScene.layer == LayerMask.NameToLayer(payerName))
              {
                  tGameObjectsWithLayer.Add(tGameObjectInScene);
              }

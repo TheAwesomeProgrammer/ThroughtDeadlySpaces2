@@ -4,7 +4,7 @@ namespace Assets.Scripts.Extensions
 {
     public static class ActionExtensions
     {
-        public static void CallIfNotNull(this Action action)
+        public static void InvokeIfNotNull(this Action action)
         {
             if (action != null)
             {
@@ -12,7 +12,7 @@ namespace Assets.Scripts.Extensions
             }
         }
 
-        public static void CallIfNotNull<T>(this Action<T> action, T parameter)
+        public static void InvokeIfNotNull<T>(this Action<T> action, T parameter)
         {
             if (action != null)
             {

@@ -2,27 +2,16 @@
 using System.Linq;
 using Assets.Scripts.Enemy.Attacks.Abstract;
 using Assets.Scripts.Extensions;
+using Assets.Scripts.Player.Swords;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy.Attacks
 {
-    public class RandomAttackSet : MonoBehaviour, AttackSet
+    public class RandomAttackSet : CombatSet<AttackStats>
     {
-        private List<Attackable> _attacks;
-
-        private void Awake()
+        protected override CombatActor<AttackStats> FindCombat()
         {
-            FindAttacks();
-        }
-
-        private void FindAttacks()
-        {
-            _attacks = GetComponentsInChildren<Attackable>().ToList();
-        }
-
-        public Attackable GetAttack()
-        {
-            return _attacks.Random();
+            return _combats.Random();
         }
     }
 }

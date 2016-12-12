@@ -12,16 +12,16 @@ namespace Assets.Scripts.Player.Swords
             Debug.Log("Starting animation with trigger name : " + TriggerName + Environment.NewLine + 
                 "With a duration of "+ AnimationDuration);
             OnAnimationStarting();
-            Timer.Start(gameObject, AnimationDuration, End);
+            Timer.Start(gameObject, AnimationDuration, EndAnimation);
         }
 
-        public override void End()
+        public override void EndAnimation()
         {
             Debug.Log("Starting animation with trigger end name : " + TriggerEndName);
             OnAnimationEnded();
         }
 
-        public override void Cancel()
+        public override void CancelAnimation()
         {
             Debug.Log("Cancelling animation");
         }

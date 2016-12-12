@@ -62,4 +62,8 @@ namespace Assets.Editor
             prop.intValue = EditorExtension.DrawBitMaskField(position, prop.intValue, typeAttr.propType, label);
         }
     }
+
+
+
+
 }

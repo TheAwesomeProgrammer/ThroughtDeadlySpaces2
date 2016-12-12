@@ -38,18 +38,18 @@ namespace Assets.Scripts.Tests.Xml
 
         void TestIfCanFindSwordBySwordId()
         {
-            Assert.IsEquals(_xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords").Attributes["name"].InnerText, "Standard",
+            IntegrationAssert.Equals(_xmlSearcher.GetNodeInArrayWithId(SwordId, "Swords").Attributes["name"].InnerText, "Standard",
                 "Test if can find sword by sword id");
         }
 
         void TestIfCanFindSwordSpecs()
         {
             int[] specs = _swordPath.GetSpecs();
-            Assert.IsEquals(specs[0], 1, "Test sword base damage");
-            Assert.IsEquals(specs[1], 2, "Test sword combat type1 damage");
-            Assert.IsEquals(specs[2], 3, "Test sword combat type2 damage");
-            Assert.IsEquals(specs[3], 4, "Test sword combat type3 damage");
-            Assert.IsEquals(specs[4], 5, "Test sword combat type4 damage");
+            IntegrationAssert.Equals(specs[0], 1, "Test sword base damage");
+            IntegrationAssert.Equals(specs[1], 2, "Test sword combat type1 damage");
+            IntegrationAssert.Equals(specs[2], 3, "Test sword combat type2 damage");
+            IntegrationAssert.Equals(specs[3], 4, "Test sword combat type3 damage");
+            IntegrationAssert.Equals(specs[4], 5, "Test sword combat type4 damage");
         }
 
         void TestIfCanFindRustyCurseSpecs()
@@ -63,8 +63,8 @@ namespace Assets.Scripts.Tests.Xml
 
             rustySwordCurse.LoadXml(1);
 
-            Assert.IsEquals(specs[0], rustySwordCurse.MinusProcentDamage, "Test minus procent damage");
-            Assert.IsEquals(specs[1], rustySwordCurse.ProcentToBreakSword, "Test procent to break sword");
+            IntegrationAssert.Equals(specs[0], rustySwordCurse.MinusProcentDamage, "Test minus procent damage");
+            IntegrationAssert.Equals(specs[1], rustySwordCurse.ProcentToBreakSword, "Test procent to break sword");
         }
 
         void TestIfCanFindVStellSwordBlessingSpecs()
@@ -78,8 +78,8 @@ namespace Assets.Scripts.Tests.Xml
 
             vsteelSwordBaseBlessing.LoadXml(1);
 
-            Assert.IsEquals(specs[0], vsteelSwordBaseBlessing.ProcentChanceOfCriticalHit, "Test procent chance of crital hit is loaded correct");
-            Assert.IsEquals(specs[1], vsteelSwordBaseBlessing.CriticalHitDamageProcent, "Test critical hit damage procent is loaded correct");
+            IntegrationAssert.Equals(specs[0], vsteelSwordBaseBlessing.ProcentChanceOfCriticalHit, "Test procent chance of crital hit is loaded correct");
+            IntegrationAssert.Equals(specs[1], vsteelSwordBaseBlessing.CriticalHitDamageProcent, "Test critical hit damage procent is loaded correct");
         }
 
         void TestIfCanFindLifeDrainSwordSpecs()
@@ -93,8 +93,8 @@ namespace Assets.Scripts.Tests.Xml
 
             lifeDrainBlessing.LoadXml(1);
 
-            Assert.IsEquals(specs[0], lifeDrainBlessing.ProcentChanceOfGainingLifeOnHit, "Test procent change of ganing life on hit spec is loaded correct");
-            Assert.IsEquals(specs[1], lifeDrainBlessing.LifeOnHit, "Test life on hit spec is loaded correct");
+            IntegrationAssert.Equals(specs[0], lifeDrainBlessing.ProcentChanceOfGainingLifeOnHit, "Test procent change of ganing life on hit spec is loaded correct");
+            IntegrationAssert.Equals(specs[1], lifeDrainBlessing.LifeOnHit, "Test life on hit spec is loaded correct");
         }
     }
 }

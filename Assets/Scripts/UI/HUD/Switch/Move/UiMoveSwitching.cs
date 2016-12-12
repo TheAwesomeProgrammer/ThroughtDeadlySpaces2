@@ -74,7 +74,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
             {
                 Reset();
                 Moved = !Moved;
-                _callback.CallIfNotNull((int)SwitchType);
+                _callback.InvokeIfNotNull((int)SwitchType);
             }
         }
     }

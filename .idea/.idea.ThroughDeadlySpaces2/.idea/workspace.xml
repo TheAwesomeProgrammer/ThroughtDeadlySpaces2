@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="498ccc4c-2690-4bea-914d-7e19ea1967bb" name="Default" comment="" />
+    <list default="true" id="04474cfe-e987-4f3b-bc9d-80b234c782d9" name="Default" comment="" />
     <ignored path="ThroughDeadlySpaces2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -20,132 +20,172 @@
     <favorites_list name="ThroughDeadlySpaces2" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Swords.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Swords.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ListExtensions.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Extensions/ListExtensions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19131">
-              <caret line="911" column="20" selection-start-line="911" selection-start-column="20" selection-end-line="911" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Curses.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Curses.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bosses.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Bosses.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Blessings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Blessings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Armor.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Armor.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12873">
-              <caret line="613" column="29" selection-start-line="613" selection-start-column="29" selection-end-line="613" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shop.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Shop.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestGivers.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/QuestGivers.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnumConverter.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Converters/EnumConverter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1344">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="576">
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
-                <marker date="1471602880903" expanded="true" signature="6:47" ph="..." />
-                <marker date="1471602880903" expanded="true" signature="95:313" ph="{...}" />
-                <marker date="1471602880903" expanded="true" signature="177:223" ph="{...}" />
-                <marker date="1471602880903" expanded="true" signature="264:310" ph="{...}" />
-                <marker date="1471602880903" expanded="true" signature="345:1789" ph="{...}" />
-                <marker date="1471602880903" expanded="true" signature="452:1051" ph="{...}" />
-                <marker date="1471602880903" expanded="true" signature="1160:1360" ph="{...}" />
-                <marker date="1471602880903" expanded="true" signature="1439:1783" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="6:85" ph="..." />
+                <marker date="1481556410786" expanded="true" signature="163:2456" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="240:357" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="447:630" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="717:810" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="820:953" ph="/// Get random element from list ... " />
+                <marker date="1481556410786" expanded="true" signature="1006:1188" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="1286:1401" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="1464:1662" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="1795:2105" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="2186:2273" ph="{...}" />
+                <marker date="1481556410786" expanded="true" signature="2356:2450" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerDeath.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/PlayerDeath.cs">
+      <file leaf-file-name="TargetData.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/TargetData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="320">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <marker date="1470874681398" expanded="true" signature="6:89" ph="..." />
-                <marker date="1470874681398" expanded="true" signature="122:1223" ph="{...}" />
-                <marker date="1470874681398" expanded="true" signature="169:1221" ph="{...}" />
-                <marker date="1470874681398" expanded="true" signature="370:764" ph="{...}" />
-                <marker date="1470874681398" expanded="true" signature="788:1087" ph="{...}" />
-                <marker date="1470874681398" expanded="true" signature="1123:1215" ph="{...}" />
+                <marker date="1481558935212" expanded="true" signature="6:99" ph="..." />
+                <marker date="1481558935212" expanded="true" signature="148:990" ph="{...}" />
+                <marker date="1481558935212" expanded="true" signature="197:988" ph="{...}" />
+                <marker date="1481558935212" expanded="true" signature="442:838" ph="{...}" />
+                <marker date="1481558935212" expanded="true" signature="898:982" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UiMoveSwitching.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Move/UiMoveSwitching.cs">
+      <file leaf-file-name="Null.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Extensions/StaticClasses/Null.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+            <state relative-caret-position="400">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
               <folding>
-                <marker date="1471288928851" expanded="true" signature="6:80" ph="..." />
-                <marker date="1471288928851" expanded="true" signature="173:2040" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="419:648" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="710:775" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="805:869" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="925:979" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1041:1148" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1201:1249" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1313:1422" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1477:1525" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1585:1645" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1677:1766" ph="{...}" />
-                <marker date="1471288928851" expanded="true" signature="1802:2034" ph="{...}" />
+                <marker date="1481559689572" expanded="true" signature="6:66" ph="..." />
+                <marker date="1481559689572" expanded="true" signature="103:1077" ph="{...}" />
+                <marker date="1481559689572" expanded="true" signature="134:1075" ph="{...}" />
+                <marker date="1481559689572" expanded="true" signature="215:349" ph="{...}" />
+                <marker date="1481559689572" expanded="true" signature="428:661" ph="{...}" />
+                <marker date="1481559689572" expanded="true" signature="731:862" ph="{...}" />
+                <marker date="1481559689572" expanded="true" signature="928:1069" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CombatActor.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatActor.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+              <folding>
+                <marker date="1481554731498" expanded="true" signature="6:204" ph="..." />
+                <marker date="1481554731498" expanded="true" signature="254:827" ph="{...}" />
+                <marker date="1481554731498" expanded="true" signature="365:825" ph="{...}" />
+                <marker date="1481554731498" expanded="true" signature="634:716" ph="{...}" />
+                <marker date="1481554731498" expanded="true" signature="756:819" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CombatStats.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatStats.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <folding>
+                <marker date="1481554409657" expanded="true" signature="6:32" ph="..." />
+                <marker date="1481554409657" expanded="true" signature="81:208" ph="{...}" />
+                <marker date="1481554409657" expanded="true" signature="140:206" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShouldStopAttackingChanger.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/ShouldStopAttackingChanger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1481555752157" expanded="true" signature="6:232" ph="..." />
+                <marker date="1481555752157" expanded="true" signature="275:850" ph="{...}" />
+                <marker date="1481555752157" expanded="true" signature="340:848" ph="{...}" />
+                <marker date="1481555752157" expanded="true" signature="433:842" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShouldAttackStateChanger.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/ShouldAttackStateChanger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+              <folding>
+                <marker date="1481555417922" expanded="true" signature="6:80" ph="..." />
+                <marker date="1481555417922" expanded="true" signature="123:996" ph="{...}" />
+                <marker date="1481555417922" expanded="true" signature="186:994" ph="{...}" />
+                <marker date="1481555417922" expanded="true" signature="360:516" ph="{...}" />
+                <marker date="1481555417922" expanded="true" signature="604:988" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyMind.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/EnemyMind.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+              <folding>
+                <marker date="1481382960459" expanded="true" signature="6:154" ph="..." />
+                <marker date="1481382960459" expanded="true" signature="186:3074" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="231:3072" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="633:881" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="920:1349" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="1379:1601" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="1651:1766" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="1829:2001" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="2089:2425" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="2471:2925" ph="{...}" />
+                <marker date="1481382960459" expanded="true" signature="2980:3066" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateChanger.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/StateChanger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <marker date="1478964508508" expanded="true" signature="45:167" ph="{...}" />
+                <marker date="1478964508508" expanded="true" signature="81:165" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReactToEventStateChanger.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Vision/ReactToEventStateChanger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <marker date="1477754622034" expanded="true" signature="6:212" ph="..." />
+                <marker date="1477754622034" expanded="true" signature="254:1645" ph="{...}" />
+                <marker date="1477754622034" expanded="true" signature="317:1643" ph="{...}" />
+                <marker date="1477754622034" expanded="true" signature="583:852" ph="{...}" />
+                <marker date="1477754622034" expanded="true" signature="917:1240" ph="{...}" />
+                <marker date="1477754622034" expanded="true" signature="1328:1637" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -153,54 +193,68 @@
       </file>
     </leaf>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/PlayerDeath.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/Combat/CombatActor.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Bosses/Abstract/BossProjectileSpawner.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Bosses/Attack/BossAttack.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Bosses/Bobo the mighty/Attacks/MinionSpawn/BoboMinionSpawnExecuter.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Bosses/Manager/Generator/BossGeneratorProperties.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/Extensions'/SerializedObjectExtensions.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/PropertyEditors/ShowPropertyStatEditor.cs" />
         <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/PlayerProperties.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/UI/HUD/Draw/PropertyStats/PropertyStat.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/Combat/AttackEditor.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/EditorExtension.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/Extensions/SerializedPropertyExtensions.cs" />
         <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/AbillityTiming.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/QuestProperties.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Xml/XmlSearcher.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/UiQuestGiver.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Xml/XmlName.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/QuestGiver.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/QuestGiverProperties.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Xml/Test/Swords.xml" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Extensions/Enums/EnumExtensions.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Xml/Test/QuestGivers.xml" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/Quest.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Sword/RewardSword.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Reward.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Extensions/StringExtensions.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/EquipmentXmlLoader.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Xml/EnumConverter.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/SwordAttributes/SwordAttribute.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Armors/ArmorAttribute.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Draw/PropertyStats/PropertyStat.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/EquipmentFinder.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/SwordManager.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Equipment.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Draw/PropertyStats/EquipmentSpecsPropertiesStat.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/ShowAttributeNames.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/TextRow.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Move/MoveSwitcher.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Managers/UiSwitchManager.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Move/UiMoveSwitching.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Movement/MoveToPoint.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enviroment/Map/Interactables/InteractableWithButtons.cs" />
-        <option value="$PROJECT_DIR$/../../Assets/Xml/Test/Armor.xml" />
-        <option value="$PROJECT_DIR$/../../Assets/Scripts/Converters/EnumConverter.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatActionData.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/ARandomAction.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/HeavyAttack.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Animator/AnimatorTriggerBase.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/StateEnd.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/StateEnter.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/State.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/AiState.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/IdleState.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GrowlState.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/MovementState.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/Test/TestAttack.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Test/AttackStateTest.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/AttackActions/HeavyAttackAction.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Animator/TestAnimatorTrigger.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Bosses/Bobo the mighty/Attacks/RapidFrenzy/BoboRapidFrenzyExecuter.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/Movement/PlayerDash.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Player/PlayerShield.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/TargetType.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/TargetDataEditor.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/EnemyMind.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/StateData.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/Combat/CombatActorEditor.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Editor/TargetDataEditor.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/AttackState.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/Abstract/GroupBehaviourBase.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatAction.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatStats.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/RangeCheck.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/AttackStats.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatActor.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/Attack.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/ShouldAttackStateChanger.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatSet.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/ShouldStopAttackingChanger.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Extensions/ListExtensions.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/TargetData.cs" />
+        <option value="$PROJECT_DIR$/../../Assets/Scripts/Extensions/StaticClasses/Null.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1860" />
-    <option name="height" value="1092" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -208,15 +262,6 @@
         <expanded-state>
           <State>
             <id />
-          </State>
-          <State>
-            <id>General</id>
-          </State>
-          <State>
-            <id>RELAX NG</id>
-          </State>
-          <State>
-            <id>SQL</id>
           </State>
         </expanded-state>
         <selected-state>
@@ -227,7 +272,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -264,30 +309,217 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Enemy" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Enemy" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AI" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Enemy" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AI" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mind" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Enemy" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AI" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Attack" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThroughDeadlySpaces2 (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
         <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected=".NET Project.Default">
     <configuration default="true" type="DotNetProject" factoryName=".NET Project">
       <option name="PROJECT_PATH" value="" />
       <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
       <method />
     </configuration>
     <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="PROJECT_PATH" value="" />
       <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
       <method />
     </configuration>
     <list size="1">
@@ -302,30 +534,24 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="498ccc4c-2690-4bea-914d-7e19ea1967bb" name="Default" comment="" />
-      <created>1470870680845</created>
+      <changelist id="04474cfe-e987-4f3b-bc9d-80b234c782d9" name="Default" comment="" />
+      <created>1480934096795</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1470870680845</updated>
-      <workItem from="1470870688330" duration="2910000" />
-      <workItem from="1470923915313" duration="2213000" />
-      <workItem from="1471182384154" duration="6941000" />
-      <workItem from="1471190030683" duration="2596000" />
-      <workItem from="1471192988274" duration="7462000" />
-      <workItem from="1471217335655" duration="8333000" />
-      <workItem from="1471226592000" duration="4622000" />
-      <workItem from="1471426404697" duration="76000" />
-      <workItem from="1471435494112" duration="3620000" />
-      <workItem from="1471602704772" duration="840000" />
-      <workItem from="1471976739177" duration="6000" />
-      <workItem from="1472585759349" duration="239000" />
-      <workItem from="1472586031750" duration="66000" />
-      <workItem from="1472589720476" duration="35000" />
+      <updated>1480934096795</updated>
+      <workItem from="1480934118545" duration="10237000" />
+      <workItem from="1481101787797" duration="5028000" />
+      <workItem from="1481121074915" duration="5980000" />
+      <workItem from="1481206005545" duration="7328000" />
+      <workItem from="1481290685285" duration="7244000" />
+      <workItem from="1481377277951" duration="11750000" />
+      <workItem from="1481550999968" duration="6222000" />
+      <workItem from="1481557270174" duration="3053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39959000" />
+    <option name="totallyTimeSpent" value="56842000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,411 +563,526 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1860" height="1092" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18729642" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32460734" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18998924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40669373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18998924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4070248" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Spawner/RewardSpawner.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Movement/PlayerDash.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        <state relative-caret-position="1088">
+          <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/Attack/Xml/XmlName.cs" />
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Bosses/Manager/Generator/BossGeneratorProperties.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/PlayerShield.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="960">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/Attack/Xml/Location.cs" />
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Sword/RewardSwordObjectFactory.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Animator/AnimatorTrigger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/TargetType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Extensions/Enums/EnumExtensions.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/Extensions/SerializedObjectExtensions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/QuestGiverProperties.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/Extensions/SerializedPropertyExtensions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/RewardFactory.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/PropertyEditors/ShowPropertyStatEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Potion/RewardPotion.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/PropertyEditors/ShowPropertyEquipmentEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/QuestGiver.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/PropertyEditors/ShowPropertyEditorWithEquipmentType.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1407">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Giver/Quest.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/PropertyEditors/LifePropertyStatEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1617">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Sword/RewardSword.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/PropertyEditors/ShowEquipmentSpecsPropertyEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Quest/Rewards/Reward.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/EditorExtension.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enviroment/Map/Rooms/Room.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Extensions/StringExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/EquipmentXmlLoader.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/Attack/Xml/EnumConverter.cs" />
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/SwordAttributes/SwordAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Armors/ArmorAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/DefaultSword.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/Abstract/Sword.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Draw/PropertyStats/PropertyStat.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="120" column="37" selection-start-line="120" selection-start-column="37" selection-end-line="120" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/EquipmentFinder.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="100" selection-start-line="25" selection-start-column="100" selection-end-line="25" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Draw/PropertyStats/EquipmentPropertyStat.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/SwordManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Equipment.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Draw/PropertyStats/EquipmentSpecsPropertiesStat.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/ShowAttributeNames.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1869">
-          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/TextRow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="-620">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Assets/Editor/EnumFlagDrawer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="96" selection-start-line="10" selection-start-column="96" selection-end-line="10" selection-end-column="96" />
+        <state relative-caret-position="-188">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/UIItem.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/ExposeProperties.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enviroment/Map/Interactables/InteractableWithButtons.cs">
+    <entry file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/v07/DecompilerCache/decompiler/8A4B30A9-424F-4EB3-BC0D-7A9DBCCD4100/cb/55193778/EditorGUIUtility.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+        <state relative-caret-position="352">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/UiMoveManager.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/TargetDataEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        <state relative-caret-position="448">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Switchable.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/UiMoverEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Movement/MoveToPoint.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/Combat/CombatActorEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+        <state relative-caret-position="240">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/EDrop.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Editor/UpgradeVSProject.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Managers/UiESwitching.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/ClosestToPlayerGroupBehaviour.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Managers/UiSwitchManager.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/MovementState.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Move/MoveSwitcher.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/IdleState.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Move/UiMover.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GrowlState.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/Abstract/BehaviourStates.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/StateChangers/GroupMovementChanger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/AnimationStateChanger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/AttackState.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatAction.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/AttackActions/HeavyAttackAction.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/RangeCheck.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/AttackStats.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatActionData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/Attack.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Attacks/RandomAttackSet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatSet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/Abstract/GroupBehaviourManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/StateChangerBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
           <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Camera ll UI/HUD/Switch/Move/UiMoveSwitching.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
           <folding>
-            <marker date="1471288928851" expanded="true" signature="6:80" ph="..." />
-            <marker date="1471288928851" expanded="true" signature="173:2040" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="419:648" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="710:775" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="805:869" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="925:979" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1041:1148" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1201:1249" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1313:1422" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1477:1525" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1585:1645" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1677:1766" ph="{...}" />
-            <marker date="1471288928851" expanded="true" signature="1802:2034" ph="{...}" />
+            <marker date="1477591172999" expanded="true" signature="6:93" ph="..." />
+            <marker date="1477591172999" expanded="true" signature="200:655" ph="{...}" />
+            <marker date="1477591172999" expanded="true" signature="310:414" ph="{...}" />
+            <marker date="1477591172999" expanded="true" signature="477:560" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/Equipments/Swords/Attack/Xml/XmlSearcher.cs" />
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Shop.xml">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/StateData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Swords.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19131">
-          <caret line="911" column="20" selection-start-line="911" selection-start-column="20" selection-end-line="911" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Curses.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Blessings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Bosses.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/Armor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12873">
-          <caret line="613" column="29" selection-start-line="613" selection-start-column="29" selection-end-line="613" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Xml/Test/QuestGivers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Converters/EnumConverter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="1008">
+          <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
           <folding>
-            <marker date="1471602880903" expanded="true" signature="6:47" ph="..." />
-            <marker date="1471602880903" expanded="true" signature="95:313" ph="{...}" />
-            <marker date="1471602880903" expanded="true" signature="177:223" ph="{...}" />
-            <marker date="1471602880903" expanded="true" signature="264:310" ph="{...}" />
-            <marker date="1471602880903" expanded="true" signature="345:1789" ph="{...}" />
-            <marker date="1471602880903" expanded="true" signature="452:1051" ph="{...}" />
-            <marker date="1471602880903" expanded="true" signature="1160:1360" ph="{...}" />
-            <marker date="1471602880903" expanded="true" signature="1439:1783" ph="{...}" />
+            <marker date="1481382976780" expanded="true" signature="6:203" ph="..." />
+            <marker date="1481382976780" expanded="true" signature="283:1910" ph="{...}" />
+            <marker date="1481382976780" expanded="true" signature="735:880" ph="{...}" />
+            <marker date="1481382976780" expanded="true" signature="916:1023" ph="{...}" />
+            <marker date="1481382976780" expanded="true" signature="1060:1183" ph="{...}" />
+            <marker date="1481382976780" expanded="true" signature="1229:1448" ph="{...}" />
+            <marker date="1481382976780" expanded="true" signature="1491:1904" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Player/PlayerDeath.cs">
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/RandomGroupBehaviour.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="112">
+          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
           <folding>
-            <marker date="1470874681398" expanded="true" signature="6:89" ph="..." />
-            <marker date="1470874681398" expanded="true" signature="122:1223" ph="{...}" />
-            <marker date="1470874681398" expanded="true" signature="169:1221" ph="{...}" />
-            <marker date="1470874681398" expanded="true" signature="370:764" ph="{...}" />
-            <marker date="1470874681398" expanded="true" signature="788:1087" ph="{...}" />
-            <marker date="1470874681398" expanded="true" signature="1123:1215" ph="{...}" />
+            <marker date="1477594126983" expanded="true" signature="6:162" ph="..." />
+            <marker date="1477594126983" expanded="true" signature="268:873" ph="{...}" />
+            <marker date="1477594126983" expanded="true" signature="687:867" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Behaviours/GroupBehaviours/Abstract/GroupBehaviourBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+          <folding>
+            <marker date="1481553645135" expanded="true" signature="6:212" ph="..." />
+            <marker date="1481553645135" expanded="true" signature="381:1009" ph="{...}" />
+            <marker date="1481553645135" expanded="true" signature="698:959" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Extensions/ListExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding>
+            <marker date="1481556410786" expanded="true" signature="6:85" ph="..." />
+            <marker date="1481556410786" expanded="true" signature="163:2456" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="240:357" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="447:630" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="717:810" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="820:953" ph="/// Get random element from list ... " />
+            <marker date="1481556410786" expanded="true" signature="1006:1188" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="1286:1401" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="1464:1662" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="1795:2105" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="2186:2273" ph="{...}" />
+            <marker date="1481556410786" expanded="true" signature="2356:2450" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Vision/ReactToEventStateChanger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1477754622034" expanded="true" signature="6:212" ph="..." />
+            <marker date="1477754622034" expanded="true" signature="254:1645" ph="{...}" />
+            <marker date="1477754622034" expanded="true" signature="317:1643" ph="{...}" />
+            <marker date="1477754622034" expanded="true" signature="583:852" ph="{...}" />
+            <marker date="1477754622034" expanded="true" signature="917:1240" ph="{...}" />
+            <marker date="1477754622034" expanded="true" signature="1328:1637" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/EnemyMind.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+          <folding>
+            <marker date="1481382960459" expanded="true" signature="6:154" ph="..." />
+            <marker date="1481382960459" expanded="true" signature="186:3074" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="231:3072" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="633:881" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="920:1349" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="1379:1601" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="1651:1766" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="1829:2001" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="2089:2425" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="2471:2925" ph="{...}" />
+            <marker date="1481382960459" expanded="true" signature="2980:3066" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Mind/Abstact/StateChanger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <marker date="1478964508508" expanded="true" signature="45:167" ph="{...}" />
+            <marker date="1478964508508" expanded="true" signature="81:165" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/ShouldStopAttackingChanger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481555752157" expanded="true" signature="6:232" ph="..." />
+            <marker date="1481555752157" expanded="true" signature="275:850" ph="{...}" />
+            <marker date="1481555752157" expanded="true" signature="340:848" ph="{...}" />
+            <marker date="1481555752157" expanded="true" signature="433:842" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/AI/Attack/ShouldAttackStateChanger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <marker date="1481555417922" expanded="true" signature="6:80" ph="..." />
+            <marker date="1481555417922" expanded="true" signature="123:996" ph="{...}" />
+            <marker date="1481555417922" expanded="true" signature="186:994" ph="{...}" />
+            <marker date="1481555417922" expanded="true" signature="360:516" ph="{...}" />
+            <marker date="1481555417922" expanded="true" signature="604:988" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatActor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <marker date="1481554731498" expanded="true" signature="6:204" ph="..." />
+            <marker date="1481554731498" expanded="true" signature="254:827" ph="{...}" />
+            <marker date="1481554731498" expanded="true" signature="365:825" ph="{...}" />
+            <marker date="1481554731498" expanded="true" signature="634:716" ph="{...}" />
+            <marker date="1481554731498" expanded="true" signature="756:819" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/CombatStats.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <marker date="1481554409657" expanded="true" signature="6:32" ph="..." />
+            <marker date="1481554409657" expanded="true" signature="81:208" ph="{...}" />
+            <marker date="1481554409657" expanded="true" signature="140:206" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Enemy/Combat/Abstract/TargetData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1481558935212" expanded="true" signature="6:99" ph="..." />
+            <marker date="1481558935212" expanded="true" signature="148:990" ph="{...}" />
+            <marker date="1481558935212" expanded="true" signature="197:988" ph="{...}" />
+            <marker date="1481558935212" expanded="true" signature="442:838" ph="{...}" />
+            <marker date="1481558935212" expanded="true" signature="898:982" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assets/Scripts/Extensions/StaticClasses/Null.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <marker date="1481559689572" expanded="true" signature="6:66" ph="..." />
+            <marker date="1481559689572" expanded="true" signature="103:1077" ph="{...}" />
+            <marker date="1481559689572" expanded="true" signature="134:1075" ph="{...}" />
+            <marker date="1481559689572" expanded="true" signature="215:349" ph="{...}" />
+            <marker date="1481559689572" expanded="true" signature="428:661" ph="{...}" />
+            <marker date="1481559689572" expanded="true" signature="731:862" ph="{...}" />
+            <marker date="1481559689572" expanded="true" signature="928:1069" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy.AI.Abstact
 {
-    public class MovementState : AiState
+    public class MovementState : AiState, StateEnter, StateExit
     {
         public override StateType StateType
         {
@@ -20,12 +20,12 @@ namespace Assets.Scripts.Enemy.AI.Abstact
             _enemyMovement = GetComponent<Moveable>();
         }
 
-        public override void OnEnterState()
+        public void OnEnterState()
         {
             _enemyMovement.Resume();
         }
 
-        public override void OnExitState()
+        public void OnExitState()
         {
             _enemyMovement.Stop();
         }

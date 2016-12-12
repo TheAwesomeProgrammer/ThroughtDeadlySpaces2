@@ -17,7 +17,7 @@ namespace Assets.Scripts.Camera_ll_UI.HUD
         {
             UiId = (int) SwitchType;
             _moveToPoint = GetComponent<MoveToPoint>();
-            _moveToPoint.OnMoved += () => OnMoved.CallIfNotNull();
+            _moveToPoint.OnMoved += () => OnMoved.InvokeIfNotNull();
         }
 
         protected override void OnShow()

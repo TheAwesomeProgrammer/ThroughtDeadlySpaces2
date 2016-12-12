@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Enemy.AI.Factories;
+using Assets.Scripts.Enemy.AI.Mind.Abstact;
+using Assets.Scripts.Extensions;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy
@@ -8,6 +11,16 @@ namespace Assets.Scripts.Enemy
     [Serializable]
     public class StateData
     {
+        public BehaviourType BehaviourType
+        {
+            get { return State.BehaviourType; }
+        }
+
+        public StateType StateType
+        {
+            get { return State.StateType; }
+        }
+
         public State State;
         public List<StateChanger> StateChangers;
 
@@ -22,23 +35,19 @@ namespace Assets.Scripts.Enemy
 
         public void OnEnterState()
         {
-            State.OnEnterState();
+            Null.Call(State as StateEnter, (stateEnter) => stateEnter.OnEnterState());
         }
 
         public void OnUpdateState()
         {
-            StateUpdateable stateUpdateable = State as StateUpdateable;
-            if (stateUpdateable != null)
-            {
-                stateUpdateable.OnUpdateState();
-            }
+            Null.Call(State as StateUpdateable, (stateUpdateable) => stateUpdateable.OnUpdateState());
         }
 
         public void OnExitState(State state)
         {
             if (state.Equals(State) && State.ExitOnReEntry || !state.Equals(State))
             {
-                State.OnExitState();
+                Null.Call(State as StateExit, (stateExit) => stateExit.OnExitState());
             }
         }
 

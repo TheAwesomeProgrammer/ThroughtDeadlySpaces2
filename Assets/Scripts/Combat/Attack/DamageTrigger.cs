@@ -101,7 +101,7 @@ namespace Assets.Scripts.Player.Swords
             CombatDamage newCombatDamage = new CombatDamage(damageable, AttackSpeed);
             if (!_enemyAttackers.Contains(newCombatDamage))
             {
-                _newEnemyAdded.CallIfNotNull(newCombatDamage);
+                _newEnemyAdded.InvokeIfNotNull(newCombatDamage);
                 _enemyAttackers.Add(newCombatDamage);
             }
         }

@@ -7,12 +7,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy.AI.Behaviours.GroupBehaviours.Abstract
 {
+    [Serializable]
     public abstract class GroupBehaviourBase : MonoBehaviour, GroupBehaviour
     {
-        public abstract GroupSize GroupSize { get;  }
+        public abstract GroupSize GroupSize { get; }
         public abstract StateType StateType { get; }
         
-        protected List<BehavoiourStateData> _states;
+        protected List<AiState> _states;
 
         protected GroupBehaviourManager _groupBehaviourManager;
         private BehaviourStates _behaviourStates;

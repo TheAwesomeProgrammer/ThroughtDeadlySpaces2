@@ -74,7 +74,7 @@ namespace Assets.Scripts.Tests.Player.Swords
 
             _swordAttack.Attack();
 
-            Assert.IsEquals(_enemyLife.Health, StartHealth - baseDamage, "Test Base damage going through");
+            IntegrationAssert.Equals(_enemyLife.Health, StartHealth - baseDamage, "Test Base damage going through");
         }
 
         void TestIfDamageDataWithCombatType1GoesThroughWhenEnemyHasSameWeakness()
@@ -86,7 +86,7 @@ namespace Assets.Scripts.Tests.Player.Swords
 
             _swordAttack.Attack();
 
-            Assert.IsTrue(_enemyLife.Health == StartHealth - damage, "Test if damage with combat type 1, goes through, when enemy has same weakness");
+            IntegrationAssert.IsTrue(_enemyLife.Health == StartHealth - damage, "Test if damage with combat type 1, goes through, when enemy has same weakness");
         }
 
         void TestIfDamageWithCombatType1DosntDoDamageWhenEnemyHasDifferentWeakness()
@@ -98,7 +98,7 @@ namespace Assets.Scripts.Tests.Player.Swords
 
             _swordAttack.Attack();
 
-            Assert.IsTrue(_enemyLife.Health == StartHealth, "Test if Damage With Combat Type 1 Dosnt Do Damage When Enemy Has Different Weakness");
+            IntegrationAssert.IsTrue(_enemyLife.Health == StartHealth, "Test if Damage With Combat Type 1 Dosnt Do Damage When Enemy Has Different Weakness");
         }
 
         void TestIfStrengthDamageGoesThorugh()
@@ -109,7 +109,7 @@ namespace Assets.Scripts.Tests.Player.Swords
 
             _swordAttack.Attack();
 
-            Assert.IsTrue(_enemyLife.Health == StartHealth - strengthDamage, "Test if strength damage goes through");
+            IntegrationAssert.IsTrue(_enemyLife.Health == StartHealth - strengthDamage, "Test if strength damage goes through");
         }
         #endregion
 
@@ -122,7 +122,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             _swordAttack.AddDamageDatas(new List<CombatData>() {new CombatData(CombatType.BaseType, damage)});
             BrokenSwordCurse brokenSwordCurse = _swordEquipmentAttributeManager.AddNewComponent<BrokenSwordCurse>();
 
-            Assert.IsEquals(MathHelper.GetValueMultipliedWithProcent(damage, brokenSwordCurse.BrokenSwordMinusProcentDamage),
+            IntegrationAssert.Equals(MathHelper.GetValueMultipliedWithProcent(damage, brokenSwordCurse.BrokenSwordMinusProcentDamage),
                 _swordAttack.Attack()[0].CombatValue, 
                 "Testing if damage is reduced when has broken sword curse");
         }
@@ -134,7 +134,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             _swordAttack.AddDamageDatas(new List<CombatData>() { new CombatData(CombatType.BaseType, damage) });
             RustySwordCurse rustySwordCurse = _swordEquipmentAttributeManager.AddNewComponent<RustySwordCurse>();
 
-            Assert.IsEquals(MathHelper.GetValueMultipliedWithProcent(damage, rustySwordCurse.MinusProcentDamage),
+            IntegrationAssert.Equals(MathHelper.GetValueMultipliedWithProcent(damage, rustySwordCurse.MinusProcentDamage),
                 _swordAttack.Attack()[0].CombatValue,
                 "Testing if damage is reduced when has rusty sword curse");
         }
@@ -146,7 +146,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             _swordAttack.AddDamageDatas(new List<CombatData>() { new StrengthDamageData(damage) });
             _swordEquipmentAttributeManager.AddNewComponent<WornSwordCurse>();
 
-            Assert.IsEquals(0,_swordAttack.Attack()[0].CombatValue,
+            IntegrationAssert.Equals(0,_swordAttack.Attack()[0].CombatValue,
                 "Testing if strength is set to zero, when has worn sword curse");
         }
 
@@ -163,7 +163,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             VsteelSwordBaseBlessing vsteelSwordBaseBlessing = _swordEquipmentAttributeManager.AddNewComponent<VsteelSwordBaseBlessing>();
             vsteelSwordBaseBlessing.ProcentChanceOfCriticalHit = 100;
 
-            Assert.IsEquals(MathHelper.GetValueMultipliedWithProcent(damage, vsteelSwordBaseBlessing.CriticalHitDamageProcent),
+            IntegrationAssert.Equals(MathHelper.GetValueMultipliedWithProcent(damage, vsteelSwordBaseBlessing.CriticalHitDamageProcent),
                 _swordAttack.Attack()[0].CombatValue,
                 "Testing if vsteel blessing  increases damage  by critical hit procent");
         }
@@ -176,7 +176,7 @@ namespace Assets.Scripts.Tests.Player.Swords
             EnchantedBlessing enchantedBlessing = _swordEquipmentAttributeManager.AddNewComponent<EnchantedBlessing>();
             enchantedBlessing.ProcentChangeToEnchant = 100;
 
-            Assert.IsEquals(damage + enchantedBlessing.EnchantDamage,
+            IntegrationAssert.Equals(damage + enchantedBlessing.EnchantDamage,
                 _swordAttack.Attack()[0].CombatValue,
                 "Testing if enchanted blessing increases damage  by one");
         }
@@ -191,7 +191,7 @@ namespace Assets.Scripts.Tests.Player.Swords
 
             _swordAttack.Attack();
 
-            Assert.IsEquals(StartHealth + lifeDrainBlessing.LifeOnHit, _life.Health, 
+            IntegrationAssert.Equals(StartHealth + lifeDrainBlessing.LifeOnHit, _life.Health, 
                 "Testing if life drain blessing drains life on hit");
         }
 

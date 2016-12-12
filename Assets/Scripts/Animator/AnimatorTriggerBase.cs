@@ -25,17 +25,17 @@ namespace Assets.Scripts.Player.Swords
         private string _triggerEndName;
 
         public abstract void StartAnimation(AnimatorRunMode animatorRunMode);
-        public abstract void End();
-        public abstract void Cancel();
+        public abstract void EndAnimation();
+        public abstract void CancelAnimation();
 
         protected void OnAnimationStarting()
         {
-            AnimationStarting.CallIfNotNull();
+            AnimationStarting.InvokeIfNotNull();
         }
 
         protected void OnAnimationEnded()
         {
-            AnimationEnded.CallIfNotNull();
+            AnimationEnded.InvokeIfNotNull();
         }
     }
 }

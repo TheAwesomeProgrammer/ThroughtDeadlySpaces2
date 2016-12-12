@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy.AI.Abstact
 {
-    public class IdleState : AiState
+    public class IdleState : AiState, StateEnter, StateExit
     {
         public override StateType StateType
         {
             get { return StateType.Idle; }
         }
 
-        public override void OnEnterState()
+        public void OnEnterState()
         {
             Debug.Log("Entering idle state");
         }
 
-        public override void OnExitState()
+        public void OnExitState()
         {
             Debug.Log("Exiting idle state");
         }

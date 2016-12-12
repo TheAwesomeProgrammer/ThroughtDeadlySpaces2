@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Enemy.AI.Factories;
 using Assets.Scripts.Tests;
 using UnityEngine;
 
@@ -8,8 +9,13 @@ namespace Assets.Scripts.Enemy
 {
     public class EnemyMind : MonoBehaviour
     {
+        public StateData CurrentStateData
+        {
+            get { return _currentStateData; }
+        }
+
         public AiState DefaultState;
-        public List<StateChangerBase> GlobalStateChangersScripts; 
+        public List<StateChangerBase> GlobalStateChangersScripts;
 
         private List<StateData> _stateDatas;
         private StateData _currentStateData;
